@@ -2,7 +2,7 @@
 
 Active Slice: SPS-002
 Active Study: STU-001
-Status: Phase 2 Study active
+Status: Study candidate authored; verification and independent review pending
 
 ## Authoritative Entry Points
 
@@ -18,9 +18,16 @@ Status: Phase 2 Study active
 ## Current State
 
 Branch `codex/phase-2-study` starts at exact merged baseline
-`3a3b9ece5db6bde438dfd2b4eba57be344350e85`. Research and Study synthesis are
-pending. No Study verification or independent Phase 2 review exists yet, so
-`SPS-002` is not complete and no readiness claim is permitted.
+`3a3b9ece5db6bde438dfd2b4eba57be344350e85`. The complete `STU-001` candidate
+and its stable-ID relations are present in the working tree. No Study
+verification or independent Phase 2 review exists yet, so `SPS-002` remains
+active and no Steering-readiness claim is permitted.
+
+The candidate recommends Go with all five target pairs (including Linux arm64),
+an upstream-owned machine-readable Toolkit installation plan plus conformance
+fixtures, purpose-built verified Toolkit assets, hostile-input extraction
+invariants, and platform-honest journaled recovery. These are Study inputs only.
+The current Toolkit remains unreleased and supplies no eligible stable asset.
 
 ## Stop Boundary
 
