@@ -30,6 +30,19 @@ mandates:
       - MAN-SC-005
       - MAN-SC-006
       - MAN-SC-007
+    assumptions:
+      - MAN-ASM-001
+      - MAN-ASM-002
+      - MAN-ASM-003
+      - MAN-ASM-004
+    questions:
+      - MAN-Q-001
+      - MAN-Q-002
+      - MAN-Q-003
+      - MAN-Q-004
+      - MAN-Q-005
+      - MAN-Q-006
+      - MAN-Q-007
 outcomes:
   MAN-OUT-001:
     mandate: MAN-001
@@ -117,6 +130,52 @@ successCriteria:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
     status: proposed
+assumptions:
+  MAN-ASM-001:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: proposed
+  MAN-ASM-002:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: proposed
+  MAN-ASM-003:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: proposed
+  MAN-ASM-004:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: proposed
+questions:
+  MAN-Q-001:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: unresolved
+  MAN-Q-002:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: unresolved
+  MAN-Q-003:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: unresolved
+  MAN-Q-004:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: unresolved
+  MAN-Q-005:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: unresolved
+  MAN-Q-006:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: unresolved
+  MAN-Q-007:
+    mandate: MAN-001
+    path: SDP/01--Mandate/mandate.md
+    status: unresolved
 sprints:
   Sprint-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
@@ -143,13 +202,25 @@ slices:
     status: active
     verification:
       - VER-SPS-001
-    reviews: []
+    reviews:
+      - REV-SPS-001-001
 fixes: {}
-reviews: {}
+reviews:
+  REV-SPS-001-001:
+    path: SDP/CodeReview/REV-SPS-001-001.md
+    status: changes-required
+    reviewer: /root/phase1_reviewer
+    candidateCommit: 381b38ed6fc59936e7e2cb30b877e156ff57914c
+    slice: SPS-001
+    findings:
+      blocking: 0
+      high: 0
+      medium: 4
+      low: 1
 verification:
   VER-SPS-001:
     path: SDP/Verification/VER-SPS-001.md
-    status: master-validated-review-pending
+    status: remediation-validated-follow-up-review-pending
     slice: SPS-001
     releaseContext: REL-0.1.0
 migrations: {}
@@ -170,5 +241,6 @@ releases:
     githubRelease: null
 
 # Publication identities remain null until the corresponding Git/GitHub objects
-# exist. VER-SPS-001 is validated Slice working-tree evidence, not accepted
-# release-gate verification; the 0.1.0 target remains proposed and unreleased.
+# exist. VER-SPS-001 distinguishes exact committed-candidate evidence from
+# remediation working-tree evidence; it is not accepted release-gate
+# verification. The 0.1.0 target remains proposed and unreleased.

@@ -1,15 +1,21 @@
 # VER-SPS-001 — SPS-001 Documentation Verification
 
-Status: Master validation passed; independent Reviewer confirmation pending
+Status: remediation validation passed; fresh follow-up Reviewer confirmation pending
 Slice: SPS-001
 Mandate: MAN-001
 Release context: REL-0.1.0 (gh-sdp 0.1.0, proposed and unreleased)
-Validation time: 2026-07-13T09:43:35Z
-Candidate basis: branch codex/phase-1-sdp-bootstrap-mandate, initial commit
-2dcc18423a10497678eb19ace8fd9668efda9551, plus the current working tree
+Reviewed candidate: 381b38ed6fc59936e7e2cb30b877e156ff57914c
+Pull request: https://github.com/Hans-Einar/gh-sdp/pull/1 (draft)
+Exact candidate rerun: 2026-07-13T10:06:44Z
+Remediation validation: 2026-07-13T10:06:44Z
+Remediation basis: reviewed candidate plus the current uncommitted bounded
+review-record, evidence, handoff, and traceability corrections
 
-This is Slice evidence, not a product-release gate. It claims no final commit,
-pull request, review approval, tag, GitHub Release, or published capability.
+This is Slice evidence, not a product-release gate. It distinguishes checks of
+the exact committed candidate from checks of the remediation working tree. The
+initial commit, pushed branch, draft pull request, and changes-required review
+exist; no follow-up review approval, tag, GitHub Release, or published capability
+is claimed.
 
 ## Environment
 
@@ -77,7 +83,118 @@ Results:
 - The initializer's Toolkit-specific REL-0.2.0 seed and copied Toolkit
   traceability facts were replaced with truthful gh-sdp REL-0.1.0 records.
 
-## Consuming-Project Record Validation
+## Exact Reviewed Candidate Rerun
+
+The following command was run from the target repository after initial review.
+All candidate content is read from Git objects, so current remediation edits
+cannot affect the result.
+
+~~~powershell
+$candidate = '381b38ed6fc59936e7e2cb30b877e156ff57914c'
+$base = '2dcc18423a10497678eb19ace8fd9668efda9551'
+$resolved = git rev-parse "$candidate^{commit}"
+if ($LASTEXITCODE -ne 0 -or $resolved -ne $candidate) { throw 'Candidate resolution failed' }
+if ((git rev-parse HEAD) -ne $candidate) { throw 'HEAD is not the reviewed candidate' }
+git diff --check $base $candidate
+if ($LASTEXITCODE -ne 0) { throw 'Full PR candidate git diff --check failed' }
+
+@'
+from pathlib import Path
+import hashlib, json, re, subprocess, yaml
+from jsonschema import Draft202012Validator, FormatChecker
+
+root = Path(r'C:\Users\hanse\GIT\gh-sdp')
+upstream = Path(r'C:\Users\hanse\GIT\SDP')
+candidate = '381b38ed6fc59936e7e2cb30b877e156ff57914c'
+source = 'bc110bb5fd60009ba67015cf640ad6ddbfe1b04b'
+
+def blob(repo, revision, path):
+    return subprocess.run(['git', 'show', f'{revision}:{path}'], cwd=repo,
+                          check=True, stdout=subprocess.PIPE).stdout
+
+def target(path): return blob(root, candidate, path)
+def source_blob(path): return blob(upstream, source, path)
+def target_yaml(path): return yaml.safe_load(target(path).decode('utf-8'))
+
+schema_records = (
+    ('SDP/SDP-project.manifest.yaml', 'SDP-project-manifest.schema.json'),
+    ('SDP/Framework/installed-toolkit.manifest.yaml', 'installed-toolkit-manifest.schema.json'),
+    ('SDP/Releases/REL-0.1.0.yaml', 'release-record.schema.json'),
+)
+records = []
+for record_path, schema_name in schema_records:
+    record = target_yaml(record_path)
+    schema = json.loads(source_blob(f'Toolkit/schemas/{schema_name}'))
+    errors = list(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(record))
+    assert not errors, [error.message for error in errors]
+    records.append(record)
+project, installed, release = records
+current = target_yaml('SDP/Traceability/CurrentIndex.yaml')
+relations = target_yaml('SDP/Traceability/Relations.yaml')
+assert project['project']['name'] == current['project']['name'] == 'gh-sdp'
+assert project['release']['nextTargetVersion'] == release['version'] == '0.1.0'
+assert installed['sourceCommit'] == source
+assert release['releasePreparationCommit'] is None
+assert release['gitTag'] is None and release['githubReleaseUrl'] is None
+
+ledger_schema = json.loads(source_blob('Toolkit/schemas/release-event.schema.json'))
+for line in target('SDP/Traceability/Ledger.ndjson').decode('utf-8').splitlines():
+    if line.strip():
+        errors = list(Draft202012Validator(ledger_schema, format_checker=FormatChecker()).iter_errors(json.loads(line)))
+        assert not errors, [error.message for error in errors]
+
+mandate = target('SDP/01--Mandate/mandate.md').decode('utf-8')
+for section in ('outcomes', 'boundaries', 'successCriteria'):
+    for stable_id, record in relations[section].items():
+        assert stable_id in mandate and record['mandate'] == 'MAN-001'
+        target(record['path'])
+assert 'assumptions' not in relations and 'questions' not in relations
+
+tracked = subprocess.run(['git', 'ls-tree', '-r', '--name-only', candidate],
+    cwd=root, check=True, text=True, encoding='utf-8', stdout=subprocess.PIPE).stdout.splitlines()
+forbidden_pattern = re.compile(r'(^|/)(go\.mod|go\.sum|.*\.go|.*\.exe|.*\.dll|.*\.sh|.*\.bat|.*\.cmd|Dockerfile|Makefile)$', re.I)
+assert any(path.startswith('.codex/') for path in tracked)
+assert not any(path.startswith('.github/') for path in tracked)
+assert not [path for path in tracked if forbidden_pattern.search(path)]
+
+pairs = [('AGENTS.md', 'Toolkit/payload/project-root/AGENTS.md.template')]
+source_paths = subprocess.run(['git', 'ls-tree', '-r', '--name-only', source,
+    '--', 'Toolkit/skills', 'Toolkit/payload/sdp-root/Framework'], cwd=upstream,
+    check=True, text=True, encoding='utf-8', stdout=subprocess.PIPE).stdout.splitlines()
+for path in source_paths:
+    if path.endswith('/SKILL.md'):
+        pairs.append((f'.codex/skills/{Path(path).parent.name}/SKILL.md', path))
+    elif path.startswith('Toolkit/payload/sdp-root/Framework/'):
+        pairs.append((f"SDP/Framework/{path.removeprefix('Toolkit/payload/sdp-root/Framework/')}", path))
+for target_path, source_path in pairs:
+    assert hashlib.sha256(target(target_path)).digest() == hashlib.sha256(source_blob(source_path)).digest()
+
+future = ('02--Study/study.md', '03--Requirements/requirements.md',
+          '04--Architecture/architecture.md', '05--DesignAnalysis/design-analysis.md',
+          '06--Design/design.md', '07--Implementation/implementation-plan.md')
+for path in future:
+    assert hashlib.sha256(target(f'SDP/{path}')).digest() == hashlib.sha256(source_blob(path)).digest()
+
+print(f'PASS exact candidate: {candidate}')
+print(f'PASS complete tracked tree: {len(tracked)} files including hidden .codex; no .github or product/build files')
+print(f'PASS managed Git-blob hashes: {len(pairs)}; later-lifecycle hashes: {len(future)}')
+print('CONFIRMED REVIEW FINDING: candidate lacks assumption/question relation maps')
+'@ | python -
+if ($LASTEXITCODE -ne 0) { throw 'Exact committed candidate validation failed' }
+~~~
+
+Results: commit identity resolved exactly; full PR `git diff --check` from base
+`2dcc18423a10497678eb19ace8fd9668efda9551` through candidate
+`381b38ed6fc59936e7e2cb30b877e156ff57914c` emitted no output;
+the three canonical YAML schemas and one ledger release-event record passed;
+version/publication identities passed; all 46 tracked paths were checked,
+including hidden `.codex`; no `.github` or product/build paths existed; all 16
+managed Git blobs and six later-lifecycle templates matched the pinned source.
+The rerun also reproduced the known review finding that the committed candidate
+did not yet map Mandate assumptions or questions. That gap is addressed only in
+the remediation working tree below.
+
+## Remediation Working-Tree Record Validation
 
 The following exact command was run from the target repository. It uses the
 canonical schemas and checks cross-record identity, publication truth, stable
@@ -138,12 +255,14 @@ assert 'REL-0.1.0' in relations['releases'] and not (root/'SDP/Releases/REL-0.2.
 print('PASS cross-record identity, lifecycle, and publication truth')
 
 mandate_text = (root/'SDP/01--Mandate/mandate.md').read_text(encoding='utf-8')
-for section in ('outcomes','boundaries','successCriteria'):
+mandate_relation = relations['mandates']['MAN-001']
+for section in ('outcomes','boundaries','successCriteria','assumptions','questions'):
+    assert set(mandate_relation[section]) == set(relations[section]), section
     for stable_id, record in relations[section].items():
         assert stable_id in mandate_text, stable_id
         assert record['mandate'] == 'MAN-001'
         assert (root/record['path']).is_file(), record['path']
-for category in ('mandates','sprints','iterations','slices','verification'):
+for category in ('mandates','sprints','iterations','slices','reviews','verification'):
     for stable_id, record in relations[category].items():
         if 'path' in record:
             assert (root/record['path']).is_file(), f'{stable_id}: {record["path"]}'
@@ -166,7 +285,10 @@ print('PHASE 1 RECORD VALIDATION PASSED')
 
 Result: all three YAML records passed their canonical schemas; CurrentIndex and
 Relations parsed; the one ledger line passed the release-event schema; identity,
-lifecycle, publication, relation, ID, path, and template checks passed.
+lifecycle, publication, relation, ID, path, and template checks passed. The
+expanded relation check resolved all six outcomes, eight boundaries, seven
+success criteria, four assumptions, and seven questions to `MAN-001` and its
+real path.
 
 ## Managed Files, Layout, and Scope
 
@@ -218,16 +340,25 @@ print('MANAGED AND PLACEHOLDER HASH VALIDATION PASSED')
 $gitRoots = @(Get-ChildItem -LiteralPath 'C:\Users\hanse\GIT\gh-sdp' -Force -Recurse -Directory -Filter .git -ErrorAction Stop | ForEach-Object FullName)
 if ($gitRoots.Count -ne 1 -or $gitRoots[0] -ne 'C:\Users\hanse\GIT\gh-sdp\.git') { throw "Unexpected Git roots: $($gitRoots -join ', ')" }
 
-$files = @(rg --files -g '!**/.git/**')
-$forbidden = @($files | Where-Object { $_ -match '(^|[\\/])(go\.mod|go\.sum|.*\.go|.*\.exe|.*\.dll|.*\.sh|.*\.bat|.*\.cmd|Dockerfile|Makefile)$' -or $_ -match '^\.github[\\/]' })
+$files = @(git ls-files --cached --others --exclude-standard)
+if ($LASTEXITCODE -ne 0) { throw 'Unable to enumerate the complete repository file set' }
+$codexFiles = @($files | Where-Object { $_ -match '^\.codex[\\/]' })
+if ($codexFiles.Count -eq 0) { throw 'Hidden .codex paths were not enumerated' }
+$githubFiles = @($files | Where-Object { $_ -match '^\.github[\\/]' })
+if ($githubFiles.Count -ne 0) { throw "Forbidden workflow files: $($githubFiles -join ', ')" }
+$forbidden = @($files | Where-Object { $_ -match '(^|[\\/])(go\.mod|go\.sum|.*\.go|.*\.exe|.*\.dll|.*\.sh|.*\.bat|.*\.cmd|Dockerfile|Makefile)$' })
 if ($forbidden.Count -ne 0) { throw "Forbidden product/build files: $($forbidden -join ', ')" }
 if (Test-Path -LiteralPath 'SDP\.sdp-backups') { throw 'Unexpected SDP backup directory' }
+git diff --check
+if ($LASTEXITCODE -ne 0) { throw 'Remediation working-tree git diff --check failed' }
 ~~~
 
 Results: all 16 copied managed files matched the pinned source; all 10 skills
 matched; all 6 later-lifecycle documents matched their untouched templates;
-exactly one .git existed at repository root; all 36 files were governance
-artifacts; no product/build/workflow file or backup artifact existed.
+exactly one `.git` existed at repository root; all 47 tracked or untracked files
+were enumerated, including the 10 hidden `.codex` skill files and the untracked
+initial review record; no `.github`, product/build, or backup artifact existed;
+and remediation working-tree `git diff --check` emitted no output.
 
 ## Installer Repeatability
 
@@ -259,10 +390,18 @@ Results:
   an authoritative validator.
 - Toolkit test dependencies use compatible version ranges rather than a fully
   locked environment.
-- Evidence currently applies to the working tree. The Master must rerun checks
-  against the committed PR head, and a fresh Reviewer must inspect the actual
-  diff and evidence before SPS-001 can close.
+- Baseline evidence now applies directly to reviewed commit
+  381b38ed6fc59936e7e2cb30b877e156ff57914c and draft PR #1. The four review
+  corrections are separately validated in the current working tree; the Master
+  must integrate and rerun that remediation, then a fresh Reviewer must inspect
+  the corrected PR head before SPS-001 can close.
 
 ## Reviewer Confirmation
 
-Pending. No review disposition is claimed here.
+Initial review `REV-SPS-001-001` was completed by fresh Reviewer
+`/root/phase1_reviewer` against commit
+381b38ed6fc59936e7e2cb30b877e156ff57914c and draft PR #1. Its disposition was
+changes required: zero blocking, zero high, four medium, and one low finding.
+The current remediation addresses the four medium findings, but no follow-up
+review disposition is claimed. The low empty-repository-description finding is
+unchanged for Steering Group disposition.

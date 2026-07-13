@@ -1,7 +1,7 @@
 # Sprint-001 Handoff
 
 Current Slice: `SPS-001`
-Status: active — Master validation passed; commit, draft PR, and review pending
+Status: active — review findings remediated; Master integration and follow-up review pending
 
 ## Authoritative Entry Points
 
@@ -13,14 +13,18 @@ Status: active — Master validation passed; commit, draft PR, and review pendin
 - Identifier convention: `SDP/Instructions/StableIdentifiers.md`
 - Mandate: `SDP/01--Mandate/mandate.md` (`MAN-001`)
 - Worker verification: `SDP/Verification/VER-SPS-001.md`
+- Initial review: `SDP/CodeReview/REV-SPS-001-001.md`
 
 ## Pending Work Within SPS-001
 
-The Master must inspect the Worker return and verification, establish the review
-surface required by the Slice contract, and delegate a fresh Reviewer to inspect
-the actual diff and evidence. Any blocking, high, or medium finding requires
-bounded rework and fresh follow-up review. Commit, push, draft PR, Reviewer
-confirmation, and completion decisions are not claimed by this handoff.
+Draft PR #1 exists at https://github.com/Hans-Einar/gh-sdp/pull/1. Initial review
+`REV-SPS-001-001` found four medium evidence/traceability issues. The current
+remediation working tree addresses those findings by binding evidence to the
+reviewed commit, correcting stale PR state, validating the complete hidden and
+visible file set, and resolving all Mandate assumption and question IDs. The
+Master must inspect and rerun the corrected checks, commit and push the bounded
+remediation, and delegate a fresh follow-up Reviewer. Completion is not claimed
+by this handoff.
 
 Do not repeat `-InitializeProjectStructure` without inspecting its preview. At
 the installed source revision it proposes re-creating the Toolkit repository's

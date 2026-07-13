@@ -26,9 +26,9 @@ convention before those identifiers are used. It is not an upstream SDP format.
 Numbers are three decimal digits, are unique within their kind, and are never
 reassigned to a different meaning. The authoritative definition remains in the
 Mandate document. `SDP/Traceability/Relations.yaml` resolves the Mandate,
-outcome, boundary, and success-criterion IDs to that document; other records
-refer to the exact ID. Status is recorded separately and is not encoded in an
-identifier.
+outcome, boundary, success-criterion, assumption, and question IDs to that
+document; other records refer to the exact ID. Status is recorded separately
+and is not encoded in an identifier.
 
 The canonical release and Fix formats remain authoritative and are not redefined
 here. A later authoritative Toolkit format for the project-local kinds above may
