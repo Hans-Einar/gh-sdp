@@ -1,6 +1,6 @@
 project:
   name: gh-sdp
-  status: phase-1-ready-for-steering-assessment
+  status: phase-1-accepted-awaiting-pr-merge-and-separate-study-assignment
 
 release:
   previousVersion: null

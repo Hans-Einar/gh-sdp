@@ -4,7 +4,7 @@ mandates:
   MAN-001:
     path: SDP/01--Mandate/mandate.md
     identifierConvention: SDP/Instructions/StableIdentifiers.md
-    status: proposed
+    status: approved
     sprint: Sprint-001
     outcomes:
       - MAN-OUT-001
@@ -47,27 +47,27 @@ outcomes:
   MAN-OUT-001:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-OUT-002:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-OUT-003:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-OUT-004:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-OUT-005:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-OUT-006:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
 boundaries:
   MAN-BND-001:
     mandate: MAN-001
@@ -105,48 +105,48 @@ successCriteria:
   MAN-SC-001:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-SC-002:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-SC-003:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-SC-004:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-SC-005:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-SC-006:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-SC-007:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
 assumptions:
   MAN-ASM-001:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-ASM-002:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-ASM-003:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
   MAN-ASM-004:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: proposed
+    status: approved
 questions:
   MAN-Q-001:
     mandate: MAN-001
@@ -261,3 +261,6 @@ releases:
 # exist. VER-SPS-001 is passed Slice evidence confirmed by REV-SPS-001-002; it
 # is not release-gate verification and is intentionally absent from the release
 # verification/review arrays. The 0.1.0 target remains proposed and unreleased.
+# `approved` on the Mandate, outcomes, success criteria, and assumptions records
+# Steering-approved normative content, not delivered or verified product
+# behavior. Boundaries remain active and questions remain unresolved.

@@ -1,14 +1,35 @@
 # MAN-001 — gh-sdp GitHub CLI Extension Mandate
 
-Status: proposed — ready for Steering Group assessment
+Status: approved — governing Mandate for the Study phase
+Approval date: 2026-07-13
+Steering-assessed commit: `ed205c1ef193ab8a6e5cd1c50e558c3049ce6def`
+Phase 1 decision: accepted
+Phase 2 authorization: not authorized — requires PR #1 merge and a separate
+Study assignment
 Lifecycle level: Mandate only
 Completed Phase 1 work: `Sprint-001` / `SPI-001` / `SPS-001`
 Proposed client release: `REL-0.1.0` (`gh-sdp` `0.1.0`, unreleased)
-Proposed first Toolkit compatibility target: SDP Toolkit `0.2.0` (unreleased)
+Proposed first Toolkit compatibility target: SDP Toolkit `0.2.0` (unreleased
+and unsupported)
 
 Identifiers in this document follow the project-local convention in
 `SDP/Instructions/StableIdentifiers.md`; they are not claimed as an upstream SDP
 format.
+
+## Steering Group Decision
+
+On 2026-07-13, the Steering Group assessed Phase 1 at exact commit
+`ed205c1ef193ab8a6e5cd1c50e558c3049ce6def` and decided:
+
+- Phase 1 accepted.
+- `MAN-001` approved as the governing Mandate for the Study phase.
+
+Approval makes the Mandate outcomes, success criteria, assumptions, and active
+boundaries the governing normative input to any separately authorized Study. It
+does not mean the future success criteria have been delivered, resolve the open
+questions, declare a product capability or Toolkit compatibility, or authorize
+Phase 2. Phase 2 remains unauthorized until PR #1 is merged and a separate Study
+assignment is issued.
 
 ## Problem
 
@@ -100,16 +121,18 @@ selected Toolkit's installation and preservation rules.
 ## Version and Lifecycle Truth
 
 The proposed `gh-sdp` development target is client version `0.1.0`, represented
-by `REL-0.1.0`. It is unreleased. The proposed first supported compatibility
-target is SDP Toolkit `0.2.0`; at the inspected canonical source revision it is
-also unreleased and has no evidenced tag or GitHub Release. These numbers belong
-to different products and do not advance together automatically.
+by `REL-0.1.0`. It is unreleased. The proposed first compatibility target is SDP
+Toolkit `0.2.0`; at the inspected canonical source revision it is also
+unreleased, unsupported, and has no evidenced tag or GitHub Release. These
+numbers belong to different products and do not advance together automatically.
 
-This document establishes intent only. Phase 1 preparation passed fresh
-independent review and `MAN-001` is proposed for Steering Group assessment. No
+This document establishes approved Mandate-level intent only. Phase 1 passed
+fresh independent review and was accepted by the Steering Group, which approved
+`MAN-001` as the governing Mandate for a separately authorized Study phase. No
 Study, Requirements, Architecture, Design Analysis, Design, or Implementation
-decision is approved; no product capability, compatibility promise, tag, or
-release exists as a result of `SPS-001`.
+decision is approved; no product capability, compatibility promise, Toolkit
+support declaration, tag, or release exists as a result of `SPS-001` or the
+Steering decision.
 
 ## Boundaries and Explicit Exclusions
 
