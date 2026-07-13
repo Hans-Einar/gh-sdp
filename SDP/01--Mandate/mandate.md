@@ -1,8 +1,8 @@
 # MAN-001 — gh-sdp GitHub CLI Extension Mandate
 
-Status: drafting
+Status: proposed — ready for Steering Group assessment
 Lifecycle level: Mandate only
-Active work: `Sprint-001` / `SPI-001` / `SPS-001`
+Completed Phase 1 work: `Sprint-001` / `SPI-001` / `SPS-001`
 Proposed client release: `REL-0.1.0` (`gh-sdp` `0.1.0`, unreleased)
 Proposed first Toolkit compatibility target: SDP Toolkit `0.2.0` (unreleased)
 
@@ -105,11 +105,11 @@ target is SDP Toolkit `0.2.0`; at the inspected canonical source revision it is
 also unreleased and has no evidenced tag or GitHub Release. These numbers belong
 to different products and do not advance together automatically.
 
-This document establishes intent only. `MAN-001` is still drafting and awaits
-independent review and Steering Group assessment. No Study, Requirements,
-Architecture, Design Analysis, Design, or Implementation decision is approved;
-no product capability, compatibility promise, tag, or release exists as a result
-of `SPS-001`.
+This document establishes intent only. Phase 1 preparation passed fresh
+independent review and `MAN-001` is proposed for Steering Group assessment. No
+Study, Requirements, Architecture, Design Analysis, Design, or Implementation
+decision is approved; no product capability, compatibility promise, tag, or
+release exists as a result of `SPS-001`.
 
 ## Boundaries and Explicit Exclusions
 

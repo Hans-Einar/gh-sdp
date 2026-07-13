@@ -4,7 +4,7 @@ mandates:
   MAN-001:
     path: SDP/01--Mandate/mandate.md
     identifierConvention: SDP/Instructions/StableIdentifiers.md
-    status: drafting
+    status: proposed
     sprint: Sprint-001
     outcomes:
       - MAN-OUT-001
@@ -179,7 +179,7 @@ questions:
 sprints:
   Sprint-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
-    status: active
+    status: complete
     iterations:
       - SPI-001
 refactors: {}
@@ -187,7 +187,7 @@ iterations:
   SPI-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
     sprint: Sprint-001
-    status: active
+    status: complete
     slices:
       - SPS-001
 slices:
@@ -199,11 +199,12 @@ slices:
       - MAN-001
     release:
       - REL-0.1.0
-    status: active
+    status: complete
     verification:
       - VER-SPS-001
     reviews:
       - REV-SPS-001-001
+      - REV-SPS-001-002
 fixes: {}
 reviews:
   REV-SPS-001-001:
@@ -212,18 +213,33 @@ reviews:
     reviewer: /root/phase1_reviewer
     candidateCommit: 381b38ed6fc59936e7e2cb30b877e156ff57914c
     slice: SPS-001
+    resolvedBy: REV-SPS-001-002
     findings:
       blocking: 0
       high: 0
       medium: 4
       low: 1
+  REV-SPS-001-002:
+    path: SDP/CodeReview/REV-SPS-001-002.md
+    status: approved
+    reviewer: /root/phase1_followup_reviewer
+    candidateCommit: f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f
+    slice: SPS-001
+    resolves: REV-SPS-001-001
+    findings:
+      blocking: 0
+      high: 0
+      medium: 0
+      low: 1
 verification:
   VER-SPS-001:
     path: SDP/Verification/VER-SPS-001.md
-    status: committed-remediation-validated-follow-up-review-pending
+    status: passed
     slice: SPS-001
     releaseContext: REL-0.1.0
-    candidateCommit: bb16bee815d40742f29e15eeac4254bd1310376e
+    remediationCommit: bb16bee815d40742f29e15eeac4254bd1310376e
+    candidateCommit: f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f
+    reviewerConfirmation: REV-SPS-001-002
 migrations: {}
 releases:
   REL-0.1.0:
@@ -242,6 +258,6 @@ releases:
     githubRelease: null
 
 # Publication identities remain null until the corresponding Git/GitHub objects
-# exist. VER-SPS-001 distinguishes the initial reviewed candidate from the
-# committed remediation candidate; it is not accepted release-gate verification.
-# The 0.1.0 target remains proposed and unreleased.
+# exist. VER-SPS-001 is passed Slice evidence confirmed by REV-SPS-001-002; it
+# is not release-gate verification and is intentionally absent from the release
+# verification/review arrays. The 0.1.0 target remains proposed and unreleased.

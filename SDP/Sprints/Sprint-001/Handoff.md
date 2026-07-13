@@ -1,7 +1,8 @@
 # Sprint-001 Handoff
 
-Current Slice: `SPS-001`
-Status: active — committed remediation validated; follow-up review pending
+Active Slice: none
+Completed Slice: `SPS-001`
+Status: Phase 1 ready for Steering Group assessment
 
 ## Authoritative Entry Points
 
@@ -14,8 +15,9 @@ Status: active — committed remediation validated; follow-up review pending
 - Mandate: `SDP/01--Mandate/mandate.md` (`MAN-001`)
 - Worker verification: `SDP/Verification/VER-SPS-001.md`
 - Initial review: `SDP/CodeReview/REV-SPS-001-001.md`
+- Follow-up review: `SDP/CodeReview/REV-SPS-001-002.md`
 
-## Pending Work Within SPS-001
+## Completion State
 
 Draft PR #1 exists at https://github.com/Hans-Einar/gh-sdp/pull/1. Initial review
 `REV-SPS-001-001` found four medium evidence/traceability issues. Committed
@@ -23,8 +25,17 @@ remediation candidate `bb16bee815d40742f29e15eeac4254bd1310376e` addresses
 those findings by binding evidence to the reviewed commit, correcting stale PR
 state, validating the complete hidden and visible file set, and resolving all
 Mandate assumption and question IDs. Exact committed-candidate validation
-passed. The next gate is a fresh follow-up Reviewer against the resulting draft
-PR head. Completion is not claimed by this handoff.
+passed. Fresh follow-up review `REV-SPS-001-002` approved exact pushed head
+`f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f` for `SPS-001` closure with no
+blocking, high, or medium findings.
+
+## Next Authorized Decision
+
+Steering Group assessment of proposed Mandate `MAN-001` is the only next action
+represented by this handoff. Any Phase 2 or later-lifecycle work requires a new
+explicitly authorized Sprint/Iteration/Slice contract. The empty GitHub
+repository description is the remaining low-severity item for Steering
+disposition.
 
 Do not repeat `-InitializeProjectStructure` without inspecting its preview. At
 the installed source revision it proposes re-creating the Toolkit repository's

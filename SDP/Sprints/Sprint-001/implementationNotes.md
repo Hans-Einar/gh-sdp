@@ -2,7 +2,7 @@
 
 ## SPS-001
 
-Status: in progress — draft PR exists; review remediation validated and follow-up review pending
+Status: complete — Phase 1 ready for Steering Group assessment
 
 ### Worker Changes
 
@@ -53,9 +53,9 @@ The project warning and agent instruction record this canonical initializer gap.
 - The `gh-sdp` `0.1.0` client target and SDP Toolkit `0.2.0` compatibility target
   are separate proposals and both remain unreleased.
 - Go is a preferred direction only; Study and Architecture retain the decision.
-- `VER-SPS-001` is linked as Slice evidence but not as accepted release-gate
-  verification while the committed remediation still requires fresh follow-up
-  review.
+- `VER-SPS-001` passed as Slice evidence confirmed by independent follow-up
+  review. It is not release-gate verification; the proposed release remains
+  unreleased and its verification/review arrays remain empty.
 
 ### Independent Review Pass 1
 
@@ -63,10 +63,18 @@ Fresh Reviewer `/root/phase1_reviewer` inspected committed candidate
 `381b38ed6fc59936e7e2cb30b877e156ff57914c` and draft PR #1. The disposition was
 changes required: zero blocking, zero high, four medium, and one low finding.
 `SDP/CodeReview/REV-SPS-001-001.md` is the authoritative review record. The four
-medium findings are addressed in committed candidate
+medium findings were addressed in committed candidate
 `bb16bee815d40742f29e15eeac4254bd1310376e`; the low
 empty-repository-description finding is unchanged for Steering Group disposition.
-A fresh follow-up Reviewer remains required.
+
+### Independent Review Pass 2
+
+Fresh Reviewer `/root/phase1_followup_reviewer` inspected exact pushed draft PR
+head `f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f`, the complete diff, live PR
+metadata, and pinned canonical source. `REV-SPS-001-002` approved `SPS-001`
+closure at `2026-07-13T10:16:59Z` with zero blocking, high, or medium findings
+and one unchanged low finding. The approval is limited to Slice closure and does
+not approve publication, Toolkit support, Steering acceptance, or Phase 2.
 
 ### Residual Risks, Gaps, and Discoveries
 
@@ -78,9 +86,9 @@ A fresh follow-up Reviewer remains required.
   and cannot be represented as a consuming-project validator. Consumer checks
   therefore compose the canonical JSON schemas with project-local YAML/NDJSON,
   path/ID, hash, repository-layout, and content-boundary checks.
-- The initial reviewed commit, draft PR, and committed remediation candidate
-  exist. Exact committed-candidate validation passed, but a fresh Reviewer must
-  inspect the resulting PR head before any completion decision.
+- The initial reviewed commit, draft PR, committed remediation, and exact pushed
+  follow-up candidate exist. Exact validation and fresh review passed with no
+  blocking, high, or medium findings.
 - Normal same-version installation is idempotent, but the optional initializer is
   not idempotent after correcting its Toolkit-specific release seed. The current
   mitigation is preview-first, one-time use; correcting the reusable installer
@@ -88,3 +96,7 @@ A fresh follow-up Reviewer remains required.
 - Detailed artifact/provenance, compatibility, rollback, alternate-source,
   authentication, offline, and platform filesystem policy remains input to
   Study. No later-lifecycle template was populated.
+- `Ledger.ndjson` intentionally remains unchanged after the original
+  `release-planned` event. The canonical ledger schema supports release events,
+  not generic Sprint, Slice, or review completion; inventing such an event would
+  misstate schema authority.

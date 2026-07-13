@@ -1,6 +1,6 @@
 # VER-SPS-001 — SPS-001 Documentation Verification
 
-Status: committed remediation validation passed; fresh follow-up Reviewer confirmation pending
+Status: passed — independently confirmed for SPS-001 closure
 Slice: SPS-001
 Mandate: MAN-001
 Release context: REL-0.1.0 (gh-sdp 0.1.0, proposed and unreleased)
@@ -10,12 +10,14 @@ Exact candidate rerun: 2026-07-13T10:06:44Z
 Remediation working-tree validation: 2026-07-13T10:06:44Z
 Committed remediation candidate: bb16bee815d40742f29e15eeac4254bd1310376e
 Committed remediation rerun: 2026-07-13T10:09:41Z
+Follow-up reviewed candidate: f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f
+Follow-up review completed: 2026-07-13T10:16:59Z
 
-This is Slice evidence, not a product-release gate. It distinguishes the initial
-reviewed candidate from the committed remediation candidate. The initial commit,
-pushed branch, draft pull request, changes-required review, and remediation
-commit exist; no follow-up review approval, tag, GitHub Release, or published
-capability is claimed.
+This is passed Slice evidence, not a product-release gate. It distinguishes the
+initial reviewed candidate, committed remediation, and exact pushed follow-up
+candidate. Fresh review approved `SPS-001` closure; no Steering approval, release
+approval, tag, GitHub Release, published capability, Toolkit support declaration,
+or Phase 2 authorization is claimed.
 
 ## Environment
 
@@ -368,6 +370,12 @@ schemas, the release-event ledger line, cross-record and publication identities,
 all 32 subordinate Mandate IDs, 16 managed blobs, 10 skills, six later-lifecycle
 templates, the full PR diff, and the no-product/workflow boundary passed.
 
+The Master and fresh follow-up Reviewer then repeated the Git-object matrix
+against exact pushed head `f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f`.
+The worktree and origin matched that SHA; all 47 governance paths, schemas,
+ledger, identities, relations, managed blobs, templates, repository layout,
+full-PR diff, and no-product/workflow boundary passed.
+
 ## Installer Repeatability
 
 Commands:
@@ -401,8 +409,8 @@ Results:
 - Baseline evidence applies directly to reviewed commit
   `381b38ed6fc59936e7e2cb30b877e156ff57914c` and draft PR #1. The four review
   corrections are separately validated at committed candidate
-  `bb16bee815d40742f29e15eeac4254bd1310376e`; a fresh Reviewer must inspect the
-  corrected PR head before SPS-001 can close.
+  `bb16bee815d40742f29e15eeac4254bd1310376e`. Fresh follow-up review approved
+  exact pushed head `f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f` for Slice closure.
 
 ## Reviewer Confirmation
 
@@ -411,6 +419,11 @@ Initial review `REV-SPS-001-001` was completed by fresh Reviewer
 381b38ed6fc59936e7e2cb30b877e156ff57914c and draft PR #1. Its disposition was
 changes required: zero blocking, zero high, four medium, and one low finding.
 Committed remediation candidate `bb16bee815d40742f29e15eeac4254bd1310376e`
-addresses the four medium findings, but no follow-up review disposition is
-claimed. The low empty-repository-description finding is unchanged for Steering
-Group disposition.
+addressed all four medium findings. Fresh Reviewer
+`/root/phase1_followup_reviewer` inspected exact pushed head
+`f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f` and approved `SPS-001` closure in
+`REV-SPS-001-002`: zero blocking, zero high, zero medium, and one low finding.
+The low empty-repository-description finding remains for Steering Group
+disposition. Terminal confirmation of the later closure-metadata commit is
+recorded externally on draft PR #1 because a tracked record cannot contain the
+hash of the commit that contains itself.

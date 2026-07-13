@@ -1,8 +1,8 @@
 # Sprint-001 — Phase 1 SDP Bootstrap and Mandate
 
-Status: active
+Status: complete
 Iteration: SPI-001
-Active Slice: SPS-001
+Completed Slice: SPS-001
 Mandate: MAN-001
 Proposed gh-sdp target: REL-0.1.0 (`0.1.0`, unreleased)
 Proposed first SDP Toolkit compatibility target: `0.2.0` (unreleased)
@@ -15,11 +15,11 @@ Requirements, Architecture, Design, or implementation planning.
 
 ## SPI-001 — Repository Bootstrap and Mandate
 
-Status: active
+Status: complete
 
 ### SPS-001 — Authoritative Bootstrap, Mandate, and Initial Traceability
 
-Status: active
+Status: complete
 
 #### Goal
 
@@ -99,3 +99,14 @@ before later lifecycle or production work can begin.
   and independent review has no unresolved blocking, high, or medium findings.
 - The repository contains no production implementation and stops at the Phase 1
   boundary for Steering Group assessment.
+
+#### Completion Evidence
+
+- `VER-SPS-001` passed deterministic validation against committed remediation
+  `bb16bee815d40742f29e15eeac4254bd1310376e` and exact pushed review head
+  `f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f`.
+- Fresh follow-up review `REV-SPS-001-002` approved `SPS-001` closure with zero
+  blocking, high, or medium findings and one non-blocking low finding.
+- The draft PR remains open for Steering Group assessment. `REL-0.1.0`, client
+  `0.1.0`, and Toolkit `0.2.0` remain proposed and unreleased; no publication or
+  Phase 2 authorization is implied.

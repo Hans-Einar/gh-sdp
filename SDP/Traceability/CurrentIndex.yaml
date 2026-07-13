@@ -1,6 +1,6 @@
 project:
   name: gh-sdp
-  status: phase-1-mandate-active
+  status: phase-1-ready-for-steering-assessment
 
 release:
   previousVersion: null
@@ -10,9 +10,9 @@ release:
   targetStatus: proposed
 
 active:
-  sprint: Sprint-001
+  sprint: null
   refactor: null
-  iteration: SPI-001
-  slice: SPS-001
+  iteration: null
+  slice: null
   fix: null
   revision: null
