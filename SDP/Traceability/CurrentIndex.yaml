@@ -1,0 +1,18 @@
+project:
+  name: gh-sdp
+  status: phase-1-mandate-active
+
+release:
+  previousVersion: null
+  activeReleaseId: REL-0.1.0
+  targetVersion: "0.1.0"
+  state: unreleased
+  targetStatus: proposed
+
+active:
+  sprint: Sprint-001
+  refactor: null
+  iteration: SPI-001
+  slice: SPS-001
+  fix: null
+  revision: null
