@@ -104,7 +104,7 @@ Every entry was inspected on 2026-07-13.
 | STU-EVD-013 | GitHub [source archive stability](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives) | Generated archive bytes may change; commit contents are stable; releases are preferred for security | Does not define an SDP payload format |
 | STU-EVD-014 | Microsoft [path naming](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file), [long paths](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation), [links/junctions](https://learn.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions), [reparse points](https://learn.microsoft.com/en-us/windows/win32/fileio/reparse-points), and [`ReplaceFileW`](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-replacefilew) | Windows roots, reserved names, case default, link types, long-path opt-in, same-volume replacement and partial failure states | Filesystem and policy configuration still vary by machine |
 | STU-EVD-015 | POSIX Issue 8 [`rename`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/rename.html) and [durability rationale](https://pubs.opengroup.org/onlinepubs/9799919799/xrat/V4_xbd_chap01.html) | Atomic rename semantics, cross-filesystem failure, and distinction between atomicity and durability | Applies to conforming Unix behavior, not Windows and not whole-tree transactions |
-| STU-EVD-016 | Apple [files/directories](https://developer.apple.com/documentation/technologyoverviews/files-and-directories), [APFS FAQ](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html), and [`replaceItem`](https://developer.apple.com/documentation/foundation/filemanager/replaceitemat%28_%3Awithitemat%3Abackupitemname%3Aoptions%3A%29-4210g) | APFS case/normalization behavior, portable path advice, same-volume replacement | macOS may use non-APFS or case-sensitive volumes |
+| STU-EVD-016 | Apple [files/directories](https://developer.apple.com/documentation/technologyoverviews/files-and-directories), [APFS FAQ](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html), and [`replaceItem`](https://developer.apple.com/documentation/foundation/filemanager/replaceitemat%28_%3Awithitemat%3Abackupitemname%3Aoptions%3A%29) | APFS case/normalization behavior, portable path advice, same-volume replacement | macOS may use non-APFS or case-sensitive volumes |
 | STU-EVD-017 | Local commands `gh --version`, `git --version`, `python --version`, `Get-Command go`, and OS environment | Exact Study tool environment and absence of local Go | One Windows workstation only |
 | STU-EVD-018 | [Semantic Versioning 2.0.0](https://semver.org/) | Full SemVer syntax and prerelease precedence | Does not define Toolkit compatibility policy |
 | STU-EVD-019 | `SDP/Framework/installed-toolkit.manifest.yaml`, `SDP/SDP-project.manifest.yaml`, and `SDP/Releases/REL-0.1.0.yaml` at activation commit | Installed Toolkit and proposed client identities/state | Project state only; not publication evidence |
@@ -196,14 +196,19 @@ release signals binary mode but lacks the user's matching asset, installation
 fails. [verified external fact/source-derived; STU-EVD-002, STU-EVD-003]
 
 The latest-release API excludes drafts and prereleases and currently selects by
-`created_at`, not highest SemVer. A pinned binary install uses the requested
-release tag. These rules apply to client-extension distribution; Toolkit
-selection needs its own policy. Whether `--pin <prerelease-tag>` reliably
-installs a binary when the repository has only prereleases is source-ambiguous
-because binary detection begins with latest-release discovery; this needs a
-version-pinned GitHub CLI fixture and remains unresolved. [verified external
-fact/source observation/unresolved question; STU-EVD-002, STU-EVD-003,
-STU-EVD-005, STU-EVD-018]
+`created_at`, not highest SemVer. During remote install, GitHub CLI 2.96.0 first
+calls `isBinExtension`, whose binary detector inspects the latest stable release
+before the requested `--pin` tag. Only after that classification succeeds does
+the pinned binary path fetch the requested release tag. A prerelease-only
+precompiled repository with no root script therefore receives no latest stable
+release, falls through to script detection, and is rejected as not installable;
+`--pin <prerelease-tag>` does not rescue it. This is a pinned-source fact, not an
+ambiguity. A version-pinned conformance fixture remains useful to detect future
+GitHub CLI changes and to characterize repositories that have both a stable
+binary release and a pinned prerelease. These rules apply to client-extension
+distribution; Toolkit selection needs its own policy. [verified external
+fact/source-derived behavior; STU-EVD-002, STU-EVD-003, STU-EVD-005,
+STU-EVD-018]
 
 `gh extension upgrade sdp` updates the installed **client**. Future
 `gh sdp update` intends to update **SDP Toolkit content in a selected project**.
@@ -633,7 +638,7 @@ Later testing should be layered and deterministic:
 | --- | --- |
 | Pure domain tests | Full SemVer including prerelease/build metadata; command/flag parsing; client/Toolkit identity; compatibility/capability selection; deterministic ordering; JSON schema; documented exit-state mapping |
 | Project-selection fixtures | Current directory and explicit root; missing/file/non-empty roots; Windows and Unix syntax; drive/UNC/mixed separators; real/symlinked roots; sibling `SDP` and `SDP-Analyzer`; project inside Toolkit rejection |
-| Release/API fixtures | Latest stable and exact pinned versions; prerelease-only/tag pin ambiguity; no releases/assets; authenticated and unauthenticated public access; private/alternate/GHES host; rate-limit, timeout, redirect, stale cache, corrupt cache and offline |
+| Release/API fixtures | Latest stable and exact pinned versions; prerelease-only precompiled rejection plus stable-latest/pinned-prerelease behavior; no releases/assets; authenticated and unauthenticated public access; private/alternate/GHES host; rate-limit, timeout, redirect, stale cache, corrupt cache and offline |
 | Payload/security corpus | Safe ZIP; `../`, absolute, drive/UNC/backslash/mixed paths; duplicate/case/Unicode collisions; symlink/junction/hard-link/device/FIFO; existing destination link; file-count/size/ratio/depth limits; truncated/corrupt/partial download; digest/manifest/version mismatch; `os.Root` trailing-slash regression |
 | Canonical installer fixtures | Empty/non-empty projects; legacy AGENTS/lifecycle migration; managed/project-owned preservation; force backup; normal-repeat idempotence; downgrade and unsupported schemas; initializer repeat and `REL-0.2.0` exclusion; preview zero mutation |
 | Apply/recovery fault injection | Failure at every backup, journal, write, sync, replace, verify and cleanup step; interruption/cancellation; lock contention/stale lock; rollback success/failure; disk-full/permission/sharing failures; retry from each journal state |
@@ -748,7 +753,7 @@ MAN-BND-002, MAN-ASM-002]
 | MAN-Q-003 — offline/alternate/fork/prerelease/private | **Partially answered** | Stable canonical default; all other trust sources explicit/host-qualified; local status offline and cache labeled. STU-EVD-004, STU-EVD-005, STU-REC-003 | Steering/Requirements decide supported modes, syntax, cache/offline install and private/GHES scope. |
 | MAN-Q-004 — auth/API/cache/rate limit | **Partially answered** | Reuse `gh` conventions; subprocess, direct compatible client and unauthenticated public approaches compared; local status avoids network. STU-EVD-004, STU-EVD-005, STU-EVD-020 | Architecture selects approach after private/GHES/rate/cache/redaction tests; Requirements set offline/stale behavior. |
 | MAN-Q-005 — Go direction | **Answered for Study** | Go remains preferred; pure Go is conditional; initial matrix should include Windows amd64, Linux amd64/arm64, macOS amd64/arm64. STU-EVD-002, STU-EVD-006, STU-REC-001 | Architecture must still approve/replace after prototypes, dependency audit, binary/operational measurements and native tests. |
-| MAN-Q-006 — flags/output/exits/interaction/accessibility | **Partially answered** | Section 9 analyzes intended flags; typed human/JSON, stdout/stderr, redaction and useful final-state exits are candidates. STU-RQC-002/004/005/011/015/017 | Requirements owner defines exact syntax, precedence, schema, exit codes, prompts/noninteractive mode and accessibility. Windows local install and prerelease pin remain ambiguous. |
+| MAN-Q-006 — flags/output/exits/interaction/accessibility | **Partially answered** | Section 9 analyzes intended flags; typed human/JSON, stdout/stderr, redaction and useful final-state exits are candidates. STU-RQC-002/004/005/011/015/017 | Requirements owner defines exact syntax, precedence, schema, exit codes, prompts/noninteractive mode and accessibility. Windows local install remains ambiguous; the 2.96.0 prerelease-only precompiled pin rejection is source-derived but still warrants version-pinned conformance. |
 | MAN-Q-007 — filesystem/archive/lock/backup/recovery | **Partially answered** | Sections 11–13 define hostile-input invariants, platform claim ceilings and transaction/recovery inputs. STU-EVD-007, STU-EVD-014, STU-EVD-015, STU-EVD-016; STU-REC-005 | Requirements/Architecture/security reviewers set exact limits, lock/replacement/durability/backup policy after native fault/race tests. |
 
 ### Conclusions

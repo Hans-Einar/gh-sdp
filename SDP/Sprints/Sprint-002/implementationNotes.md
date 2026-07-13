@@ -2,7 +2,8 @@
 
 ## SPS-002
 
-Status: active — Study candidate awaiting verification and independent review
+Status: active — initial review changes required; bounded rework applied,
+verification and exact-head follow-up review pending
 
 ### Activation
 
@@ -13,7 +14,8 @@ Status: active — Study candidate awaiting verification and independent review
   gh-sdp worktree, and exactly one root Git repository.
 - Created `codex/phase-2-study` from `origin/main`; the Phase 1 branch was not
   reused.
-- Activated Sprint-002 / SPI-002 / SPS-002 and Study STU-001 under MAN-001.
+- Activated Sprint-002 / SPI-002 / SPS-002 and Study STU-001 under MAN-001 in
+  commit `50bade647dc0409a40a2969e3b358d899edfa285`.
 - Left `Ledger.ndjson` unchanged because the installed schema defines release
   events only and no release transition occurred.
 
@@ -44,10 +46,27 @@ silently updating the upstream repository.
   criterion delivered or any recommendation approved.
 - Left the release-event-only Ledger unchanged; no release transition occurred.
 
+### Candidate And Initial Review
+
+- Committed the first complete Study candidate as
+  `f1f2aba5392012c13b61a652397c6d41001beffd`, pushed it to
+  `origin/codex/phase-2-study`, and opened draft PR
+  [#2](https://github.com/Hans-Einar/gh-sdp/pull/2) against `main`.
+- Fresh Reviewer `/root/study_reviewer_initial` returned `changes-required`
+  with 0 blocking, 0 high, 2 medium, and 2 low findings. The findings covered
+  three omitted direct evidence links, stale candidate/handoff state, one dead
+  Apple evidence URL, and inaccurate prerelease-only binary-install wording.
+- This bounded rework adds the missing relations, records the actual candidate
+  and review state, replaces the Apple URL, and aligns the prerelease behavior
+  with pinned GitHub CLI 2.96.0 source. The corrected exact candidate has not
+  yet been committed or pushed by the Master; verification and fresh follow-up
+  review remain pending.
+
 ### Work Remaining
 
-- Create exact Study verification evidence and bind it to the committed
-  candidate.
-- Commit and push the candidate, obtain fresh independent review, remediate all
-  blocking/high/medium findings, and obtain exact-head follow-up review.
-- Open a draft PR and stop for Steering Group assessment.
+- Have the Master commit and push this bounded correction, then create exact
+  Study verification evidence and persistent review records bound to the
+  corrected candidate.
+- Obtain fresh exact-head follow-up review with zero unresolved blocking, high,
+  or medium findings and update draft PR #2 truthfully.
+- Stop with the PR still draft for Steering Group assessment.

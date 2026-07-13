@@ -158,7 +158,7 @@ studyFindings:
   STU-FND-002: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-002, STU-EVD-003]}
   STU-FND-003: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-002, STU-EVD-003, STU-EVD-012]}
   STU-FND-004: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-004, STU-EVD-005, STU-EVD-020]}
-  STU-FND-005: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-008, STU-EVD-009, STU-EVD-010]}
+  STU-FND-005: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-008, STU-EVD-009, STU-EVD-010, STU-EVD-021]}
   STU-FND-006: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-011]}
   STU-FND-007: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-011]}
   STU-FND-008: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-007, STU-EVD-014, STU-EVD-016]}
@@ -207,13 +207,13 @@ architectureDecisionInputs:
   STU-ADI-009: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, recommendation: STU-REC-006}
   STU-ADI-010: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, finding: STU-FND-010}
 crossRepositoryFindings:
-  STU-XRF-001: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-010, STU-EVD-011, STU-EVD-021]}
+  STU-XRF-001: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-009, STU-EVD-010, STU-EVD-011, STU-EVD-021]}
   STU-XRF-002: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-008, STU-EVD-009]}
   STU-XRF-003: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-011, STU-EVD-012]}
   STU-XRF-004: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-008, STU-EVD-009]}
   STU-XRF-005: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-010]}
   STU-XRF-006: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-009, STU-EVD-010]}
-  STU-XRF-007: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-021]}
+  STU-XRF-007: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-009, STU-EVD-021]}
 mandates:
   MAN-001:
     path: SDP/01--Mandate/mandate.md
