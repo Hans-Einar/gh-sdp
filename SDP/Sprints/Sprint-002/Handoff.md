@@ -2,8 +2,8 @@
 
 Active Slice: SPS-002
 Active Study: STU-001
-Status: initial review changes required; bounded rework applied, verification
-and exact-head follow-up review pending
+Status: corrected candidate and candidate verification exist; two reviews
+require changes; evidence reconciliation awaits third exact-head review
 
 ## Authoritative Entry Points
 
@@ -26,11 +26,28 @@ open in draft PR [#2](https://github.com/Hans-Einar/gh-sdp/pull/2).
 
 Fresh Reviewer `/root/study_reviewer_initial` returned `changes-required` with
 0 blocking, 0 high, 2 medium, and 2 low findings. The bounded documentation
-corrections for all four findings are present in this working tree, but the
-Master has not yet committed/pushed a corrected candidate or created the exact
-verification and review records. Fresh exact-head follow-up review also remains
-pending. `SPS-002` therefore remains active and no Steering-readiness claim is
-permitted.
+corrections for all four findings were committed and pushed as
+`6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741`. Exact candidate verification
+passed, including all record, ID, relation, link, template, tree, layout, scope,
+and diff checks recorded in `VER-SPS-002`.
+
+Fresh Reviewer `/root/study_reviewer_followup` independently reviewed exact
+pushed `6ca9b2c...`, confirmed all first-review content corrections, and returned
+`changes-required` with 0 blocking, 0 high, 1 medium, and 0 low findings. The
+sole finding was that persistent verification/review relations and handoff plus
+the draft PR body still reflected the earlier state. The repository-side
+reconciliation consists of `VER-SPS-002`,
+`REV-SPS-002-001`, `REV-SPS-002-002`, linked Study/Slice relations, and current
+notes/handoff. The commit containing this Handoff is the evidence-review
+candidate; its exact local, remote, and PR identity must be established before
+the third review rather than self-referenced inside the commit. The external PR
+body must describe that same candidate truthfully.
+
+`SPS-002` therefore remains active. The Master must commit and push this bounded
+evidence candidate if needed, verify it as draft PR #2's exact head, update the
+PR body, and obtain a third fresh review with zero unresolved blocking, high,
+or medium findings before considering Slice closure. No Steering-readiness
+claim is permitted yet.
 
 The candidate recommends Go with all five target pairs (including Linux arm64),
 an upstream-owned machine-readable Toolkit installation plan plus conformance

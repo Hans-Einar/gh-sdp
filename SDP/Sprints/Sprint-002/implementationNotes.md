@@ -2,8 +2,9 @@
 
 ## SPS-002
 
-Status: active — initial review changes required; bounded rework applied,
-verification and exact-head follow-up review pending
+Status: active — corrected candidate committed and pushed; candidate verification
+passed; persistent evidence/handoff reconciliation and third exact-head review
+pending
 
 ### Activation
 
@@ -56,17 +57,40 @@ silently updating the upstream repository.
   with 0 blocking, 0 high, 2 medium, and 2 low findings. The findings covered
   three omitted direct evidence links, stale candidate/handoff state, one dead
   Apple evidence URL, and inaccurate prerelease-only binary-install wording.
-- This bounded rework adds the missing relations, records the actual candidate
-  and review state, replaces the Apple URL, and aligns the prerelease behavior
-  with pinned GitHub CLI 2.96.0 source. The corrected exact candidate has not
-  yet been committed or pushed by the Master; verification and fresh follow-up
-  review remain pending.
+- Commit `6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741` adds the missing relations,
+  records the actual first-candidate/review state, replaces the Apple URL, and
+  aligns prerelease behavior with pinned GitHub CLI 2.96.0 source. The Master
+  committed and pushed that corrected candidate; local HEAD, remote branch, and
+  draft PR #2 all resolved to it with a clean worktree at follow-up review.
+
+### Corrected Candidate Verification And Follow-up Review
+
+- Exact candidate verification at `6ca9b2c...` passed all eight YAML parses,
+  three applicable record schemas, the one ledger release-event schema, identity
+  and coordinate checks, 18 Study sections, all 77 Study IDs
+  (21/14/8/17/10/7), all Mandate questions, relation paths and corrected direct
+  evidence edges, 50/50 external links, five unchanged later-lifecycle
+  templates, the complete 51-path hidden-aware tree, prohibited-file and Git
+  layout checks, and full base-to-candidate `git diff --check`.
+- Fresh Reviewer `/root/study_reviewer_followup` inspected exact pushed
+  `6ca9b2c...`, confirmed every initial content correction and independently
+  repeated the full Study and validation review. `REV-SPS-002-002` returned
+  `changes-required` with 0 blocking, 0 high, 1 medium, and 0 low findings.
+- The sole follow-up finding was persistent evidence/handoff state: these notes
+  and Handoff still described `6ca9b2c...` as uncommitted, the two review records
+  and `VER-SPS-002` were absent, the Study/Slice arrays were empty, and the draft
+  PR body remained stale. No new Study-content defect was identified.
+- `VER-SPS-002`, both review records, updated Study/Slice relations, and these
+  corrected notes/handoff form the repository-side evidence reconciliation.
+  The exact identity of the commit containing them must be established from Git
+  and PR metadata before the third review; it cannot be self-referenced here.
+  The PR body is external metadata and must describe that same candidate.
 
 ### Work Remaining
 
-- Have the Master commit and push this bounded correction, then create exact
-  Study verification evidence and persistent review records bound to the
-  corrected candidate.
-- Obtain fresh exact-head follow-up review with zero unresolved blocking, high,
-  or medium findings and update draft PR #2 truthfully.
+- Have the Master ensure only this bounded evidence/handoff reconciliation is
+  committed, pushed, and the exact draft PR #2 head, then update the PR body to
+  name both existing reviews and the validation state.
+- Obtain a third fresh independent review of that new exact pushed head. Every
+  blocking, high, and medium finding must be resolved before Slice closure.
 - Stop with the PR still draft for Steering Group assessment.

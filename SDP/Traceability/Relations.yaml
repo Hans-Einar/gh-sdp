@@ -129,8 +129,11 @@ studies:
       - STU-XRF-005
       - STU-XRF-006
       - STU-XRF-007
-    verification: []
-    reviews: []
+    verification:
+      - VER-SPS-002
+    reviews:
+      - REV-SPS-002-001
+      - REV-SPS-002-002
 studyEvidence:
   STU-EVD-001: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
   STU-EVD-002: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
@@ -454,8 +457,11 @@ slices:
     releaseContext:
       - REL-0.1.0
     status: active
-    verification: []
-    reviews: []
+    verification:
+      - VER-SPS-002
+    reviews:
+      - REV-SPS-002-001
+      - REV-SPS-002-002
 fixes: {}
 reviews:
   REV-SPS-001-001:
@@ -482,6 +488,32 @@ reviews:
       high: 0
       medium: 0
       low: 1
+  REV-SPS-002-001:
+    path: SDP/CodeReview/REV-SPS-002-001.md
+    status: changes-required
+    reviewer: /root/study_reviewer_initial
+    candidateCommit: f1f2aba5392012c13b61a652397c6d41001beffd
+    slice: SPS-002
+    study: STU-001
+    followedBy: REV-SPS-002-002
+    findings:
+      blocking: 0
+      high: 0
+      medium: 2
+      low: 2
+  REV-SPS-002-002:
+    path: SDP/CodeReview/REV-SPS-002-002.md
+    status: changes-required
+    reviewer: /root/study_reviewer_followup
+    candidateCommit: 6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741
+    slice: SPS-002
+    study: STU-001
+    resolves: REV-SPS-002-001
+    findings:
+      blocking: 0
+      high: 0
+      medium: 1
+      low: 0
 verification:
   VER-SPS-001:
     path: SDP/Verification/VER-SPS-001.md
@@ -491,6 +523,15 @@ verification:
     remediationCommit: bb16bee815d40742f29e15eeac4254bd1310376e
     candidateCommit: f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f
     reviewerConfirmation: REV-SPS-001-002
+  VER-SPS-002:
+    path: SDP/Verification/VER-SPS-002.md
+    status: candidate-passed
+    slice: SPS-002
+    study: STU-001
+    releaseContext: REL-0.1.0
+    candidateCommit: 6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741
+    candidateCorroboratedBy: REV-SPS-002-002
+    releaseGate: false
 migrations: {}
 releases:
   REL-0.1.0:
@@ -516,3 +557,6 @@ releases:
 # Steering-approved normative content, not delivered or verified product
 # behavior. Boundaries remain active. Study question statuses describe analytical
 # progress only; they do not approve Requirements or Architecture decisions.
+# VER-SPS-002 is passed candidate evidence, not a release gate. Both Phase-2
+# reviews remain changes-required, SPS-002 remains active, and a third fresh
+# exact-head review is required after evidence/handoff reconciliation is pushed.
