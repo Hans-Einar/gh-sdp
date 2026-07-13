@@ -1,6 +1,6 @@
 # STU-001 — gh-sdp Phase 2 Study
 
-Status: active — candidate awaiting verification and independent review
+Status: reviewed candidate — ready for Steering assessment
 Mandate: MAN-001
 Sprint: Sprint-002
 Iteration: SPI-002
@@ -770,11 +770,12 @@ MAN-BND-002, MAN-ASM-002]
   preservation semantics but not archive, concurrency, cross-platform
   transaction or crash-recovery guarantees. [verified repository fact/inference;
   STU-EVD-009, STU-EVD-010]
-- **STU-REC-008 — Study disposition.** Accept this Study for verification and
-  fresh independent review, then for Steering assessment if those gates pass.
-  Do not authorize Requirements, Architecture or implementation from the Study
-  alone. Resolve upstream contract/provenance prerequisites before a future
-  implementation Slice. [recommendation]
+- **STU-REC-008 — Study disposition.** Submit this reviewed candidate for
+  Steering assessment now that `VER-SPS-002` and fresh exact-head review
+  `REV-SPS-002-003` have passed. Do not treat those process gates as Steering
+  acceptance or authorize Requirements, Architecture, or implementation from
+  the Study alone. Resolve upstream contract/provenance prerequisites before a
+  future implementation Slice. [recommendation]
 
 Traceability is `MAN-001` → `STU-001` → `Sprint-002` / `SPI-002` / `SPS-002`,
 with evidence `STU-EVD-001`–`021`, findings `STU-FND-001`–`014`,
@@ -782,6 +783,11 @@ recommendations `STU-REC-001`–`008`, requirement candidates
 `STU-RQC-001`–`017`, Architecture inputs `STU-ADI-001`–`010`, and upstream
 findings `STU-XRF-001`–`007`. It covers all Mandate outcomes, preserves active
 boundaries and assumptions, and does not mark any success criterion delivered.
-`VER-SPS-002` and independent review IDs must be linked only after real records
-exist for the exact candidate commit; they are not claimed by this authoring
-pass. [verified repository-process boundary; STU-EVD-001]
+`VER-SPS-002` records passed Study/Slice verification, and
+`REV-SPS-002-001` through `REV-SPS-002-003` record the real independent review
+and remediation chain. Final Reviewer `/root/study_reviewer_final` approved
+exact pushed evidence candidate `8f59a31ee6c6ee4264cb301217c5a3489fd4444d`
+for `SPS-002` closure with zero blocking, high, medium, or low findings. Steering
+assessment is the next authorized decision; `STU-001` is not Steering accepted,
+no Mandate success criterion is marked delivered, and no later lifecycle phase
+is authorized. [verified repository-process boundary; STU-EVD-001]

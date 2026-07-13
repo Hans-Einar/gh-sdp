@@ -1,8 +1,8 @@
 # Sprint-002 — Phase 2 Evidence-Backed Study
 
-Status: active
+Status: complete
 Iteration: SPI-002
-Active Slice: SPS-002
+Completed Slice: SPS-002
 Study: STU-001
 Mandate: MAN-001
 Release context: REL-0.1.0 (`gh-sdp` 0.1.0, proposed and unreleased)
@@ -17,11 +17,11 @@ written, while making no later-lifecycle or implementation decision.
 
 ## SPI-002 — Study Research, Synthesis, and Review
 
-Status: active
+Status: complete
 
 ### SPS-002 — Authoritative Phase 2 Study
 
-Status: active
+Status: complete
 
 #### Goal
 

@@ -2,9 +2,8 @@
 
 ## SPS-002
 
-Status: active — corrected candidate committed and pushed; candidate verification
-passed; persistent evidence/handoff reconciliation and third exact-head review
-pending
+Status: complete — Study/Slice verification passed; final exact-head review
+approved SPS-002 closure; reviewed draft PR awaits Steering assessment
 
 ### Activation
 
@@ -80,17 +79,32 @@ silently updating the upstream repository.
   and Handoff still described `6ca9b2c...` as uncommitted, the two review records
   and `VER-SPS-002` were absent, the Study/Slice arrays were empty, and the draft
   PR body remained stale. No new Study-content defect was identified.
-- `VER-SPS-002`, both review records, updated Study/Slice relations, and these
-  corrected notes/handoff form the repository-side evidence reconciliation.
-  The exact identity of the commit containing them must be established from Git
-  and PR metadata before the third review; it cannot be self-referenced here.
-  The PR body is external metadata and must describe that same candidate.
+- `VER-SPS-002`, both earlier review records, updated Study/Slice relations,
+  current notes/handoff, and a truthful draft-PR body were committed and pushed
+  as exact evidence candidate
+  `8f59a31ee6c6ee4264cb301217c5a3489fd4444d`.
 
-### Work Remaining
+### Final Exact-Head Review And Closure
 
-- Have the Master ensure only this bounded evidence/handoff reconciliation is
-  committed, pushed, and the exact draft PR #2 head, then update the PR body to
-  name both existing reviews and the validation state.
-- Obtain a third fresh independent review of that new exact pushed head. Every
-  blocking, high, and medium finding must be resolved before Slice closure.
-- Stop with the PR still draft for Steering Group assessment.
+- Fresh Reviewer `/root/study_reviewer_final` independently reviewed exact
+  local, remote, and draft-PR head `8f59a31...` against baseline `3a3b9ec...`.
+  PR #2 was open and draft with merge state `CLEAN`, and the worktree was clean.
+- `REV-SPS-002-003` confirmed every prior finding resolved and reran the full
+  matrix: schemas and Ledger, release isolation, all 18 sections and 77 Study
+  IDs, all Mandate identifier groups and question statuses, 50/50 URLs, five
+  unchanged later-lifecycle templates, 54 regular tracked files, one root Git
+  repository, no prohibited artifact, and passing full-PR diff hygiene.
+- The final disposition was approved for `SPS-002` closure with 0 blocking,
+  0 high, 0 medium, and 0 low findings. `STU-001` is therefore a reviewed
+  candidate ready for Steering assessment, not a Steering-accepted Study.
+- Sprint-002, SPI-002, and SPS-002 are complete. Active development coordinates
+  are cleared. `REL-0.1.0` and Toolkit 0.2.0 remain proposed/unreleased;
+  release review/verification arrays, publication identities, and the Ledger
+  remain unchanged.
+
+### Next Decision And Stop
+
+Steering assessment of the reviewed Study is the only next authorized decision.
+Keep PR #2 open and draft. Do not begin Requirements, Architecture, Design,
+implementation, build, packaging, workflow, release, or upstream Toolkit work
+without separate authority.

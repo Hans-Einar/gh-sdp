@@ -1,7 +1,6 @@
 # VER-SPS-002 — SPS-002 Study Candidate Verification
 
-Status: candidate verification passed; final independent approval and Slice
-closure pending
+Status: passed — independently confirmed for SPS-002 closure
 Slice: SPS-002
 Study: STU-001
 Mandate: MAN-001
@@ -9,17 +8,21 @@ Release context: REL-0.1.0 (`gh-sdp` 0.1.0, proposed and unreleased)
 Base commit: 3a3b9ece5db6bde438dfd2b4eba57be344350e85
 Activation commit: 50bade647dc0409a40a2969e3b358d899edfa285
 Initial Study candidate: f1f2aba5392012c13b61a652397c6d41001beffd
-Verified corrected candidate: 6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741
+Verified Study-content commit: 6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741
+Final reviewed evidence candidate: 8f59a31ee6c6ee4264cb301217c5a3489fd4444d
+Reviewer confirmation: REV-SPS-002-003
 Pull request: https://github.com/Hans-Einar/gh-sdp/pull/2 (open draft)
 Verification date: 2026-07-13
 
-This record is exact-candidate Study/Slice evidence. It is not a product test,
-release gate, publication record, Steering acceptance, compatibility claim, or
-authorization to begin Requirements, Architecture, or implementation. The
-candidate checks pass. The repository reconciliation is carried by the commit
-containing this record; `REV-SPS-002-002` still requires that commit to be
-established as the pushed PR head, the PR body to be updated, and a third fresh
-review of that exact head.
+This record is passed Study/Slice evidence. Its authored deterministic matrix is
+bound to Study-content commit `6ca9b2c...`; fresh final Reviewer
+`/root/study_reviewer_final` independently reran the final matrix against exact
+pushed evidence candidate `8f59a31...` and approved `SPS-002` closure in
+`REV-SPS-002-003`. A tracked record cannot truthfully contain the identity of
+the commit that contains itself, so no closure-metadata self-reference is
+claimed. This is not a product test, release gate, publication record, Steering
+acceptance, compatibility claim, or authorization to begin Requirements,
+Architecture, or implementation.
 
 ## Environment
 
@@ -35,7 +38,7 @@ review of that exact head.
 - Installed/canonical Toolkit source pin:
   `bc110bb5fd60009ba67015cf640ad6ddbfe1b04b`
 
-## Candidate And Pull-Request Identity
+## Study-Content Candidate And Pull-Request Identity
 
 Commands:
 
@@ -47,7 +50,7 @@ git status --porcelain=v1
 gh pr view 2 --json number,url,state,isDraft,baseRefName,headRefName,headRefOid,title
 ~~~
 
-Results at verification:
+Results at authored Study-content verification:
 
 - `HEAD` and `origin/codex/phase-2-study` both resolved to exact corrected
   candidate `6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741`.
@@ -142,8 +145,41 @@ Result: passed.
 - `REV-SPS-002-002` independently reviewed exact pushed candidate `6ca9b2c...`,
   confirmed the content corrections and validation matrix, and returned changes
   required: 0 blocking, 0 high, 1 medium, 0 low. Its sole finding is the
-  persistent evidence/handoff and external PR metadata reconciliation now in
-  progress; it did not identify a new Study-content defect.
+  persistent evidence/handoff and external PR metadata reconciliation; it did
+  not identify a new Study-content defect.
+- `REV-SPS-002-003` independently reviewed exact pushed evidence candidate
+  `8f59a31...`, confirmed all prior findings resolved, reran the complete final
+  matrix, and approved `SPS-002` closure with 0 blocking, 0 high, 0 medium, and
+  0 low findings.
+
+## Final Exact-Head Confirmation
+
+Fresh Reviewer `/root/study_reviewer_final` confirmed local HEAD,
+`origin/codex/phase-2-study`, and open draft PR #2 all resolved to
+`8f59a31ee6c6ee4264cb301217c5a3489fd4444d`, the worktree was clean, and GitHub
+reported merge state `CLEAN`.
+
+Against that exact candidate, the Reviewer independently confirmed:
+
+- four intentional base-to-head commits and 13 changed SDP-only files;
+- 54 tracked regular files, one root `.git`, no symlink, submodule, executable,
+  ignored artifact, backup, or nested repository, and no product, workflow,
+  build, package, release, or later-lifecycle addition;
+- five byte-identical later-lifecycle templates and passing full-PR
+  `git diff --check`;
+- eight parsed YAML files, the three applicable canonical record schemas, and
+  the sole non-empty Ledger event schema; byte-identical Ledger history, empty
+  release review/verification arrays, and null publication identities;
+- all 18 Study sections, all 77 Study IDs in the exact 21/14/8/17/10/7 counts,
+  bidirectional relations, all paths, all Mandate identifier groups, and the
+  stated question statuses;
+- sufficient Study treatment of alternatives A through D, security,
+  provenance, platform behavior, recovery, and the stop boundary; and
+- 50 of 50 URL resolutions, live canonical SDP main at `bc110bb5...` with no
+  tags/releases, pinned GitHub CLI source `b300f2e...`, and a truthful draft PR
+  body.
+
+Result: passed and independently confirmed for `SPS-002` closure.
 
 ## Limitations And Residual Work
 
@@ -157,14 +193,16 @@ Result: passed.
   work for a later authorized phase; the prerelease conclusion here is bound to
   pinned GitHub CLI 2.96.0 source.
 - External links are mutable and were checked only at this verification point.
-- A commit cannot truthfully self-reference its own identity. Git and PR
-  metadata must therefore establish the exact pushed identity of the commit
-  containing this record, and a third fresh reviewer must inspect that head
-  before anyone claims zero unresolved medium findings or closes `SPS-002`.
+- Final exact-head review did not rerun the upstream PowerShell fixtures or the
+  Windows local-extension and prerelease-repository experiments.
+- A commit cannot truthfully self-reference its own identity. Final review is
+  bound to exact pushed evidence candidate `8f59a31...`; no later closure-record
+  commit identity is invented here.
 
 ## Disposition
 
-The exact corrected Study candidate `6ca9b2c...` passed the documented candidate
-verification matrix. Final independent approval and Slice closure remain
-pending. No release, Steering, compatibility, support, or later-lifecycle claim
-is made.
+The exact Study-content commit `6ca9b2c...` passed the documented verification
+matrix, and fresh independent review confirmed the complete final evidence
+candidate `8f59a31...`. `SPS-002` may close and `STU-001` may proceed as a
+reviewed candidate to Steering assessment. No release, Steering acceptance,
+compatibility, support, or later-lifecycle claim is made.

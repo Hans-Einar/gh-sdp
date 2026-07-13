@@ -1,9 +1,9 @@
 # Sprint-002 Handoff
 
-Active Slice: SPS-002
-Active Study: STU-001
-Status: corrected candidate and candidate verification exist; two reviews
-require changes; evidence reconciliation awaits third exact-head review
+Active Slice: none
+Completed Slice: `SPS-002`
+Study: `STU-001` (reviewed candidate)
+Status: Phase 2 Study ready for Steering assessment
 
 ## Authoritative Entry Points
 
@@ -14,51 +14,69 @@ require changes; evidence reconciliation awaits third exact-head review
 - Current state: `SDP/Traceability/CurrentIndex.yaml`
 - Relations: `SDP/Traceability/Relations.yaml`
 - Ledger: `SDP/Traceability/Ledger.ndjson`
+- Verification: `SDP/Verification/VER-SPS-002.md`
+- Initial review: `SDP/CodeReview/REV-SPS-002-001.md`
+- Follow-up review: `SDP/CodeReview/REV-SPS-002-002.md`
+- Final review: `SDP/CodeReview/REV-SPS-002-003.md`
 - Identifier convention: `SDP/Instructions/StableIdentifiers.md`
 
-## Current State
+## Completion State
 
 Branch `codex/phase-2-study` starts at exact merged baseline
-`3a3b9ece5db6bde438dfd2b4eba57be344350e85`. Study activation is commit
-`50bade647dc0409a40a2969e3b358d899edfa285`. The first complete `STU-001`
-candidate is pushed as `f1f2aba5392012c13b61a652397c6d41001beffd` and is
-open in draft PR [#2](https://github.com/Hans-Einar/gh-sdp/pull/2).
+`3a3b9ece5db6bde438dfd2b4eba57be344350e85`. Study activation is
+`50bade647dc0409a40a2969e3b358d899edfa285`; the initial candidate is
+`f1f2aba5392012c13b61a652397c6d41001beffd`; corrected Study-content commit is
+`6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741`; and the pushed final-review
+evidence candidate is `8f59a31ee6c6ee4264cb301217c5a3489fd4444d`.
 
-Fresh Reviewer `/root/study_reviewer_initial` returned `changes-required` with
-0 blocking, 0 high, 2 medium, and 2 low findings. The bounded documentation
-corrections for all four findings were committed and pushed as
-`6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741`. Exact candidate verification
-passed, including all record, ID, relation, link, template, tree, layout, scope,
-and diff checks recorded in `VER-SPS-002`.
+`VER-SPS-002` records passed Study/Slice verification. Initial review
+`REV-SPS-002-001` returned 0 blocking, 0 high, 2 medium, and 2 low findings;
+follow-up review `REV-SPS-002-002` returned 0 blocking, 0 high, 1 medium, and
+0 low findings. Those findings were resolved through the corrected Study and
+persistent evidence/PR reconciliation.
 
-Fresh Reviewer `/root/study_reviewer_followup` independently reviewed exact
-pushed `6ca9b2c...`, confirmed all first-review content corrections, and returned
-`changes-required` with 0 blocking, 0 high, 1 medium, and 0 low findings. The
-sole finding was that persistent verification/review relations and handoff plus
-the draft PR body still reflected the earlier state. The repository-side
-reconciliation consists of `VER-SPS-002`,
-`REV-SPS-002-001`, `REV-SPS-002-002`, linked Study/Slice relations, and current
-notes/handoff. The commit containing this Handoff is the evidence-review
-candidate; its exact local, remote, and PR identity must be established before
-the third review rather than self-referenced inside the commit. The external PR
-body must describe that same candidate truthfully.
+Fresh final Reviewer `/root/study_reviewer_final` independently inspected exact
+local, remote, and draft-PR head `8f59a31...`, observed a clean worktree and
+open draft PR #2 with merge state `CLEAN`, and reran the complete Study/Slice
+matrix. `REV-SPS-002-003` approved `SPS-002` closure with 0 blocking, 0 high,
+0 medium, and 0 low findings.
 
-`SPS-002` therefore remains active. The Master must commit and push this bounded
-evidence candidate if needed, verify it as draft PR #2's exact head, update the
-PR body, and obtain a third fresh review with zero unresolved blocking, high,
-or medium findings before considering Slice closure. No Steering-readiness
-claim is permitted yet.
+The reviewed Study recommends Go with all five target pairs (including Linux
+arm64), an upstream-owned machine-readable Toolkit installation plan and
+conformance fixtures, purpose-built verified Toolkit assets, hostile-input
+extraction invariants, and platform-honest journaled recovery. These remain
+Study inputs only. The current Toolkit remains unreleased and supplies no
+eligible stable asset.
 
-The candidate recommends Go with all five target pairs (including Linux arm64),
-an upstream-owned machine-readable Toolkit installation plan plus conformance
-fixtures, purpose-built verified Toolkit assets, hostile-input extraction
-invariants, and platform-honest journaled recovery. These are Study inputs only.
-The current Toolkit remains unreleased and supplies no eligible stable asset.
+Sprint-002, SPI-002, and SPS-002 are complete, and active development
+coordinates are cleared. `STU-001` is a reviewed candidate; Mandate success
+criteria remain undelivered. `REL-0.1.0` and Toolkit 0.2.0 remain
+proposed/unreleased, release review and verification arrays remain empty,
+publication identities remain null, and the release-event Ledger is unchanged.
+
+## Next Authorized Decision
+
+Steering assessment of reviewed candidate `STU-001` is the only next action
+represented by this handoff. Draft PR
+[#2](https://github.com/Hans-Einar/gh-sdp/pull/2) remains the open review surface.
+Neither this handoff nor the passed verification/review gates constitute
+Steering acceptance, merge approval, release approval, compatibility/support,
+or authority for a later lifecycle phase.
+
+## Residual Limitations
+
+- No Go toolchain, Linux runtime, or macOS runtime evidence was available.
+- Upstream PowerShell fixtures and Windows local-extension and
+  prerelease-repository experiments were not rerun for final review.
+- URL resolution is point-in-time evidence.
+- Toolkit release, plan/payload, provenance, and conformance prerequisites
+  identified by the Study remain unreleased or unresolved.
+- A tracked record cannot self-reference its containing closure commit; final
+  approval is bound to exact pushed evidence candidate `8f59a31...`.
 
 ## Stop Boundary
 
-This assignment authorizes Study only. Requirements, Architecture, Design
-Analysis, Design, implementation planning, product code, tests/fixtures,
-workflows, builds, packaging, tags, and releases remain unauthorized. Do not
-modify `Hans-Einar/SDP`. Stop after a reviewed draft Study PR is ready for
-Steering Group assessment.
+Do not begin Requirements, Architecture, Design Analysis, Design,
+implementation planning, product code, tests/fixtures, workflows, builds,
+packaging, tags, or releases. Do not modify `Hans-Einar/SDP`. Keep PR #2 open
+and draft until Steering decides the Study disposition.

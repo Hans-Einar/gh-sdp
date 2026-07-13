@@ -1,6 +1,6 @@
 project:
   name: gh-sdp
-  status: phase-2-study-active
+  status: phase-2-study-ready-for-steering-assessment
 
 lifecycle:
   phase: Study
@@ -19,9 +19,9 @@ release:
   targetStatus: proposed
 
 active:
-  sprint: Sprint-002
+  sprint: null
   refactor: null
-  iteration: SPI-002
-  slice: SPS-002
+  iteration: null
+  slice: null
   fix: null
   revision: null

@@ -11,10 +11,10 @@ release:
   latestTag: null
   latestCommit: null
 development:
-  sprintId: Sprint-002
+  sprintId: null
   refactorId: null
-  iterationId: SPI-002
-  sliceId: SPS-002
+  iterationId: null
+  sliceId: null
   fixId: null
   revision: null
 migration:
