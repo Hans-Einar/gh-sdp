@@ -1,6 +1,15 @@
 project:
   name: gh-sdp
-  status: phase-1-accepted-awaiting-pr-merge-and-separate-study-assignment
+  status: phase-2-study-active
+
+lifecycle:
+  phase: Study
+  study: STU-001
+  mandate: MAN-001
+  authorization: separate-study-assignment-2026-07-13
+  stopBefore:
+    - Requirements
+    - Architecture
 
 release:
   previousVersion: null
@@ -10,9 +19,9 @@ release:
   targetStatus: proposed
 
 active:
-  sprint: null
+  sprint: Sprint-002
   refactor: null
-  iteration: null
-  slice: null
+  iteration: SPI-002
+  slice: SPS-002
   fix: null
   revision: null

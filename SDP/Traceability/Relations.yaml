@@ -1,11 +1,67 @@
 requirements: {}
 designs: {}
+studies:
+  STU-001:
+    path: SDP/02--Study/study.md
+    identifierConvention: SDP/Instructions/StableIdentifiers.md
+    status: active
+    mandate:
+      - MAN-001
+    outcomes:
+      - MAN-OUT-001
+      - MAN-OUT-002
+      - MAN-OUT-003
+      - MAN-OUT-004
+      - MAN-OUT-005
+      - MAN-OUT-006
+    boundaries:
+      - MAN-BND-002
+      - MAN-BND-003
+      - MAN-BND-004
+      - MAN-BND-005
+      - MAN-BND-006
+      - MAN-BND-007
+      - MAN-BND-008
+    successCriteria:
+      - MAN-SC-001
+      - MAN-SC-002
+      - MAN-SC-003
+      - MAN-SC-004
+      - MAN-SC-005
+      - MAN-SC-006
+      - MAN-SC-007
+    assumptions:
+      - MAN-ASM-001
+      - MAN-ASM-002
+      - MAN-ASM-003
+      - MAN-ASM-004
+    questions:
+      - MAN-Q-001
+      - MAN-Q-002
+      - MAN-Q-003
+      - MAN-Q-004
+      - MAN-Q-005
+      - MAN-Q-006
+      - MAN-Q-007
+    sprint: Sprint-002
+    iteration: SPI-002
+    slice: SPS-002
+    verification: []
+    reviews: []
+studyEvidence: {}
+studyFindings: {}
+studyRecommendations: {}
+requirementsCandidates: {}
+architectureDecisionInputs: {}
+crossRepositoryFindings: {}
 mandates:
   MAN-001:
     path: SDP/01--Mandate/mandate.md
     identifierConvention: SDP/Instructions/StableIdentifiers.md
     status: approved
     sprint: Sprint-001
+    studies:
+      - STU-001
     outcomes:
       - MAN-OUT-001
       - MAN-OUT-002
@@ -182,6 +238,15 @@ sprints:
     status: complete
     iterations:
       - SPI-001
+  Sprint-002:
+    path: SDP/Sprints/Sprint-002/ScrumIterations.md
+    status: active
+    mandate:
+      - MAN-001
+    studies:
+      - STU-001
+    iterations:
+      - SPI-002
 refactors: {}
 iterations:
   SPI-001:
@@ -190,6 +255,12 @@ iterations:
     status: complete
     slices:
       - SPS-001
+  SPI-002:
+    path: SDP/Sprints/Sprint-002/ScrumIterations.md
+    sprint: Sprint-002
+    status: active
+    slices:
+      - SPS-002
 slices:
   SPS-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
@@ -205,6 +276,19 @@ slices:
     reviews:
       - REV-SPS-001-001
       - REV-SPS-001-002
+  SPS-002:
+    path: SDP/Sprints/Sprint-002/ScrumIterations.md
+    sprint: Sprint-002
+    iteration: SPI-002
+    mandate:
+      - MAN-001
+    study:
+      - STU-001
+    releaseContext:
+      - REL-0.1.0
+    status: active
+    verification: []
+    reviews: []
 fixes: {}
 reviews:
   REV-SPS-001-001:

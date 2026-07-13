@@ -1,10 +1,17 @@
-# Study
+# STU-001 — gh-sdp Phase 2 Study
 
-Status: template
+Status: active — evidence collection in progress
+Mandate: MAN-001
+Sprint: Sprint-002
+Iteration: SPI-002
+Slice: SPS-002
+Authorization boundary: Study only
 
 ## Purpose
 
-Investigate the mandate before requirements and architecture are fixed.
+Investigate the approved Mandate before Requirements and Architecture are fixed.
+Evidence, findings, recommendations, candidate requirements, and Architecture
+decision inputs will be recorded here without approving later-lifecycle work.
 
 ## Questions
 

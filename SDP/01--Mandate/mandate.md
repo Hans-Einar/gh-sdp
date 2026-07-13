@@ -4,8 +4,8 @@ Status: approved — governing Mandate for the Study phase
 Approval date: 2026-07-13
 Steering-assessed commit: `ed205c1ef193ab8a6e5cd1c50e558c3049ce6def`
 Phase 1 decision: accepted
-Phase 2 authorization: not authorized — requires PR #1 merge and a separate
-Study assignment
+Phase 2 authorization: authorized for Study only by separate assignment on
+2026-07-13 after PR #1 merge
 Lifecycle level: Mandate only
 Completed Phase 1 work: `Sprint-001` / `SPI-001` / `SPS-001`
 Proposed client release: `REL-0.1.0` (`gh-sdp` `0.1.0`, unreleased)
@@ -15,6 +15,15 @@ and unsupported)
 Identifiers in this document follow the project-local convention in
 `SDP/Instructions/StableIdentifiers.md`; they are not claimed as an upstream SDP
 format.
+
+## Phase 2 Study Authorization
+
+PR #1 was merged by normal merge commit
+`3a3b9ece5db6bde438dfd2b4eba57be344350e85` on 2026-07-13. A separate assignment
+then authorized Phase 2 Study work under this Mandate. That authorization is
+limited to `Sprint-002` / `SPI-002` / `SPS-002` and `STU-001`; it does not
+authorize Requirements, Architecture, Design Analysis, Design, implementation
+planning, product code, packaging, workflows, or releases.
 
 ## Steering Group Decision
 
@@ -27,9 +36,10 @@ On 2026-07-13, the Steering Group assessed Phase 1 at exact commit
 Approval makes the Mandate outcomes, success criteria, assumptions, and active
 boundaries the governing normative input to any separately authorized Study. It
 does not mean the future success criteria have been delivered, resolve the open
-questions, declare a product capability or Toolkit compatibility, or authorize
-Phase 2. Phase 2 remains unauthorized until PR #1 is merged and a separate Study
-assignment is issued.
+questions, declare a product capability or Toolkit compatibility, or by itself
+authorize Phase 2. At the time of the decision, Phase 2 remained unauthorized
+until PR #1 was merged and a separate Study assignment was issued; both
+conditions were later satisfied as recorded above.
 
 ## Problem
 
