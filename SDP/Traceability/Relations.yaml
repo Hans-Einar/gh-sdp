@@ -220,9 +220,10 @@ reviews:
 verification:
   VER-SPS-001:
     path: SDP/Verification/VER-SPS-001.md
-    status: remediation-validated-follow-up-review-pending
+    status: committed-remediation-validated-follow-up-review-pending
     slice: SPS-001
     releaseContext: REL-0.1.0
+    candidateCommit: bb16bee815d40742f29e15eeac4254bd1310376e
 migrations: {}
 releases:
   REL-0.1.0:
@@ -241,6 +242,6 @@ releases:
     githubRelease: null
 
 # Publication identities remain null until the corresponding Git/GitHub objects
-# exist. VER-SPS-001 distinguishes exact committed-candidate evidence from
-# remediation working-tree evidence; it is not accepted release-gate
-# verification. The 0.1.0 target remains proposed and unreleased.
+# exist. VER-SPS-001 distinguishes the initial reviewed candidate from the
+# committed remediation candidate; it is not accepted release-gate verification.
+# The 0.1.0 target remains proposed and unreleased.

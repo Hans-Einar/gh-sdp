@@ -1,21 +1,21 @@
 # VER-SPS-001 — SPS-001 Documentation Verification
 
-Status: remediation validation passed; fresh follow-up Reviewer confirmation pending
+Status: committed remediation validation passed; fresh follow-up Reviewer confirmation pending
 Slice: SPS-001
 Mandate: MAN-001
 Release context: REL-0.1.0 (gh-sdp 0.1.0, proposed and unreleased)
 Reviewed candidate: 381b38ed6fc59936e7e2cb30b877e156ff57914c
 Pull request: https://github.com/Hans-Einar/gh-sdp/pull/1 (draft)
 Exact candidate rerun: 2026-07-13T10:06:44Z
-Remediation validation: 2026-07-13T10:06:44Z
-Remediation basis: reviewed candidate plus the current uncommitted bounded
-review-record, evidence, handoff, and traceability corrections
+Remediation working-tree validation: 2026-07-13T10:06:44Z
+Committed remediation candidate: bb16bee815d40742f29e15eeac4254bd1310376e
+Committed remediation rerun: 2026-07-13T10:09:41Z
 
-This is Slice evidence, not a product-release gate. It distinguishes checks of
-the exact committed candidate from checks of the remediation working tree. The
-initial commit, pushed branch, draft pull request, and changes-required review
-exist; no follow-up review approval, tag, GitHub Release, or published capability
-is claimed.
+This is Slice evidence, not a product-release gate. It distinguishes the initial
+reviewed candidate from the committed remediation candidate. The initial commit,
+pushed branch, draft pull request, changes-required review, and remediation
+commit exist; no follow-up review approval, tag, GitHub Release, or published
+capability is claimed.
 
 ## Environment
 
@@ -190,11 +190,12 @@ the three canonical YAML schemas and one ledger release-event record passed;
 version/publication identities passed; all 46 tracked paths were checked,
 including hidden `.codex`; no `.github` or product/build paths existed; all 16
 managed Git blobs and six later-lifecycle templates matched the pinned source.
-The rerun also reproduced the known review finding that the committed candidate
-did not yet map Mandate assumptions or questions. That gap is addressed only in
-the remediation working tree below.
+The rerun also reproduced the known review finding that the initial committed
+candidate did not yet map Mandate assumptions or questions. That gap is
+addressed in committed remediation candidate
+`bb16bee815d40742f29e15eeac4254bd1310376e` below.
 
-## Remediation Working-Tree Record Validation
+## Remediation Record Validation
 
 The following exact command was run from the target repository. It uses the
 canonical schemas and checks cross-record identity, publication truth, stable
@@ -353,12 +354,19 @@ git diff --check
 if ($LASTEXITCODE -ne 0) { throw 'Remediation working-tree git diff --check failed' }
 ~~~
 
-Results: all 16 copied managed files matched the pinned source; all 10 skills
-matched; all 6 later-lifecycle documents matched their untouched templates;
-exactly one `.git` existed at repository root; all 47 tracked or untracked files
-were enumerated, including the 10 hidden `.codex` skill files and the untracked
-initial review record; no `.github`, product/build, or backup artifact existed;
-and remediation working-tree `git diff --check` emitted no output.
+Results before commit: all 16 copied managed files matched the pinned source; all
+10 skills matched; all 6 later-lifecycle documents matched their untouched
+templates; exactly one `.git` existed at repository root; all 47 tracked or
+untracked files were enumerated, including the 10 hidden `.codex` skill files and
+the then-untracked initial review record; no `.github`, product/build, or backup
+artifact existed; and remediation working-tree `git diff --check` emitted no
+output.
+
+After commit, the same matrix was rerun directly from Git objects at
+`bb16bee815d40742f29e15eeac4254bd1310376e`. All 47 committed paths, three YAML
+schemas, the release-event ledger line, cross-record and publication identities,
+all 32 subordinate Mandate IDs, 16 managed blobs, 10 skills, six later-lifecycle
+templates, the full PR diff, and the no-product/workflow boundary passed.
 
 ## Installer Repeatability
 
@@ -390,11 +398,11 @@ Results:
   an authoritative validator.
 - Toolkit test dependencies use compatible version ranges rather than a fully
   locked environment.
-- Baseline evidence now applies directly to reviewed commit
-  381b38ed6fc59936e7e2cb30b877e156ff57914c and draft PR #1. The four review
-  corrections are separately validated in the current working tree; the Master
-  must integrate and rerun that remediation, then a fresh Reviewer must inspect
-  the corrected PR head before SPS-001 can close.
+- Baseline evidence applies directly to reviewed commit
+  `381b38ed6fc59936e7e2cb30b877e156ff57914c` and draft PR #1. The four review
+  corrections are separately validated at committed candidate
+  `bb16bee815d40742f29e15eeac4254bd1310376e`; a fresh Reviewer must inspect the
+  corrected PR head before SPS-001 can close.
 
 ## Reviewer Confirmation
 
@@ -402,6 +410,7 @@ Initial review `REV-SPS-001-001` was completed by fresh Reviewer
 `/root/phase1_reviewer` against commit
 381b38ed6fc59936e7e2cb30b877e156ff57914c and draft PR #1. Its disposition was
 changes required: zero blocking, zero high, four medium, and one low finding.
-The current remediation addresses the four medium findings, but no follow-up
-review disposition is claimed. The low empty-repository-description finding is
-unchanged for Steering Group disposition.
+Committed remediation candidate `bb16bee815d40742f29e15eeac4254bd1310376e`
+addresses the four medium findings, but no follow-up review disposition is
+claimed. The low empty-repository-description finding is unchanged for Steering
+Group disposition.

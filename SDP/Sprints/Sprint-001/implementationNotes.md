@@ -20,7 +20,7 @@ Status: in progress — draft PR exists; review remediation validated and follow
   verification, and proposed release target resolve to real records. The release
   remains unreleased, publication fields remain null, and no new ledger event was
   appended.
-- Added `SDP/Verification/VER-SPS-001.md` and updated the handoff for the pending
+- Added `SDP/Verification/VER-SPS-001.md` and updated the handoff for the initial
   Master integration and fresh Reviewer pass.
 - Remediated the four medium findings in `REV-SPS-001-001`: exact-candidate
   evidence now names commit `381b38ed6fc59936e7e2cb30b877e156ff57914c`
@@ -35,11 +35,12 @@ Deterministic checks and their exact commands/results are recorded in
 `381b38ed6fc59936e7e2cb30b877e156ff57914c` was rerun directly from Git objects,
 including `git diff --check` and all 46 tracked paths, so hidden `.codex` content
 and the `.github` exclusion were evaluated without relying on the remediation
-working tree. The current remediation tree separately passes the expanded
-relation check for outcomes, boundaries, success criteria, assumptions, and
-questions, along with canonical schemas, paths, managed hashes, untouched
-later-lifecycle templates, the one-Git-root invariant, and the no-product
-boundary.
+working tree. Committed remediation candidate
+`bb16bee815d40742f29e15eeac4254bd1310376e` was then rerun directly from Git
+objects. It passes the expanded relation check for outcomes, boundaries, success
+criteria, assumptions, and questions, along with canonical schemas, paths,
+managed hashes, untouched later-lifecycle templates, the one-Git-root invariant,
+the complete 47-file tree, full-PR `git diff --check`, and the no-product boundary.
 
 Repeating the one-time `-InitializeProjectStructure` preview proposed one change:
 re-creating the Toolkit-specific `SDP/Releases/REL-0.2.0.yaml`. It was not applied.
@@ -53,8 +54,8 @@ The project warning and agent instruction record this canonical initializer gap.
   are separate proposals and both remain unreleased.
 - Go is a preferred direction only; Study and Architecture retain the decision.
 - `VER-SPS-001` is linked as Slice evidence but not as accepted release-gate
-  verification while the bounded remediation still requires Master integration
-  and fresh follow-up review.
+  verification while the committed remediation still requires fresh follow-up
+  review.
 
 ### Independent Review Pass 1
 
@@ -62,9 +63,10 @@ Fresh Reviewer `/root/phase1_reviewer` inspected committed candidate
 `381b38ed6fc59936e7e2cb30b877e156ff57914c` and draft PR #1. The disposition was
 changes required: zero blocking, zero high, four medium, and one low finding.
 `SDP/CodeReview/REV-SPS-001-001.md` is the authoritative review record. The four
-medium findings are addressed in the current remediation working tree; the low
-empty-repository-description finding is unchanged for Steering Group
-disposition. A fresh follow-up Reviewer remains required.
+medium findings are addressed in committed candidate
+`bb16bee815d40742f29e15eeac4254bd1310376e`; the low
+empty-repository-description finding is unchanged for Steering Group disposition.
+A fresh follow-up Reviewer remains required.
 
 ### Residual Risks, Gaps, and Discoveries
 
@@ -76,10 +78,9 @@ disposition. A fresh follow-up Reviewer remains required.
   and cannot be represented as a consuming-project validator. Consumer checks
   therefore compose the canonical JSON schemas with project-local YAML/NDJSON,
   path/ID, hash, repository-layout, and content-boundary checks.
-- The initial reviewed commit and draft PR exist. The current bounded remediation
-  is not yet committed or pushed, so the Master must rerun it after integration
-  and a fresh Reviewer must inspect the resulting PR head before any completion
-  decision.
+- The initial reviewed commit, draft PR, and committed remediation candidate
+  exist. Exact committed-candidate validation passed, but a fresh Reviewer must
+  inspect the resulting PR head before any completion decision.
 - Normal same-version installation is idempotent, but the optional initializer is
   not idempotent after correcting its Toolkit-specific release seed. The current
   mitigation is preview-first, one-time use; correcting the reusable installer
