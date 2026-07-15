@@ -1,11 +1,231 @@
 requirements: {}
 designs: {}
+studies:
+  STU-001:
+    path: SDP/02--Study/study.md
+    identifierConvention: SDP/Instructions/StableIdentifiers.md
+    status: reviewed-candidate
+    mandate:
+      - MAN-001
+    outcomes:
+      - MAN-OUT-001
+      - MAN-OUT-002
+      - MAN-OUT-003
+      - MAN-OUT-004
+      - MAN-OUT-005
+      - MAN-OUT-006
+    boundaries:
+      - MAN-BND-002
+      - MAN-BND-003
+      - MAN-BND-004
+      - MAN-BND-005
+      - MAN-BND-006
+      - MAN-BND-007
+      - MAN-BND-008
+    successCriteria:
+      - MAN-SC-001
+      - MAN-SC-002
+      - MAN-SC-003
+      - MAN-SC-004
+      - MAN-SC-005
+      - MAN-SC-006
+      - MAN-SC-007
+    assumptions:
+      - MAN-ASM-001
+      - MAN-ASM-002
+      - MAN-ASM-003
+      - MAN-ASM-004
+    questions:
+      - MAN-Q-001
+      - MAN-Q-002
+      - MAN-Q-003
+      - MAN-Q-004
+      - MAN-Q-005
+      - MAN-Q-006
+      - MAN-Q-007
+    sprint: Sprint-002
+    iteration: SPI-002
+    slice: SPS-002
+    evidence:
+      - STU-EVD-001
+      - STU-EVD-002
+      - STU-EVD-003
+      - STU-EVD-004
+      - STU-EVD-005
+      - STU-EVD-006
+      - STU-EVD-007
+      - STU-EVD-008
+      - STU-EVD-009
+      - STU-EVD-010
+      - STU-EVD-011
+      - STU-EVD-012
+      - STU-EVD-013
+      - STU-EVD-014
+      - STU-EVD-015
+      - STU-EVD-016
+      - STU-EVD-017
+      - STU-EVD-018
+      - STU-EVD-019
+      - STU-EVD-020
+      - STU-EVD-021
+    findings:
+      - STU-FND-001
+      - STU-FND-002
+      - STU-FND-003
+      - STU-FND-004
+      - STU-FND-005
+      - STU-FND-006
+      - STU-FND-007
+      - STU-FND-008
+      - STU-FND-009
+      - STU-FND-010
+      - STU-FND-011
+      - STU-FND-012
+      - STU-FND-013
+      - STU-FND-014
+    recommendations:
+      - STU-REC-001
+      - STU-REC-002
+      - STU-REC-003
+      - STU-REC-004
+      - STU-REC-005
+      - STU-REC-006
+      - STU-REC-007
+      - STU-REC-008
+    requirementsCandidates:
+      - STU-RQC-001
+      - STU-RQC-002
+      - STU-RQC-003
+      - STU-RQC-004
+      - STU-RQC-005
+      - STU-RQC-006
+      - STU-RQC-007
+      - STU-RQC-008
+      - STU-RQC-009
+      - STU-RQC-010
+      - STU-RQC-011
+      - STU-RQC-012
+      - STU-RQC-013
+      - STU-RQC-014
+      - STU-RQC-015
+      - STU-RQC-016
+      - STU-RQC-017
+    architectureDecisionInputs:
+      - STU-ADI-001
+      - STU-ADI-002
+      - STU-ADI-003
+      - STU-ADI-004
+      - STU-ADI-005
+      - STU-ADI-006
+      - STU-ADI-007
+      - STU-ADI-008
+      - STU-ADI-009
+      - STU-ADI-010
+    crossRepositoryFindings:
+      - STU-XRF-001
+      - STU-XRF-002
+      - STU-XRF-003
+      - STU-XRF-004
+      - STU-XRF-005
+      - STU-XRF-006
+      - STU-XRF-007
+    verification:
+      - VER-SPS-002
+    reviews:
+      - REV-SPS-002-001
+      - REV-SPS-002-002
+      - REV-SPS-002-003
+studyEvidence:
+  STU-EVD-001: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-002: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-003: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-004: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-005: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-006: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-007: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-008: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-009: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-010: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-011: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-012: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-013: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-014: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-015: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-016: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-017: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-018: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-019: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-020: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+  STU-EVD-021: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
+studyFindings:
+  STU-FND-001: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-011, STU-EVD-019]}
+  STU-FND-002: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-002, STU-EVD-003]}
+  STU-FND-003: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-002, STU-EVD-003, STU-EVD-012]}
+  STU-FND-004: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-004, STU-EVD-005, STU-EVD-020]}
+  STU-FND-005: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-008, STU-EVD-009, STU-EVD-010, STU-EVD-021]}
+  STU-FND-006: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-011]}
+  STU-FND-007: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-011]}
+  STU-FND-008: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-007, STU-EVD-014, STU-EVD-016]}
+  STU-FND-009: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-009, STU-EVD-010]}
+  STU-FND-010: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-006, STU-EVD-007, STU-EVD-014, STU-EVD-015, STU-EVD-016]}
+  STU-FND-011: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-010]}
+  STU-FND-012: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-002, STU-EVD-003, STU-EVD-006]}
+  STU-FND-013: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-008, STU-EVD-011]}
+  STU-FND-014: {study: STU-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-009, STU-EVD-010]}
+studyRecommendations:
+  STU-REC-001: {study: STU-001, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-006, STU-EVD-007]}
+  STU-REC-002: {study: STU-001, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-008, STU-EVD-010]}
+  STU-REC-003: {study: STU-001, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-005, STU-EVD-011, STU-EVD-012, STU-EVD-013]}
+  STU-REC-004: {study: STU-001, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-005, STU-EVD-012]}
+  STU-REC-005: {study: STU-001, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-009, STU-EVD-014, STU-EVD-015, STU-EVD-016]}
+  STU-REC-006: {study: STU-001, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-006, STU-EVD-010]}
+  STU-REC-007: {study: STU-001, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-008, STU-EVD-009, STU-EVD-010, STU-EVD-011]}
+  STU-REC-008: {study: STU-001, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-001]}
+requirementsCandidates:
+  STU-RQC-001: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-011, STU-EVD-019]}
+  STU-RQC-002: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-003, STU-EVD-009]}
+  STU-RQC-003: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-002, STU-EVD-003]}
+  STU-RQC-004: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-005, STU-EVD-011, STU-EVD-018]}
+  STU-RQC-005: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-004, STU-EVD-005]}
+  STU-RQC-006: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-004, STU-EVD-019]}
+  STU-RQC-007: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-004, STU-EVD-020]}
+  STU-RQC-008: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-005, STU-EVD-012]}
+  STU-RQC-009: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-007, STU-EVD-014, STU-EVD-016]}
+  STU-RQC-010: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-009]}
+  STU-RQC-011: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-008, STU-EVD-009]}
+  STU-RQC-012: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-014, STU-EVD-015, STU-EVD-016]}
+  STU-RQC-013: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-008, STU-EVD-009]}
+  STU-RQC-014: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-003, STU-EVD-006]}
+  STU-RQC-015: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-004, STU-EVD-009]}
+  STU-RQC-016: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-008, STU-EVD-010]}
+  STU-RQC-017: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: candidate, evidence: [STU-EVD-021]}
+architectureDecisionInputs:
+  STU-ADI-001: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, recommendation: STU-REC-002}
+  STU-ADI-002: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, evidence: [STU-EVD-004, STU-EVD-020]}
+  STU-ADI-003: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, recommendations: [STU-REC-003, STU-REC-004]}
+  STU-ADI-004: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, evidence: [STU-EVD-007]}
+  STU-ADI-005: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, recommendation: STU-REC-005}
+  STU-ADI-006: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, evidence: [STU-EVD-014, STU-EVD-015, STU-EVD-016]}
+  STU-ADI-007: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, evidence: [STU-EVD-008, STU-EVD-018]}
+  STU-ADI-008: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open}
+  STU-ADI-009: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, recommendation: STU-REC-006}
+  STU-ADI-010: {study: STU-001, mandate: MAN-001, path: SDP/02--Study/study.md, status: open, finding: STU-FND-010}
+crossRepositoryFindings:
+  STU-XRF-001: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-009, STU-EVD-010, STU-EVD-011, STU-EVD-021]}
+  STU-XRF-002: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-008, STU-EVD-009]}
+  STU-XRF-003: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-011, STU-EVD-012]}
+  STU-XRF-004: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-008, STU-EVD-009]}
+  STU-XRF-005: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-010]}
+  STU-XRF-006: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-009, STU-EVD-010]}
+  STU-XRF-007: {study: STU-001, targetRepository: Hans-Einar/SDP, path: SDP/02--Study/study.md, status: proposed, evidence: [STU-EVD-009, STU-EVD-021]}
 mandates:
   MAN-001:
     path: SDP/01--Mandate/mandate.md
     identifierConvention: SDP/Instructions/StableIdentifiers.md
     status: approved
     sprint: Sprint-001
+    studies:
+      - STU-001
     outcomes:
       - MAN-OUT-001
       - MAN-OUT-002
@@ -151,37 +371,53 @@ questions:
   MAN-Q-001:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: unresolved
+    status: partially-answered-by-study
+    study: STU-001
   MAN-Q-002:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: unresolved
+    status: partially-answered-by-study
+    study: STU-001
   MAN-Q-003:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: unresolved
+    status: partially-answered-by-study
+    study: STU-001
   MAN-Q-004:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: unresolved
+    status: partially-answered-by-study
+    study: STU-001
   MAN-Q-005:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: unresolved
+    status: answered-for-study
+    study: STU-001
   MAN-Q-006:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: unresolved
+    status: partially-answered-by-study
+    study: STU-001
   MAN-Q-007:
     mandate: MAN-001
     path: SDP/01--Mandate/mandate.md
-    status: unresolved
+    status: partially-answered-by-study
+    study: STU-001
 sprints:
   Sprint-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
     status: complete
     iterations:
       - SPI-001
+  Sprint-002:
+    path: SDP/Sprints/Sprint-002/ScrumIterations.md
+    status: complete
+    mandate:
+      - MAN-001
+    studies:
+      - STU-001
+    iterations:
+      - SPI-002
 refactors: {}
 iterations:
   SPI-001:
@@ -190,6 +426,12 @@ iterations:
     status: complete
     slices:
       - SPS-001
+  SPI-002:
+    path: SDP/Sprints/Sprint-002/ScrumIterations.md
+    sprint: Sprint-002
+    status: complete
+    slices:
+      - SPS-002
 slices:
   SPS-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
@@ -205,6 +447,23 @@ slices:
     reviews:
       - REV-SPS-001-001
       - REV-SPS-001-002
+  SPS-002:
+    path: SDP/Sprints/Sprint-002/ScrumIterations.md
+    sprint: Sprint-002
+    iteration: SPI-002
+    mandate:
+      - MAN-001
+    study:
+      - STU-001
+    releaseContext:
+      - REL-0.1.0
+    status: complete
+    verification:
+      - VER-SPS-002
+    reviews:
+      - REV-SPS-002-001
+      - REV-SPS-002-002
+      - REV-SPS-002-003
 fixes: {}
 reviews:
   REV-SPS-001-001:
@@ -231,6 +490,46 @@ reviews:
       high: 0
       medium: 0
       low: 1
+  REV-SPS-002-001:
+    path: SDP/CodeReview/REV-SPS-002-001.md
+    status: changes-required
+    reviewer: /root/study_reviewer_initial
+    candidateCommit: f1f2aba5392012c13b61a652397c6d41001beffd
+    slice: SPS-002
+    study: STU-001
+    followedBy: REV-SPS-002-002
+    findings:
+      blocking: 0
+      high: 0
+      medium: 2
+      low: 2
+  REV-SPS-002-002:
+    path: SDP/CodeReview/REV-SPS-002-002.md
+    status: changes-required
+    reviewer: /root/study_reviewer_followup
+    candidateCommit: 6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741
+    slice: SPS-002
+    study: STU-001
+    follows: REV-SPS-002-001
+    resolvedBy: REV-SPS-002-003
+    findings:
+      blocking: 0
+      high: 0
+      medium: 1
+      low: 0
+  REV-SPS-002-003:
+    path: SDP/CodeReview/REV-SPS-002-003.md
+    status: approved
+    reviewer: /root/study_reviewer_final
+    candidateCommit: 8f59a31ee6c6ee4264cb301217c5a3489fd4444d
+    slice: SPS-002
+    study: STU-001
+    resolves: REV-SPS-002-002
+    findings:
+      blocking: 0
+      high: 0
+      medium: 0
+      low: 0
 verification:
   VER-SPS-001:
     path: SDP/Verification/VER-SPS-001.md
@@ -240,6 +539,16 @@ verification:
     remediationCommit: bb16bee815d40742f29e15eeac4254bd1310376e
     candidateCommit: f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f
     reviewerConfirmation: REV-SPS-001-002
+  VER-SPS-002:
+    path: SDP/Verification/VER-SPS-002.md
+    status: passed
+    slice: SPS-002
+    study: STU-001
+    releaseContext: REL-0.1.0
+    studyContentCommit: 6ca9b2c2d4eafdbf83aad95f7cfcd0c418320741
+    reviewedCandidateCommit: 8f59a31ee6c6ee4264cb301217c5a3489fd4444d
+    reviewerConfirmation: REV-SPS-002-003
+    releaseGate: false
 migrations: {}
 releases:
   REL-0.1.0:
@@ -263,4 +572,10 @@ releases:
 # verification/review arrays. The 0.1.0 target remains proposed and unreleased.
 # `approved` on the Mandate, outcomes, success criteria, and assumptions records
 # Steering-approved normative content, not delivered or verified product
-# behavior. Boundaries remain active and questions remain unresolved.
+# behavior. Boundaries remain active. Study question statuses describe analytical
+# progress only; they do not approve Requirements or Architecture decisions.
+# VER-SPS-002 is passed Study/Slice evidence, not a release gate.
+# REV-SPS-002-003 approved exact pushed evidence candidate 8f59a31 for SPS-002
+# closure with no findings. STU-001 remains a reviewed candidate pending
+# Steering assessment; no success criterion, later lifecycle, release, or
+# publication transition is claimed.

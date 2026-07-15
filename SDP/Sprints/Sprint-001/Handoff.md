@@ -2,7 +2,18 @@
 
 Active Slice: none
 Completed Slice: `SPS-001`
-Status: Phase 1 accepted; awaiting PR #1 merge and a separate Study assignment
+Status: Phase 1 accepted and merged; handed off to authorized Phase 2 Study
+
+## Post-Merge Reconciliation
+
+PR #1 was merged through normal merge commit
+`3a3b9ece5db6bde438dfd2b4eba57be344350e85`. Its merged tree exactly matches
+approved Phase 1 branch head
+`38a7ea46e0720616f1538ca182c6a4a7e7849eda`, and the Steering-assessed commit
+`ed205c1ef193ab8a6e5cd1c50e558c3049ce6def` is an ancestor of that head. A
+separate assignment now authorizes Phase 2 Study only. Current execution state
+has moved to `Sprint-002` / `SPI-002` / `SPS-002`; this file remains the Phase 1
+handoff record.
 
 ## Authoritative Entry Points
 
@@ -41,19 +52,18 @@ schema supports release events only. The decision is therefore represented in
 the existing project-owned Mandate, current-state, relation, and handoff
 surfaces. `SDP/Traceability/Ledger.ndjson` remains unchanged.
 
-## Next Authorized Decision
+## Historical Next-Decision Boundary
 
-Phase 2 remains unauthorized until PR #1 is merged and a separate Study
-assignment is issued. Neither condition alone authorizes Study work. Before the
-human repository owner merges, this closure candidate must be committed, pushed,
-validated at its exact Git SHA, and independently reviewed with no unresolved
-blocking, high, or medium finding.
+At Phase 1 handoff, Phase 2 remained unauthorized until PR #1 was merged and a
+separate Study assignment was issued. Both conditions have now occurred. The
+current authoritative execution surface is
+`SDP/Sprints/Sprint-002/Handoff.md`; no later-lifecycle authorization follows
+from the transition.
 
-At the time of this tracked edit, final exact-head closure validation and fresh
-review confirmation have not yet occurred. Their terminal confirmation will be
-recorded in PR #1 because a tracked file cannot name the commit that contains
-itself. A normal merge commit is recommended instead of squash or rebase because
-the SDP verification and review evidence references immutable commit SHAs.
+Final exact-head closure validation and fresh review later occurred against
+`f9d97c5a19d7b7f035f8dbfa2dd1f9e464b4378f`, with terminal confirmation on
+PR #1. The repository owner then used the recommended normal merge, preserving
+the immutable commit identities referenced by SDP verification and review.
 
 Do not repeat `-InitializeProjectStructure` without inspecting its preview. At
 the installed source revision it proposes re-creating the Toolkit repository's
@@ -68,7 +78,9 @@ capability, support, publication, or release claim is made.
 
 ## Stop Boundary
 
-Do not begin Study, Requirements, Architecture, Design Analysis, Design,
-implementation planning, or product implementation. Do not modify or publish the
-canonical SDP repository. `REL-0.1.0` and Toolkit `0.2.0` remain proposed and
-unreleased; all publication identities remain null until real objects exist.
+Phase 1 itself did not authorize Study. The separate Phase 2 assignment now
+authorizes Study only. Do not begin Requirements, Architecture, Design Analysis,
+Design, implementation planning, or product implementation. Do not modify or
+publish the canonical SDP repository. `REL-0.1.0` and Toolkit `0.2.0` remain
+proposed and unreleased; all publication identities remain null until real
+objects exist.
