@@ -129,6 +129,12 @@ silently updating the upstream repository.
 - `Ledger.ndjson` remains unchanged because the installed canonical schema
   defines release events only and has no truthful event type for a Steering
   Study disposition.
+- Exact pushed reconciliation candidate
+  `d8d0404faff58338020afd31df6c4d9454776080` passed
+  `VER-FIX-0.1.0-001`, including Git/GitHub identity, merge parentage and tree
+  equality, structured-record/schema, traceability, protected-state, scope, and
+  diff-hygiene checks. Fresh independent review and terminal durable evidence
+  remain required before the Fix closes.
 
 ### Next Decision And Stop
 

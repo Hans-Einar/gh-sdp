@@ -4,7 +4,7 @@ Active Slice: none
 Completed Slice: `SPS-002`
 Active Fix: `FIX-0.1.0-001`
 Study: `STU-001` (`ACCEPTED_WITH_LOW_FINDINGS`)
-Status: completed Phase 2 Study; post-merge acceptance reconciliation active
+Status: completed Phase 2 Study; reconciliation verification passed, review pending
 
 ## Authoritative Entry Points
 
@@ -20,6 +20,8 @@ Status: completed Phase 2 Study; post-merge acceptance reconciliation active
 - Follow-up review: `SDP/CodeReview/REV-SPS-002-002.md`
 - Final review: `SDP/CodeReview/REV-SPS-002-003.md`
 - Active Fix: `SDP/Fixes/FIX-0.1.0-001.yaml`
+- Reconciliation verification:
+  `SDP/Verification/VER-FIX-0.1.0-001.md`
 - Identifier convention: `SDP/Instructions/StableIdentifiers.md`
 
 ## Completion State
@@ -81,12 +83,12 @@ truthful Steering Study-disposition event.
 
 ## Next Authorized Decision
 
-Finish only `FIX-0.1.0-001`: verify the exact reconciliation candidate, obtain
-fresh independent review, create the new reconciliation PR evidence, and then
-correct the already merged PR
-[#2](https://github.com/Hans-Einar/gh-sdp/pull/2) body and attach the authorized
-durable reconciliation evidence. No new lifecycle phase is authorized after
-the Fix; a separate Steering decision is required.
+Finish only `FIX-0.1.0-001`: obtain fresh independent review of the exact
+pushed reconciliation candidate, persist the review result, and attach terminal
+evidence to draft PR #3 and a concise reconciliation comment to already merged
+PR [#2](https://github.com/Hans-Einar/gh-sdp/pull/2). PR #2's body is already
+corrected. No new lifecycle phase is authorized after the Fix; a separate
+Steering decision is required.
 
 ## Residual Limitations
 
