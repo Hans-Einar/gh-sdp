@@ -1,13 +1,15 @@
 # MAN-001 — gh-sdp GitHub CLI Extension Mandate
 
-Status: approved — governing Mandate for the Study phase
+Status: approved — governing Mandate; Phase 2 Study evidence foundation accepted
 Approval date: 2026-07-13
 Steering-assessed commit: `ed205c1ef193ab8a6e5cd1c50e558c3049ce6def`
 Phase 1 decision: accepted
 Phase 2 authorization: authorized for Study only by separate assignment on
 2026-07-13 after PR #1 merge
-Lifecycle level: Mandate only
+Phase 2 Study disposition: `ACCEPTED_WITH_LOW_FINDINGS` on 2026-07-17
+Lifecycle level: Study evidence foundation accepted; later phases unauthorized
 Completed Phase 1 work: `Sprint-001` / `SPI-001` / `SPS-001`
+Completed Phase 2 work: `Sprint-002` / `SPI-002` / `SPS-002`
 Proposed client release: `REL-0.1.0` (`gh-sdp` `0.1.0`, unreleased)
 Proposed first Toolkit compatibility target: SDP Toolkit `0.2.0` (unreleased
 and unsupported)
@@ -25,7 +27,7 @@ limited to `Sprint-002` / `SPI-002` / `SPS-002` and `STU-001`; it does not
 authorize Requirements, Architecture, Design Analysis, Design, implementation
 planning, product code, packaging, workflows, or releases.
 
-## Steering Group Decision
+## Phase 1 Steering Group Decision
 
 On 2026-07-13, the Steering Group assessed Phase 1 at exact commit
 `ed205c1ef193ab8a6e5cd1c50e558c3049ce6def` and decided:
@@ -40,6 +42,35 @@ questions, declare a product capability or Toolkit compatibility, or by itself
 authorize Phase 2. At the time of the decision, Phase 2 remained unauthorized
 until PR #1 was merged and a separate Study assignment was issued; both
 conditions were later satisfied as recorded above.
+
+## Phase 2 Study Steering Disposition
+
+On 2026-07-17, the Steering Group recorded disposition
+`ACCEPTED_WITH_LOW_FINDINGS` for `STU-001`. Acceptance is limited to the
+historical Phase 2 Study evidence foundation produced against pinned SDP source
+commit `bc110bb5fd60009ba67015cf640ad6ddbfe1b04b`. PR #2 had already merged
+normally on 2026-07-15 with head
+`a9fa6980e633c054645b749f8a3babfefa183bf2` and merge commit
+`32613734781bf39f2fce176db2acfb2284dfc92f`; the merge preceded this acceptance
+record.
+
+The accepted Low findings concerned durable PR evidence for the terminal
+exact-head review and stale/damaged PR #2 body text. The PR body was corrected,
+and fresh reconciliation review plus terminal PR evidence resolves the durable
+evidence gap without claiming recovery of unavailable historical output. The
+findings do not lower or waive any product, compatibility, security, platform,
+or release gate. Sprint-002, SPI-002, and SPS-002 remain complete and are not
+reopened.
+
+Acceptance does not approve any Study recommendation as a Requirement or
+Architecture decision, accept an installation contract or schema, declare
+Toolkit compatibility/support, deliver a Mandate success criterion, or
+authorize Requirements, Architecture, Design Analysis, Design, implementation,
+compatibility validation, workflows, packaging, or release work. A separate
+post-Study assessment of `Hans-Einar/SDP` PR #4 at
+`bf20832bed618ab240cf87c17517fc31ea721311` returned
+`UPSTREAM_REWORK_REQUIRED`; that later dependency evidence was not part of the
+historical Study inspection.
 
 ## Problem
 
@@ -136,13 +167,14 @@ Toolkit `0.2.0`; at the inspected canonical source revision it is also
 unreleased, unsupported, and has no evidenced tag or GitHub Release. These
 numbers belong to different products and do not advance together automatically.
 
-This document establishes approved Mandate-level intent only. Phase 1 passed
-fresh independent review and was accepted by the Steering Group, which approved
-`MAN-001` as the governing Mandate for a separately authorized Study phase. No
-Study, Requirements, Architecture, Design Analysis, Design, or Implementation
-decision is approved; no product capability, compatibility promise, Toolkit
-support declaration, tag, or release exists as a result of `SPS-001` or the
-Steering decision.
+This document establishes approved Mandate-level intent. Phase 1 passed fresh
+independent review and was accepted by the Steering Group, which approved
+`MAN-001` as the governing Mandate for the separately authorized Study.
+Steering later accepted `STU-001` only as the historical Phase 2 evidence
+foundation described above. No Requirements, Architecture, Design Analysis,
+Design, or Implementation decision is approved; no product capability,
+compatibility promise, Toolkit support declaration, tag, or release exists as a
+result of either completed Slice or either Steering decision.
 
 ## Boundaries and Explicit Exclusions
 
