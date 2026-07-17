@@ -54,10 +54,13 @@ normally on 2026-07-15 with head
 `32613734781bf39f2fce176db2acfb2284dfc92f`; the merge preceded this acceptance
 record.
 
-The accepted Low findings concern durable PR evidence for the terminal
-exact-head review and stale/damaged PR #2 body text. They do not lower or waive
-any product, compatibility, security, platform, or release gate. Sprint-002,
-SPI-002, and SPS-002 remain complete and are not reopened.
+The accepted Low findings concerned durable PR evidence for the terminal
+exact-head review and stale/damaged PR #2 body text. The PR body was corrected,
+and fresh reconciliation review plus terminal PR evidence resolves the durable
+evidence gap without claiming recovery of unavailable historical output. The
+findings do not lower or waive any product, compatibility, security, platform,
+or release gate. Sprint-002, SPI-002, and SPS-002 remain complete and are not
+reopened.
 
 Acceptance does not approve any Study recommendation as a Requirement or
 Architecture decision, accept an installation contract or schema, declare

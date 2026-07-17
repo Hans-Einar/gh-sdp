@@ -1,7 +1,7 @@
 schemaVersion: "1.0"
 fixId: FIX-0.1.0-001
 targetVersion: "0.1.0"
-status: verification
+status: complete
 reasonFullSliceIsDisproportionate: >-
   This is a bounded governance reconciliation after an already completed and
   merged Study. Reopening Sprint-002 or creating a new lifecycle Slice would
@@ -45,5 +45,5 @@ verification:
   - Confirm the changed set is governance-only and contains no prohibited artifact.
   - Confirm local HEAD, remote branch, and draft PR head agree with a clean worktree.
   - Obtain fresh independent review with no unresolved Blocking, High, or Medium findings.
-reviewRecord: null
+reviewRecord: REV-FIX-0.1.0-001-001
 revision: 1

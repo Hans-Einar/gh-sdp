@@ -1,6 +1,6 @@
 # VER-FIX-0.1.0-001 — Study Acceptance Reconciliation Verification
 
-Status: passed for the exact reconciliation candidate; independent review pending
+Status: passed and independently confirmed for the reconciliation review gate
 Fix: FIX-0.1.0-001
 Study: STU-001
 Mandate: MAN-001
@@ -11,14 +11,17 @@ Verified reconciliation candidate: d8d0404faff58338020afd31df6c4d9454776080
 Pull request: https://github.com/Hans-Einar/gh-sdp/pull/3 (open draft)
 Historical pull request: https://github.com/Hans-Einar/gh-sdp/pull/2 (merged)
 Verification date: 2026-07-17
+Reviewer confirmation: REV-FIX-0.1.0-001-001
 
 This record binds the authored deterministic verification matrix to exact
 pushed candidate `d8d0404faff58338020afd31df6c4d9454776080`. It verifies the
 post-merge governance reconciliation and corrected live PR #2 metadata; it is
 not product testing, a release gate, a compatibility claim, publication
 evidence, or authority for a later lifecycle phase. A tracked record cannot
-truthfully contain the identity of the commit that contains itself, so final
-exact-head review remains a separate required gate.
+truthfully contain the identity of the commit that contains itself. Fresh
+Reviewer `/root/reconciliation_reviewer` independently reran the matrix against
+exact pushed evidence head `05688cee7b76271ccad62fb994c446bcf041f9fa`;
+the later closure-only commit still requires terminal exact-head confirmation.
 
 ## Environment
 
@@ -152,6 +155,7 @@ Result: passed.
 ## Disposition
 
 Exact pushed reconciliation candidate `d8d0404...` passed the authored
-verification matrix. It may proceed to fresh independent review. The Fix may
-not close until review has no unresolved Blocking, High, or Medium finding and
-terminal exact-head evidence is durably attached to GitHub.
+verification matrix, and `REV-FIX-0.1.0-001-001` independently reran it against
+exact evidence head `05688cee...` with no Blocking, High, Medium, or Low
+finding. A closure-only governance commit may clear the Fix; its exact head
+must then receive terminal confirmation durably attached to GitHub.

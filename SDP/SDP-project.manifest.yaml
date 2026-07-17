@@ -15,8 +15,8 @@ development:
   refactorId: null
   iterationId: null
   sliceId: null
-  fixId: FIX-0.1.0-001
-  revision: 1
+  fixId: null
+  revision: null
 migration:
   pendingWarnings:
     - "Bootstrapped from unreleased SDP Toolkit 0.2.0 source commit bc110bb5fd60009ba67015cf640ad6ddbfe1b04b; no Toolkit 0.2.0 tag or GitHub Release was evidenced."

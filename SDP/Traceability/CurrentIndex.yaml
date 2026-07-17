@@ -1,6 +1,6 @@
 project:
   name: gh-sdp
-  status: phase-2-study-acceptance-reconciliation-active
+  status: phase-2-study-accepted-waiting-separate-authorization
 
 lifecycle:
   phase: Study
@@ -10,7 +10,7 @@ lifecycle:
   steeringDispositionDate: "2026-07-17"
   evidenceFoundationToolkitCommit: bc110bb5fd60009ba67015cf640ad6ddbfe1b04b
   mandate: MAN-001
-  authorization: steering-acceptance-reconciliation-2026-07-17
+  authorization: steering-accepted-study-no-later-phase-authorized
   laterLifecycleAuthorized: false
   stopBefore:
     - Requirements
@@ -37,5 +37,5 @@ active:
   refactor: null
   iteration: null
   slice: null
-  fix: FIX-0.1.0-001
-  revision: 1
+  fix: null
+  revision: null

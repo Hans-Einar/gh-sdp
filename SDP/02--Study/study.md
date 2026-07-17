@@ -28,13 +28,19 @@ source classifications below.
 PR #2 merged normally before acceptance was recorded. Its exact head was
 `a9fa6980e633c054645b749f8a3babfefa183bf2`; GitHub created merge commit
 `32613734781bf39f2fce176db2acfb2284dfc92f` on 2026-07-15. Sprint-002,
-SPI-002, and SPS-002 remain complete and are not reopened. The accepted Low
-findings are:
+SPI-002, and SPS-002 remain complete and are not reopened. At acceptance, the
+Low findings were:
 
 1. the terminal exact-head review claim for `a9fa698...` was not durably
    attached to PR #2 as a PR comment or native review; and
-2. the PR #2 body contains a control character before the short head identity
-   and stale statements that the PR is open, draft, and unmerged.
+2. the PR #2 body contained a control character before the short head identity
+   and stale statements that the PR was open, draft, and unmerged.
+
+The second finding was resolved by correcting the merged PR #2 body without
+changing unrelated metadata. The first is resolved through fresh independent
+review of the reconciliation and durable terminal evidence in the PR #3 and PR
+#2 conversations; unavailable historical terminal output is not claimed as
+recovered.
 
 A separate post-Study dependency assessment inspected `Hans-Einar/SDP` draft
 PR #4 at exact head `bf20832bed618ab240cf87c17517fc31ea721311`. Its disposition

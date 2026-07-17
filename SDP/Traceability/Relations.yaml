@@ -20,13 +20,21 @@ studies:
       mergedBeforeAcceptanceRecord: true
     acceptedLowFindings:
       - severity: Low
+        status: resolved
         summary: >-
           Terminal exact-head review evidence for a9fa698 was not durably
           attached to PR #2 as a PR comment or native review.
+        resolution: >-
+          Fresh independent reconciliation review and terminal exact-head
+          evidence are durably maintained in the PR #3 and PR #2 conversations.
       - severity: Low
+        status: resolved
         summary: >-
-          PR #2 body contains a control character before the short head
+          PR #2 body contained a control character before the short head
           identity and stale open, draft, and unmerged claims.
+        resolution: >-
+          The merged PR #2 body was corrected without changing unrelated
+          metadata and independently inspected through PR #3.
     postStudyDependencyAssessment:
       repository: Hans-Einar/SDP
       pullRequest: 4
@@ -510,7 +518,7 @@ slices:
 fixes:
   FIX-0.1.0-001:
     path: SDP/Fixes/FIX-0.1.0-001.yaml
-    status: verification
+    status: complete
     targetVersion: "0.1.0"
     mandate:
       - MAN-001
@@ -520,7 +528,8 @@ fixes:
       - REL-0.1.0
     verification:
       - VER-FIX-0.1.0-001
-    reviews: []
+    reviews:
+      - REV-FIX-0.1.0-001-001
 reviews:
   REV-SPS-001-001:
     path: SDP/CodeReview/REV-SPS-001-001.md
@@ -586,6 +595,19 @@ reviews:
       high: 0
       medium: 0
       low: 0
+  REV-FIX-0.1.0-001-001:
+    path: SDP/CodeReview/REV-FIX-0.1.0-001-001.md
+    status: approved
+    reviewer: /root/reconciliation_reviewer
+    candidateCommit: 05688cee7b76271ccad62fb994c446bcf041f9fa
+    fix: FIX-0.1.0-001
+    study: STU-001
+    findings:
+      blocking: 0
+      high: 0
+      medium: 0
+      low: 0
+      notes: 2
 verification:
   VER-SPS-001:
     path: SDP/Verification/VER-SPS-001.md
@@ -613,6 +635,8 @@ verification:
     releaseContext: REL-0.1.0
     baselineCommit: 32613734781bf39f2fce176db2acfb2284dfc92f
     candidateCommit: d8d0404faff58338020afd31df6c4d9454776080
+    reviewedEvidenceCommit: 05688cee7b76271ccad62fb994c446bcf041f9fa
+    reviewerConfirmation: REV-FIX-0.1.0-001-001
     releaseGate: false
 migrations: {}
 releases:

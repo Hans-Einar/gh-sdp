@@ -112,10 +112,12 @@ silently updating the upstream repository.
 - On 2026-07-17, Steering recorded `ACCEPTED_WITH_LOW_FINDINGS` for `STU-001`,
   limited to the historical Study evidence foundation inspected against SDP
   commit `bc110bb5fd60009ba67015cf640ad6ddbfe1b04b`.
-- The two accepted Low findings are the absence of durable PR #2 evidence for
-  the terminal exact-head review and the control character plus stale
-  open/draft/unmerged claims in the PR #2 body. `FIX-0.1.0-001` is the active
-  bounded reconciliation; Sprint-002, SPI-002, and SPS-002 remain complete.
+- The two accepted Low findings concerned the absence of durable PR #2 evidence
+  for the terminal exact-head review and the control character plus stale
+  open/draft/unmerged claims in the PR #2 body. `FIX-0.1.0-001` corrected the
+  body and replaced the unrecoverable evidence gap with fresh review and
+  durable exact-head PR evidence; Sprint-002, SPI-002, and SPS-002 remain
+  complete.
 - A separate post-Study dependency assessment of `Hans-Einar/SDP` draft PR #4
   at `bf20832bed618ab240cf87c17517fc31ea721311` returned
   `UPSTREAM_REWORK_REQUIRED` with exactly three Medium findings owned upstream:
@@ -133,13 +135,17 @@ silently updating the upstream repository.
   `d8d0404faff58338020afd31df6c4d9454776080` passed
   `VER-FIX-0.1.0-001`, including Git/GitHub identity, merge parentage and tree
   equality, structured-record/schema, traceability, protected-state, scope, and
-  diff-hygiene checks. Fresh independent review and terminal durable evidence
-  remain required before the Fix closes.
+  diff-hygiene checks.
+- Fresh Reviewer `/root/reconciliation_reviewer` independently inspected exact
+  evidence head `05688cee7b76271ccad62fb994c446bcf041f9fa` and approved
+  `REV-FIX-0.1.0-001-001` with 0 Blocking, 0 High, 0 Medium, 0 Low, and 2
+  process notes. The closure-only transition clears the Fix; terminal
+  confirmation of that new exact head is maintained in the PR conversation.
 
 ### Next Decision And Stop
 
-Complete only `FIX-0.1.0-001` verification, fresh independent review, PR
-evidence, and the approved PR #2 metadata correction. After the Fix, wait for a
-separate next authorization. Do not reopen the completed Sprint/Iteration/Slice
-or begin Requirements, Architecture, Design, implementation, compatibility
+`FIX-0.1.0-001` is complete. Wait for a separate Steering decision on whether
+to authorize upstream rework of the three SDP PR #4 contract findings; do not
+work around them locally. Do not reopen the completed Sprint/Iteration/Slice or
+begin Requirements, Architecture, Design, implementation, compatibility
 validation, build, packaging, workflow, release, or upstream Toolkit work.
