@@ -1,12 +1,12 @@
 project:
   name: gh-sdp
-  status: phase-2-study-ready-for-steering-assessment
+  status: phase-2-study-acceptance-reconciliation-active
 
 lifecycle:
   phase: Study
   study: STU-001
   mandate: MAN-001
-  authorization: separate-study-assignment-2026-07-13
+  authorization: steering-acceptance-reconciliation-2026-07-17
   stopBefore:
     - Requirements
     - Architecture
@@ -23,5 +23,5 @@ active:
   refactor: null
   iteration: null
   slice: null
-  fix: null
-  revision: null
+  fix: FIX-0.1.0-001
+  revision: 1

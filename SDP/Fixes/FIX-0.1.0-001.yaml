@@ -1,0 +1,49 @@
+schemaVersion: "1.0"
+fixId: FIX-0.1.0-001
+targetVersion: "0.1.0"
+status: active
+reasonFullSliceIsDisproportionate: >-
+  This is a bounded governance reconciliation after an already completed and
+  merged Study. Reopening Sprint-002 or creating a new lifecycle Slice would
+  misrepresent the authorized work.
+scope:
+  - Record Steering disposition ACCEPTED_WITH_LOW_FINDINGS for STU-001.
+  - Record the actual PR #2 merge sequence and exact Git identities.
+  - Record the post-Study SDP PR #4 dependency assessment as UPSTREAM_REWORK_REQUIRED.
+  - Correct the stale and damaged PR #2 body without changing unrelated metadata.
+  - Produce exact verification, independent review, and durable PR evidence.
+expectedFiles:
+  - SDP/Fixes/FIX-0.1.0-001.yaml
+  - SDP/01--Mandate/mandate.md
+  - SDP/02--Study/study.md
+  - SDP/Sprints/Sprint-002/implementationNotes.md
+  - SDP/Sprints/Sprint-002/Handoff.md
+  - SDP/SDP-project.manifest.yaml
+  - SDP/Traceability/CurrentIndex.yaml
+  - SDP/Traceability/Relations.yaml
+  - SDP/Verification/VER-FIX-0.1.0-001.md
+  - SDP/CodeReview/REV-FIX-0.1.0-001-001.md
+invariants:
+  - Sprint-002, SPI-002, and SPS-002 remain complete and are not reopened.
+  - The Study remains historically bound to SDP commit bc110bb5fd60009ba67015cf640ad6ddbfe1b04b.
+  - Requirements, Architecture, Design Analysis, Design, implementation, compatibility validation, packaging, workflows, and releases remain unauthorized.
+  - gh-sdp 0.1.0 and SDP Toolkit 0.2.0 remain unreleased and unsupported.
+  - Hans-Einar/SDP is not modified and its missing contract semantics are not redefined here.
+  - No product, executable, workflow, package, tag, GitHub Release, or release gate is introduced.
+  - The release-event Ledger remains unchanged unless a canonical event type truthfully applies.
+nonGoals:
+  - Revert, rewrite, reopen, or amend the merged PR #2 history.
+  - Accept SDP PR #4, installation manifest schema v1, or Toolkit compatibility.
+  - Run downstream compatibility validation or implement product code.
+  - Modify Hans-Einar/SDP.
+verification:
+  - Confirm PR #2 head, merge commit, base, parentage, merge date, and tree equality through Git and GitHub.
+  - Run git diff --check from merge baseline to the exact candidate.
+  - Parse changed YAML, JSON, and NDJSON and apply every available canonical schema.
+  - Resolve changed stable IDs, relations, and referenced paths.
+  - Confirm completed and active coordinates agree and later-lifecycle templates are unchanged.
+  - Confirm the changed set is governance-only and contains no prohibited artifact.
+  - Confirm local HEAD, remote branch, and draft PR head agree with a clean worktree.
+  - Obtain fresh independent review with no unresolved Blocking, High, or Medium findings.
+reviewRecord: null
+revision: 1

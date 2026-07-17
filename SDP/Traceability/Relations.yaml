@@ -135,6 +135,8 @@ studies:
       - REV-SPS-002-001
       - REV-SPS-002-002
       - REV-SPS-002-003
+    reconciliationFix:
+      - FIX-0.1.0-001
 studyEvidence:
   STU-EVD-001: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
   STU-EVD-002: {study: STU-001, path: SDP/02--Study/study.md, status: inspected}
@@ -464,7 +466,19 @@ slices:
       - REV-SPS-002-001
       - REV-SPS-002-002
       - REV-SPS-002-003
-fixes: {}
+fixes:
+  FIX-0.1.0-001:
+    path: SDP/Fixes/FIX-0.1.0-001.yaml
+    status: active
+    targetVersion: "0.1.0"
+    mandate:
+      - MAN-001
+    study:
+      - STU-001
+    releaseContext:
+      - REL-0.1.0
+    verification: []
+    reviews: []
 reviews:
   REV-SPS-001-001:
     path: SDP/CodeReview/REV-SPS-001-001.md
