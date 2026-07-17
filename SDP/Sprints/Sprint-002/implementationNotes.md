@@ -3,7 +3,8 @@
 ## SPS-002
 
 Status: complete — Study/Slice verification passed; final exact-head review
-approved SPS-002 closure; reviewed draft PR awaits Steering assessment
+approved SPS-002 closure; Steering accepted the historical Study evidence
+foundation with Low findings
 
 ### Activation
 
@@ -102,9 +103,37 @@ silently updating the upstream repository.
   release review/verification arrays, publication identities, and the Ledger
   remain unchanged.
 
+### Post-Merge Steering Reconciliation
+
+- PR #2 merged normally into `main` on 2026-07-15. Its exact head was
+  `a9fa6980e633c054645b749f8a3babfefa183bf2`, and its merge commit was
+  `32613734781bf39f2fce176db2acfb2284dfc92f`. The merge occurred before the
+  Steering acceptance record.
+- On 2026-07-17, Steering recorded `ACCEPTED_WITH_LOW_FINDINGS` for `STU-001`,
+  limited to the historical Study evidence foundation inspected against SDP
+  commit `bc110bb5fd60009ba67015cf640ad6ddbfe1b04b`.
+- The two accepted Low findings are the absence of durable PR #2 evidence for
+  the terminal exact-head review and the control character plus stale
+  open/draft/unmerged claims in the PR #2 body. `FIX-0.1.0-001` is the active
+  bounded reconciliation; Sprint-002, SPI-002, and SPS-002 remain complete.
+- A separate post-Study dependency assessment of `Hans-Einar/SDP` draft PR #4
+  at `bf20832bed618ab240cf87c17517fc31ea721311` returned
+  `UPSTREAM_REWORK_REQUIRED` with exactly three Medium findings owned upstream:
+  normative `PlanJson` action ordering is insufficiently specified; AGENTS
+  conflict-migration collision/idempotency behavior is insufficiently
+  specified; and the promised portable shared conformance fixture bundle is
+  absent.
+- PR #4 and installation-manifest schema v1 are not accepted. No missing
+  contract semantic is defined locally, and no downstream compatibility
+  validation or later lifecycle phase is authorized.
+- `Ledger.ndjson` remains unchanged because the installed canonical schema
+  defines release events only and has no truthful event type for a Steering
+  Study disposition.
+
 ### Next Decision And Stop
 
-Steering assessment of the reviewed Study is the only next authorized decision.
-Keep PR #2 open and draft. Do not begin Requirements, Architecture, Design,
-implementation, build, packaging, workflow, release, or upstream Toolkit work
-without separate authority.
+Complete only `FIX-0.1.0-001` verification, fresh independent review, PR
+evidence, and the approved PR #2 metadata correction. After the Fix, wait for a
+separate next authorization. Do not reopen the completed Sprint/Iteration/Slice
+or begin Requirements, Architecture, Design, implementation, compatibility
+validation, build, packaging, workflow, release, or upstream Toolkit work.

@@ -1,11 +1,13 @@
 # STU-001 — gh-sdp Phase 2 Study
 
-Status: reviewed candidate — ready for Steering assessment
+Status: accepted evidence foundation — `ACCEPTED_WITH_LOW_FINDINGS`
 Mandate: MAN-001
 Sprint: Sprint-002
 Iteration: SPI-002
 Slice: SPS-002
 Inspection date: 2026-07-13
+Steering disposition date: 2026-07-17
+Inspected SDP source: `bc110bb5fd60009ba67015cf640ad6ddbfe1b04b`
 Authorization boundary: Study only
 
 This Study records evidence, findings, recommendations, candidate requirements,
@@ -13,6 +15,47 @@ and Architecture inputs. It approves none of the latter and delivers none of
 `MAN-SC-001` through `MAN-SC-007`. Requirements, Architecture, Design Analysis,
 Design, implementation planning, product code, packaging, workflows, tags, and
 releases remain outside `SPS-002`.
+
+## Steering disposition and post-Study boundary
+
+On 2026-07-17, the Steering Group accepted `STU-001` with disposition
+`ACCEPTED_WITH_LOW_FINDINGS` as the Phase 2 Study evidence foundation. The
+acceptance applies only to the historical Study performed against pinned SDP
+commit `bc110bb5fd60009ba67015cf640ad6ddbfe1b04b`; it does not retroactively
+change the inspection date, evidence inventory, findings, recommendations, or
+source classifications below.
+
+PR #2 merged normally before acceptance was recorded. Its exact head was
+`a9fa6980e633c054645b749f8a3babfefa183bf2`; GitHub created merge commit
+`32613734781bf39f2fce176db2acfb2284dfc92f` on 2026-07-15. Sprint-002,
+SPI-002, and SPS-002 remain complete and are not reopened. The accepted Low
+findings are:
+
+1. the terminal exact-head review claim for `a9fa698...` was not durably
+   attached to PR #2 as a PR comment or native review; and
+2. the PR #2 body contains a control character before the short head identity
+   and stale statements that the PR is open, draft, and unmerged.
+
+A separate post-Study dependency assessment inspected `Hans-Einar/SDP` draft
+PR #4 at exact head `bf20832bed618ab240cf87c17517fc31ea721311`. Its disposition
+is `UPSTREAM_REWORK_REQUIRED`, with exactly three Medium, upstream-owned
+findings:
+
+1. normative `PlanJson` action ordering is insufficiently specified;
+2. AGENTS conflict-migration collision/idempotency behavior is insufficiently
+   specified; and
+3. the promised portable shared conformance fixture bundle is absent.
+
+PR #4 and installation-manifest schema v1 are not accepted. These later facts
+are not historical Study evidence, and this repository does not redefine the
+missing semantics or work around the findings. The Steering disposition
+authorizes no Requirements, Architecture, Design Analysis, Design,
+implementation, compatibility validation, packaging, workflow, or release
+work. `gh-sdp` 0.1.0 and SDP Toolkit 0.2.0 remain unreleased and unsupported.
+
+`SDP/Traceability/Ledger.ndjson` remains unchanged because the installed
+canonical schema defines release events only and has no truthful event type for
+a Steering Study disposition.
 
 ## 1. Scope and methodology
 
@@ -770,7 +813,8 @@ MAN-BND-002, MAN-ASM-002]
   preservation semantics but not archive, concurrency, cross-platform
   transaction or crash-recovery guarantees. [verified repository fact/inference;
   STU-EVD-009, STU-EVD-010]
-- **STU-REC-008 — Study disposition.** Submit this reviewed candidate for
+- **STU-REC-008 — historical Study disposition at Slice closure.** Submit this
+  reviewed candidate for
   Steering assessment now that `VER-SPS-002` and fresh exact-head review
   `REV-SPS-002-003` have passed. Do not treat those process gates as Steering
   acceptance or authorize Requirements, Architecture, or implementation from
@@ -787,7 +831,9 @@ boundaries and assumptions, and does not mark any success criterion delivered.
 `REV-SPS-002-001` through `REV-SPS-002-003` record the real independent review
 and remediation chain. Final Reviewer `/root/study_reviewer_final` approved
 exact pushed evidence candidate `8f59a31ee6c6ee4264cb301217c5a3489fd4444d`
-for `SPS-002` closure with zero blocking, high, medium, or low findings. Steering
-assessment is the next authorized decision; `STU-001` is not Steering accepted,
-no Mandate success criterion is marked delivered, and no later lifecycle phase
-is authorized. [verified repository-process boundary; STU-EVD-001]
+for `SPS-002` closure with zero blocking, high, medium, or low findings. At
+Slice closure, Steering assessment was the next authorized decision and
+`STU-001` was not yet Steering accepted. The 2026-07-17 disposition recorded
+above now accepts only that historical evidence foundation; no Mandate success
+criterion is marked delivered and no later lifecycle phase is authorized.
+[verified repository-process boundary; STU-EVD-001]

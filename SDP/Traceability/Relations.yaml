@@ -4,7 +4,48 @@ studies:
   STU-001:
     path: SDP/02--Study/study.md
     identifierConvention: SDP/Instructions/StableIdentifiers.md
-    status: reviewed-candidate
+    status: accepted-with-low-findings
+    steeringDisposition:
+      value: ACCEPTED_WITH_LOW_FINDINGS
+      recordedDate: "2026-07-17"
+      scope: historical-study-evidence-foundation
+      inspectedToolkitCommit: bc110bb5fd60009ba67015cf640ad6ddbfe1b04b
+      laterLifecycleAuthorized: false
+    historicalPullRequest:
+      number: 2
+      url: https://github.com/Hans-Einar/gh-sdp/pull/2
+      headCommit: a9fa6980e633c054645b749f8a3babfefa183bf2
+      mergeCommit: 32613734781bf39f2fce176db2acfb2284dfc92f
+      mergedDate: "2026-07-15"
+      mergedBeforeAcceptanceRecord: true
+    acceptedLowFindings:
+      - severity: Low
+        summary: >-
+          Terminal exact-head review evidence for a9fa698 was not durably
+          attached to PR #2 as a PR comment or native review.
+      - severity: Low
+        summary: >-
+          PR #2 body contains a control character before the short head
+          identity and stale open, draft, and unmerged claims.
+    postStudyDependencyAssessment:
+      repository: Hans-Einar/SDP
+      pullRequest: 4
+      assessedCommit: bf20832bed618ab240cf87c17517fc31ea721311
+      disposition: UPSTREAM_REWORK_REQUIRED
+      accepted: false
+      installationManifestSchemaV1Accepted: false
+      findings:
+        - severity: Medium
+          owner: Hans-Einar/SDP
+          summary: Normative PlanJson action ordering is insufficiently specified.
+        - severity: Medium
+          owner: Hans-Einar/SDP
+          summary: >-
+            AGENTS conflict-migration collision/idempotency behavior is
+            insufficiently specified.
+        - severity: Medium
+          owner: Hans-Einar/SDP
+          summary: The promised portable shared conformance fixture bundle is absent.
     mandate:
       - MAN-001
     outcomes:
@@ -590,6 +631,8 @@ releases:
 # progress only; they do not approve Requirements or Architecture decisions.
 # VER-SPS-002 is passed Study/Slice evidence, not a release gate.
 # REV-SPS-002-003 approved exact pushed evidence candidate 8f59a31 for SPS-002
-# closure with no findings. STU-001 remains a reviewed candidate pending
-# Steering assessment; no success criterion, later lifecycle, release, or
-# publication transition is claimed.
+# closure with no findings. Steering recorded ACCEPTED_WITH_LOW_FINDINGS for the
+# historical STU-001 evidence foundation on 2026-07-17, after PR #2 merged.
+# No success criterion, later lifecycle, compatibility, support, release, or
+# publication transition is claimed. The Ledger remains unchanged because the
+# installed release-event schema has no truthful Steering disposition event.
