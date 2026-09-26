@@ -7,7 +7,7 @@ bootstrap configuration. These are explicit development inputs; there is no
 implicit production key or invented latest release. Bootstrap returns the fixed
 verified compatible native executable path. Go os/exec receives that path and
 all client arguments unchanged, inherits cwd/environment and connects all three
-standard streams. Return the child's exit code. Local configuration/bootstrap
+standard streams. Return the child's exit code. Local configuration
 errors are written to stderr and return exit 2; bootstrap or process-start
 errors return exit 4. Saved apply/resume operations force verified-cache-only
 bootstrap. Ordinary child exit codes are forwarded unchanged.

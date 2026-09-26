@@ -56,8 +56,9 @@ installs only the temporary local extension.
 - `go vet ./...` and `git diff --check` pass.
 
 Signature, wrong-key, download bounds, immutable cache, offline-miss and timeout
-unit evidence belongs to the pinned upstream bootstrap package. This client
-record does not relabel those tests as independently repeated local evidence.
+behavior is owned by the pinned upstream bootstrap package. This client record
+does not assert that each behavior has a corresponding upstream unit test, nor
+claim independent local verification beyond the explicitly listed checks.
 Power loss, signals/cancellation and native non-Linux execution remain outside
 this bounded evidence. Independent review must inspect the actual paired source
 candidate and the log before Slice closure.
