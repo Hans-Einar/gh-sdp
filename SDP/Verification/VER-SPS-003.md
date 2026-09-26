@@ -5,8 +5,9 @@ Slice: SPS-003. Release gate: false. Date: 2026-09-27.
 Host: Linux amd64; Go go1.27.1; GitHub CLI 2.97.0.
 Canonical bootstrap source: 266179e87452272e9f513f0d8f7acb3cdf9e3051.
 
-The implementation working tree was tested before candidate commit. A subsequent
-exact-candidate check records hashes and commands in the evidence log. No native
+Client candidate `02e3db23c1b40894d26fbb57db0fb77bfb2c364f` was rebuilt from a
+clean tree and passed all checks below. [Exact command/output log](evidence/GIP-3-M2-tests.txt)
+records candidate, toolchains, package hashes and results. No native
 Windows/macOS execution, production trust or release support is claimed.
 
 ## Reproducible checks
@@ -23,6 +24,13 @@ git diff --check
 ```
 
 The paired SDPTool package was built by the coordinating GIP-3-M1 assignment.
+It reports `c279d8a2367ec4ea4db3c891a3687352c1434256-dirty` (precommit
+GIP-3-M1 source), with SHA256
+`550220f27849ff01f15f6ac3e7838a2c372b6ea75443aa693983cedc8844607e`.
+This is binary-hash-bound paired evidence, not a claim that its embedded build
+revision equals the bootstrap module commit. Final GIP-4 pairing must rerun
+against its actual final engine candidate. Client SHA256 is
+`1a4c08327ba490efb1297e344a997761168987201f624f191815c9d157a11f9a`.
 The integration test creates test keys, signatures, descriptors, plans and
 projects in temporary directories. It never updates gh-sdp's installed Toolkit
 or any live consumer. The optional gh route uses isolated GH_CONFIG_DIR/XDG_DATA_HOME and

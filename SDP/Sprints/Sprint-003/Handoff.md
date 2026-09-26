@@ -7,7 +7,7 @@ merge, production release or live upgrade is inferred.
 Canonical bootstrap dependency: SDP commit
 266179e87452272e9f513f0d8f7acb3cdf9e3051 (Go pseudo-version in go.mod).
 Paired engine used for local verification: GIP-3-M1 package supplied by the
-coordinating Master, from the same source delivery. Exact binary hashes and
+coordinating Master, with precommit build revision explicitly recorded. Exact binary hashes and
 candidate evidence are in [VER-SPS-003](../../Verification/VER-SPS-003.md).
 
 Remaining actions: review actual candidate, address findings, rerun paired

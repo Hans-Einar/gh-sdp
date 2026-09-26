@@ -1,0 +1,80 @@
+$ git rev-parse HEAD
+02e3db23c1b40894d26fbb57db0fb77bfb2c364f
+
+exit 0
+$ git status --porcelain
+
+exit 0
+$ go version
+go version go1.27.1 linux/amd64
+
+exit 0
+$ gh --version
+gh version 2.97.0 (2026-07-31)
+https://github.com/cli/cli/releases/tag/v2.97.0
+
+exit 0
+$ go build -o /tmp/gip-gh-sdp .
+
+exit 0
+$ go test -race -count=1 ./...
+ok  	github.com/Hans-Einar/gh-sdp	1.021s
+
+exit 0
+$ go vet ./...
+
+exit 0
+Packaged route: direct
+{"GH_SDP_BINARY": "/tmp/gip-gh-sdp", "GH_SDP_VIA_GH": "false", "SDPTOOL_BINARY": "/tmp/gip3m1-package/sdptool"}
+$ go test -race -count=1 -v ./...
+=== RUN   TestPackagedCandidates
+    integration_test.go:234: packaged SHA256 gh-sdp=1a4c08327ba490efb1297e344a997761168987201f624f191815c9d157a11f9a sdptool=550220f27849ff01f15f6ac3e7838a2c372b6ea75443aa693983cedc8844607e; preview equality, apply, preservation, repetition, incompatible and corrupt cache passed
+--- PASS: TestPackagedCandidates (0.97s)
+=== RUN   TestChildProcess
+--- PASS: TestChildProcess (0.00s)
+=== RUN   TestDelegatesExactArgumentsStreamsEnvironmentAndExit
+--- PASS: TestDelegatesExactArgumentsStreamsEnvironmentAndExit (0.01s)
+=== RUN   TestConfigurationAndFailureBoundaries
+=== RUN   TestConfigurationAndFailureBoundaries/invalid_config
+=== RUN   TestConfigurationAndFailureBoundaries/verification_failed
+=== RUN   TestConfigurationAndFailureBoundaries/start_failed
+--- PASS: TestConfigurationAndFailureBoundaries (0.00s)
+    --- PASS: TestConfigurationAndFailureBoundaries/invalid_config (0.00s)
+    --- PASS: TestConfigurationAndFailureBoundaries/verification_failed (0.00s)
+    --- PASS: TestConfigurationAndFailureBoundaries/start_failed (0.00s)
+PASS
+ok  	github.com/Hans-Einar/gh-sdp	1.999s
+
+exit 0
+Packaged route: gh
+{"GH_SDP_BINARY": "/tmp/gip-gh-sdp", "GH_SDP_VIA_GH": "true", "SDPTOOL_BINARY": "/tmp/gip3m1-package/sdptool"}
+$ go test -race -count=1 -v ./...
+=== RUN   TestPackagedCandidates
+    integration_test.go:234: packaged SHA256 gh-sdp=1a4c08327ba490efb1297e344a997761168987201f624f191815c9d157a11f9a sdptool=550220f27849ff01f15f6ac3e7838a2c372b6ea75443aa693983cedc8844607e; preview equality, apply, preservation, repetition, incompatible and corrupt cache passed
+--- PASS: TestPackagedCandidates (2.05s)
+=== RUN   TestChildProcess
+--- PASS: TestChildProcess (0.00s)
+=== RUN   TestDelegatesExactArgumentsStreamsEnvironmentAndExit
+--- PASS: TestDelegatesExactArgumentsStreamsEnvironmentAndExit (0.01s)
+=== RUN   TestConfigurationAndFailureBoundaries
+=== RUN   TestConfigurationAndFailureBoundaries/invalid_config
+=== RUN   TestConfigurationAndFailureBoundaries/verification_failed
+=== RUN   TestConfigurationAndFailureBoundaries/start_failed
+--- PASS: TestConfigurationAndFailureBoundaries (0.00s)
+    --- PASS: TestConfigurationAndFailureBoundaries/invalid_config (0.00s)
+    --- PASS: TestConfigurationAndFailureBoundaries/verification_failed (0.00s)
+    --- PASS: TestConfigurationAndFailureBoundaries/start_failed (0.00s)
+PASS
+ok  	github.com/Hans-Einar/gh-sdp	3.079s
+
+exit 0
+$ git diff --check
+
+exit 0
+YAML/NDJSON parse, active coordinates, managed AGENTS, installed facts and unchanged ledger: passed
+User extension data contains no gh-sdp symlink after isolated gh test: passed
+/tmp/gip-gh-sdp SHA256 1a4c08327ba490efb1297e344a997761168987201f624f191815c9d157a11f9a
+/tmp/gip3m1-package/sdptool SHA256 550220f27849ff01f15f6ac3e7838a2c372b6ea75443aa693983cedc8844607e
+
+Paired engine self-reported build identity (precommit GIP-3-M1 package):
+{"installationProtocol":"sdp-install-command/1","installedFactSchemas":["1.0","2.0","3.0"],"operation":"version","revision":"c279d8a2367ec4ea4db3c891a3687352c1434256-dirty","schema":"sdptool/0.1","version":"0.1.0-dev"}
