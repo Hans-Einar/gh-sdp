@@ -1,15 +1,29 @@
 project:
   name: gh-sdp
-  status: phase-2-study-ready-for-steering-assessment
+  status: phase-2-study-accepted-waiting-separate-authorization
 
 lifecycle:
   phase: Study
   study: STU-001
+  studyStatus: accepted-with-low-findings
+  steeringDisposition: ACCEPTED_WITH_LOW_FINDINGS
+  steeringDispositionDate: "2026-07-17"
+  evidenceFoundationToolkitCommit: bc110bb5fd60009ba67015cf640ad6ddbfe1b04b
   mandate: MAN-001
-  authorization: separate-study-assignment-2026-07-13
+  authorization: steering-accepted-study-no-later-phase-authorized
+  laterLifecycleAuthorized: false
   stopBefore:
     - Requirements
     - Architecture
+
+dependency:
+  repository: Hans-Einar/SDP
+  pullRequest: 4
+  assessedCommit: bf20832bed618ab240cf87c17517fc31ea721311
+  assessmentTiming: post-study
+  disposition: UPSTREAM_REWORK_REQUIRED
+  accepted: false
+  mediumFindings: 3
 
 release:
   previousVersion: null

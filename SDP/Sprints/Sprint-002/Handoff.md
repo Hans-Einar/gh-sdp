@@ -2,8 +2,9 @@
 
 Active Slice: none
 Completed Slice: `SPS-002`
-Study: `STU-001` (reviewed candidate)
-Status: Phase 2 Study ready for Steering assessment
+Active Fix: none
+Study: `STU-001` (`ACCEPTED_WITH_LOW_FINDINGS`)
+Status: Study accepted; governance reconciliation complete; waiting for separate authorization
 
 ## Authoritative Entry Points
 
@@ -18,6 +19,11 @@ Status: Phase 2 Study ready for Steering assessment
 - Initial review: `SDP/CodeReview/REV-SPS-002-001.md`
 - Follow-up review: `SDP/CodeReview/REV-SPS-002-002.md`
 - Final review: `SDP/CodeReview/REV-SPS-002-003.md`
+- Completed reconciliation Fix: `SDP/Fixes/FIX-0.1.0-001.yaml`
+- Reconciliation verification:
+  `SDP/Verification/VER-FIX-0.1.0-001.md`
+- Reconciliation review:
+  `SDP/CodeReview/REV-FIX-0.1.0-001-001.md`
 - Identifier convention: `SDP/Instructions/StableIdentifiers.md`
 
 ## Completion State
@@ -48,20 +54,43 @@ extraction invariants, and platform-honest journaled recovery. These remain
 Study inputs only. The current Toolkit remains unreleased and supplies no
 eligible stable asset.
 
-Sprint-002, SPI-002, and SPS-002 are complete, and active development
-coordinates are cleared. `STU-001` is a reviewed candidate; Mandate success
-criteria remain undelivered. `REL-0.1.0` and Toolkit 0.2.0 remain
-proposed/unreleased, release review and verification arrays remain empty,
-publication identities remain null, and the release-event Ledger is unchanged.
+PR #2 merged normally into `main` on 2026-07-15 with exact head
+`a9fa6980e633c054645b749f8a3babfefa183bf2` and merge commit
+`32613734781bf39f2fce176db2acfb2284dfc92f`. The merge occurred before Steering
+acceptance was recorded. On 2026-07-17, Steering accepted `STU-001` with
+disposition `ACCEPTED_WITH_LOW_FINDINGS`, limited to the historical Study
+evidence foundation inspected against SDP commit
+`bc110bb5fd60009ba67015cf640ad6ddbfe1b04b`.
+
+The two Low findings concerned missing durable PR #2 evidence for the terminal
+exact-head review and the control character plus stale open/draft/unmerged
+claims in the PR body. `FIX-0.1.0-001` corrected the body and replaced the
+unrecoverable evidence gap with fresh independent reconciliation review and
+durable exact-head PR evidence. Sprint-002, SPI-002, and SPS-002 remain
+complete; all active development coordinates are cleared and none is reopened.
+
+A separate post-Study dependency assessment of `Hans-Einar/SDP` draft PR #4 at
+`bf20832bed618ab240cf87c17517fc31ea721311` returned
+`UPSTREAM_REWORK_REQUIRED`. Its exactly three Medium, upstream-owned findings
+are insufficient normative `PlanJson` action ordering, insufficient AGENTS
+conflict-migration collision/idempotency behavior, and the absent promised
+portable shared conformance fixture bundle. PR #4 and installation-manifest
+schema v1 are not accepted, and their missing semantics must not be defined
+locally.
+
+Mandate success criteria remain undelivered. `REL-0.1.0` and Toolkit 0.2.0
+remain proposed/unreleased and unsupported, release review and verification
+arrays remain empty, and publication identities remain null. The
+release-event-only Ledger is unchanged because its installed schema has no
+truthful Steering Study-disposition event.
 
 ## Next Authorized Decision
 
-Steering assessment of reviewed candidate `STU-001` is the only next action
-represented by this handoff. Draft PR
-[#2](https://github.com/Hans-Einar/gh-sdp/pull/2) remains the open review surface.
-Neither this handoff nor the passed verification/review gates constitute
-Steering acceptance, merge approval, release approval, compatibility/support,
-or authority for a later lifecycle phase.
+There is no active development assignment. The next requested Steering decision
+is whether to authorize a separate upstream rework assignment in
+`Hans-Einar/SDP` for the three Medium PR #4 contract findings, or keep that
+dependency blocked. No downstream Requirements, Architecture, compatibility
+validation, or implementation work is authorized by this handoff.
 
 ## Residual Limitations
 
@@ -71,12 +100,16 @@ or authority for a later lifecycle phase.
 - URL resolution is point-in-time evidence.
 - Toolkit release, plan/payload, provenance, and conformance prerequisites
   identified by the Study remain unreleased or unresolved.
-- A tracked record cannot self-reference its containing closure commit; final
-  approval is bound to exact pushed evidence candidate `8f59a31...`.
+- The three Medium SDP PR #4 contract findings remain upstream-owned and block
+  accepting that post-Study dependency or schema v1.
+- Tracked verification/review records cannot self-reference their containing
+  closure commit. Terminal confirmation of the reconciliation closure head is
+  therefore maintained as durable evidence in the PR conversation.
 
 ## Stop Boundary
 
 Do not begin Requirements, Architecture, Design Analysis, Design,
 implementation planning, product code, tests/fixtures, workflows, builds,
-packaging, tags, or releases. Do not modify `Hans-Einar/SDP`. Keep PR #2 open
-and draft until Steering decides the Study disposition.
+compatibility validation, packaging, tags, or releases. Do not modify
+`Hans-Einar/SDP`, accept PR #4/schema v1, or redefine its missing contract
+semantics in this repository.
