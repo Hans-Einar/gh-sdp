@@ -5,8 +5,8 @@ Slice: SPS-003. Release gate: false. Date: 2026-09-27.
 Host: Linux amd64; Go go1.27.1; GitHub CLI 2.97.0.
 Canonical bootstrap source: fb79727aaa229e5a4a5f228f458d350cd196a6a8.
 
-Client candidate `02e3db23c1b40894d26fbb57db0fb77bfb2c364f` was rebuilt from a
-clean tree and passed all checks below. [Exact command/output log](evidence/GIP-3-M2-tests.txt)
+Client candidate `fca8480b1619f325fbbbd7b9d7224cbf865dbcdf` was rebuilt from a
+clean tree and passed all checks below. [Final command/output log](evidence/GIP-3-M2-final-tests.txt)
 records candidate, toolchains, package hashes and results. No native
 Windows/macOS execution, production trust or release support is claimed.
 
@@ -18,19 +18,17 @@ export PATH=/home/warloc/.local/share/sdp-toolchains/go1.27.1/go/bin:$PATH
 go build -o /tmp/gip-gh-sdp .
 go test -race ./...
 go vet ./...
-GH_SDP_BINARY=/tmp/gip-gh-sdp SDPTOOL_BINARY=/tmp/gip3m1-package/sdptool go test -race -count=1 -v ./...
-GH_SDP_VIA_GH=true GH_SDP_BINARY=/tmp/gip-gh-sdp SDPTOOL_BINARY=/tmp/gip3m1-package/sdptool go test -race -count=1 -v ./...
+GH_SDP_BINARY=/tmp/gip-gh-sdp SDPTOOL_BINARY=/tmp/gip3-exact-package/sdptool go test -race -count=1 -v ./...
+GH_SDP_VIA_GH=true GH_SDP_BINARY=/tmp/gip-gh-sdp SDPTOOL_BINARY=/tmp/gip3-exact-package/sdptool go test -race -count=1 -v ./...
 git diff --check
 ```
 
-The paired SDPTool package was built by the coordinating GIP-3-M1 assignment.
-It reports `c279d8a2367ec4ea4db3c891a3687352c1434256-dirty` (precommit
-GIP-3-M1 source), with SHA256
-`550220f27849ff01f15f6ac3e7838a2c372b6ea75443aa693983cedc8844607e`.
-This is binary-hash-bound paired evidence, not a claim that its embedded build
-revision equals the bootstrap module commit. Final GIP-4 pairing must rerun
-against its actual final engine candidate. Client SHA256 is
-`1a4c08327ba490efb1297e344a997761168987201f624f191815c9d157a11f9a`.
+The paired SDPTool package was built from a detached clean canonical worktree at
+`fb79727aaa229e5a4a5f228f458d350cd196a6a8`; its embedded revision agrees.
+SDPTool SHA256: `b80504b1a1c89f586a02b938e7a7f514fc415b8b14ff005d3c35693076293007`.
+Client SHA256: `f7fa971d950591512919c65ede5d009d65cce2d2d4c25c33b91ecfd640af50f8`.
+The [initial precommit pairing log](evidence/GIP-3-M2-tests.txt) remains historical
+and is superseded by this exact clean pairing; it is not relabeled as clean.
 The integration test creates test keys, signatures, descriptors, plans and
 projects in temporary directories. It never updates gh-sdp's installed Toolkit
 or any live consumer. The optional gh route uses isolated GH_CONFIG_DIR/XDG_DATA_HOME and
@@ -53,6 +51,10 @@ installs only the temporary local extension.
 - The same packaged checks pass through actual `gh sdp` (GitHub CLI 2.97.0).
 - YAML/NDJSON parse and current-coordinate checks pass; managed AGENTS.md,
   installed Toolkit manifest and append-only ledger match origin/main bytes.
+- Packaged Linux FIFO regression returns exit 4 promptly within its two-second
+  guard, proving the repinned canonical reader addresses REV-SPS-003-001 R1.
+- Invalid SDP_OFFLINE spellings such as 1/TRUE are rejected, preserving identical
+  offline selection between the bootstrap and unchanged child environment.
 - `go vet ./...` and `git diff --check` pass.
 
 Signature, wrong-key, download bounds, immutable cache, offline-miss and timeout
