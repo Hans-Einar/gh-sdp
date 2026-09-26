@@ -41,3 +41,9 @@ No production key, release catalog, binary release, merge, live target update or
 native Windows/macOS support is claimed. Test subprocesses are not a power-loss
 or cancellation/signal-forwarding guarantee. Native Linux amd64 is the measured
 platform; the full GIP-4 adoption scenario belongs to the coordinating SDP plan.
+
+The first GitHub CLI test isolated GH_CONFIG_DIR but revealed that 2.97.0 stores
+extensions under XDG_DATA_HOME separately. The test-created dangling extension
+symlink was identified by its exact disposable target and removed; gh-tree was
+untouched. The corrected harness isolates both locations, and repeat checks
+confirm no extension link is left in the user's data directory.

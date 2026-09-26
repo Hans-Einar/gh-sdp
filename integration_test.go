@@ -87,6 +87,7 @@ func TestPackagedCandidates(t *testing.T) {
 	viaGH := os.Getenv("GH_SDP_VIA_GH") == "true"
 	if viaGH {
 		t.Setenv("GH_CONFIG_DIR", filepath.Join(dir, "gh-config"))
+		t.Setenv("XDG_DATA_HOME", filepath.Join(dir, "gh-data"))
 		extension := filepath.Join(dir, "gh-sdp")
 		if err = os.Mkdir(extension, 0700); err != nil {
 			t.Fatal(err)

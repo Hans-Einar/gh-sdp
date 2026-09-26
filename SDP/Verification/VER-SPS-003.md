@@ -25,7 +25,7 @@ git diff --check
 The paired SDPTool package was built by the coordinating GIP-3-M1 assignment.
 The integration test creates test keys, signatures, descriptors, plans and
 projects in temporary directories. It never updates gh-sdp's installed Toolkit
-or any live consumer. The optional gh route uses isolated GH_CONFIG_DIR and
+or any live consumer. The optional gh route uses isolated GH_CONFIG_DIR/XDG_DATA_HOME and
 installs only the temporary local extension.
 
 ## Results

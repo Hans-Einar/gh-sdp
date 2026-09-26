@@ -54,7 +54,7 @@ GH_SDP_VIA_GH=true GH_SDP_BINARY=/absolute/path/to/gh-sdp SDPTOOL_BINARY=/absolu
 The packaged-candidate test is skipped unless both binary paths are supplied.
 It creates disposable signed fixtures and projects and compares direct and
 client preview/apply. The optional GitHub CLI route installs the local extension
-only into a temporary isolated `GH_CONFIG_DIR`.
+only into a temporary isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
 
 [Current Slice and authority](SDP/Sprints/Sprint-003/ScrumIterations.md) ·
 [Verification](SDP/Verification/VER-SPS-003.md) ·
