@@ -11,12 +11,12 @@ release:
   latestTag: null
   latestCommit: null
 development:
-  sprintId: Sprint-003
+  sprintId: null
   refactorId: null
-  iterationId: SPI-003
-  sliceId: SPS-003
+  iterationId: null
+  sliceId: null
   fixId: null
-  revision: 1
+  revision: null
 migration:
   pendingWarnings:
   - Bootstrapped from unreleased SDP Toolkit 0.2.0 source commit bc110bb5fd60009ba67015cf640ad6ddbfe1b04b;

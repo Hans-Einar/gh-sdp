@@ -1,6 +1,6 @@
 project:
   name: gh-sdp
-  status: gip-thin-client-in-progress
+  status: gip-thin-client-complete
 release:
   previousVersion: null
   activeReleaseId: REL-0.1.0
@@ -8,12 +8,12 @@ release:
   state: unreleased
   targetStatus: proposed
 active:
-  sprint: Sprint-003
+  sprint: null
   refactor: null
-  iteration: SPI-003
-  slice: SPS-003
+  iteration: null
+  slice: null
   fix: null
-  revision: 1
+  revision: null
 historicalStudy:
   phase: Study
   study: STU-001
@@ -41,4 +41,18 @@ lifecycle:
   milestone: GIP-3-M2
   mandate: MAN-001
   contract: SDP/Sprints/Sprint-003/ScrumIterations.md
-  review: pending
+  review: REV-SPS-003-002
+  status: complete
+lastCompleted:
+  sprint: Sprint-003
+  refactor: null
+  iteration: SPI-003
+  slice: SPS-003
+  fix: null
+  revision: 1
+  milestone: GIP-3-M2
+  productCandidate: fca8480b1619f325fbbbd7b9d7224cbf865dbcdf
+  engineCandidate: fb79727aaa229e5a4a5f228f458d350cd196a6a8
+  verification: VER-SPS-003
+  review: REV-SPS-003-002
+  disposition: master-closed-after-independent-review

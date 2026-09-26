@@ -8,5 +8,5 @@ Release-Date: unreleased
 
 - SPS-003 / GIP-3-M2: thin Go client imports canonical SDPTool signed bootstrap
   and delegates arguments, streams and exits. Linux disposable preview/apply
-  parity is verified. Independent review remains pending; no release, production
+  parity is verified and independent REV-SPS-003-002 review approved; no release, production
   trust, native Windows/macOS support or live rollout is declared.

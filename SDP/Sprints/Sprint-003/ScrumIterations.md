@@ -1,6 +1,6 @@
 # Sprint-003 — Thin SDPTool delegation
 
-Status: in-progress
+Status: complete
 Iteration: SPI-003
 Slice: SPS-003
 Milestone: GIP-3-M2 in [PLAN-SDP-0003](https://github.com/Hans-Einar/SDP/blob/sdp/install-gip-3/SDP/05--Implementation/SDPTool/Installation/Plan.md)
@@ -44,3 +44,16 @@ completed Sprint records, live XFMD, release workflows, tags or releases.
 
 Return the bounded milestone and paired source identities to the coordinating
 Master. Do not begin another Slice or imply completion before actual review.
+
+## Completion disposition — 2026-09-27
+
+The coordinating Master closed Sprint-003 / SPI-003 / SPS-003 after independent
+REV-SPS-003-002 approved exact client fca8480 and canonical engine/bootstrap
+fb79727 with no remaining findings. VER-SPS-003 binds successful native Linux
+fixture tests to both clean source candidates and binary hashes. Current active
+work pointers are cleared. The existing release-only ledger has no truthful
+implementation-closeout event; its bytes remain unchanged.
+
+The bounded client outcome is delivered. GIP-4's fresh XFMD disposable-copy trial
+remains separate upstream work and does not keep this completed Slice active.
+No owner acceptance, merge, release, production trust or live rollout is inferred.

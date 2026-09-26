@@ -1,6 +1,6 @@
 # VER-SPS-003 — GIP-3-M2 client evidence
 
-Status: passed local verification; fresh independent review pending.
+Status: passed; independently confirmed by REV-SPS-003-002 and closed by Master.
 Slice: SPS-003. Release gate: false. Date: 2026-09-27.
 Host: Linux amd64; Go go1.27.1; GitHub CLI 2.97.0.
 Canonical bootstrap source: fb79727aaa229e5a4a5f228f458d350cd196a6a8.
@@ -62,5 +62,5 @@ behavior is owned by the pinned upstream bootstrap package. This client record
 does not assert that each behavior has a corresponding upstream unit test, nor
 claim independent local verification beyond the explicitly listed checks.
 Power loss, signals/cancellation and native non-Linux execution remain outside
-this bounded evidence. Independent review must inspect the actual paired source
-candidate and the log before Slice closure.
+this bounded evidence. Independent review [REV-SPS-003-002](../CodeReview/REV-SPS-003-002.md) inspected
+the actual paired sources/log and reran the applicable checks before closure.

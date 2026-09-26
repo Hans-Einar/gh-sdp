@@ -2,7 +2,7 @@
 
 Authorization: owner-selected PLAN-SDP-0003, GIP-3-M2 (2026-09-27).
 Baseline: gh-sdp main be990cc; branch sdp/install-gip-3.
-Status: implemented and verified locally; independent review and closeout pending.
+Status: complete after independent REV-SPS-003-002 approval and Master closeout.
 
 ## Canonical source reuse
 
@@ -50,8 +50,8 @@ confirm no extension link is left in the user's data directory.
 
 Fresh review REV-SPS-003-001 found a canonical bootstrap FIFO read issue (upstream
 fix and repin required), an overly broad test-coverage statement, and contradictory
-design error wording. The documentation issues were corrected in a82d432; review
-remains open for the dependency fix. A subsequent client inspection also restricted
+design error wording. The documentation issues were corrected in a82d432; that initial review
+remained open for the dependency fix until REV-SPS-003-002. A subsequent client inspection also restricted
 SDP_OFFLINE to lowercase true/false: strconv aliases such as 1/TRUE would otherwise
 select offline bootstrap while the child interpreted its unchanged environment as
 online. Regression tests now reject those divergent spellings.
@@ -59,4 +59,5 @@ online. Regression tests now reject those divergent spellings.
 The dependency now pins fb79727, containing the canonical pre-open regular-file
 guard and native FIFO regression. A client packaged Linux regression also probes
 a FIFO descriptor under a two-second bound and requires prompt exit 4. No reader
-policy was copied into gh-sdp. Fresh follow-up review remains required.
+policy was copied into gh-sdp. Fresh follow-up review REV-SPS-003-002 independently confirmed the fix and
+approved the exact paired candidates.
