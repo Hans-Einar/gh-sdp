@@ -3,7 +3,7 @@
 Status: passed local verification; fresh independent review pending.
 Slice: SPS-003. Release gate: false. Date: 2026-09-27.
 Host: Linux amd64; Go go1.27.1; GitHub CLI 2.97.0.
-Canonical bootstrap source: 266179e87452272e9f513f0d8f7acb3cdf9e3051.
+Canonical bootstrap source: fb79727aaa229e5a4a5f228f458d350cd196a6a8.
 
 Client candidate `02e3db23c1b40894d26fbb57db0fb77bfb2c364f` was rebuilt from a
 clean tree and passed all checks below. [Exact command/output log](evidence/GIP-3-M2-tests.txt)

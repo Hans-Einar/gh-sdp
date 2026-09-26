@@ -8,8 +8,8 @@ Status: implemented and verified locally; independent review and closeout pendin
 
 The only product dependency is the stdlib-only nested Go module
 `github.com/Hans-Einar/SDP/SDPTool/bootstrap` at
-`v0.0.0-20260926233103-266179e87452`, from canonical SDP commit
-`266179e87452272e9f513f0d8f7acb3cdf9e3051`. go.sum pins module content.
+`v0.0.0-20260926233855-fb79727aaa22`, from canonical SDP commit
+`fb79727aaa229e5a4a5f228f458d350cd196a6a8`. go.sum pins module content.
 No local replace, vendored policy or sibling-module dependency is shipped.
 The parent SDPTool module's sibling development replaces are not inherited.
 
@@ -55,3 +55,8 @@ remains open for the dependency fix. A subsequent client inspection also restric
 SDP_OFFLINE to lowercase true/false: strconv aliases such as 1/TRUE would otherwise
 select offline bootstrap while the child interpreted its unchanged environment as
 online. Regression tests now reject those divergent spellings.
+
+The dependency now pins fb79727, containing the canonical pre-open regular-file
+guard and native FIFO regression. A client packaged Linux regression also probes
+a FIFO descriptor under a two-second bound and requires prompt exit 4. No reader
+policy was copied into gh-sdp. Fresh follow-up review remains required.
