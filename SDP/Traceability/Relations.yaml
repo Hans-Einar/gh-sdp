@@ -455,6 +455,10 @@ questions:
     status: partially-answered-by-study
     study: STU-001
 sprints:
+  Sprint-003:
+    path: SDP/Sprints/Sprint-003/ScrumIterations.md
+    status: in-progress
+    iterations: [SPI-003]
   Sprint-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
     status: complete
@@ -471,6 +475,11 @@ sprints:
       - SPI-002
 refactors: {}
 iterations:
+  SPI-003:
+    path: SDP/Sprints/Sprint-003/ScrumIterations.md
+    sprint: Sprint-003
+    status: in-progress
+    slices: [SPS-003]
   SPI-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
     sprint: Sprint-001
@@ -484,6 +493,15 @@ iterations:
     slices:
       - SPS-002
 slices:
+  SPS-003:
+    path: SDP/Sprints/Sprint-003/ScrumIterations.md
+    sprint: Sprint-003
+    iteration: SPI-003
+    status: in-progress
+    requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004]
+    design: [DES-GHS-001]
+    verification: [VER-SPS-003]
+    reviews: []
   SPS-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
     sprint: Sprint-001
@@ -609,6 +627,11 @@ reviews:
       low: 0
       notes: 2
 verification:
+  VER-SPS-003:
+    path: SDP/Verification/VER-SPS-003.md
+    status: passed-local-review-pending
+    slice: SPS-003
+    releaseGate: false
   VER-SPS-001:
     path: SDP/Verification/VER-SPS-001.md
     status: passed
@@ -670,3 +693,14 @@ releases:
 # No success criterion, later lifecycle, compatibility, support, release, or
 # publication transition is claimed. The Ledger remains unchanged because the
 # installed release-event schema has no truthful Steering disposition event.
+
+# Current GIP authorization supersedes Study implementation recommendations only.
+gipRequirements:
+  REQ-GHS-001: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}
+  REQ-GHS-002: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}
+  REQ-GHS-003: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}
+  REQ-GHS-004: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}
+gipArchitecture:
+  ARC-GHS-001: {path: SDP/04--Architecture/architecture.md, status: selected, supersedesRecommendation: STU-ADI-001}
+gipDesign:
+  DES-GHS-001: {path: SDP/06--Design/design.md, architecture: ARC-GHS-001, slice: SPS-003, status: selected}

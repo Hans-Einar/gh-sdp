@@ -46,3 +46,10 @@ Architecture decision.
 The canonical release and Fix formats remain authoritative and are not
 redefined here. A later authoritative Toolkit format for the project-local kinds
 above may require a documented migration while preserving historical links.
+
+## GIP client identifiers
+
+For the separately authorized SPS-003, REQ-GHS-### identifies bounded client
+requirements, ARC-GHS-### architecture decisions, and DES-GHS-### designs.
+These are local identifiers, not an asserted Toolkit grammar. Sprint/Slice,
+verification and review identifiers continue the existing sequence.

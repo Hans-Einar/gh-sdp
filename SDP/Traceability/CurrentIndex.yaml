@@ -1,22 +1,33 @@
 project:
   name: gh-sdp
-  status: phase-2-study-accepted-waiting-separate-authorization
-
-lifecycle:
+  status: gip-thin-client-in-progress
+release:
+  previousVersion: null
+  activeReleaseId: REL-0.1.0
+  targetVersion: 0.1.0
+  state: unreleased
+  targetStatus: proposed
+active:
+  sprint: Sprint-003
+  refactor: null
+  iteration: SPI-003
+  slice: SPS-003
+  fix: null
+  revision: 1
+historicalStudy:
   phase: Study
   study: STU-001
   studyStatus: accepted-with-low-findings
   steeringDisposition: ACCEPTED_WITH_LOW_FINDINGS
-  steeringDispositionDate: "2026-07-17"
+  steeringDispositionDate: '2026-07-17'
   evidenceFoundationToolkitCommit: bc110bb5fd60009ba67015cf640ad6ddbfe1b04b
   mandate: MAN-001
   authorization: steering-accepted-study-no-later-phase-authorized
   laterLifecycleAuthorized: false
   stopBefore:
-    - Requirements
-    - Architecture
-
-dependency:
+  - Requirements
+  - Architecture
+historicalDependencyAssessment:
   repository: Hans-Einar/SDP
   pullRequest: 4
   assessedCommit: bf20832bed618ab240cf87c17517fc31ea721311
@@ -24,18 +35,10 @@ dependency:
   disposition: UPSTREAM_REWORK_REQUIRED
   accepted: false
   mediumFindings: 3
-
-release:
-  previousVersion: null
-  activeReleaseId: REL-0.1.0
-  targetVersion: "0.1.0"
-  state: unreleased
-  targetStatus: proposed
-
-active:
-  sprint: null
-  refactor: null
-  iteration: null
-  slice: null
-  fix: null
-  revision: null
+lifecycle:
+  phase: Implementation
+  authorization: owner-selected-PLAN-SDP-0003-2026-09-27
+  milestone: GIP-3-M2
+  mandate: MAN-001
+  contract: SDP/Sprints/Sprint-003/ScrumIterations.md
+  review: pending

@@ -1,5 +1,17 @@
 # MAN-001 — gh-sdp GitHub CLI Extension Mandate
 
+## Current authorization — 2026-09-27
+
+Owner selection of PLAN-SDP-0003 separately authorizes the bounded GIP-3-M2
+thin client implementation as Sprint-003 / SPI-003 / SPS-003. SDPTool now owns
+all installation policy and execution, including the canonical shared bootstrap.
+Historical Study recommendations allocating an apply engine to gh-sdp are
+superseded by this current selection; their historical evidence is unchanged.
+The earlier Study-only limits below describe those completed assignments.
+No production release, merge, live rollout or platform support is authorized.
+See [current Slice](../Sprints/Sprint-003/ScrumIterations.md).
+
+
 Status: approved — governing Mandate; Phase 2 Study evidence foundation accepted
 Approval date: 2026-07-13
 Steering-assessed commit: `ed205c1ef193ab8a6e5cd1c50e558c3049ce6def`

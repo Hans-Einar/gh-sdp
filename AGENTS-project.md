@@ -21,3 +21,13 @@ do not modify that repository without a separate, explicit authorization.
 
 The managed `AGENTS.md` remains authoritative for role boundaries, Slice/Fix
 discipline, review, verification, release gates, and stop conditions.
+
+## Current implementation assignment
+
+Owner authorization on 2026-09-27 selects SDP PLAN-SDP-0003, including GIP-3-M2
+as local Sprint-003 / SPI-003 / SPS-003. Its project-owned contract is
+`SDP/Sprints/Sprint-003/ScrumIterations.md`. gh-sdp is only a thin bootstrap and
+delegation client; SDPTool owns all installation policy. Earlier SPS-001 and
+SPS-002 boundaries remain historical and do not prohibit this separately
+authorized Slice. Managed AGENTS.md and installed Toolkit facts stay unchanged.
+Fresh independent review remains required; no merge or release is selected.
