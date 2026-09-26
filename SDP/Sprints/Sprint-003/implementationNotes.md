@@ -47,3 +47,11 @@ extensions under XDG_DATA_HOME separately. The test-created dangling extension
 symlink was identified by its exact disposable target and removed; gh-tree was
 untouched. The corrected harness isolates both locations, and repeat checks
 confirm no extension link is left in the user's data directory.
+
+Fresh review REV-SPS-003-001 found a canonical bootstrap FIFO read issue (upstream
+fix and repin required), an overly broad test-coverage statement, and contradictory
+design error wording. The documentation issues were corrected in a82d432; review
+remains open for the dependency fix. A subsequent client inspection also restricted
+SDP_OFFLINE to lowercase true/false: strconv aliases such as 1/TRUE would otherwise
+select offline bootstrap while the child interpreted its unchanged environment as
+online. Regression tests now reject those divergent spellings.

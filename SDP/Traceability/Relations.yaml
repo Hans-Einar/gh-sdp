@@ -501,7 +501,7 @@ slices:
     requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004]
     design: [DES-GHS-001]
     verification: [VER-SPS-003]
-    reviews: []
+    reviews: [REV-SPS-003-001]
   SPS-001:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
     sprint: Sprint-001
@@ -549,6 +549,12 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-003-001:
+    path: SDP/CodeReview/REV-SPS-003-001.md
+    status: changes-required
+    reviewer: /root/gip_client_review
+    candidateCommit: 02e3db23c1b40894d26fbb57db0fb77bfb2c364f
+    slice: SPS-003
   REV-SPS-001-001:
     path: SDP/CodeReview/REV-SPS-001-001.md
     status: changes-required

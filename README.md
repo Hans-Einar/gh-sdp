@@ -32,7 +32,8 @@ gh sdp upgrade --apply /absolute/path/to/plan.json
 Run from the project directory. Preview requires a fresh external plan path;
 apply uses that exact root-bound plan. Saved apply/resume forces offline bootstrap
 from the verified cache populated during preview. For other commands, set
-`SDP_OFFLINE=true` to require cached distribution inputs. The explicit test key
+`SDP_OFFLINE=true` to require cached distribution inputs. Only lowercase `true`
+and `false` are accepted so the child receives the same selection. The explicit test key
 is required again for cached test distributions. It is a base64 Ed25519 public
 key; its selection never means a production release is trusted or supported.
 The signed descriptor's `.sig` and assets follow the canonical SDPTool contract.

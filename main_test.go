@@ -63,6 +63,25 @@ func TestDelegatesExactArgumentsStreamsEnvironmentAndExit(t *testing.T) {
 }
 
 func TestConfigurationAndFailureBoundaries(t *testing.T) {
+	for _, value := range []string{"1", "t", "TRUE"} {
+		if _, err := configuration(nil, func(key string) string {
+			if key == "SDP_OFFLINE" {
+				return value
+			}
+			return ""
+		}); err == nil {
+			t.Fatalf("accepted offline spelling ignored by child: %q", value)
+		}
+	}
+	c, err := configuration(nil, func(key string) string {
+		if key == "SDP_OFFLINE" {
+			return "true"
+		}
+		return ""
+	})
+	if err != nil || !c.Offline {
+		t.Fatalf("offline true: %+v %v", c, err)
+	}
 	for _, args := range [][]string{{"upgrade", "--apply", "saved plan"}, {"upgrade", "--resume=operation"}, {"install", "-apply=x"}} {
 		c, err := configuration(args, func(k string) string {
 			return map[string]string{"SDP_RELEASE": "descriptor", "SDP_TEST_KEY": "test-key", "SDP_CACHE_DIR": "cache", "SDP_OFFLINE": "false"}[k]

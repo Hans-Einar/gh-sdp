@@ -8,7 +8,6 @@ import (
 	"io"
 	"os"
 	"os/exec"
-	"strconv"
 	"strings"
 
 	"github.com/Hans-Einar/SDP/SDPTool/bootstrap"
@@ -22,12 +21,14 @@ type resolveBinary func(context.Context, bootstrap.Config) (string, error)
 
 func configuration(args []string, getenv func(string) string) (bootstrap.Config, error) {
 	c := bootstrap.Config{Descriptor: getenv("SDP_RELEASE"), TestKey: getenv("SDP_TEST_KEY"), CacheDir: getenv("SDP_CACHE_DIR")}
-	if value := getenv("SDP_OFFLINE"); value != "" {
-		offline, err := strconv.ParseBool(value)
-		if err != nil {
-			return c, fmt.Errorf("SDP_OFFLINE must be a boolean: %w", err)
-		}
-		c.Offline = offline
+	// Keep accepted environment spelling identical to the child's canonical
+	// offline switch so bootstrap and preview cannot disagree about networking.
+	switch getenv("SDP_OFFLINE") {
+	case "true":
+		c.Offline = true
+	case "", "false":
+	default:
+		return c, fmt.Errorf("SDP_OFFLINE must be true or false")
 	}
 	// Saved operations never update the selected distribution during execution.
 	for _, arg := range args {
