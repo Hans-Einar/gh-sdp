@@ -783,7 +783,7 @@ migrations: {}
 releases:
   REL-0.1.2:
     version: "0.1.2"
-    state: unreleased
+    state: prerelease
     targetStatus: selected
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml

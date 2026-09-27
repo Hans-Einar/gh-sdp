@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 releaseId: REL-0.1.2
 version: 0.1.2
-state: unreleased
+state: prerelease
 releaseNotesPath: SDP/RELEASE-NOTES.md
 includedCapabilities:
 - gh-sdp.bootstrap.signed

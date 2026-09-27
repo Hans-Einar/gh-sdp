@@ -5,7 +5,7 @@ release:
   previousVersion: 0.1.1
   activeReleaseId: REL-0.1.2
   targetVersion: 0.1.2
-  state: unreleased
+  state: prerelease
   targetStatus: selected
 active:
   sprint: Sprint-006

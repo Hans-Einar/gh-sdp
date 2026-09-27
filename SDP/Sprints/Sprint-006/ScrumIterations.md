@@ -6,7 +6,7 @@ Slice: SPS-006
 Authorization: owner explicitly authorized commit, integration, release, extension installation and XFMD upgrade on 2026-09-28; root coordination assigns this repository only.
 BranchPolicy: sdp/release-0.1.2 from clean main 9ef2736; independently reviewed PR merge to main, then publication reconciliation on a follow-up branch.
 CommitPolicy: contract, bounded Worker implementation, verified review evidence, publication reconciliation.
-Release: gh-sdp v0.1.2 paired with SDP v0.2.2, subject to root confirming its final selection; Linux amd64 only.
+Release: gh-sdp v0.1.2 paired with SDP v0.2.2, confirmed by root; Linux amd64 only.
 
 ## Contract
 
@@ -47,5 +47,7 @@ The owner authorization covers this release; no further approval is required.
 
 ## Progress
 
-Contract selected. P1 awaits root's immutable remotely available bootstrap SHA;
-P2 and P3 are pending. No publication or verification is claimed.
+P1 delivered in f7b690633413b0a1f13b49d3e6265bd3494d1995. Root confirmed SDP
+v0.2.2 and supplied remotely available bootstrap 591920b69534fa12e587f5f95a55b6bce9b13da4.
+P2 clean exact-commit package, asset discovery and FIFO checks passed; independent
+review remains pending. VER-SPS-006 records actual evidence. P3 is pending.
