@@ -455,6 +455,10 @@ questions:
     status: partially-answered-by-study
     study: STU-001
 sprints:
+  Sprint-005:
+    path: SDP/Sprints/Sprint-005/ScrumIterations.md
+    status: active
+    iterations: [SPI-005]
   Sprint-004:
     path: SDP/Sprints/Sprint-004/ScrumIterations.md
     status: complete
@@ -479,6 +483,11 @@ sprints:
       - SPI-002
 refactors: {}
 iterations:
+  SPI-005:
+    path: SDP/Sprints/Sprint-005/ScrumIterations.md
+    sprint: Sprint-005
+    status: active
+    slices: [SPS-005]
   SPI-004:
     path: SDP/Sprints/Sprint-004/ScrumIterations.md
     sprint: Sprint-004
@@ -502,6 +511,16 @@ iterations:
     slices:
       - SPS-002
 slices:
+  SPS-005:
+    path: SDP/Sprints/Sprint-005/ScrumIterations.md
+    sprint: Sprint-005
+    iteration: SPI-005
+    status: active
+    release: REL-0.1.1
+    requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004, REQ-GHS-005]
+    design: DES-GHS-001
+    verification: []
+    reviews: []
   SPS-004:
     path: SDP/Sprints/Sprint-004/ScrumIterations.md
     sprint: Sprint-004
@@ -725,6 +744,18 @@ verification:
     releaseGate: false
 migrations: {}
 releases:
+  REL-0.1.1:
+    version: "0.1.1"
+    state: development
+    targetStatus: selected
+    releaseNotes: SDP/RELEASE-NOTES.md
+    manifest: SDP/SDP-project.manifest.yaml
+    releaseRecord: SDP/Releases/REL-0.1.1.yaml
+    verification: []
+    reviews: []
+    releaseCommit: null
+    gitTag: null
+    githubRelease: null
   REL-0.1.0:
     version: "0.1.0"
     state: released
