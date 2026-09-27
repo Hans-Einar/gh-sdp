@@ -13,7 +13,9 @@ which GitHub CLI discovers as a binary extension asset. The package script recor
 source commit and refuses tracked or untracked dirt. A checksum accompanies the binary.
 
 Freeze selected notes into the selected client version and set release state to
-prerelease at preparation. SPS-005 selects v0.1.1 paired with SDP v0.2.1.
+prerelease at preparation. SPS-006 selects v0.1.2 paired with Go-only SDP v1.0.0.
+The earlier v0.2.2 candidate's package and review evidence remain historical;
+the selected v1.0.0 candidate requires its own package checks and fresh review.
 Keep publication identities null until real objects exist. After owner-authorized PR
 merge, tag the clean merged source commit with an annotated tag for the selected client
 version and publish its exact asset/checksum/manifest. Verify tag target and GitHub

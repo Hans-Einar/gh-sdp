@@ -46,3 +46,15 @@ SPS-005 in SDP/Sprints/Sprint-005/ScrumIterations.md selects gh-sdp v0.1.1 with
 canonical SDP v0.2.1 as its default engine. This supersedes SPS-004's completed
 boundary only for the bounded patch. Root owns upstream publication, global
 extension installation and XFMD adoption. Fresh independent review is required.
+
+## Authorized template-default patch — 2026-09-28
+
+The owner authorized commit, integration, release, extension installation and
+XFMD upgrade. SPS-006 in SDP/Sprints/Sprint-006/ScrumIterations.md selects client
+v0.1.2 paired with owner-selected SDP v1.0.0, which removes public PowerShell
+entrypoints. It supersedes SPS-005's completed boundary for this bounded patch.
+Root owns upstream publication and XFMD adoption; the client coordinator owns
+delegated global extension installation and default verification. Root confirmed the revised Go-only candidate and immutable pin after exact-head
+CI and upstream integration. REV-SPS-006-002 approves P2; P3 verifies the public
+production descriptor and publishes the exact merged client. Independent review
+of final publication reconciliation remains required.
