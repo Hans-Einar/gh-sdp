@@ -5,8 +5,8 @@ release:
   previousVersion: null
   activeReleaseId: REL-0.1.0
   targetVersion: 0.1.0
-  state: unreleased
-  targetStatus: proposed
+  state: prerelease
+  targetStatus: selected
 active:
   sprint: Sprint-004
   refactor: null

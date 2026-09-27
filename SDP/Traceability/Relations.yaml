@@ -455,6 +455,10 @@ questions:
     status: partially-answered-by-study
     study: STU-001
 sprints:
+  Sprint-004:
+    path: SDP/Sprints/Sprint-004/ScrumIterations.md
+    status: active
+    iterations: [SPI-004]
   Sprint-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
     status: complete
@@ -475,6 +479,11 @@ sprints:
       - SPI-002
 refactors: {}
 iterations:
+  SPI-004:
+    path: SDP/Sprints/Sprint-004/ScrumIterations.md
+    sprint: Sprint-004
+    status: active
+    slices: [SPS-004]
   SPI-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
     sprint: Sprint-003
@@ -493,6 +502,14 @@ iterations:
     slices:
       - SPS-002
 slices:
+  SPS-004:
+    path: SDP/Sprints/Sprint-004/ScrumIterations.md
+    sprint: Sprint-004
+    iteration: SPI-004
+    status: active
+    release: [REL-0.1.0]
+    verification: [VER-SPS-004]
+    reviews: []
   SPS-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
     sprint: Sprint-003
@@ -683,14 +700,14 @@ migrations: {}
 releases:
   REL-0.1.0:
     version: "0.1.0"
-    state: unreleased
-    targetStatus: proposed
+    state: prerelease
+    targetStatus: selected
     mandate:
       - MAN-001
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
     releaseRecord: SDP/Releases/REL-0.1.0.yaml
-    verification: []
+    verification: [VER-SPS-004]
     reviews: []
     releaseCommit: null
     gitTag: null
@@ -699,7 +716,7 @@ releases:
 # Publication identities remain null until the corresponding Git/GitHub objects
 # exist. VER-SPS-001 is passed Slice evidence confirmed by REV-SPS-001-002; it
 # is not release-gate verification and is intentionally absent from the release
-# verification/review arrays. The 0.1.0 target remains proposed and unreleased.
+# verification/review arrays. SPS-004 later selected first-release preparation.
 # `approved` on the Mandate, outcomes, success criteria, and assumptions records
 # Steering-approved normative content, not delivered or verified product
 # behavior. Boundaries remain active. Study question statuses describe analytical

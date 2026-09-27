@@ -1,4 +1,12 @@
-# Implementation plan — GIP-3-M2
+# Implementation and release work
+
+Current: [SPS-004](../Sprints/Sprint-004/ScrumIterations.md) prepares the owner-authorized
+first native client release and records real publication after independent review.
+Root coordination owns paired SDP publication, global extension installation and
+live XFMD adoption. Linux amd64 is the bounded support target.
+
+## Delivered GIP-3-M2 foundation
+
 
 Status: complete for GIP-3-M2; owner authorized PLAN-SDP-0003 on 2026-09-27.
 

@@ -7,7 +7,7 @@ installed:
 release:
   currentVersion: 0.0.0
   nextTargetVersion: 0.1.0
-  state: unreleased
+  state: prerelease
   latestTag: null
   latestCommit: null
 development:
