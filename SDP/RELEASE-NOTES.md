@@ -4,9 +4,9 @@
 
 No additional changes selected.
 
-## [0.1.0] — release preparation
+## [0.1.0] — 2026-09-27
 
-Release-Date: unreleased
+Release-Date: 2026-09-27
 
 ### Added
 

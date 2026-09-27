@@ -1,6 +1,6 @@
 # Sprint-004 — gh-sdp first native release
 
-Status: active
+Status: complete
 Iteration: SPI-004
 Slice: SPS-004
 Authorization: owner requested merge, release, global gh extension installation and live XFMD upgrade on 2026-09-27.
@@ -49,3 +49,20 @@ SPS-004 corrects the published asset name to `gh-sdp-linux-amd64` on branch
 `sdp/release-0.1.0-asset-fix`, with focused Worker implementation and fresh review.
 The original exact-candidate manifests remain historical evidence. Actual remote
 `gh extension install` is required after publication before live XFMD adoption.
+
+## Publication and closeout
+
+R3 delivered on 2026-09-27. Annotated tag v0.1.0 resolves to clean merged
+release commit 8ad0fc2906fc52bd4ee4c214e801a5872a4b0faa. The GitHub Release was published at
+2026-09-27T08:14:45Z: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.1.0. Its Linux amd64 executable, checksum and manifest
+are uploaded; remote asset digest matches the exact local release package.
+The default public signed SDP v0.2.0 descriptor was tested without SDP_RELEASE
+or SDP_TEST_KEY in a fresh cache, returning engine commit
+738e6c882daed85591311f18248dab2a48ce2076.
+
+SPS-004 closes the client release boundary. Root coordination owns actual global
+extension installation and live XFMD adoption and records those results separately.
+
+Independent REV-SPS-004-003 verified publication, downloaded asset bytes, current
+records, and actual remote extension installation/default delegation. No findings
+remain. Project-owned active work coordinates are cleared.

@@ -1,19 +1,19 @@
 project:
   name: gh-sdp
-  status: release-preparation
+  status: released
 release:
   previousVersion: null
   activeReleaseId: REL-0.1.0
   targetVersion: 0.1.0
-  state: prerelease
-  targetStatus: selected
+  state: released
+  targetStatus: published
 active:
-  sprint: Sprint-004
+  sprint: null
   refactor: null
-  iteration: SPI-004
-  slice: SPS-004
+  iteration: null
+  slice: null
   fix: null
-  revision: 1
+  revision: null
 historicalStudy:
   phase: Study
   study: STU-001
@@ -39,17 +39,15 @@ lifecycle:
   phase: ReleasePreparation
   authorization: owner-merge-release-install-upgrade-2026-09-27
   contract: SDP/Sprints/Sprint-004/ScrumIterations.md
-  status: active
+  status: complete
+  review: REV-SPS-004-003
 lastCompleted:
-  sprint: Sprint-003
-  refactor: null
-  iteration: SPI-003
-  slice: SPS-003
-  fix: null
+  sprint: Sprint-004
+  iteration: SPI-004
+  slice: SPS-004
   revision: 1
-  milestone: GIP-3-M2
-  productCandidate: fca8480b1619f325fbbbd7b9d7224cbf865dbcdf
-  engineCandidate: fb79727aaa229e5a4a5f228f458d350cd196a6a8
-  verification: VER-SPS-003
-  review: REV-SPS-003-002
-  disposition: master-closed-after-independent-review
+  milestone: SPS-004-R3
+  releaseCommit: 8ad0fc2906fc52bd4ee4c214e801a5872a4b0faa
+  verification: VER-SPS-004
+  review: REV-SPS-004-003
+  disposition: published-and-reconciled
