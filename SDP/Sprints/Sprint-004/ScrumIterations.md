@@ -39,3 +39,13 @@ R1 and R2 delivered. Independent REV-SPS-004-001 approved preparation 4660b6b
 and unchanged product 2618e38 with no unresolved findings. VER-SPS-004 records
 actual tests and clean package identity. R3 remains active until coordinated
 publication and reconciliation; no future release object is pre-claimed.
+
+## Pre-publication packaging correction
+
+Before any tag or asset publication, final distribution inspection found that
+GitHub CLI selects a binary asset by the platform suffix `linux-amd64`. The
+initial package used `linux_amd64`, which only the local symlink tests exercised.
+SPS-004 corrects the published asset name to `gh-sdp-linux-amd64` on branch
+`sdp/release-0.1.0-asset-fix`, with focused Worker implementation and fresh review.
+The original exact-candidate manifests remain historical evidence. Actual remote
+`gh extension install` is required after publication before live XFMD adoption.

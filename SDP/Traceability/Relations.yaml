@@ -511,7 +511,7 @@ slices:
     requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004, REQ-GHS-005]
     design: [DES-GHS-001]
     verification: [VER-SPS-004]
-    reviews: [REV-SPS-004-001]
+    reviews: [REV-SPS-004-001, REV-SPS-004-002]
   SPS-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
     sprint: Sprint-003
@@ -568,6 +568,11 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-004-002:
+    path: SDP/CodeReview/REV-SPS-004-002.md
+    status: approved
+    slice: SPS-004
+    candidateCommit: c62f5fc23aeb7f4429fc95ecac0bc91c78bb069e
   REV-SPS-004-001:
     path: SDP/CodeReview/REV-SPS-004-001.md
     status: approved
@@ -722,7 +727,7 @@ releases:
     manifest: SDP/SDP-project.manifest.yaml
     releaseRecord: SDP/Releases/REL-0.1.0.yaml
     verification: [VER-SPS-004]
-    reviews: [REV-SPS-004-001]
+    reviews: [REV-SPS-004-001, REV-SPS-004-002]
     releaseCommit: null
     gitTag: null
     githubRelease: null

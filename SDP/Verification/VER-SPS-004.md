@@ -44,3 +44,17 @@ The
 final merged release commit is rebuilt cleanly and its identity/checksum recorded
 at publication. Public descriptor availability and actual GitHub extension
 installation must be verified then; neither is inferred from these fixtures.
+
+## Remote asset discovery correction
+
+Pre-publication inspection found that the initial underscore-named asset was not
+discoverable by GitHub CLI. The local symlink integration did not cover remote
+asset selection. Worker candidate c62f5fc changes the asset to
+`gh-sdp-linux-amd64`, with no change to the client runtime. Independent
+[REV-SPS-004-002](../CodeReview/REV-SPS-004-002.md) approved this correction and
+reproduced package SHA-256
+`c98257e4ddc688773805fdf6a14e9fec1e23bc424018b1b59a46af1363f800d6`.
+Its actual-package discovery test passes and rejects the historical underscore
+package. Race tests and vet pass. The [corrected manifest](evidence/SPS-004-assetfix-manifest.json)
+is separate from the retained historical package record. Actual GitHub remote
+installation remains a required post-publication check.
