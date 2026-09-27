@@ -1,5 +1,17 @@
 # STU-001 — gh-sdp Phase 2 Study
 
+## Current authorization — 2026-09-27
+
+Owner selection of PLAN-SDP-0003 separately authorizes the bounded GIP-3-M2
+thin client implementation as Sprint-003 / SPI-003 / SPS-003. SDPTool now owns
+all installation policy and execution, including the canonical shared bootstrap.
+Historical Study recommendations allocating an apply engine to gh-sdp are
+superseded by this current selection; their historical evidence is unchanged.
+The earlier Study-only limits below describe those completed assignments.
+No production release, merge, live rollout or platform support is authorized.
+See [current Slice](../Sprints/Sprint-003/ScrumIterations.md).
+
+
 Status: accepted evidence foundation — `ACCEPTED_WITH_LOW_FINDINGS`
 Mandate: MAN-001
 Sprint: Sprint-002
