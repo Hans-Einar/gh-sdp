@@ -31,3 +31,10 @@ delegation client; SDPTool owns all installation policy. Earlier SPS-001 and
 SPS-002 boundaries remain historical and do not prohibit this separately
 authorized Slice. Managed AGENTS.md and installed Toolkit facts stay unchanged.
 Fresh independent review remains required; no merge or release is selected.
+
+## Authorized release assignment — 2026-09-27
+
+The owner selected merge, release, extension installation and live XFMD upgrade.
+SPS-004 in SDP/Sprints/Sprint-004/ScrumIterations.md governs this repository's
+release preparation and publication; it supersedes SPS-003's historical no-release
+boundary only for this new work. Root coordination owns upstream SDP and live XFMD.
