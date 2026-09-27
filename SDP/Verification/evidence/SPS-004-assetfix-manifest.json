@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gh-sdp-package/1",
+  "version": "0.1.0",
+  "sourceCommit": "c62f5fc23aeb7f4429fc95ecac0bc91c78bb069e",
+  "platform": "linux/amd64",
+  "file": "gh-sdp-linux-amd64",
+  "sha256": "c98257e4ddc688773805fdf6a14e9fec1e23bc424018b1b59a46af1363f800d6",
+  "size": 10042505,
+  "goVersion": "go1.27.1",
+  "buildInfo": [
+    "\tpath\tgithub.com/Hans-Einar/gh-sdp",
+    "\tmod\tgithub.com/Hans-Einar/gh-sdp\tv0.0.0-20260927080831-c62f5fc23aeb\t",
+    "\tdep\tgithub.com/Hans-Einar/SDP/SDPTool/bootstrap\tv0.0.0-20260927075424-659e543e89d7\th1:13YGUBQr08hiVVgeLyvEJM3YT7GJPGIsYLQfyw6wIAM=",
+    "\tbuild\t-buildmode=exe",
+    "\tbuild\t-compiler=gc",
+    "\tbuild\t-trimpath=true",
+    "\tbuild\tDefaultGODEBUG=tracebacklabels=0,x509sslcertoverrideplatform=0",
+    "\tbuild\tCGO_ENABLED=0",
+    "\tbuild\tGOARCH=amd64",
+    "\tbuild\tGOOS=linux",
+    "\tbuild\tGOAMD64=v1",
+    "\tbuild\tvcs=git",
+    "\tbuild\tvcs.revision=c62f5fc23aeb7f4429fc95ecac0bc91c78bb069e",
+    "\tbuild\tvcs.time=2026-09-27T08:08:31Z",
+    "\tbuild\tvcs.modified=false"
+  ]
+}
