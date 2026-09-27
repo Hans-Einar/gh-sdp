@@ -12,10 +12,11 @@ placeholder). Platform scope is Linux amd64. Package naming is gh-sdp-linux-amd6
 which GitHub CLI discovers as a binary extension asset. The package script records
 source commit and refuses tracked or untracked dirt. A checksum accompanies the binary.
 
-Freeze selected notes into 0.1.0 and set release state to prerelease at preparation.
+Freeze selected notes into the selected client version and set release state to
+prerelease at preparation. SPS-005 selects v0.1.1 paired with SDP v0.2.1.
 Keep publication identities null until real objects exist. After owner-authorized PR
-merge, tag the selected preparation commit with an annotated v0.1.0 tag and publish
-its exact asset/checksum. Verify tag target and GitHub release remotely, append actual
-release events, and reconcile manifests in a small follow-up commit. Do not overwrite
+merge, tag the clean merged source commit with an annotated tag for the selected client
+version and publish its exact asset/checksum/manifest. Verify tag target and GitHub
+release remotely, append actual release events, and reconcile manifests in a small follow-up commit. Do not overwrite
 a published tag or asset. The root coordinator installs the extension from GitHub and
 checks actual default delegation before live XFMD adoption.

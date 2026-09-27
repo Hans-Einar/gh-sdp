@@ -1,6 +1,7 @@
 # Architecture — GIP thin client
 
-Status: SPS-003 thin client delivered; SPS-004 selects first release preparation.
+Status: SPS-003 thin client and SPS-004 first release delivered; SPS-005 selects
+the default-engine patch release.
 
 ## Ownership
 
@@ -16,10 +17,10 @@ and its source evidence and original recommendations are preserved.
 
 ## Scope and limits
 
-SPS-004 selects the shared bootstrap production public trust and the exact SDP
-v0.2.0 descriptor as the default. No mutable latest-release catalog is inferred.
+SPS-005 retains the shared bootstrap production public trust and selects the exact
+SDP v0.2.1 descriptor as the default. No mutable latest-release catalog is inferred.
 Explicit local/HTTPS descriptors and non-production public-key files remain
 available for development. Release packaging targets Linux amd64 only.
 Windows and macOS require native verification before support claims.
 
-Requirements: [REQ-GHS-001–004](../03--Requirements/requirements.md).
+Requirements: [REQ-GHS-001–005](../03--Requirements/requirements.md).
