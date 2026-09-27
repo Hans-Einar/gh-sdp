@@ -1,6 +1,6 @@
 # Sprint-006 — Template distribution default patch
 
-Status: active
+Status: paused by owner
 Iteration: SPI-006
 Slice: SPS-006
 Authorization: owner explicitly authorized commit, integration, release, extension installation and XFMD upgrade on 2026-09-28; root coordination assigns this repository only.
@@ -51,3 +51,16 @@ P1 delivered in f7b690633413b0a1f13b49d3e6265bd3494d1995. Root confirmed SDP
 v0.2.2 and supplied remotely available bootstrap 591920b69534fa12e587f5f95a55b6bce9b13da4.
 P2 clean exact-commit package, asset discovery and FIFO checks passed; independent
 review remains pending. VER-SPS-006 records actual evidence. P3 is pending.
+
+## Owner steering — publication and integration paused
+
+The owner stopped publication and integration on 2026-09-28 and requires removal
+of all PowerShell dependencies from the upstream release. Preserve this prepared
+client branch. P2 approval applies to product candidate f7b6906 only; do not merge,
+tag, publish or upgrade the global extension until root confirms the revised
+Go-only upstream candidate and whether its bootstrap requires a new immutable pin.
+No client PR, merge, tag, release or global installation occurred in SPS-006.
+The installed extension remains v0.1.1. Root still owns XFMD application changes.
+Before the pause, root explicitly delegated global extension installation and
+fresh-cache default verification to this client coordinator after publication;
+that operation is also paused.

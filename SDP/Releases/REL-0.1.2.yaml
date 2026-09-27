@@ -6,8 +6,10 @@ releaseNotesPath: SDP/RELEASE-NOTES.md
 includedCapabilities:
 - gh-sdp.bootstrap.signed
 - gh-sdp.delegate.native
-verificationRecords: []
-reviewRecords: []
+verificationRecords:
+- VER-SPS-006
+reviewRecords:
+- REV-SPS-006-001
 migrationRecord: null
 releasePreparationCommit: null
 gitTag: null

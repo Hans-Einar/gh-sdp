@@ -1,6 +1,6 @@
 # VER-SPS-006 — Template distribution default patch gate
 
-Status: candidate package checks passed; independent review and publication pending
+Status: preparation independently approved; publication paused by owner
 Slice: SPS-006
 Release: REL-0.1.2
 Platform: Linux amd64
@@ -27,3 +27,12 @@ The [candidate manifest](evidence/SPS-006-candidate-manifest.json) identifies
 exact clean source, dependency and binary bytes. Independent review, fresh-cache
 public production default execution, clean merged packaging and publication
 are pending; no Windows/macOS, global installation or XFMD evidence is claimed.
+
+## Independent review and owner pause
+
+REV-SPS-006-001 independently reproduced the clean candidate package bytes,
+passed race tests, vet, module verification, discovery and FIFO checks, and
+confirmed fresh remote module provenance. P2 is approved for this candidate.
+The owner then paused integration/publication pending a revised Go-only upstream
+SDP release. P3 and global extension installation remain pending; root must
+confirm the revised candidate and bootstrap pin before continuation.

@@ -524,7 +524,9 @@ slices:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
     sprint: Sprint-006
     iteration: SPI-006
-    status: active
+    status: paused-by-owner
+    verification: [VER-SPS-006]
+    reviews: [REV-SPS-006-001]
     requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004, REQ-GHS-005]
     design: [DES-GHS-001]
     release: [REL-0.1.2]
@@ -604,6 +606,11 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-006-001:
+    path: SDP/CodeReview/REV-SPS-006-001.md
+    status: approved-preparation-only
+    slice: SPS-006
+    candidateCommit: f7b690633413b0a1f13b49d3e6265bd3494d1995
   REV-SPS-005-002:
     path: SDP/CodeReview/REV-SPS-005-002.md
     status: approved
@@ -722,6 +729,13 @@ reviews:
       low: 0
       notes: 2
 verification:
+  VER-SPS-006:
+    path: SDP/Verification/VER-SPS-006.md
+    status: preparation-passed-publication-paused
+    slice: SPS-006
+    productCandidate: f7b690633413b0a1f13b49d3e6265bd3494d1995
+    reviewerConfirmation: REV-SPS-006-001
+    releaseGate: false
   VER-SPS-005:
     path: SDP/Verification/VER-SPS-005.md
     status: passed
@@ -788,8 +802,8 @@ releases:
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
     releaseRecord: SDP/Releases/REL-0.1.2.yaml
-    verification: []
-    reviews: []
+    verification: [VER-SPS-006]
+    reviews: [REV-SPS-006-001]
     releaseCommit: null
     gitTag: null
     githubRelease: null

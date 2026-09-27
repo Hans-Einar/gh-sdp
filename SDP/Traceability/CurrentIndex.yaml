@@ -39,8 +39,8 @@ lifecycle:
   phase: ReleasePreparation
   authorization: owner-template-update-merge-release-2026-09-28
   contract: SDP/Sprints/Sprint-006/ScrumIterations.md
-  status: active
-  review: null
+  status: paused-by-owner
+  review: REV-SPS-006-001
 lastCompleted:
   sprint: Sprint-005
   iteration: SPI-005
