@@ -35,7 +35,7 @@ coordination confirms the paired SDP descriptor is publicly available.
 
 ## Preparation disposition
 
-R1 and R2 delivered. Independent REV-SPS-004-001 approved preparation4660b6b
-and unchanged product2618e38 with no unresolved findings. VER-SPS-004 records
+R1 and R2 delivered. Independent REV-SPS-004-001 approved preparation 4660b6b
+and unchanged product 2618e38 with no unresolved findings. VER-SPS-004 records
 actual tests and clean package identity. R3 remains active until coordinated
 publication and reconciliation; no future release object is pre-claimed.

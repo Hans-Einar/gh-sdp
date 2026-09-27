@@ -36,9 +36,9 @@ GH_SDP_VIA_GH=true GH_SDP_BINARY=/tmp/gh-sdp-r1-final-package/gh-sdp_linux_amd64
 
 Independent [REV-SPS-004-001](../CodeReview/REV-SPS-004-001.md) reproduced race/vet,
 module verification, exact package hash and actual isolated gh integration. It also
-verified a local production-signed descriptor without SDP_TEST_KEY, yielding63
+verified a local production-signed descriptor without SDP_TEST_KEY, yielding 63
 install actions with signed provenance and no project writes. All three draft
-documentation findings are resolved; exact preparation4660b6b is approved.
+documentation findings are resolved; exact preparation 4660b6b is approved.
 
 The
 final merged release commit is rebuilt cleanly and its identity/checksum recorded
