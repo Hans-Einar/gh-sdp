@@ -1,19 +1,19 @@
 project:
   name: gh-sdp
-  status: prerelease
+  status: released
 release:
   previousVersion: 0.1.0
   activeReleaseId: REL-0.1.1
   targetVersion: 0.1.1
-  state: prerelease
-  targetStatus: preparation-approved
+  state: released
+  targetStatus: published
 active:
-  sprint: Sprint-005
+  sprint: null
   refactor: null
-  iteration: SPI-005
-  slice: SPS-005
+  iteration: null
+  slice: null
   fix: null
-  revision: 1
+  revision: null
 historicalStudy:
   phase: Study
   study: STU-001
@@ -39,15 +39,15 @@ lifecycle:
   phase: ReleasePreparation
   authorization: owner-external-kanban-fix-merge-release-2026-09-27
   contract: SDP/Sprints/Sprint-005/ScrumIterations.md
-  status: publication-pending
-  review: REV-SPS-005-001
+  status: complete
+  review: REV-SPS-005-002
 lastCompleted:
-  sprint: Sprint-004
-  iteration: SPI-004
-  slice: SPS-004
+  sprint: Sprint-005
+  iteration: SPI-005
+  slice: SPS-005
   revision: 1
-  milestone: SPS-004-R3
-  releaseCommit: 8ad0fc2906fc52bd4ee4c214e801a5872a4b0faa
-  verification: VER-SPS-004
-  review: REV-SPS-004-003
+  milestone: SPS-005-P3
+  releaseCommit: 8cbef9693e353cb04dc6d98021aca454b9078e3f
+  verification: VER-SPS-005
+  review: REV-SPS-005-002
   disposition: published-and-reconciled

@@ -4,8 +4,7 @@ A thin GitHub CLI extension that obtains a verified SDPTool executable and
 forwards arguments, streams and exit status. SDPTool owns installation policy,
 preview, apply, recovery and project preservation.
 
-The v0.1.1 candidate selects the signed SDP v0.2.1 distribution. The published
-v0.1.0 client selects SDP v0.2.0. Install the published client with
+The v0.1.1 client is released for the signed SDP v0.2.1 distribution. Install with
 `gh extension install Hans-Einar/gh-sdp`; no local Go or PowerShell is needed.
 Native verification covers Linux amd64 only; Windows/macOS support requires native tests.
 
@@ -24,8 +23,7 @@ After publication, install the Linux amd64 GitHub CLI extension with:
 gh extension install Hans-Einar/gh-sdp
 ```
 
-The shared upstream default for this candidate selects the exact SDP v0.2.1
-release descriptor.
+The shared upstream default selects the exact SDP v0.2.1 release descriptor.
 Without `SDP_RELEASE`, the client uses that default for both verification and the
 SDPTool child. An explicit `SDP_RELEASE` overrides both selections. No key option
 is needed for the production release: public trust is compiled into the shared
@@ -106,5 +104,5 @@ client preview/apply. The optional GitHub CLI route installs the local extension
 only into a temporary isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
 
 [Current Slice and authority](SDP/Sprints/Sprint-005/ScrumIterations.md) ·
-[Verification](SDP/Verification/VER-SPS-003.md) ·
+[Verification](SDP/Verification/VER-SPS-005.md) ·
 [Canonical dependency provenance](SDP/Sprints/Sprint-005/implementationNotes.md)

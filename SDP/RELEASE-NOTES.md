@@ -4,13 +4,15 @@
 
 No additional changes selected.
 
-## [0.1.1] — Selected, unreleased
+## [0.1.1] — 2026-09-27
+
+Release-Date: 2026-09-27
 
 ### Fixed
 
 - Select the exact signed SDP v0.2.1 descriptor by default through the immutable
   canonical bootstrap dependency. This delivers the upstream external KanBan
-  seed correction once the paired distribution is published.
+  seed correction from the published paired distribution.
 - Assert the exact default descriptor in both bootstrap configuration and the
   delegated child's environment; explicit descriptor overrides remain unchanged.
 

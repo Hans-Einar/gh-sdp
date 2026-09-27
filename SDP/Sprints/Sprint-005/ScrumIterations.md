@@ -1,6 +1,6 @@
 # Sprint-005 — Default engine patch release
 
-Status: active
+Status: complete
 Iteration: SPI-005
 Slice: SPS-005
 Authorization: owner explicitly authorized merge and release of the external KanBan fix on 2026-09-27; root coordination assigned gh-sdp v0.1.1.
@@ -46,6 +46,24 @@ extension verification and live XFMD adoption. Do not claim either here.
 P1 and P2 delivered. Independent REV-SPS-005-001 approves production candidate
 50c2fbe5eff4c17a6116c171797a248d49d9e05e and independently reproduces its
 package checksum and manifest. Race/vet, exact default URL/delegation, fresh
-remote module retrieval, asset discovery and FIFO rejection pass. P3 remains
-active: public upstream default verification, clean merged package, publication
-and reconciliation are not yet claimed.
+remote module retrieval, asset discovery and FIFO rejection passed. At preparation, P3 remained pending; actual publication and reconciliation
+are recorded below.
+
+## Publication and closeout
+
+P3 delivered on 2026-09-27. PR #8 merged reviewed preparation with an identical
+tree into source 8cbef9693e353cb04dc6d98021aca454b9078e3f. Its clean package
+passed race/vet, asset discovery and FIFO checks. Both candidate and final package
+used fresh caches without SDP_RELEASE, SDP_TEST_KEY or SDP_OFFLINE overrides and
+returned public SDP 0.2.1 / revision 4bacfce05f92f0dab9680456e297214727b54bc6.
+
+Annotated v0.1.1 resolves to the clean merged source. The public final GitHub
+Release was published at 2026-09-27T10:05:48Z:
+https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.1.1.
+Downloaded binary, checksum and manifest match the exact local package bytes.
+Publication records are reconciled; active work coordinates are cleared.
+Root coordination retains global extension installation and live XFMD verification.
+
+Independent REV-SPS-005-002 approves publication reconciliation with no findings.
+It verified the remote tag, release, independently downloaded assets and actual
+downloaded binary's fresh-cache production default. SPS-005 is complete.
