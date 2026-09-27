@@ -457,7 +457,7 @@ questions:
 sprints:
   Sprint-004:
     path: SDP/Sprints/Sprint-004/ScrumIterations.md
-    status: active
+    status: complete
     iterations: [SPI-004]
   Sprint-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
@@ -482,7 +482,7 @@ iterations:
   SPI-004:
     path: SDP/Sprints/Sprint-004/ScrumIterations.md
     sprint: Sprint-004
-    status: active
+    status: complete
     slices: [SPS-004]
   SPI-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
@@ -506,12 +506,12 @@ slices:
     path: SDP/Sprints/Sprint-004/ScrumIterations.md
     sprint: Sprint-004
     iteration: SPI-004
-    status: active
+    status: complete
     release: [REL-0.1.0]
     requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004, REQ-GHS-005]
     design: [DES-GHS-001]
     verification: [VER-SPS-004]
-    reviews: [REV-SPS-004-001, REV-SPS-004-002]
+    reviews: [REV-SPS-004-001, REV-SPS-004-002, REV-SPS-004-003]
   SPS-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
     sprint: Sprint-003
@@ -568,6 +568,11 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-004-003:
+    path: SDP/CodeReview/REV-SPS-004-003.md
+    status: approved
+    slice: SPS-004
+    releaseCommit: 8ad0fc2906fc52bd4ee4c214e801a5872a4b0faa
   REV-SPS-004-002:
     path: SDP/CodeReview/REV-SPS-004-002.md
     status: approved
@@ -673,10 +678,13 @@ reviews:
 verification:
   VER-SPS-004:
     path: SDP/Verification/VER-SPS-004.md
-    status: preparation-passed
+    status: passed
     slice: SPS-004
     productCandidate: 2618e3857a9cf1a7165090ec5209727593fa3221
     reviewerConfirmation: REV-SPS-004-001
+    publicationReview: REV-SPS-004-003
+    releaseCommit: 8ad0fc2906fc52bd4ee4c214e801a5872a4b0faa
+    publishedManifest: SDP/Verification/evidence/SPS-004-published-manifest.json
     releaseGate: true
   VER-SPS-003:
     path: SDP/Verification/VER-SPS-003.md
@@ -719,18 +727,18 @@ migrations: {}
 releases:
   REL-0.1.0:
     version: "0.1.0"
-    state: prerelease
-    targetStatus: selected
+    state: released
+    targetStatus: published
     mandate:
       - MAN-001
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
     releaseRecord: SDP/Releases/REL-0.1.0.yaml
     verification: [VER-SPS-004]
-    reviews: [REV-SPS-004-001, REV-SPS-004-002]
-    releaseCommit: null
-    gitTag: null
-    githubRelease: null
+    reviews: [REV-SPS-004-001, REV-SPS-004-002, REV-SPS-004-003]
+    releaseCommit: 8ad0fc2906fc52bd4ee4c214e801a5872a4b0faa
+    gitTag: v0.1.0
+    githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.1.0
 
 # Publication identities remain null until the corresponding Git/GitHub objects
 # exist. VER-SPS-001 is passed Slice evidence confirmed by REV-SPS-001-002; it

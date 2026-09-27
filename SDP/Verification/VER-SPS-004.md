@@ -1,6 +1,6 @@
 # VER-SPS-004 — First native release gate
 
-Status: preparation passed; independent REV-SPS-004-001 approved
+Status: passed; preparation and actual publication verified
 Slice: SPS-004
 Release: REL-0.1.0
 Platform: Linux amd64
@@ -58,3 +58,30 @@ Its actual-package discovery test passes and rejects the historical underscore
 package. Race tests and vet pass. The [corrected manifest](evidence/SPS-004-assetfix-manifest.json)
 is separate from the retained historical package record. Actual GitHub remote
 installation remains a required post-publication check.
+
+## Actual release evidence
+
+Final clean merged release source: `8ad0fc2906fc52bd4ee4c214e801a5872a4b0faa`.
+[Published package manifest](evidence/SPS-004-published-manifest.json).
+Binary SHA-256: `9b34b6775137bafd2c864c17bb9930a5af45024fed4167e291ce9a0f62fcd6d3`.
+`TestPackagedAssetDiscovery` passed against the final package. Annotated tag object
+`559888833fbe0bcd172f7c9b65c48496b9a821aa` resolves to that source; remote Git
+inspection confirms it. [GitHub Release](https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.1.0) is public, not draft or prerelease,
+published at `2026-09-27T08:14:45Z`. GitHub's uploaded asset digest equals the
+local binary SHA-256.
+
+Actual final client `--version` with an empty fresh cache and neither SDP_RELEASE
+nor SDP_TEST_KEY fetched the public default signed descriptor and returned engine
+version 0.2.0 / revision 738e6c882daed85591311f18248dab2a48ce2076. This verifies
+public production trust and delegation. Global GitHub extension installation and
+live XFMD adoption are root-coordinated follow-up evidence, not assumed here.
+
+## Actual remote extension installation
+
+Root coordination installed `Hans-Einar/gh-sdp` through GitHub CLI. The client
+coordinator then independently observed `gh extension list`: gh-sdp v0.1.0 and
+the existing gh-tree v0.3.14 remain present. With SDP_RELEASE and SDP_TEST_KEY
+unset, `gh sdp --version` returned SDPTool 0.2.0 / revision
+738e6c882daed85591311f18248dab2a48ce2076. This closes the remote asset-selection
+check missed by the historical local symlink test. Live XFMD mutation evidence
+remains in the root SDP workstream.
