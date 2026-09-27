@@ -18,7 +18,7 @@ and its source evidence and original recommendations are preserved.
 ## Scope and limits
 
 SPS-006 retains the shared bootstrap production public trust and selects the exact
-SDP v0.2.2 descriptor as the default. No mutable latest-release catalog is inferred.
+Go-only SDP v1.0.0 descriptor as the default. No mutable latest-release catalog is inferred.
 Explicit local/HTTPS descriptors and non-production public-key files remain
 available for development. Release packaging targets Linux amd64 only.
 Windows and macOS require native verification before support claims.

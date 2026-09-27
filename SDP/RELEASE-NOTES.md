@@ -10,9 +10,9 @@ Release-Date: null
 
 ### Fixed
 
-- Select the exact signed SDP v0.2.2 descriptor by default through the immutable
-  canonical bootstrap dependency. This distributes the upstream current template
-  update through the existing thin client.
+- Select the exact signed SDP v1.0.0 descriptor by default through the immutable
+  canonical bootstrap dependency. This distributes the upstream Go-only release
+  and current template update through the existing thin client.
 - Assert the exact default descriptor in both bootstrap configuration and the
   delegated child's environment; explicit descriptor overrides remain unchanged.
 
@@ -20,7 +20,8 @@ Release-Date: null
 
 Linux amd64 only. Client arguments, environment, streams, working directory and
 exit behavior remain unchanged. The client version is independent from SDP
-v0.2.2. Publication, global installation and XFMD adoption remain pending and
+v1.0.0, whose removal of public PowerShell entrypoints does not change the Go
+client API. Publication, global installation and XFMD adoption remain pending and
 require separate recorded evidence.
 
 ## [0.1.1] — 2026-09-27

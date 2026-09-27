@@ -5,8 +5,8 @@ forwards arguments, streams and exit status. SDPTool owns installation policy,
 preview, apply, recovery and project preservation.
 
 The v0.1.2 client now targets the signed Go-only SDP v1.0.0 distribution.
-Preparation is paused pending its gated upstream revision; the current candidate
-still pins the earlier v0.2.2 bootstrap and is not the selected release candidate.
+The candidate pins the remotely available v1.0.0 bootstrap revision; packaging,
+fresh independent review and publication gates remain pending.
 The latest published client is v0.1.1, paired with SDP v0.2.1. Install with
 `gh extension install Hans-Einar/gh-sdp`; no local Go or PowerShell is needed.
 Native verification covers Linux amd64 only; Windows/macOS support requires native tests.
@@ -26,7 +26,7 @@ After publication, install the Linux amd64 GitHub CLI extension with:
 gh extension install Hans-Einar/gh-sdp
 ```
 
-The selected shared upstream default is the exact SDP v0.2.2 release descriptor.
+The selected shared upstream default is the exact SDP v1.0.0 release descriptor.
 Without `SDP_RELEASE`, the client uses that default for both verification and the
 SDPTool child. An explicit `SDP_RELEASE` overrides both selections. No key option
 is needed for the production release: public trust is compiled into the shared

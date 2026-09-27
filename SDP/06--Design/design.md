@@ -4,7 +4,7 @@ DES-GHS-001 implements ARC-GHS-001 and REQ-GHS-001–005.
 
 Read SDP_RELEASE, SDP_TEST_KEY, SDP_CACHE_DIR and SDP_OFFLINE for canonical
 bootstrap configuration. When SDP_RELEASE is empty, use the shared bootstrap
-DefaultRelease constant for the exact signed SDP v0.2.2 descriptor selected by
+DefaultRelease constant for the exact signed SDP v1.0.0 descriptor selected by
 SPS-006. Production public trust belongs to that canonical package; explicit SDP_TEST_KEY keeps test
 trust separate. Explicitly pass the selected SDP_RELEASE to the child so bootstrap
 and installation planning agree. Bootstrap returns the fixed
