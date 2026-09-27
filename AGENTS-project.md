@@ -46,3 +46,11 @@ SPS-005 in SDP/Sprints/Sprint-005/ScrumIterations.md selects gh-sdp v0.1.1 with
 canonical SDP v0.2.1 as its default engine. This supersedes SPS-004's completed
 boundary only for the bounded patch. Root owns upstream publication, global
 extension installation and XFMD adoption. Fresh independent review is required.
+
+## Authorized template-default patch — 2026-09-28
+
+The owner authorized commit, integration, release, extension installation and
+XFMD upgrade. SPS-006 in SDP/Sprints/Sprint-006/ScrumIterations.md selects client
+v0.1.2 paired with root-confirmed SDP v0.2.2. It supersedes SPS-005's completed
+boundary only for this bounded patch. Root owns upstream publication, global
+extension installation and XFMD adoption. Independent review remains required.
