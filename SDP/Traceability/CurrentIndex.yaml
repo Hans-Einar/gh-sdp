@@ -1,19 +1,19 @@
 project:
   name: gh-sdp
-  status: gip-thin-client-complete
+  status: release-preparation
 release:
   previousVersion: null
   activeReleaseId: REL-0.1.0
   targetVersion: 0.1.0
-  state: unreleased
-  targetStatus: proposed
+  state: prerelease
+  targetStatus: selected
 active:
-  sprint: null
+  sprint: Sprint-004
   refactor: null
-  iteration: null
-  slice: null
+  iteration: SPI-004
+  slice: SPS-004
   fix: null
-  revision: null
+  revision: 1
 historicalStudy:
   phase: Study
   study: STU-001
@@ -36,13 +36,10 @@ historicalDependencyAssessment:
   accepted: false
   mediumFindings: 3
 lifecycle:
-  phase: Implementation
-  authorization: owner-selected-PLAN-SDP-0003-2026-09-27
-  milestone: GIP-3-M2
-  mandate: MAN-001
-  contract: SDP/Sprints/Sprint-003/ScrumIterations.md
-  review: REV-SPS-003-002
-  status: complete
+  phase: ReleasePreparation
+  authorization: owner-merge-release-install-upgrade-2026-09-27
+  contract: SDP/Sprints/Sprint-004/ScrumIterations.md
+  status: active
 lastCompleted:
   sprint: Sprint-003
   refactor: null

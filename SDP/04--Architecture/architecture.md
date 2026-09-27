@@ -1,6 +1,6 @@
 # Architecture — GIP thin client
 
-Status: selected by PLAN-SDP-0003, GIP-3-M2; implementation SPS-003.
+Status: SPS-003 thin client delivered; SPS-004 selects first release preparation.
 
 ## Ownership
 
@@ -16,9 +16,10 @@ and its source evidence and original recommendations are preserved.
 
 ## Scope and limits
 
-No production trust keys/catalog or release asset publication are selected.
-Explicit local/HTTPS descriptors and non-production public-key files support the
-verified development workflow. Linux is the initial native evidence platform.
+SPS-004 selects the shared bootstrap production public trust and the exact SDP
+v0.2.0 descriptor as the default. No mutable latest-release catalog is inferred.
+Explicit local/HTTPS descriptors and non-production public-key files remain
+available for development. Release packaging targets Linux amd64 only.
 Windows and macOS require native verification before support claims.
 
 Requirements: [REQ-GHS-001–004](../03--Requirements/requirements.md).

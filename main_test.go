@@ -23,9 +23,9 @@ func TestChildProcess(t *testing.T) {
 	cwd, _ := os.Getwd()
 	input, _ := io.ReadAll(os.Stdin)
 	data := struct {
-		Args            []string
-		Input, Cwd, Env string
-	}{os.Args[3:], string(input), cwd, os.Getenv("GH_SDP_INHERITED")}
+		Args                     []string
+		Input, Cwd, Env, Release string
+	}{os.Args[3:], string(input), cwd, os.Getenv("GH_SDP_INHERITED"), os.Getenv("SDP_RELEASE")}
 	_ = json.NewEncoder(os.Stdout).Encode(data)
 	fmt.Fprint(os.Stderr, "child diagnostic\n")
 	os.Exit(23)
@@ -114,6 +114,50 @@ func TestConfigurationAndFailureBoundaries(t *testing.T) {
 			}, nil, &out, &diagnostic, test.resolver)
 			if code != test.want || out.Len() != 0 || diagnostic.Len() == 0 {
 				t.Fatalf("exit=%d out=%q err=%q", code, &out, &diagnostic)
+			}
+		})
+	}
+}
+
+func TestSelectedReleaseReachesChild(t *testing.T) {
+	executable, err := os.Executable()
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, test := range []struct {
+		name, release string
+		unset         bool
+	}{{"unset", "", true}, {"empty", "", false}, {"override", "/explicit/descriptor with spaces.json", false}} {
+		t.Run(test.name, func(t *testing.T) {
+			t.Setenv("GH_SDP_CHILD_TEST", "1")
+			t.Setenv("SDP_RELEASE", test.release)
+			if test.unset {
+				if err := os.Unsetenv("SDP_RELEASE"); err != nil {
+					t.Fatal(err)
+				}
+			}
+			want := test.release
+			if want == "" {
+				want = bootstrap.DefaultRelease
+			}
+			if want == "" {
+				t.Fatal("canonical default descriptor is empty")
+			}
+			var out, diagnostic bytes.Buffer
+			code := run(context.Background(), []string{"-test.run=TestChildProcess", "--"}, os.Getenv, nil, &out, &diagnostic,
+				func(_ context.Context, config bootstrap.Config) (string, error) {
+					if config.Descriptor != want {
+						t.Fatalf("bootstrap descriptor %q, want %q", config.Descriptor, want)
+					}
+					return executable, nil
+				})
+			var child struct{ Release string }
+			if err := json.Unmarshal(out.Bytes(), &child); err != nil || code != 23 || child.Release != want {
+				t.Fatalf("exit=%d child=%+v error=%v stderr=%s", code, child, err, &diagnostic)
+			}
+			value, present := os.LookupEnv("SDP_RELEASE")
+			if value != test.release || present == test.unset {
+				t.Fatal("delegation changed the parent's environment")
 			}
 		})
 	}

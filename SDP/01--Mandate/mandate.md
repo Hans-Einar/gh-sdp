@@ -8,8 +8,11 @@ all installation policy and execution, including the canonical shared bootstrap.
 Historical Study recommendations allocating an apply engine to gh-sdp are
 superseded by this current selection; their historical evidence is unchanged.
 The earlier Study-only limits below describe those completed assignments.
-No production release, merge, live rollout or platform support is authorized.
-See [current Slice](../Sprints/Sprint-003/ScrumIterations.md).
+The owner subsequently authorized merge, release, extension installation and live
+XFMD upgrade. [SPS-004](../Sprints/Sprint-004/ScrumIterations.md) selects the first
+Linux amd64 client release, with root coordination owning SDP publication and live
+XFMD adoption. Other platforms remain unverified. Publication identities are
+recorded only after the real tag and GitHub Release exist.
 
 
 Status: approved — governing Mandate; Phase 2 Study evidence foundation accepted

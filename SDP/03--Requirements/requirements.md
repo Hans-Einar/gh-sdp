@@ -14,4 +14,10 @@ claim all MAN-SC success criteria delivered.
 - REQ-GHS-004: Actual executable preview and explicit saved-plan apply must match
   direct SDPTool on disposable projects; Linux-only evidence is stated honestly.
 
-Work and acceptance: [SPS-003](../Sprints/Sprint-003/ScrumIterations.md).
+SPS-004 adds REQ-GHS-005: select the exact canonical default when SDP_RELEASE is
+empty and pass that same selection to the child; explicit overrides retain their
+meaning. Publish only the verified Linux amd64 client package with source identity
+and checksum, independently versioned from SDP.
+
+Work and acceptance: [SPS-004](../Sprints/Sprint-004/ScrumIterations.md); delivered
+bootstrap foundation: [SPS-003](../Sprints/Sprint-003/ScrumIterations.md).

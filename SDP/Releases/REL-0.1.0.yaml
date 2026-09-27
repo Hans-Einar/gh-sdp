@@ -1,11 +1,15 @@
-schemaVersion: "1.0"
+schemaVersion: '1.0'
 releaseId: REL-0.1.0
-version: "0.1.0"
-state: unreleased
+version: 0.1.0
+state: prerelease
 releaseNotesPath: SDP/RELEASE-NOTES.md
-includedCapabilities: []
-verificationRecords: []
-reviewRecords: []
+includedCapabilities:
+- gh-sdp.bootstrap.signed
+- gh-sdp.delegate.native
+verificationRecords:
+- VER-SPS-004
+reviewRecords:
+- REV-SPS-004-001
 migrationRecord: null
 releasePreparationCommit: null
 gitTag: null

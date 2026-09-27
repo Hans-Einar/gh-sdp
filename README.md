@@ -4,9 +4,9 @@ A thin GitHub CLI extension that obtains a verified SDPTool executable and
 forwards arguments, streams and exit status. SDPTool owns installation policy,
 preview, apply, recovery and project preservation.
 
-This is an unreleased development candidate. No production signing key, release
-catalog or published binary is selected. Native verification currently covers
-Linux amd64 only; Windows/macOS support requires native tests.
+The v0.1.0 client candidate targets the signed SDP v0.2.0 distribution. Publication
+is tracked separately in the release records; building a candidate is not a release.
+Native verification covers Linux amd64 only; Windows/macOS support requires native tests.
 
 ## Build and use
 
@@ -17,7 +17,31 @@ go build -o gh-sdp .
 gh extension install .
 ```
 
-Configure an explicit signed test distribution supplied by the SDPTool workstream:
+After publication, install the Linux amd64 GitHub CLI extension with:
+
+```sh
+gh extension install Hans-Einar/gh-sdp
+```
+
+The shared upstream default selects the exact SDP v0.2.0 release descriptor.
+Without `SDP_RELEASE`, the client uses that default for both verification and the
+SDPTool child. An explicit `SDP_RELEASE` overrides both selections. No key option
+is needed for the production release: public trust is compiled into the shared
+bootstrap. The private signing key is never part of the client or package.
+
+From a project checkout, preview an existing manual installation with:
+
+```sh
+gh sdp upgrade --manifest /absolute/path/to/adoption.json --plan-output /absolute/path/to/plan.json
+gh sdp upgrade --apply /absolute/path/to/plan.json
+```
+
+An adoption manifest must describe that project's actual current inventory; the
+client does not generate or guess it. `gh sdp install --plan-output ...` previews
+a clean installation. The default descriptor requires a published paired SDP
+release and network access on the first call, then uses the verified cache.
+
+For an explicit nonproduction signed test distribution instead:
 
 ```sh
 export SDP_RELEASE=/absolute/path/to/release.json
@@ -42,7 +66,26 @@ All command arguments reach SDPTool unchanged. Invalid local configuration exits
 2, bootstrap/start failures exit 4, and ordinary child exit codes pass through.
 No shell or PATH lookup selects the engine. `gh sdp --version` reports the child
 SDPTool identity; it does not claim that the client has that version. The client
-release remains independently proposed as 0.1.0 and unreleased.
+release identity is recorded independently in the package manifest; delegated
+`--version` remains unchanged.
+
+## Package a release candidate
+
+The script requires Bash, Git, Python 3, and Go. Use a clean checkout and an output
+directory outside it; existing output files and local module replacements are rejected.
+No downloads or publication are performed by the script except Go's normal immutable
+module retrieval during compilation.
+
+```sh
+SDP_GO=/absolute/path/to/go scripts/package.sh 0.1.0 /absolute/path/to/package
+```
+
+Outputs are `gh-sdp_linux_amd64` (the asset naming recognized by GitHub CLI),
+`checksums.txt`, and `gh-sdp.manifest.json`. The manifest records the exact clean
+source commit, platform, byte count, SHA-256 and Go dependency/build identities.
+Builds disable CGO and use `-trimpath`; the same clean source and Go toolchain
+produce the same executable. Publication requires the separate
+[release gate](docs/Release-Lifecycle.md).
 
 ## Verification
 
@@ -57,6 +100,6 @@ It creates disposable signed fixtures and projects and compares direct and
 client preview/apply. The optional GitHub CLI route installs the local extension
 only into a temporary isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
 
-[Current Slice and authority](SDP/Sprints/Sprint-003/ScrumIterations.md) ·
+[Current Slice and authority](SDP/Sprints/Sprint-004/ScrumIterations.md) ·
 [Verification](SDP/Verification/VER-SPS-003.md) ·
 [Canonical dependency provenance](SDP/Sprints/Sprint-003/implementationNotes.md)

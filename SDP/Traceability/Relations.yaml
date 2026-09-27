@@ -455,6 +455,10 @@ questions:
     status: partially-answered-by-study
     study: STU-001
 sprints:
+  Sprint-004:
+    path: SDP/Sprints/Sprint-004/ScrumIterations.md
+    status: active
+    iterations: [SPI-004]
   Sprint-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
     status: complete
@@ -475,6 +479,11 @@ sprints:
       - SPI-002
 refactors: {}
 iterations:
+  SPI-004:
+    path: SDP/Sprints/Sprint-004/ScrumIterations.md
+    sprint: Sprint-004
+    status: active
+    slices: [SPS-004]
   SPI-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
     sprint: Sprint-003
@@ -493,6 +502,16 @@ iterations:
     slices:
       - SPS-002
 slices:
+  SPS-004:
+    path: SDP/Sprints/Sprint-004/ScrumIterations.md
+    sprint: Sprint-004
+    iteration: SPI-004
+    status: active
+    release: [REL-0.1.0]
+    requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004, REQ-GHS-005]
+    design: [DES-GHS-001]
+    verification: [VER-SPS-004]
+    reviews: [REV-SPS-004-001]
   SPS-003:
     path: SDP/Sprints/Sprint-003/ScrumIterations.md
     sprint: Sprint-003
@@ -549,6 +568,11 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-004-001:
+    path: SDP/CodeReview/REV-SPS-004-001.md
+    status: approved
+    slice: SPS-004
+    candidateCommit: 4660b6b3e27d5285c592f90570536750e5f0352f
   REV-SPS-003-002:
     path: SDP/CodeReview/REV-SPS-003-002.md
     status: approved
@@ -642,6 +666,13 @@ reviews:
       low: 0
       notes: 2
 verification:
+  VER-SPS-004:
+    path: SDP/Verification/VER-SPS-004.md
+    status: preparation-passed
+    slice: SPS-004
+    productCandidate: 2618e3857a9cf1a7165090ec5209727593fa3221
+    reviewerConfirmation: REV-SPS-004-001
+    releaseGate: true
   VER-SPS-003:
     path: SDP/Verification/VER-SPS-003.md
     status: passed
@@ -683,15 +714,15 @@ migrations: {}
 releases:
   REL-0.1.0:
     version: "0.1.0"
-    state: unreleased
-    targetStatus: proposed
+    state: prerelease
+    targetStatus: selected
     mandate:
       - MAN-001
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
     releaseRecord: SDP/Releases/REL-0.1.0.yaml
-    verification: []
-    reviews: []
+    verification: [VER-SPS-004]
+    reviews: [REV-SPS-004-001]
     releaseCommit: null
     gitTag: null
     githubRelease: null
@@ -699,7 +730,7 @@ releases:
 # Publication identities remain null until the corresponding Git/GitHub objects
 # exist. VER-SPS-001 is passed Slice evidence confirmed by REV-SPS-001-002; it
 # is not release-gate verification and is intentionally absent from the release
-# verification/review arrays. The 0.1.0 target remains proposed and unreleased.
+# verification/review arrays. SPS-004 later selected first-release preparation.
 # `approved` on the Mandate, outcomes, success criteria, and assumptions records
 # Steering-approved normative content, not delivered or verified product
 # behavior. Boundaries remain active. Study question statuses describe analytical
@@ -714,6 +745,7 @@ releases:
 
 # Current GIP authorization supersedes Study implementation recommendations only.
 gipRequirements:
+  REQ-GHS-005: {path: SDP/03--Requirements/requirements.md, slice: SPS-004, status: selected}
   REQ-GHS-001: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}
   REQ-GHS-002: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}
   REQ-GHS-003: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}

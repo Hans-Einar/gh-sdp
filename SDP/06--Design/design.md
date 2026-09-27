@@ -1,12 +1,15 @@
 # Design — Thin process adapter
 
-DES-GHS-001 implements ARC-GHS-001 and REQ-GHS-001–004.
+DES-GHS-001 implements ARC-GHS-001 and REQ-GHS-001–005.
 
 Read SDP_RELEASE, SDP_TEST_KEY, SDP_CACHE_DIR and SDP_OFFLINE for canonical
-bootstrap configuration. These are explicit development inputs; there is no
-implicit production key or invented latest release. Bootstrap returns the fixed
+bootstrap configuration. When SDP_RELEASE is empty, use the shared bootstrap
+DefaultRelease constant for the exact signed SDP v0.2.0 descriptor. Production
+public trust belongs to that canonical package; explicit SDP_TEST_KEY keeps test
+trust separate. Explicitly pass the selected SDP_RELEASE to the child so bootstrap
+and installation planning agree. Bootstrap returns the fixed
 verified compatible native executable path. Go os/exec receives that path and
-all client arguments unchanged, inherits cwd/environment and connects all three
+all client arguments unchanged, inherits cwd and other environment entries, and connects all three
 standard streams. Return the child's exit code. Local configuration
 errors are written to stderr and return exit 2; bootstrap or process-start
 errors return exit 4. Saved apply/resume operations force verified-cache-only
