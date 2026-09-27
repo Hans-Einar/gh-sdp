@@ -51,6 +51,9 @@ extension installation and XFMD adoption. Fresh independent review is required.
 
 The owner authorized commit, integration, release, extension installation and
 XFMD upgrade. SPS-006 in SDP/Sprints/Sprint-006/ScrumIterations.md selects client
-v0.1.2 paired with root-confirmed SDP v0.2.2. It supersedes SPS-005's completed
-boundary only for this bounded patch. Root owns upstream publication, global
-extension installation and XFMD adoption. Independent review remains required.
+v0.1.2 paired with owner-selected SDP v1.0.0, which removes public PowerShell
+entrypoints. It supersedes SPS-005's completed boundary for this bounded patch.
+Root owns upstream publication and XFMD adoption; the client coordinator owns
+delegated global extension installation and default verification. Publication and
+integration remain paused until root confirms the new Go-only candidate and pin.
+Independent review of that actual candidate remains required.

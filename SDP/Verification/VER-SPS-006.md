@@ -1,6 +1,6 @@
 # VER-SPS-006 — Template distribution default patch gate
 
-Status: preparation independently approved; publication paused by owner
+Status: previous v0.2.2 candidate approved; v1.0.0 verification pending; publication paused
 Slice: SPS-006
 Release: REL-0.1.2
 Platform: Linux amd64
@@ -36,3 +36,11 @@ confirmed fresh remote module provenance. P2 is approved for this candidate.
 The owner then paused integration/publication pending a revised Go-only upstream
 SDP release. P3 and global extension installation remain pending; root must
 confirm the revised candidate and bootstrap pin before continuation.
+
+## Revised upstream target
+
+The owner subsequently selected SDP v1.0.0 to remove public PowerShell entrypoints.
+The client stays at target v0.1.2. This record and REV-SPS-006-001 prove only the
+previous v0.2.2 candidate, not the new target. Root has not supplied its gated
+replacement bootstrap SHA. Updated pin, regression and exact-candidate checks
+remain pending, as do integration, publication and installation.

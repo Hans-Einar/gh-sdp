@@ -6,7 +6,8 @@ release:
   activeReleaseId: REL-0.1.2
   targetVersion: 0.1.2
   state: prerelease
-  targetStatus: selected
+  targetStatus: awaiting-revised-upstream-candidate
+  upstreamTargetVersion: 1.0.0
 active:
   sprint: Sprint-006
   refactor: null
@@ -41,6 +42,7 @@ lifecycle:
   contract: SDP/Sprints/Sprint-006/ScrumIterations.md
   status: paused-by-owner
   review: REV-SPS-006-001
+  reviewScope: previous-v0.2.2-candidate-only
 lastCompleted:
   sprint: Sprint-005
   iteration: SPI-005

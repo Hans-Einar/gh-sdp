@@ -4,7 +4,9 @@ A thin GitHub CLI extension that obtains a verified SDPTool executable and
 forwards arguments, streams and exit status. SDPTool owns installation policy,
 preview, apply, recovery and project preservation.
 
-The v0.1.2 client is in preparation for the signed SDP v0.2.2 distribution.
+The v0.1.2 client now targets the signed Go-only SDP v1.0.0 distribution.
+Preparation is paused pending its gated upstream revision; the current candidate
+still pins the earlier v0.2.2 bootstrap and is not the selected release candidate.
 The latest published client is v0.1.1, paired with SDP v0.2.1. Install with
 `gh extension install Hans-Einar/gh-sdp`; no local Go or PowerShell is needed.
 Native verification covers Linux amd64 only; Windows/macOS support requires native tests.
