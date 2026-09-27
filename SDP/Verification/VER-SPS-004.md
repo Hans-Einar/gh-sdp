@@ -1,6 +1,6 @@
 # VER-SPS-004 — First native release gate
 
-Status: implementation checks passed; independent review pending
+Status: preparation passed; independent REV-SPS-004-001 approved
 Slice: SPS-004
 Release: REL-0.1.0
 Platform: Linux amd64
@@ -34,7 +34,13 @@ SDP_GO=/absolute/path/to/go scripts/package.sh 0.1.0 /tmp/fresh-package
 GH_SDP_VIA_GH=true GH_SDP_BINARY=/tmp/gh-sdp-r1-final-package/gh-sdp_linux_amd64 SDPTOOL_BINARY=/tmp/gip4-exact-package/sdptool GOTOOLCHAIN=local go test -race -count=1 -v ./...
 ```
 
-The coordinator inspects the independent review before closing preparation. The
+Independent [REV-SPS-004-001](../CodeReview/REV-SPS-004-001.md) reproduced race/vet,
+module verification, exact package hash and actual isolated gh integration. It also
+verified a local production-signed descriptor without SDP_TEST_KEY, yielding63
+install actions with signed provenance and no project writes. All three draft
+documentation findings are resolved; exact preparation4660b6b is approved.
+
+The
 final merged release commit is rebuilt cleanly and its identity/checksum recorded
 at publication. Public descriptor availability and actual GitHub extension
 installation must be verified then; neither is inferred from these fixtures.

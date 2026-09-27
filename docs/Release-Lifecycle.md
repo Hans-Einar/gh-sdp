@@ -1,6 +1,7 @@
 # Native release gate
 
-A release candidate must have a completed bounded release-preparation Slice,
+A release candidate must have completed preparation milestones in its bounded
+release Slice,
 passing Go race tests and vet, a clean exact-commit Linux amd64 package with SHA-256,
 and a fresh independent review of the same production source. The upstream bootstrap
 must be a remotely resolvable immutable module version, with no local replace.
