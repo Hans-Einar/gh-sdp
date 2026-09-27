@@ -21,6 +21,9 @@ type resolveBinary func(context.Context, bootstrap.Config) (string, error)
 
 func configuration(args []string, getenv func(string) string) (bootstrap.Config, error) {
 	c := bootstrap.Config{Descriptor: getenv("SDP_RELEASE"), TestKey: getenv("SDP_TEST_KEY"), CacheDir: getenv("SDP_CACHE_DIR")}
+	if c.Descriptor == "" {
+		c.Descriptor = bootstrap.DefaultRelease
+	}
 	// Keep accepted environment spelling identical to the child's canonical
 	// offline switch so bootstrap and preview cannot disagree about networking.
 	switch getenv("SDP_OFFLINE") {
@@ -52,6 +55,9 @@ func run(ctx context.Context, args []string, getenv func(string) string, stdin i
 		return 4
 	}
 	cmd := exec.CommandContext(ctx, binary, args...)
+	// The child must plan against the same descriptor selected by bootstrap.
+	// Appending overrides an inherited empty value without changing other env.
+	cmd.Env = append(os.Environ(), "SDP_RELEASE="+c.Descriptor)
 	cmd.Stdin, cmd.Stdout, cmd.Stderr = stdin, stdout, stderr
 	if err := cmd.Run(); err != nil {
 		var child *exec.ExitError
