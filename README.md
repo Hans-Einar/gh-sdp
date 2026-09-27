@@ -80,7 +80,7 @@ module retrieval during compilation.
 SDP_GO=/absolute/path/to/go scripts/package.sh 0.1.0 /absolute/path/to/package
 ```
 
-Outputs are `gh-sdp_linux_amd64` (the asset naming recognized by GitHub CLI),
+Outputs are `gh-sdp-linux-amd64` (the asset naming recognized by GitHub CLI),
 `checksums.txt`, and `gh-sdp.manifest.json`. The manifest records the exact clean
 source commit, platform, byte count, SHA-256 and Go dependency/build identities.
 Builds disable CGO and use `-trimpath`; the same clean source and Go toolchain
@@ -91,10 +91,13 @@ produce the same executable. Publication requires the separate
 
 ```sh
 go test -race ./...
+GH_SDP_PACKAGE_DIR=/absolute/path/to/package go test -race -run TestPackagedAssetDiscovery -v ./...
 GH_SDP_BINARY=/absolute/path/to/gh-sdp SDPTOOL_BINARY=/absolute/path/to/sdptool go test -race -v ./...
 GH_SDP_VIA_GH=true GH_SDP_BINARY=/absolute/path/to/gh-sdp SDPTOOL_BINARY=/absolute/path/to/sdptool go test -race -v ./...
 ```
 
+The asset-discovery test checks the real package using GitHub CLI's `linux-amd64`
+suffix rule, then verifies its manifest and checksum; it requires `GH_SDP_PACKAGE_DIR`.
 The packaged-candidate test is skipped unless both binary paths are supplied.
 It creates disposable signed fixtures and projects and compares direct and
 client preview/apply. The optional GitHub CLI route installs the local extension

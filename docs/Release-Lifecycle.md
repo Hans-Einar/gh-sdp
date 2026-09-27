@@ -8,7 +8,7 @@ must be a remotely resolvable immutable module version, with no local replace.
 The default signed SDP descriptor must be public before the gh-sdp release is published.
 
 The first public client API is v0.1.0 (previous currentVersion 0.0.0 is an unreleased
-placeholder). Platform scope is Linux amd64. Package naming is gh-sdp_linux_amd64,
+placeholder). Platform scope is Linux amd64. Package naming is gh-sdp-linux-amd64,
 which GitHub CLI discovers as a binary extension asset. The package script records
 source commit and refuses tracked or untracked dirt. A checksum accompanies the binary.
 
