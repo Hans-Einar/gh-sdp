@@ -4,6 +4,25 @@
 
 No additional changes selected.
 
+## [0.1.2] — Unreleased
+
+Release-Date: null
+
+### Fixed
+
+- Select the exact signed SDP v0.2.2 descriptor by default through the immutable
+  canonical bootstrap dependency. This distributes the upstream current template
+  update through the existing thin client.
+- Assert the exact default descriptor in both bootstrap configuration and the
+  delegated child's environment; explicit descriptor overrides remain unchanged.
+
+### Scope
+
+Linux amd64 only. Client arguments, environment, streams, working directory and
+exit behavior remain unchanged. The client version is independent from SDP
+v0.2.2. Publication, global installation and XFMD adoption remain pending and
+require separate recorded evidence.
+
 ## [0.1.1] — 2026-09-27
 
 Release-Date: 2026-09-27

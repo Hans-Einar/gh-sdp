@@ -4,7 +4,8 @@ A thin GitHub CLI extension that obtains a verified SDPTool executable and
 forwards arguments, streams and exit status. SDPTool owns installation policy,
 preview, apply, recovery and project preservation.
 
-The v0.1.1 client is released for the signed SDP v0.2.1 distribution. Install with
+The v0.1.2 client is in preparation for the signed SDP v0.2.2 distribution.
+The latest published client is v0.1.1, paired with SDP v0.2.1. Install with
 `gh extension install Hans-Einar/gh-sdp`; no local Go or PowerShell is needed.
 Native verification covers Linux amd64 only; Windows/macOS support requires native tests.
 
@@ -23,7 +24,7 @@ After publication, install the Linux amd64 GitHub CLI extension with:
 gh extension install Hans-Einar/gh-sdp
 ```
 
-The shared upstream default selects the exact SDP v0.2.1 release descriptor.
+The selected shared upstream default is the exact SDP v0.2.2 release descriptor.
 Without `SDP_RELEASE`, the client uses that default for both verification and the
 SDPTool child. An explicit `SDP_RELEASE` overrides both selections. No key option
 is needed for the production release: public trust is compiled into the shared
@@ -77,7 +78,7 @@ No downloads or publication are performed by the script except Go's normal immut
 module retrieval during compilation.
 
 ```sh
-SDP_GO=/absolute/path/to/go scripts/package.sh 0.1.1 /absolute/path/to/package
+SDP_GO=/absolute/path/to/go scripts/package.sh 0.1.2 /absolute/path/to/package
 ```
 
 Outputs are `gh-sdp-linux-amd64` (the asset naming recognized by GitHub CLI),
@@ -103,6 +104,6 @@ It creates disposable signed fixtures and projects and compares direct and
 client preview/apply. The optional GitHub CLI route installs the local extension
 only into a temporary isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
 
-[Current Slice and authority](SDP/Sprints/Sprint-005/ScrumIterations.md) ·
-[Verification](SDP/Verification/VER-SPS-005.md) ·
-[Canonical dependency provenance](SDP/Sprints/Sprint-005/implementationNotes.md)
+[Current Slice and authority](SDP/Sprints/Sprint-006/ScrumIterations.md) ·
+[Latest published verification](SDP/Verification/VER-SPS-005.md) ·
+[Candidate dependency provenance and verification status](SDP/Sprints/Sprint-006/implementationNotes.md)
