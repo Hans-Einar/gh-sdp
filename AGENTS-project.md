@@ -38,3 +38,11 @@ The owner selected merge, release, extension installation and live XFMD upgrade.
 SPS-004 in SDP/Sprints/Sprint-004/ScrumIterations.md governs this repository's
 release preparation and publication; it supersedes SPS-003's historical no-release
 boundary only for this new work. Root coordination owns upstream SDP and live XFMD.
+
+## Authorized default-engine patch — 2026-09-27
+
+The owner explicitly authorized merge and release of the external KanBan fix.
+SPS-005 in SDP/Sprints/Sprint-005/ScrumIterations.md selects gh-sdp v0.1.1 with
+canonical SDP v0.2.1 as its default engine. This supersedes SPS-004's completed
+boundary only for the bounded patch. Root owns upstream publication, global
+extension installation and XFMD adoption. Fresh independent review is required.
