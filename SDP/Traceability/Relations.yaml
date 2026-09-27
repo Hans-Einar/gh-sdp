@@ -508,6 +508,8 @@ slices:
     iteration: SPI-004
     status: active
     release: [REL-0.1.0]
+    requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004, REQ-GHS-005]
+    design: [DES-GHS-001]
     verification: [VER-SPS-004]
     reviews: []
   SPS-003:
@@ -731,6 +733,7 @@ releases:
 
 # Current GIP authorization supersedes Study implementation recommendations only.
 gipRequirements:
+  REQ-GHS-005: {path: SDP/03--Requirements/requirements.md, slice: SPS-004, status: selected}
   REQ-GHS-001: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}
   REQ-GHS-002: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}
   REQ-GHS-003: {path: SDP/03--Requirements/requirements.md, slice: SPS-003, status: selected}
