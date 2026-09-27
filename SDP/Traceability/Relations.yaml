@@ -457,7 +457,7 @@ questions:
 sprints:
   Sprint-006:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
-    status: active
+    status: complete
     iterations: [SPI-006]
   Sprint-005:
     path: SDP/Sprints/Sprint-005/ScrumIterations.md
@@ -490,7 +490,7 @@ iterations:
   SPI-006:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
     sprint: Sprint-006
-    status: active
+    status: complete
     slices: [SPS-006]
   SPI-005:
     path: SDP/Sprints/Sprint-005/ScrumIterations.md
@@ -524,9 +524,9 @@ slices:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
     sprint: Sprint-006
     iteration: SPI-006
-    status: release-preparation
+    status: complete
     verification: [VER-SPS-006]
-    reviews: [REV-SPS-006-001, REV-SPS-006-002]
+    reviews: [REV-SPS-006-001, REV-SPS-006-002, REV-SPS-006-003]
     requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004, REQ-GHS-005]
     design: [DES-GHS-001]
     release: [REL-0.1.2]
@@ -606,6 +606,11 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-006-003:
+    path: SDP/CodeReview/REV-SPS-006-003.md
+    status: approved
+    slice: SPS-006
+    releaseCommit: a4988846432c7f7f7b3f722f2786359c9b127372
   REV-SPS-006-002:
     path: SDP/CodeReview/REV-SPS-006-002.md
     status: approved-preparation-only
@@ -736,11 +741,14 @@ reviews:
 verification:
   VER-SPS-006:
     path: SDP/Verification/VER-SPS-006.md
-    status: preparation-passed
+    status: passed
     slice: SPS-006
     productCandidate: 6cd4c3e3b16d265a79d2e8879fd964cb1c8ccbd2
     reviewerConfirmation: REV-SPS-006-002
-    releaseGate: false
+    publicationReview: REV-SPS-006-003
+    releaseGate: true
+    releaseCommit: a4988846432c7f7f7b3f722f2786359c9b127372
+    publishedManifest: SDP/Verification/evidence/SPS-006-published-manifest.json
   VER-SPS-005:
     path: SDP/Verification/VER-SPS-005.md
     status: passed
@@ -802,18 +810,18 @@ migrations: {}
 releases:
   REL-0.1.2:
     version: "0.1.2"
-    state: prerelease
-    targetStatus: ready-for-merge-and-publication
+    state: released
+    targetStatus: published
     upstreamTargetVersion: "1.0.0"
     evidenceScope: revised-v1.0.0-candidate
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
     releaseRecord: SDP/Releases/REL-0.1.2.yaml
     verification: [VER-SPS-006]
-    reviews: [REV-SPS-006-001, REV-SPS-006-002]
-    releaseCommit: null
-    gitTag: null
-    githubRelease: null
+    reviews: [REV-SPS-006-001, REV-SPS-006-002, REV-SPS-006-003]
+    releaseCommit: a4988846432c7f7f7b3f722f2786359c9b127372
+    gitTag: v0.1.2
+    githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.1.2
   REL-0.1.1:
     version: "0.1.1"
     state: released

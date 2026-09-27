@@ -4,9 +4,9 @@
 
 No additional changes selected.
 
-## [0.1.2] — Unreleased
+## [0.1.2] — 2026-09-28
 
-Release-Date: null
+Release-Date: 2026-09-28
 
 ### Fixed
 
@@ -21,8 +21,8 @@ Release-Date: null
 Linux amd64 only. Client arguments, environment, streams, working directory and
 exit behavior remain unchanged. The client version is independent from SDP
 v1.0.0, whose removal of public PowerShell entrypoints does not change the Go
-client API. Publication, global installation and XFMD adoption remain pending and
-require separate recorded evidence.
+client API. Publication and global extension installation are verified in
+VER-SPS-006; the upstream RP3 record owns live XFMD process-upgrade evidence.
 
 ## [0.1.1] — 2026-09-27
 
