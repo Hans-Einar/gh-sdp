@@ -47,6 +47,7 @@ digest = hashlib.sha256(data).hexdigest()
 manifest = {'schemaVersion': 'gh-sdp-package/1', 'version': version,
             'sourceCommit': commit, 'platform': 'linux/amd64', 'file': name,
             'sha256': digest, 'size': len(data),
+            'goVersion': info.splitlines()[0].rsplit(': ', 1)[-1],
             'buildInfo': info.splitlines()[1:]}
 (root / 'gh-sdp.manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
 (root / 'checksums.txt').write_text(f'{digest}  {name}\n')
