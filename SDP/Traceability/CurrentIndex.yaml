@@ -7,7 +7,6 @@ release:
   targetVersion: 0.1.2
   state: prerelease
   targetStatus: ready-for-merge-and-publication
-  upstreamTargetVersion: 1.0.0
 active:
   sprint: Sprint-006
   refactor: null

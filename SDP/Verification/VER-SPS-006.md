@@ -4,10 +4,13 @@ Status: revised v1.0.0 candidate preparation passed; P3 publication pending
 Slice: SPS-006
 Release: REL-0.1.2
 Platform: Linux amd64
-Product candidate: f7b690633413b0a1f13b49d3e6265bd3494d1995
-Bootstrap: v0.0.0-20260927231627-591920b69534 (remote, no replacement)
+Product candidate: 6cd4c3e3b16d265a79d2e8879fd964cb1c8ccbd2
+Bootstrap: v0.0.0-20260927233033-705df7e3d550 (remote, no replacement)
 
 ## Historical v0.2.2 candidate evidence
+
+Historical product candidate: f7b690633413b0a1f13b49d3e6265bd3494d1995.
+Historical bootstrap: v0.0.0-20260927231627-591920b69534.
 
 Worker implementation notes record Go 1.27.1 race tests, vet, module verification
 and the literal v0.2.2 default URL regression. Master inspected the actual diff:
@@ -65,3 +68,13 @@ public signed descriptor and executable, then returned SDPTool version 1.0.0
 and revision fede327d6f3af35fe7aad323e2c485a27134d20d, exit zero. Public upstream
 release: https://github.com/Hans-Einar/SDP/releases/tag/v1.0.0. No local descriptor
 or trust override was used. Final client merge/build/publication remain pending.
+
+## Additional process-schema inspection
+
+The current upstream Toolkit project validator was tried as an additional check,
+not a selected native release gate. It rejects this project's pre-existing custom
+study/traceability extensions and historical release-note Scope headings, also
+present on clean main 9ef2736. No compatibility with that validator is claimed.
+The new upstreamTargetVersion field is retained only in extensible Relations, not
+the strict CurrentIndex release object. Migrating historical process records is
+outside this default-engine patch; native client release gates above govern.
