@@ -1,12 +1,12 @@
 project:
   name: gh-sdp
-  status: release-preparation
+  status: release-reconciliation
 release:
   previousVersion: 0.1.1
   activeReleaseId: REL-0.1.2
   targetVersion: 0.1.2
-  state: prerelease
-  targetStatus: ready-for-merge-and-publication
+  state: released
+  targetStatus: published-awaiting-reconciliation-review
 active:
   sprint: Sprint-006
   refactor: null
@@ -36,19 +36,19 @@ historicalDependencyAssessment:
   accepted: false
   mediumFindings: 3
 lifecycle:
-  phase: ReleasePreparation
+  phase: ReleaseReconciliation
   authorization: owner-template-update-merge-release-2026-09-28
   contract: SDP/Sprints/Sprint-006/ScrumIterations.md
-  status: release-preparation
+  status: awaiting-independent-review
   review: REV-SPS-006-002
   reviewScope: revised-v1.0.0-candidate
 lastCompleted:
-  sprint: Sprint-005
-  iteration: SPI-005
-  slice: SPS-005
+  sprint: Sprint-006
+  iteration: SPI-006
+  slice: SPS-006
   revision: 1
-  milestone: SPS-005-P3
-  releaseCommit: 8cbef9693e353cb04dc6d98021aca454b9078e3f
-  verification: VER-SPS-005
-  review: REV-SPS-005-002
-  disposition: published-and-reconciled
+  milestone: SPS-006-P3-publication
+  releaseCommit: a4988846432c7f7f7b3f722f2786359c9b127372
+  verification: VER-SPS-006
+  review: REV-SPS-006-002
+  disposition: published-awaiting-reconciliation-review

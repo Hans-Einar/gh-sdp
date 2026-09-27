@@ -1,6 +1,6 @@
 # VER-SPS-006 — Template distribution default patch gate
 
-Status: revised v1.0.0 candidate preparation passed; P3 publication pending
+Status: publication and extension installation verified; reconciliation review pending
 Slice: SPS-006
 Release: REL-0.1.2
 Platform: Linux amd64
@@ -78,3 +78,18 @@ present on clean main 9ef2736. No compatibility with that validator is claimed.
 The new upstreamTargetVersion field is retained only in extensible Relations, not
 the strict CurrentIndex release object. Migrating historical process records is
 outside this default-engine patch; native client release gates above govern.
+
+## P3 actual publication and installation
+
+PR10 merged to a4988846432c7f7f7b3f722f2786359c9b127372. The clean merged source package
+passed actual discovery/FIFO tests with the race detector. Its annotated v0.1.2
+tag and GitHub Release were published at 2026-09-27T23:42:46Z:
+https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.1.2
+
+Downloaded assets pass checksums.txt and match the published manifest. SHA-256:
+14c4824f765e4621260714746ad0c91e66c3167ae75d1dac6b2b76a50311ae41.
+The installed extension was upgraded with `gh extension upgrade sdp` from v0.1.1
+to v0.1.2. `gh sdp --version` with its ordinary production configuration returns
+SDPTool 1.0.0 at fede327d6f3af35fe7aad323e2c485a27134d20d. gh-tree remains installed.
+Root owns the separate live XFMD upgrade evidence. Independent publication-record
+reconciliation review is pending; historical released records remain unchanged.

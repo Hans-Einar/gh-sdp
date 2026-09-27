@@ -736,11 +736,13 @@ reviews:
 verification:
   VER-SPS-006:
     path: SDP/Verification/VER-SPS-006.md
-    status: preparation-passed
+    status: passed
     slice: SPS-006
     productCandidate: 6cd4c3e3b16d265a79d2e8879fd964cb1c8ccbd2
     reviewerConfirmation: REV-SPS-006-002
-    releaseGate: false
+    releaseGate: true
+    releaseCommit: a4988846432c7f7f7b3f722f2786359c9b127372
+    publishedManifest: SDP/Verification/evidence/SPS-006-published-manifest.json
   VER-SPS-005:
     path: SDP/Verification/VER-SPS-005.md
     status: passed
@@ -802,8 +804,8 @@ migrations: {}
 releases:
   REL-0.1.2:
     version: "0.1.2"
-    state: prerelease
-    targetStatus: ready-for-merge-and-publication
+    state: released
+    targetStatus: published-awaiting-reconciliation-review
     upstreamTargetVersion: "1.0.0"
     evidenceScope: revised-v1.0.0-candidate
     releaseNotes: SDP/RELEASE-NOTES.md
@@ -811,9 +813,9 @@ releases:
     releaseRecord: SDP/Releases/REL-0.1.2.yaml
     verification: [VER-SPS-006]
     reviews: [REV-SPS-006-001, REV-SPS-006-002]
-    releaseCommit: null
-    gitTag: null
-    githubRelease: null
+    releaseCommit: a4988846432c7f7f7b3f722f2786359c9b127372
+    gitTag: v0.1.2
+    githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.1.2
   REL-0.1.1:
     version: "0.1.1"
     state: released
