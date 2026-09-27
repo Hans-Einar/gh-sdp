@@ -746,7 +746,7 @@ migrations: {}
 releases:
   REL-0.1.1:
     version: "0.1.1"
-    state: development
+    state: unreleased
     targetStatus: selected
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
