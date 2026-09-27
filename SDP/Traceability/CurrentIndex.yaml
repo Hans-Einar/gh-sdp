@@ -40,7 +40,7 @@ lifecycle:
   authorization: owner-external-kanban-fix-merge-release-2026-09-27
   contract: SDP/Sprints/Sprint-005/ScrumIterations.md
   status: complete
-  review: REV-SPS-005-001
+  review: REV-SPS-005-002
 lastCompleted:
   sprint: Sprint-005
   iteration: SPI-005
@@ -49,5 +49,5 @@ lastCompleted:
   milestone: SPS-005-P3
   releaseCommit: 8cbef9693e353cb04dc6d98021aca454b9078e3f
   verification: VER-SPS-005
-  review: REV-SPS-005-001
+  review: REV-SPS-005-002
   disposition: published-and-reconciled

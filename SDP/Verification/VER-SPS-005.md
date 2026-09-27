@@ -60,3 +60,7 @@ returned SDPTool `0.2.1`, revision `4bacfce05f92f0dab9680456e297214727b54bc6`.
 The upstream release was independently observed public and final before client
 publication. Root coordination owns actual global extension installation and
 live XFMD verification; this record does not infer those outcomes.
+
+Independent [REV-SPS-005-002](../CodeReview/REV-SPS-005-002.md) confirms actual
+remote publication, downloaded asset bytes, clean merged-source identity,
+release records and fresh-cache production default execution with no findings.

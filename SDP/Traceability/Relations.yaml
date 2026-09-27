@@ -520,7 +520,7 @@ slices:
     requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004, REQ-GHS-005]
     design: DES-GHS-001
     verification: [VER-SPS-005]
-    reviews: [REV-SPS-005-001]
+    reviews: [REV-SPS-005-001, REV-SPS-005-002]
   SPS-004:
     path: SDP/Sprints/Sprint-004/ScrumIterations.md
     sprint: Sprint-004
@@ -587,6 +587,11 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-005-002:
+    path: SDP/CodeReview/REV-SPS-005-002.md
+    status: approved
+    slice: SPS-005
+    releaseCommit: 8cbef9693e353cb04dc6d98021aca454b9078e3f
   REV-SPS-005-001:
     path: SDP/CodeReview/REV-SPS-005-001.md
     status: approved
@@ -706,6 +711,7 @@ verification:
     slice: SPS-005
     productCandidate: 50c2fbe5eff4c17a6116c171797a248d49d9e05e
     reviewerConfirmation: REV-SPS-005-001
+    publicationReview: REV-SPS-005-002
     releaseGate: true
     releaseCommit: 8cbef9693e353cb04dc6d98021aca454b9078e3f
     publishedManifest: SDP/Verification/evidence/SPS-005-published-manifest.json
@@ -766,7 +772,7 @@ releases:
     manifest: SDP/SDP-project.manifest.yaml
     releaseRecord: SDP/Releases/REL-0.1.1.yaml
     verification: [VER-SPS-005]
-    reviews: [REV-SPS-005-001]
+    reviews: [REV-SPS-005-001, REV-SPS-005-002]
     releaseCommit: 8cbef9693e353cb04dc6d98021aca454b9078e3f
     gitTag: v0.1.1
     githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.1.1
