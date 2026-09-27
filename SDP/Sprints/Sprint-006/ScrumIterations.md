@@ -1,6 +1,6 @@
 # Sprint-006 — Template distribution default patch
 
-Status: release preparation; revised P1/P2 approved
+Status: complete
 Iteration: SPI-006
 Slice: SPS-006
 Authorization: owner explicitly authorized commit, integration, release, extension installation and XFMD upgrade on 2026-09-28; root coordination assigns this repository only.
@@ -96,3 +96,10 @@ PR10 merged at a4988846432c7f7f7b3f722f2786359c9b127372; exact clean assets, ann
 tag and GitHub Release now exist. Downloaded checksum verification and global
 extension upgrade passed; the installed default returns signed SDP 1.0.0.
 VER-SPS-006 records production identities. Reconciliation review remains pending.
+
+## Closeout
+
+REV-SPS-006-003 independently approves actual publication and reconciliation,
+including remote assets and installed extension provenance. Current README and
+selected release-note status are reconciled. P1–P3 are complete; no later Slice
+or project-process migration is selected. Root separately records XFMD adoption.

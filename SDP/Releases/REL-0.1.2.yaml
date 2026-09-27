@@ -11,6 +11,7 @@ verificationRecords:
 reviewRecords:
 - REV-SPS-006-001
 - REV-SPS-006-002
+- REV-SPS-006-003
 migrationRecord: null
 releasePreparationCommit: a4988846432c7f7f7b3f722f2786359c9b127372
 gitTag: v0.1.2

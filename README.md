@@ -106,5 +106,5 @@ client preview/apply. The optional GitHub CLI route installs the local extension
 only into a temporary isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
 
 [Current Slice and authority](SDP/Sprints/Sprint-006/ScrumIterations.md) ·
-[Latest published verification](SDP/Verification/VER-SPS-005.md) ·
+[Latest published verification](SDP/Verification/VER-SPS-006.md) ·
 [Candidate dependency provenance and verification status](SDP/Sprints/Sprint-006/implementationNotes.md)

@@ -1,6 +1,6 @@
 # VER-SPS-006 — Template distribution default patch gate
 
-Status: publication and extension installation verified; reconciliation review pending
+Status: passed; publication and installation independently reconciled
 Slice: SPS-006
 Release: REL-0.1.2
 Platform: Linux amd64
@@ -93,3 +93,10 @@ to v0.1.2. `gh sdp --version` with its ordinary production configuration returns
 SDPTool 1.0.0 at fede327d6f3af35fe7aad323e2c485a27134d20d. gh-tree remains installed.
 Root owns the separate live XFMD upgrade evidence. Independent publication-record
 reconciliation review is pending; historical released records remain unchanged.
+
+## Independent closeout
+
+REV-SPS-006-003 independently confirms the remote annotated tag, release assets,
+checksums, installed executable and fresh-cache production default. Publication
+records are approved. The stale README/selected release-note finding was resolved
+in 835d095; the final latest-verification link now points here.
