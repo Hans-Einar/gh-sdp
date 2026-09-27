@@ -1,12 +1,12 @@
 project:
   name: gh-sdp
-  status: development
+  status: prerelease
 release:
   previousVersion: 0.1.0
   activeReleaseId: REL-0.1.1
   targetVersion: 0.1.1
-  state: unreleased
-  targetStatus: selected
+  state: prerelease
+  targetStatus: preparation-approved
 active:
   sprint: Sprint-005
   refactor: null
@@ -39,8 +39,8 @@ lifecycle:
   phase: ReleasePreparation
   authorization: owner-external-kanban-fix-merge-release-2026-09-27
   contract: SDP/Sprints/Sprint-005/ScrumIterations.md
-  status: active
-  review: null
+  status: publication-pending
+  review: REV-SPS-005-001
 lastCompleted:
   sprint: Sprint-004
   iteration: SPI-004

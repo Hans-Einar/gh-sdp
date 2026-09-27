@@ -1,13 +1,15 @@
 schemaVersion: '1.0'
 releaseId: REL-0.1.1
 version: 0.1.1
-state: unreleased
+state: prerelease
 releaseNotesPath: SDP/RELEASE-NOTES.md
 includedCapabilities:
 - gh-sdp.bootstrap.signed
 - gh-sdp.delegate.native
-verificationRecords: []
-reviewRecords: []
+verificationRecords:
+- VER-SPS-005
+reviewRecords:
+- REV-SPS-005-001
 migrationRecord: null
 releasePreparationCommit: null
 gitTag: null

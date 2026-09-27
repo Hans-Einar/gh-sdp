@@ -40,3 +40,12 @@ Managed AGENTS.md and installed Toolkit facts remain unchanged.
 The installed release skill and docs/Release-Lifecycle.md govern publication.
 All publication identities remain null until real objects exist. Root owns global
 extension verification and live XFMD adoption. Do not claim either here.
+
+## Preparation disposition
+
+P1 and P2 delivered. Independent REV-SPS-005-001 approves production candidate
+50c2fbe5eff4c17a6116c171797a248d49d9e05e and independently reproduces its
+package checksum and manifest. Race/vet, exact default URL/delegation, fresh
+remote module retrieval, asset discovery and FIFO rejection pass. P3 remains
+active: public upstream default verification, clean merged package, publication
+and reconciliation are not yet claimed.

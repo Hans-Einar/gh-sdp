@@ -519,8 +519,8 @@ slices:
     release: REL-0.1.1
     requirements: [REQ-GHS-001, REQ-GHS-002, REQ-GHS-003, REQ-GHS-004, REQ-GHS-005]
     design: DES-GHS-001
-    verification: []
-    reviews: []
+    verification: [VER-SPS-005]
+    reviews: [REV-SPS-005-001]
   SPS-004:
     path: SDP/Sprints/Sprint-004/ScrumIterations.md
     sprint: Sprint-004
@@ -587,6 +587,11 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-005-001:
+    path: SDP/CodeReview/REV-SPS-005-001.md
+    status: approved
+    slice: SPS-005
+    candidateCommit: 50c2fbe5eff4c17a6116c171797a248d49d9e05e
   REV-SPS-004-003:
     path: SDP/CodeReview/REV-SPS-004-003.md
     status: approved
@@ -695,6 +700,13 @@ reviews:
       low: 0
       notes: 2
 verification:
+  VER-SPS-005:
+    path: SDP/Verification/VER-SPS-005.md
+    status: preparation-passed
+    slice: SPS-005
+    productCandidate: 50c2fbe5eff4c17a6116c171797a248d49d9e05e
+    reviewerConfirmation: REV-SPS-005-001
+    releaseGate: false
   VER-SPS-004:
     path: SDP/Verification/VER-SPS-004.md
     status: passed
@@ -746,13 +758,13 @@ migrations: {}
 releases:
   REL-0.1.1:
     version: "0.1.1"
-    state: unreleased
-    targetStatus: selected
+    state: prerelease
+    targetStatus: preparation-approved
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
     releaseRecord: SDP/Releases/REL-0.1.1.yaml
-    verification: []
-    reviews: []
+    verification: [VER-SPS-005]
+    reviews: [REV-SPS-005-001]
     releaseCommit: null
     gitTag: null
     githubRelease: null

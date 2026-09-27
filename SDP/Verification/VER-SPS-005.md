@@ -1,6 +1,6 @@
 # VER-SPS-005 — Default engine patch release gate
 
-Status: candidate checks passed; independent review and publication pending
+Status: preparation passed; public upstream and publication checks pending
 Slice: SPS-005
 Release: REL-0.1.1
 Platform: Linux amd64
@@ -29,3 +29,11 @@ source and exact dependency. Independent review must confirm preparation.
 The final merged source needs a fresh clean package. Default production trust
 with a fresh cache is required after the paired SDP v0.2.1 release is public.
 No publication, global extension installation or XFMD adoption is claimed here.
+
+## Independent preparation review
+
+[REV-SPS-005-001](../CodeReview/REV-SPS-005-001.md) approves P2 and independently
+reproduces the package SHA-256 and complete manifest byte-for-byte from detached
+50c2fbe. Race tests, vet, module verification, fresh-cache remote module retrieval,
+actual asset discovery and packaged FIFO rejection pass. Upstream module content
+diff contains only the default descriptor change. No implementation findings remain.
