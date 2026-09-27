@@ -1,13 +1,13 @@
 # VER-SPS-006 — Template distribution default patch gate
 
-Status: previous v0.2.2 candidate approved; v1.0.0 verification pending; publication paused
+Status: revised v1.0.0 candidate preparation passed; P3 publication pending
 Slice: SPS-006
 Release: REL-0.1.2
 Platform: Linux amd64
 Product candidate: f7b690633413b0a1f13b49d3e6265bd3494d1995
 Bootstrap: v0.0.0-20260927231627-591920b69534 (remote, no replacement)
 
-## Candidate evidence
+## Historical v0.2.2 candidate evidence
 
 Worker implementation notes record Go 1.27.1 race tests, vet, module verification
 and the literal v0.2.2 default URL regression. Master inspected the actual diff:
@@ -44,3 +44,24 @@ The client stays at target v0.1.2. This record and REV-SPS-006-001 prove only th
 previous v0.2.2 candidate, not the new target. Root has not supplied its gated
 replacement bootstrap SHA. Updated pin, regression and exact-candidate checks
 remain pending, as do integration, publication and installation.
+
+## Current revised P1/P2 evidence
+
+Exact product candidate: 6cd4c3e3b16d265a79d2e8879fd964cb1c8ccbd2. Bootstrap:
+v0.0.0-20260927233033-705df7e3d550. Independent REV-SPS-006-002 passed full
+race tests including packaged discovery/FIFO rejection, vet, module verification
+and direct remote dependency retrieval. No adapter or package source changes.
+The [revised candidate manifest](evidence/SPS-006-go-only-candidate-manifest.json)
+records clean exact-source provenance, Linux amd64, size 10042505 and SHA-256
+2a02675a9f61979ae781b8a7bfb855167c6db61d08a4d5e2a38be64a6d9c318b.
+Root inspected these records and confirmed the new upstream production candidate.
+P3 public default execution, merged packaging and publication remain to be recorded.
+
+## Public production default gate
+
+The reviewed packaged client was executed with a new empty SDP_CACHE_DIR and no
+SDP_RELEASE override after upstream publication. It downloaded and verified the
+public signed descriptor and executable, then returned SDPTool version 1.0.0
+and revision fede327d6f3af35fe7aad323e2c485a27134d20d, exit zero. Public upstream
+release: https://github.com/Hans-Einar/SDP/releases/tag/v1.0.0. No local descriptor
+or trust override was used. Final client merge/build/publication remain pending.

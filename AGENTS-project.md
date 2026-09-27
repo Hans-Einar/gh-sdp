@@ -54,6 +54,7 @@ XFMD upgrade. SPS-006 in SDP/Sprints/Sprint-006/ScrumIterations.md selects clien
 v0.1.2 paired with owner-selected SDP v1.0.0, which removes public PowerShell
 entrypoints. It supersedes SPS-005's completed boundary for this bounded patch.
 Root owns upstream publication and XFMD adoption; the client coordinator owns
-delegated global extension installation and default verification. Publication and
-integration remain paused until root confirms the new Go-only candidate and pin.
-Independent review of that actual candidate remains required.
+delegated global extension installation and default verification. Root confirmed the revised Go-only candidate and immutable pin after exact-head
+CI and upstream integration. REV-SPS-006-002 approves P2; P3 verifies the public
+production descriptor and publishes the exact merged client. Independent review
+of final publication reconciliation remains required.

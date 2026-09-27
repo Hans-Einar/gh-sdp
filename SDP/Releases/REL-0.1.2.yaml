@@ -10,6 +10,7 @@ verificationRecords:
 - VER-SPS-006
 reviewRecords:
 - REV-SPS-006-001
+- REV-SPS-006-002
 migrationRecord: null
 releasePreparationCommit: null
 gitTag: null

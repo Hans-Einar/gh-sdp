@@ -1,6 +1,6 @@
 # Sprint-006 — Template distribution default patch
 
-Status: paused by owner
+Status: release preparation; revised P1/P2 approved
 Iteration: SPI-006
 Slice: SPS-006
 Authorization: owner explicitly authorized commit, integration, release, extension installation and XFMD upgrade on 2026-09-28; root coordination assigns this repository only.
@@ -79,3 +79,13 @@ candidate. Preserve the previous candidate and its evidence as historical;
 its v0.2.2 default and P2 review do not prove or approve the v1.0.0 target.
 Publication and integration remain paused. Existing owner authorization applies
 when root confirms the revised candidate; no new owner approval is required.
+
+## Revised candidate accepted for P3
+
+Root confirmed the revised upstream candidate after exact-head ff95993 CI passed
+and PR45 merged at fede327d6f3af35fe7aad323e2c485a27134d20d. This lifts the
+historical pause for the selected 1.0.0 candidate. Worker P1 is 6cd4c3e; fresh
+REV-SPS-006-002 approves P2 at that exact source. Bootstrap pin
+v0.0.0-20260927233033-705df7e3d550 is remotely verified and unchanged by the
+upstream evidence-only closeout and merge. P3 now proceeds under the existing
+owner publication authorization; no previous 0.2.2 evidence is reused as proof.
