@@ -96,3 +96,12 @@ schema sdptool/0.2 and revision 6f9af514c99076d9067b3fbbfc93193a2f986070;
 SPS-007-final-signed-version.json retains the response. This establishes the
 actual immutable signed pair locally. It does not establish public descriptor
 availability, which remains a P3 requirement before client publication.
+
+## Upstream candidate replaced before publication
+
+Root subsequently withheld final approval of 6f9af514 after exact-candidate CI
+found a historical fixture version expectation requiring correction. Root is
+also correcting obsolete archive-gate prose. Its rebuilt commit, binary and
+signature require fresh pairing even though runtime behavior is unchanged.
+The preceding pair evidence remains valid only for 6f9af514 and is not the
+selected final-pair approval. Client publication stays pending.
