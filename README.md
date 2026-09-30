@@ -25,13 +25,24 @@ Install the published Linux amd64 GitHub CLI extension with:
 gh extension install Hans-Einar/gh-sdp
 ```
 
-The selected shared upstream default is the exact SDP v1.0.0 release descriptor.
+The v0.2.0 candidate selects the exact SDP v2.0.0 release descriptor.
+This candidate is not yet published.
 Without `SDP_RELEASE`, the client uses that default for both verification and the
 SDPTool child. An explicit `SDP_RELEASE` overrides both selections. No key option
 is needed for the production release: public trust is compiled into the shared
 bootstrap. The private signing key is never part of the client or package.
 
-From a project checkout, preview an existing manual installation with:
+The paired v2.0.0 engine discovers project sources and defaults to human-readable
+output. Machine consumers must explicitly request `--json`, including for
+`--version`. For example, from a project checkout:
+
+```sh
+gh sdp discover
+gh sdp discover --json
+gh sdp --version --json
+```
+
+Preview an existing manual installation with:
 
 ```sh
 gh sdp upgrade --manifest /absolute/path/to/adoption.json --plan-output /absolute/path/to/plan.json
@@ -68,8 +79,8 @@ All command arguments reach SDPTool unchanged. Invalid local configuration exits
 2, bootstrap/start failures exit 4, and ordinary child exit codes pass through.
 No shell or PATH lookup selects the engine. `gh sdp --version` reports the child
 SDPTool identity; it does not claim that the client has that version. The client
-release identity is recorded independently in the package manifest; delegated
-`--version` remains unchanged.
+release identity is recorded independently in the package manifest; the client
+forwards the engine's version output unchanged.
 
 ## Package a release candidate
 
@@ -79,7 +90,7 @@ No downloads or publication are performed by the script except Go's normal immut
 module retrieval during compilation.
 
 ```sh
-SDP_GO=/absolute/path/to/go scripts/package.sh 0.1.2 /absolute/path/to/package
+SDP_GO=/absolute/path/to/go scripts/package.sh 0.2.0 /absolute/path/to/package
 ```
 
 Outputs are `gh-sdp-linux-amd64` (the asset naming recognized by GitHub CLI),
@@ -102,9 +113,11 @@ The asset-discovery test checks the real package using GitHub CLI's `linux-amd64
 suffix rule, then verifies its manifest and checksum; it requires `GH_SDP_PACKAGE_DIR`.
 The packaged-candidate test is skipped unless both binary paths are supplied.
 It creates disposable signed fixtures and projects and compares direct and
-client preview/apply. The optional GitHub CLI route installs the local extension
-only into a temporary isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
+client human/JSON version, discovery, preview and diagnostic output, then
+preview/apply.
+The optional GitHub CLI route installs the local extension only into a temporary
+isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
 
-[Current Slice and authority](SDP/Sprints/Sprint-006/ScrumIterations.md) ·
+[Current Slice and authority](SDP/Sprints/Sprint-007/ScrumIterations.md) ·
 [Latest published verification](SDP/Verification/VER-SPS-006.md) ·
-[Candidate dependency provenance and verification status](SDP/Sprints/Sprint-006/implementationNotes.md)
+[Candidate dependency provenance and verification status](SDP/Sprints/Sprint-007/implementationNotes.md)

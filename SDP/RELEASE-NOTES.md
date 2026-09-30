@@ -2,7 +2,23 @@
 
 ## [Unreleased]
 
-No additional changes selected.
+### Changed
+
+- Select the exact signed SDP v2.0.0 default through the immutable canonical
+  bootstrap, including upstream automatic source discovery.
+- The paired SDPTool now defaults to human-readable output. Machine consumers
+  must pass --json explicitly, including when requesting --version. This visible
+  compatibility change selects client v0.2.0 independently of Toolkit v2.0.0.
+- Shared bootstrap version probing requests machine output with compatibility
+  fallback for older explicitly selected engines.
+
+### Scope
+
+Linux amd64 only. The client continues to forward arguments, streams, working
+directory, environment and child exit status. Explicit descriptors and saved
+operation offline behavior remain supported. Publication awaits exact-candidate
+verification, independent review and the public paired descriptor; no merge,
+global extension installation or live XFMD change is selected.
 
 ## [0.1.2] — 2026-09-28
 

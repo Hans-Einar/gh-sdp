@@ -136,6 +136,52 @@ func TestPackagedCandidates(t *testing.T) {
 		}
 		return out
 	}
+	// The new paired engine defaults to human output, including its version.
+	// Bootstrap must probe it successfully without changing delegated output.
+	for _, args := range [][]string{{"--version"}, {"--version", "--json"}, {"discover"}, {"discover", "--json"}, {"upgrade", "--manifest", manifest}, {"upgrade", "--manifest", manifest, "--json"}} {
+		wrapped, wrappedErr, wrappedCode := call(client, args...)
+		direct, directErr, directCode := call(engine, args...)
+		if wrappedCode != 0 || directCode != 0 || !bytes.Equal(wrapped, direct) || !bytes.Equal(wrappedErr, directErr) {
+			t.Fatalf("output delegation %v: client=%d %s %s direct=%d %s %s", args, wrappedCode, wrapped, wrappedErr, directCode, direct, directErr)
+		}
+		machine := args[len(args)-1] == "--json"
+		if len(wrapped) == 0 || json.Valid(wrapped) != machine {
+			t.Fatalf("output mode %v: %s", args, wrapped)
+		}
+		if args[0] == "--version" && machine {
+			var version struct{ InstallationProtocol string }
+			if err := json.Unmarshal(wrapped, &version); err != nil || version.InstallationProtocol != bootstrap.Protocol {
+				t.Fatalf("machine version protocol: %s (%v)", wrapped, err)
+			}
+		}
+	}
+	// An ordinary SDP directory is discoverable without navigation registration.
+	// Inspect the public machine contract as well as byte-for-byte delegation.
+	var discovery struct {
+		Schema, Operation, Status, Root string
+		Inventory                       struct{ SchemaVersion string }
+		Navigation                      struct {
+			Schema, Operation, InventoryRevision string
+			Nodes                                []json.RawMessage
+		}
+	}
+	out := require(client, "discover", "--json")
+	if err := json.Unmarshal(out, &discovery); err != nil || discovery.Schema != "sdptool/0.2" || discovery.Operation != "discover" || discovery.Status != "valid" || discovery.Root != root || discovery.Inventory.SchemaVersion != "2.0" || discovery.Navigation.Schema != discovery.Schema || discovery.Navigation.Operation != "tree" || discovery.Navigation.InventoryRevision == "" || len(discovery.Navigation.Nodes) == 0 {
+		t.Fatalf("automatic discovery contract: %s (%v)", out, err)
+	}
+	if _, err := os.Stat(filepath.Join(root, "SDP", "navigation.json")); !os.IsNotExist(err) {
+		t.Fatalf("discovery created navigation registration: %v", err)
+	}
+	for _, args := range [][]string{{"unknown-command"}, {"unknown-command", "--json"}} {
+		wrapped, wrappedErr, wrappedCode := call(client, args...)
+		direct, directErr, directCode := call(engine, args...)
+		if wrappedCode == 0 || wrappedCode != directCode || !bytes.Equal(wrapped, direct) || !bytes.Equal(wrappedErr, directErr) {
+			t.Fatalf("diagnostic delegation %v: client=%d %s %s direct=%d %s %s", args, wrappedCode, wrapped, wrappedErr, directCode, direct, directErr)
+		}
+		if len(wrapped) != 0 || len(wrappedErr) == 0 || json.Valid(wrappedErr) != (args[len(args)-1] == "--json") {
+			t.Fatalf("diagnostic mode %v: stdout=%s stderr=%s", args, wrapped, wrappedErr)
+		}
+	}
 	clientPlan := filepath.Join(dir, "client-plan.json")
 	directPlan := filepath.Join(dir, "direct-plan.json")
 	wrapperOutput := require(client, "upgrade", "--manifest", manifest, "--plan-output", clientPlan, "--json")
@@ -231,7 +277,7 @@ func TestPackagedCandidates(t *testing.T) {
 	if code != 4 || len(out) != 0 || !bytes.Contains(diagnostic, []byte("digest/size")) {
 		t.Fatalf("corrupt: %d %s %s", code, out, diagnostic)
 	}
-	t.Logf("packaged SHA256 gh-sdp=%s sdptool=%s; preview equality, apply, preservation, repetition, incompatible and corrupt cache passed", fileDigest(t, client), digest(binary))
+	t.Logf("packaged SHA256 gh-sdp=%s sdptool=%s; automatic discovery, human/JSON output and diagnostic equality, preview equality, apply, preservation, repetition, incompatible and corrupt cache passed", fileDigest(t, client), digest(binary))
 }
 func fileDigest(t *testing.T, path string) string {
 	t.Helper()

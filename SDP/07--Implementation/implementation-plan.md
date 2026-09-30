@@ -1,9 +1,12 @@
 # Implementation and release work
 
-Current: [SPS-004](../Sprints/Sprint-004/ScrumIterations.md) prepares the owner-authorized
-first native client release and records real publication after independent review.
-Root coordination owns paired SDP publication, global extension installation and
-live XFMD adoption. Linux amd64 is the bounded support target.
+Current: [SPS-007](../Sprints/Sprint-007/ScrumIterations.md) prepares client v0.2.0
+paired with SDP v2.0.0, including upstream discovery and human output defaults.
+The owner authorized publication of the exact reviewed branch commit after
+verification and public paired-descriptor availability. Root coordination owns
+upstream publication. Main merge, global extension installation and live XFMD
+changes are not selected; the owner will manually upgrade XFMD. Linux amd64
+remains the bounded support target.
 
 ## Delivered GIP-3-M2 foundation
 
