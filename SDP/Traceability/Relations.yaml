@@ -536,7 +536,7 @@ slices:
     status: in-progress
     release: REL-0.2.0
     verification: [VER-SPS-007]
-    reviews: [REV-SPS-007-001]
+    reviews: [REV-SPS-007-001, REV-SPS-007-002]
   SPS-006:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
     sprint: Sprint-006
@@ -623,6 +623,12 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-007-002:
+    path: SDP/CodeReview/REV-SPS-007-002.md
+    status: approved
+    slice: SPS-007
+    candidateCommit: 72b4e048a90841a1994e9846bb4db0d0ad9b922e
+    scope: final-pair-and-public-default-publication-gate
   REV-SPS-007-001:
     path: SDP/CodeReview/REV-SPS-007-001.md
     status: approved
@@ -768,7 +774,8 @@ verification:
     slice: SPS-007
     productCandidate: 336d654c7533a30b340a1366109a41a9307ddf1e
     packageCandidate: 72b4e048a90841a1994e9846bb4db0d0ad9b922e
-    releaseGate: false
+    reviewerConfirmation: REV-SPS-007-002
+    releaseGate: true
   VER-SPS-006:
     path: SDP/Verification/VER-SPS-006.md
     status: passed

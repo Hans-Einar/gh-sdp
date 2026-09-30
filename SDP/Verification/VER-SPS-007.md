@@ -1,6 +1,6 @@
 # VER-SPS-007 — Discovery client release gate
 
-Status: initial P2 preparation independently approved; final upstream pairing and P3 pending
+Status: publication gate passed; actual publication and reconciliation pending
 Slice: SPS-007
 Release: REL-0.2.0
 Platform: Linux amd64 only
@@ -123,3 +123,25 @@ SDP_OFFLINE=false returned --version --json with 2.0.0, sdptool/0.2 and exact
 revision d304261c90066a86b2d8ffcaa2115517ea339b05, recorded in
 SPS-007-final2-signed-version.json. Fresh supplemental review and public default
 availability remain pending. Earlier 6f9af514 pairing is historical only.
+
+## Public paired descriptor gate
+
+Root published https://github.com/Hans-Einar/SDP/releases/tag/v2.0.0 from
+d304261c90066a86b2d8ffcaa2115517ea339b05 after exact-candidate CI run
+36790502323 and independent upstream release approval. Descriptor SHA-256 is
+f7aac5a703c4d296a3474d90c682be5c96733ba1f46aed94817954cbc864f367.
+
+Master invoked the exact client package with SDP_RELEASE and SDP_TEST_KEY absent,
+SDP_OFFLINE=false and a newly created empty cache
+/tmp/gh-sdp-sps007-public-cache-ktqy0119. --version returned human output;
+--version --json returned version 2.0.0, exact d304261 revision and sdptool/0.2.
+Both exited zero with empty stderr; actual output is retained in
+SPS-007-public-human.txt and SPS-007-public-json.txt. discover --json also exited
+zero, with sdptool/0.2 inventory and inline navigation and no registration field.
+No project files or global extension were changed. REV-SPS-007-002 approves the
+local immutable pair; final independent public-default confirmation is pending.
+
+REV-SPS-007-002 independently passed a separate empty-cache public default check
+and approves publication of the exact reviewed client source 72b4e048 and binary
+9c7471817285647e3ca12c7ef0618171bd09021e43a9a8392a3779c85b0ba72b.
+P1/P2 and the P3 prepublication gate are complete. No tag/release is claimed yet.
