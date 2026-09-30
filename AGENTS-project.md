@@ -58,3 +58,13 @@ delegated global extension installation and default verification. Root confirmed
 CI and upstream integration. REV-SPS-006-002 approves P2; P3 verifies the public
 production descriptor and publishes the exact merged client. Independent review
 of final publication reconciliation remains required.
+
+## Authorized discovery release — 2026-10-01
+
+Session 0003 / upstream PLAN-SDP-0014 selects local SPS-007 in
+SDP/Sprints/Sprint-007/ScrumIterations.md. Prepare and release client v0.2.0
+paired with SDP v2.0.0 through the root-supplied immutable bootstrap. The human
+default output change requires explicit --json for machine consumers. Publication
+from the reviewed branch is authorized after the paired descriptor is public;
+main merge, global extension installation and live XFMD changes are not selected.
+Root owns upstream release; the owner will manually upgrade XFMD.

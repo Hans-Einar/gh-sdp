@@ -6,15 +6,15 @@ installed:
   manifestPath: Framework/installed-toolkit.manifest.yaml
 release:
   currentVersion: 0.1.2
-  nextTargetVersion: null
-  state: released
+  nextTargetVersion: 0.2.0
+  state: unreleased
   latestTag: v0.1.2
   latestCommit: a4988846432c7f7f7b3f722f2786359c9b127372
 development:
-  sprintId: Sprint-006
+  sprintId: Sprint-007
   refactorId: null
-  iterationId: SPI-006
-  sliceId: SPS-006
+  iterationId: SPI-007
+  sliceId: SPS-007
   fixId: null
   revision: 1
 migration:

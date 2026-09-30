@@ -455,6 +455,10 @@ questions:
     status: partially-answered-by-study
     study: STU-001
 sprints:
+  Sprint-007:
+    path: SDP/Sprints/Sprint-007/ScrumIterations.md
+    status: in-progress
+    iterations: [SPI-007]
   Sprint-006:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
     status: complete
@@ -487,6 +491,11 @@ sprints:
       - SPI-002
 refactors: {}
 iterations:
+  SPI-007:
+    path: SDP/Sprints/Sprint-007/ScrumIterations.md
+    sprint: Sprint-007
+    status: in-progress
+    slices: [SPS-007]
   SPI-006:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
     sprint: Sprint-006
@@ -520,6 +529,12 @@ iterations:
     slices:
       - SPS-002
 slices:
+  SPS-007:
+    path: SDP/Sprints/Sprint-007/ScrumIterations.md
+    sprint: Sprint-007
+    iteration: SPI-007
+    status: in-progress
+    release: REL-0.2.0
   SPS-006:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
     sprint: Sprint-006
@@ -808,6 +823,17 @@ verification:
     releaseGate: false
 migrations: {}
 releases:
+  REL-0.2.0:
+    version: "0.2.0"
+    state: unreleased
+    targetStatus: selected
+    upstreamTargetVersion: "2.0.0"
+    releaseNotes: SDP/RELEASE-NOTES.md
+    manifest: SDP/SDP-project.manifest.yaml
+    releaseRecord: SDP/Releases/REL-0.2.0.yaml
+    releaseCommit: null
+    gitTag: null
+    githubRelease: null
   REL-0.1.2:
     version: "0.1.2"
     state: released
