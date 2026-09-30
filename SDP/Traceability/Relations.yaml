@@ -536,6 +536,7 @@ slices:
     status: in-progress
     release: REL-0.2.0
     verification: [VER-SPS-007]
+    reviews: [REV-SPS-007-001]
   SPS-006:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
     sprint: Sprint-006
@@ -622,6 +623,12 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-007-001:
+    path: SDP/CodeReview/REV-SPS-007-001.md
+    status: approved
+    slice: SPS-007
+    candidateCommit: 72b4e048a90841a1994e9846bb4db0d0ad9b922e
+    scope: preparation-only-final-upstream-pairing-pending
   REV-SPS-006-003:
     path: SDP/CodeReview/REV-SPS-006-003.md
     status: approved

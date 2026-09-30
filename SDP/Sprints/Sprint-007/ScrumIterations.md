@@ -55,3 +55,8 @@ v0.0.0-20260930230248-247fb7aba628. Race tests with the initial paired engine,
 vet and module provenance passed as recorded in implementationNotes.md.
 P2 exact clean package and independent review are pending. P3 awaits the public
 paired descriptor. No client publication or integration has occurred.
+
+P2 initial clean package checks and independent REV-SPS-007-001 are approved.
+The exact package source is 72b4e048a90841a1994e9846bb4db0d0ad9b922e.
+Final immutable upstream package pairing is pending; development-engine rehearsal
+evidence is not substituted for that gate. P3 still awaits the public descriptor.

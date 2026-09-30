@@ -1,6 +1,6 @@
 # VER-SPS-007 — Discovery client release gate
 
-Status: initial P2 checks passed; final upstream pairing, independent review and P3 pending
+Status: initial P2 preparation independently approved; final upstream pairing and P3 pending
 Slice: SPS-007
 Release: REL-0.2.0
 Platform: Linux amd64 only
@@ -69,3 +69,11 @@ SDP_OFFLINE=false and no SDP_TEST_KEY. Its --version returned upstream 1.0.0 at
 fede327d6f3af35fe7aad323e2c485a27134d20d, recorded in SPS-007-legacy-version.json.
 This confirms legacy explicit selection and the bootstrap compatibility fallback;
 it does not establish new default production availability.
+
+## Independent preparation disposition
+
+REV-SPS-007-001 independently approves the reviewed preparation source and exact
+client package with no findings. The Reviewer reran all race tests, isolated
+GitHub CLI routing, vet, module verification, pinned bootstrap tests and a new
+production-trust legacy override. Final immutable upstream release pairing and
+public SDP v2.0.0 default verification remain pending; releaseGate remains false.

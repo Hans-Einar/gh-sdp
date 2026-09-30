@@ -8,7 +8,8 @@ includedCapabilities:
 - gh-sdp.delegate.native
 verificationRecords:
 - VER-SPS-007
-reviewRecords: []
+reviewRecords:
+- REV-SPS-007-001
 migrationRecord: null
 releasePreparationCommit: 72b4e048a90841a1994e9846bb4db0d0ad9b922e
 gitTag: null
