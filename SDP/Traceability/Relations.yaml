@@ -535,6 +535,7 @@ slices:
     iteration: SPI-007
     status: in-progress
     release: REL-0.2.0
+    verification: [VER-SPS-007]
   SPS-006:
     path: SDP/Sprints/Sprint-006/ScrumIterations.md
     sprint: Sprint-006
@@ -754,6 +755,13 @@ reviews:
       low: 0
       notes: 2
 verification:
+  VER-SPS-007:
+    path: SDP/Verification/VER-SPS-007.md
+    status: in-progress
+    slice: SPS-007
+    productCandidate: 336d654c7533a30b340a1366109a41a9307ddf1e
+    packageCandidate: 72b4e048a90841a1994e9846bb4db0d0ad9b922e
+    releaseGate: false
   VER-SPS-006:
     path: SDP/Verification/VER-SPS-006.md
     status: passed

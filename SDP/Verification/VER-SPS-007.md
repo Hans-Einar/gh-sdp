@@ -1,6 +1,6 @@
 # VER-SPS-007 — Discovery client release gate
 
-Status: pending
+Status: initial P2 checks passed; final upstream pairing, independent review and P3 pending
 Slice: SPS-007
 Release: REL-0.2.0
 Platform: Linux amd64 only
@@ -35,3 +35,37 @@ historicalDependencyAssessment, lifecycle and lastCompleted extensions, also
 present in the clean baseline. As documented in VER-SPS-006, process migration
 is not part of this client release; no complete current-Toolkit schema
 compatibility is claimed.
+
+## Clean exact candidate checks
+
+Release source candidate: 72b4e048a90841a1994e9846bb4db0d0ad9b922e.
+Go 1.27.1 built the clean checkout with scripts/package.sh 0.2.0 into
+/tmp/gh-sdp-sps007-candidate. The checked-in candidate manifest records Linux
+amd64, no replacement, vcs.modified=false, size 10043233 and SHA-256
+9c7471817285647e3ca12c7ef0618171bd09021e43a9a8392a3779c85b0ba72b.
+
+Commands exited zero:
+
+```sh
+env GOMAXPROCS=2 SDP_GO=/home/warloc/.local/share/sdp-toolchains/go1.27.1/go/bin/go scripts/package.sh 0.2.0 /tmp/gh-sdp-sps007-candidate
+env GOMAXPROCS=2 GOTOOLCHAIN=local GH_SDP_PACKAGE_DIR=/tmp/gh-sdp-sps007-candidate GH_SDP_BINARY=/tmp/gh-sdp-sps007-candidate/gh-sdp-linux-amd64 SDPTOOL_BINARY=/tmp/sdptool-session3 /home/warloc/.local/share/sdp-toolchains/go1.27.1/go/bin/go test -race -p 2 -count=1 -v ./...
+env GOMAXPROCS=2 GOTOOLCHAIN=local GH_SDP_VIA_GH=true GH_SDP_PACKAGE_DIR=/tmp/gh-sdp-sps007-candidate GH_SDP_BINARY=/tmp/gh-sdp-sps007-candidate/gh-sdp-linux-amd64 SDPTOOL_BINARY=/tmp/sdptool-session3 /home/warloc/.local/share/sdp-toolchains/go1.27.1/go/bin/go test -race -p 2 -count=1 -run TestPackagedCandidates -v ./...
+env GOMAXPROCS=2 GOTOOLCHAIN=local /home/warloc/.local/share/sdp-toolchains/go1.27.1/go/bin/go vet -p 2 ./...
+```
+
+The candidate-tests and gh-routing logs record actual packaged discovery, FIFO,
+automatic source discovery without navigation.json, sdptool/0.2 inventory and
+inline navigation, human/JSON output, diagnostics, preview/apply, preservation,
+repetition, incompatible protocol and corrupt cache checks. GitHub CLI used
+isolated temporary configuration/data and did not change the user's installation.
+The initial paired engine SHA-256 is
+4383e8b8539eb23aeba5b8333c6cdb4b99f827dc039014cba67fd38794747f8c;
+it reports 2.0.0-dev and revision unknown, so these checks are rehearsal evidence.
+Final upstream release pairing is still required.
+
+The same clean client passed a new production-trust cache with explicit
+SDP_RELEASE=https://github.com/Hans-Einar/SDP/releases/download/v1.0.0/sdp-release.json,
+SDP_OFFLINE=false and no SDP_TEST_KEY. Its --version returned upstream 1.0.0 at
+fede327d6f3af35fe7aad323e2c485a27134d20d, recorded in SPS-007-legacy-version.json.
+This confirms legacy explicit selection and the bootstrap compatibility fallback;
+it does not establish new default production availability.
