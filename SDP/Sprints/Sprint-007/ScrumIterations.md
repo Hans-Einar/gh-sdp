@@ -64,3 +64,11 @@ evidence is not substituted for that gate. P3 still awaits the public descriptor
 P2 final d304261 immutable pair and the public production default gate now pass.
 REV-SPS-007-002 approves exact client source 72b4e048 for authorized publication.
 P3 actual tag/release and independent reconciliation remain pending.
+
+## Actual publication
+
+Annotated v0.2.0 now resolves to exact reviewed source
+72b4e048a90841a1994e9846bb4db0d0ad9b922e. GitHub Release was published at
+2026-09-30T23:24:45Z; downloaded checksums and manifest match the reviewed
+package. Main remains unchanged; no global installation or XFMD mutation
+occurred. Independent publication reconciliation remains pending.

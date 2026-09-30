@@ -22,9 +22,10 @@ Release-Date: 2026-10-01
 
 Linux amd64 only. The client continues to forward arguments, streams, working
 directory, environment and child exit status. Explicit descriptors and saved
-operation offline behavior remain supported. Publication awaits exact-candidate
-verification, independent review and the public paired descriptor; no merge,
-global extension installation or live XFMD change is selected.
+operation offline behavior remain supported. The exact reviewed client package
+and public paired descriptor passed independent verification; v0.2.0 is published
+from source 72b4e048a90841a1994e9846bb4db0d0ad9b922e. No main merge, global extension
+installation or live XFMD change was performed.
 
 ## [0.1.2] — 2026-09-28
 

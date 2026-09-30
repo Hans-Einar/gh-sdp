@@ -1,6 +1,6 @@
 # VER-SPS-007 — Discovery client release gate
 
-Status: publication gate passed; actual publication and reconciliation pending
+Status: publication verified; independent reconciliation pending
 Slice: SPS-007
 Release: REL-0.2.0
 Platform: Linux amd64 only
@@ -145,3 +145,24 @@ REV-SPS-007-002 independently passed a separate empty-cache public default check
 and approves publication of the exact reviewed client source 72b4e048 and binary
 9c7471817285647e3ca12c7ef0618171bd09021e43a9a8392a3779c85b0ba72b.
 P1/P2 and the P3 prepublication gate are complete. No tag/release is claimed yet.
+
+## Actual client publication
+
+The owner-authorized annotated v0.2.0 tag has object
+48f41b0e83cdac806db41f66665fe955939ecee6 and resolves remotely to reviewed
+source 72b4e048a90841a1994e9846bb4db0d0ad9b922e. GitHub Release
+https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.2.0 was published at
+2026-09-30T23:24:45Z, neither draft nor prerelease. The uploaded assets were the
+unchanged exact package in /tmp/gh-sdp-sps007-candidate. Publication commands:
+
+```sh
+git tag -a v0.2.0 72b4e048a90841a1994e9846bb4db0d0ad9b922e -m 'gh-sdp v0.2.0: SDP 2.0.0 discovery and human output default'
+git push origin refs/tags/v0.2.0
+gh release create v0.2.0 /tmp/gh-sdp-sps007-candidate/gh-sdp-linux-amd64 /tmp/gh-sdp-sps007-candidate/checksums.txt /tmp/gh-sdp-sps007-candidate/gh-sdp.manifest.json --repo Hans-Einar/gh-sdp --verify-tag --title 'gh-sdp v0.2.0' --notes-file /tmp/gh-sdp-sps007-release-body.md
+gh release download v0.2.0 --repo Hans-Einar/gh-sdp --dir /tmp/gh-sdp-sps007-downloaded
+```
+
+Downloaded checksums pass; manifest is byte-identical to the candidate manifest.
+SPS-007-published-manifest.json retains exact source and binary identity. Main,
+the user's global extension and XFMD were not modified. Independent release
+reconciliation is pending; publication does not claim owner adoption.

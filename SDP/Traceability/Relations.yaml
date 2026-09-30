@@ -770,7 +770,7 @@ reviews:
 verification:
   VER-SPS-007:
     path: SDP/Verification/VER-SPS-007.md
-    status: in-progress
+    status: passed
     slice: SPS-007
     productCandidate: 336d654c7533a30b340a1366109a41a9307ddf1e
     packageCandidate: 72b4e048a90841a1994e9846bb4db0d0ad9b922e
@@ -847,15 +847,17 @@ migrations: {}
 releases:
   REL-0.2.0:
     version: "0.2.0"
-    state: prerelease
-    targetStatus: preparing
+    state: released
+    targetStatus: published
     upstreamTargetVersion: "2.0.0"
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
     releaseRecord: SDP/Releases/REL-0.2.0.yaml
-    releaseCommit: null
-    gitTag: null
-    githubRelease: null
+    verification: [VER-SPS-007]
+    reviews: [REV-SPS-007-001, REV-SPS-007-002]
+    releaseCommit: 72b4e048a90841a1994e9846bb4db0d0ad9b922e
+    gitTag: v0.2.0
+    githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.2.0
   REL-0.1.2:
     version: "0.1.2"
     state: released
