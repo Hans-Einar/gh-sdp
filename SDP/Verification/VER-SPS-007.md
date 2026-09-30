@@ -77,3 +77,22 @@ client package with no findings. The Reviewer reran all race tests, isolated
 GitHub CLI routing, vet, module verification, pinned bootstrap tests and a new
 production-trust legacy override. Final immutable upstream release pairing and
 public SDP v2.0.0 default verification remain pending; releaseGate remains false.
+
+## Authoritative upstream package pairing
+
+The unchanged exact client package above passed the full race suite with
+SDPTOOL_BINARY=/tmp/sdp-session3-release-package/sdptool, then passed the isolated
+GitHub CLI TestPackagedCandidates route against the same final binary. Commands
+match the initial package checks with only the supplied engine path changed.
+Actual outputs are retained as SPS-007-final-pair.txt and
+SPS-007-final-gh-routing.txt. No tests were skipped.
+
+Final engine SHA-256:
+fa0c4a9f387a7752fcc5928ed267c4de13c54f50d80d709cbedc1b9cae42325c.
+A separate fresh-cache production-trust invocation used the signed local
+/tmp/sdp-session3-release-package/sdp-release.json with no SDP_TEST_KEY and
+SDP_OFFLINE=false. The client --version --json returned version 2.0.0,
+schema sdptool/0.2 and revision 6f9af514c99076d9067b3fbbfc93193a2f986070;
+SPS-007-final-signed-version.json retains the response. This establishes the
+actual immutable signed pair locally. It does not establish public descriptor
+availability, which remains a P3 requirement before client publication.
