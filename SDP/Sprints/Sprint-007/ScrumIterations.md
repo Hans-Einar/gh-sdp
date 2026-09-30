@@ -50,5 +50,8 @@ The owner's manual XFMD upgrade is outside this repository assignment.
 
 ## Progress
 
-Contract selected. P1 awaits the root-supplied immutable bootstrap revision.
-P2/P3 have not passed. No client publication or integration has occurred.
+P1 delivered in 336d654c7533a30b340a1366109a41a9307ddf1e using remote bootstrap
+v0.0.0-20260930230248-247fb7aba628. Race tests with the initial paired engine,
+vet and module provenance passed as recorded in implementationNotes.md.
+P2 exact clean package and independent review are pending. P3 awaits the public
+paired descriptor. No client publication or integration has occurred.

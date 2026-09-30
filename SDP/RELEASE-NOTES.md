@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+No additional changes selected.
+
+## [0.2.0] — 2026-10-01
+
+Release-Date: 2026-10-01
+
 ### Changed
 
 - Select the exact signed SDP v2.0.0 default through the immutable canonical

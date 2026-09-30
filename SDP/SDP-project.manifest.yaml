@@ -7,7 +7,7 @@ installed:
 release:
   currentVersion: 0.1.2
   nextTargetVersion: 0.2.0
-  state: unreleased
+  state: prerelease
   latestTag: v0.1.2
   latestCommit: a4988846432c7f7f7b3f722f2786359c9b127372
 development:

@@ -825,8 +825,8 @@ migrations: {}
 releases:
   REL-0.2.0:
     version: "0.2.0"
-    state: unreleased
-    targetStatus: selected
+    state: prerelease
+    targetStatus: preparing
     upstreamTargetVersion: "2.0.0"
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
