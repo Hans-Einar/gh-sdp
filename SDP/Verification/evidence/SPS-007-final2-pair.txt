@@ -1,0 +1,29 @@
+=== RUN   TestPackagedCandidates
+    integration_test.go:280: packaged SHA256 gh-sdp=9c7471817285647e3ca12c7ef0618171bd09021e43a9a8392a3779c85b0ba72b sdptool=193f5fe8c1c6d15455561c00ce10ab39a3302a4ed320e25e870a73a904a61715; automatic discovery, human/JSON output and diagnostic equality, preview equality, apply, preservation, repetition, incompatible and corrupt cache passed
+--- PASS: TestPackagedCandidates (2.80s)
+=== RUN   TestChildProcess
+--- PASS: TestChildProcess (0.00s)
+=== RUN   TestDelegatesExactArgumentsStreamsEnvironmentAndExit
+--- PASS: TestDelegatesExactArgumentsStreamsEnvironmentAndExit (0.01s)
+=== RUN   TestConfigurationAndFailureBoundaries
+=== RUN   TestConfigurationAndFailureBoundaries/invalid_config
+=== RUN   TestConfigurationAndFailureBoundaries/verification_failed
+=== RUN   TestConfigurationAndFailureBoundaries/start_failed
+--- PASS: TestConfigurationAndFailureBoundaries (0.00s)
+    --- PASS: TestConfigurationAndFailureBoundaries/invalid_config (0.00s)
+    --- PASS: TestConfigurationAndFailureBoundaries/verification_failed (0.00s)
+    --- PASS: TestConfigurationAndFailureBoundaries/start_failed (0.00s)
+=== RUN   TestSelectedReleaseReachesChild
+=== RUN   TestSelectedReleaseReachesChild/unset
+=== RUN   TestSelectedReleaseReachesChild/empty
+=== RUN   TestSelectedReleaseReachesChild/override
+--- PASS: TestSelectedReleaseReachesChild (0.03s)
+    --- PASS: TestSelectedReleaseReachesChild/unset (0.01s)
+    --- PASS: TestSelectedReleaseReachesChild/empty (0.01s)
+    --- PASS: TestSelectedReleaseReachesChild/override (0.01s)
+=== RUN   TestPackagedAssetDiscovery
+--- PASS: TestPackagedAssetDiscovery (0.05s)
+=== RUN   TestPackagedClientRejectsFIFO
+--- PASS: TestPackagedClientRejectsFIFO (0.00s)
+PASS
+ok  	github.com/Hans-Einar/gh-sdp	3.948s

@@ -105,3 +105,21 @@ also correcting obsolete archive-gate prose. Its rebuilt commit, binary and
 signature require fresh pairing even though runtime behavior is unchanged.
 The preceding pair evidence remains valid only for 6f9af514 and is not the
 selected final-pair approval. Client publication stays pending.
+
+## Replacement final package pairing
+
+The selected replacement upstream source is
+d304261c90066a86b2d8ffcaa2115517ea339b05. Its final package binary at
+/tmp/sdp-session3-final-package/sdptool has SHA-256
+193f5fe8c1c6d15455561c00ce10ab39a3302a4ed320e25e870a73a904a61715.
+The unchanged exact client passed the complete race suite with GH_SDP_VIA_GH=true
+and SDPTOOL_BINARY set to this replacement binary, proving the isolated GitHub
+CLI route, paired direct behavior, actual asset discovery and FIFO rejection
+in one run; no tests skipped. SPS-007-final2-pair.txt retains the actual log.
+
+A new empty /tmp/gh-sdp-sps007-final2-signed-cache, local production-signed
+/tmp/sdp-session3-final-package/sdp-release.json, no SDP_TEST_KEY and
+SDP_OFFLINE=false returned --version --json with 2.0.0, sdptool/0.2 and exact
+revision d304261c90066a86b2d8ffcaa2115517ea339b05, recorded in
+SPS-007-final2-signed-version.json. Fresh supplemental review and public default
+availability remain pending. Earlier 6f9af514 pairing is historical only.
