@@ -1,6 +1,6 @@
 # Sprint-007 — SDP discovery and human output default
 
-Status: in-progress
+Status: complete
 Iteration: SPI-007
 Slice: SPS-007
 Authorization: owner selected Session 0003 on 2026-10-01, implementing automatic source discovery and releasing SDP plus the required gh-sdp update for manual XFMD adoption.
@@ -72,3 +72,11 @@ Annotated v0.2.0 now resolves to exact reviewed source
 2026-09-30T23:24:45Z; downloaded checksums and manifest match the reviewed
 package. Main remains unchanged; no global installation or XFMD mutation
 occurred. Independent publication reconciliation remains pending.
+
+## Closeout
+
+REV-SPS-007-003 independently approves the actual remote annotated tag, release,
+downloaded assets, checksums, public default and reconciliation with no findings.
+P1–P3 are complete. Publication uses the reviewed branch source; main remains at
+be00296ab88590aea2eff757f1f76148449beb7c. Global extension installation and manual
+XFMD adoption remain with the owner. No next Slice is selected.

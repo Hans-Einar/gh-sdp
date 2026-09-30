@@ -1,6 +1,6 @@
 # VER-SPS-007 — Discovery client release gate
 
-Status: publication verified; independent reconciliation pending
+Status: passed; publication independently reconciled
 Slice: SPS-007
 Release: REL-0.2.0
 Platform: Linux amd64 only
@@ -166,3 +166,12 @@ Downloaded checksums pass; manifest is byte-identical to the candidate manifest.
 SPS-007-published-manifest.json retains exact source and binary identity. Main,
 the user's global extension and XFMD were not modified. Independent release
 reconciliation is pending; publication does not claim owner adoption.
+
+## Independent closeout
+
+REV-SPS-007-003 independently verifies the remote tag target, release metadata,
+downloaded assets/checksums and a fresh-cache public default. It approves the
+actual publication and reconciliation with no findings. Release/project manifests
+and all new release-event records also pass the current Toolkit JSON schemas.
+The historical current-index extension limitation described above remains out
+of scope. No global installation or XFMD adoption is claimed.
