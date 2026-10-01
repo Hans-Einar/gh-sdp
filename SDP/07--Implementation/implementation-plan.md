@@ -1,7 +1,8 @@
 # Implementation and release work
 
-Current: [SPS-007](../Sprints/Sprint-007/ScrumIterations.md) prepares client v0.2.0
-paired with SDP v2.0.0, including upstream discovery and human output defaults.
+Current: [SPS-008](../Sprints/Sprint-008/ScrumIterations.md) prepares client v0.2.1
+paired with SDP v2.1.0 through its immutable canonical bootstrap. The client
+retains upstream discovery, human output defaults and explicit --json selection.
 The owner authorized publication of the exact reviewed branch commit after
 verification and public paired-descriptor availability. Root coordination owns
 upstream publication. Main merge, global extension installation and live XFMD

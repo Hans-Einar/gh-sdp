@@ -138,7 +138,7 @@ func TestSelectedReleaseReachesChild(t *testing.T) {
 			}
 			want := test.release
 			if want == "" {
-				want = "https://github.com/Hans-Einar/SDP/releases/download/v2.0.0/sdp-release.json"
+				want = "https://github.com/Hans-Einar/SDP/releases/download/v2.1.0/sdp-release.json"
 			}
 			var out, diagnostic bytes.Buffer
 			code := run(context.Background(), []string{"-test.run=TestChildProcess", "--"}, os.Getenv, nil, &out, &diagnostic,

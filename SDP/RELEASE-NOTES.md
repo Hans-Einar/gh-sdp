@@ -4,6 +4,22 @@
 
 No additional changes selected.
 
+## [0.2.1] — selected, unpublished
+
+### Fixed
+
+- Select the exact signed SDP v2.1.0 default through the immutable canonical
+  bootstrap dependency, with regression coverage for bootstrap configuration
+  and the delegated child's environment.
+
+### Scope
+
+Linux amd64 only. This patch retains argument, environment, stream, working
+directory, exit, human/JSON, explicit descriptor override and saved-operation
+offline behavior. The client version is independent from SDP v2.1.0. Publication
+requires this candidate's package verification and fresh independent review.
+No main merge, global extension installation/upgrade or live XFMD change is selected.
+
 ## [0.2.0] — 2026-10-01
 
 Release-Date: 2026-10-01

@@ -8,6 +8,8 @@ The latest published client is v0.2.0, paired with signed SDP v2.0.0.
 Its immutable bootstrap, clean package and public production default were
 independently verified. Install with `gh extension install Hans-Einar/gh-sdp`,
 or update with `gh extension upgrade sdp`; no local Go or PowerShell is needed.
+The selected v0.2.1 candidate pairs with SDP v2.1.0; publication awaits its own
+package verification and independent review.
 Native verification covers Linux amd64 only; Windows/macOS support requires native tests.
 
 ## Build and use
@@ -25,13 +27,13 @@ Install the published Linux amd64 GitHub CLI extension with:
 gh extension install Hans-Einar/gh-sdp
 ```
 
-Client v0.2.0 selects the exact SDP v2.0.0 release descriptor.
+The v0.2.1 candidate selects the exact SDP v2.1.0 release descriptor.
 Without `SDP_RELEASE`, the client uses that default for both verification and the
 SDPTool child. An explicit `SDP_RELEASE` overrides both selections. No key option
 is needed for the production release: public trust is compiled into the shared
 bootstrap. The private signing key is never part of the client or package.
 
-The paired v2.0.0 engine discovers project sources and defaults to human-readable
+The paired v2.1.0 engine discovers project sources and defaults to human-readable
 output. Machine consumers must explicitly request `--json`, including for
 `--version`. For example, from a project checkout:
 
@@ -89,7 +91,7 @@ No downloads or publication are performed by the script except Go's normal immut
 module retrieval during compilation.
 
 ```sh
-SDP_GO=/absolute/path/to/go scripts/package.sh 0.2.0 /absolute/path/to/package
+SDP_GO=/absolute/path/to/go scripts/package.sh 0.2.1 /absolute/path/to/package
 ```
 
 Outputs are `gh-sdp-linux-amd64` (the asset naming recognized by GitHub CLI),
@@ -117,6 +119,6 @@ preview/apply.
 The optional GitHub CLI route installs the local extension only into a temporary
 isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
 
-[Current Slice and authority](SDP/Sprints/Sprint-007/ScrumIterations.md) ·
+[Current Slice and authority](SDP/Sprints/Sprint-008/ScrumIterations.md) ·
 [Latest published verification](SDP/Verification/VER-SPS-007.md) ·
-[Candidate dependency provenance and verification status](SDP/Sprints/Sprint-007/implementationNotes.md)
+[Candidate dependency provenance and verification status](SDP/Sprints/Sprint-008/implementationNotes.md)
