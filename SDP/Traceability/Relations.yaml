@@ -179,7 +179,6 @@ studies:
       - STU-XRF-006
       - STU-XRF-007
     verification:
-  VER-SPS-008: {path: SDP/Verification/VER-SPS-008.md, status: pending, slice: SPS-008, releaseGate: false}
       - VER-SPS-002
     reviews:
       - REV-SPS-002-001
@@ -481,7 +480,6 @@ sprints:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
     status: complete
     iterations:
-  SPI-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, status: active, slices: [SPS-008]}
       - SPI-001
   Sprint-002:
     path: SDP/Sprints/Sprint-002/ScrumIterations.md
@@ -494,6 +492,7 @@ sprints:
       - SPI-002
 refactors: {}
 iterations:
+  SPI-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, status: active, slices: [SPS-008]}
   SPI-007:
     path: SDP/Sprints/Sprint-007/ScrumIterations.md
     sprint: Sprint-007
@@ -524,7 +523,6 @@ iterations:
     sprint: Sprint-001
     status: complete
     slices:
-  SPS-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, iteration: SPI-008, status: active, release: REL-0.2.1, verification: [VER-SPS-008], reviews: []}
       - SPS-001
   SPI-002:
     path: SDP/Sprints/Sprint-002/ScrumIterations.md
@@ -533,6 +531,7 @@ iterations:
     slices:
       - SPS-002
 slices:
+  SPS-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, iteration: SPI-008, status: active, release: REL-0.2.1, verification: [VER-SPS-008], reviews: []}
   SPS-007:
     path: SDP/Sprints/Sprint-007/ScrumIterations.md
     sprint: Sprint-007
@@ -777,6 +776,7 @@ reviews:
       low: 0
       notes: 2
 verification:
+  VER-SPS-008: {path: SDP/Verification/VER-SPS-008.md, status: pending, slice: SPS-008, releaseGate: false}
   VER-SPS-007:
     path: SDP/Verification/VER-SPS-007.md
     status: passed
