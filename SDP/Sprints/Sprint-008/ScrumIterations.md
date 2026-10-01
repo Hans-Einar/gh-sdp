@@ -1,6 +1,6 @@
 # Sprint-008 — SDP 2.1 default patch
 
-Status: active
+Status: complete
 Iteration: SPI-008
 Slice: SPS-008
 Authorization: owner explicitly requested publication of prepared SDPTool 2.1.0 and paired gh-sdp on 2026-10-01.
@@ -44,7 +44,7 @@ Use the native local release gate and record upstream exact-source CI separately
 Publication is explicitly authorized but awaits actual gate completion. Release
 identities remain null until they exist. Root owns upstream publication.
 
-## Progress
+## Chronological progress
 
 P1 delivered in 315ec1de9dbe9aee990baae47a1ac2a7a07a0702. P2 exact clean
 package and full native suite, and P3 public production default checks pass as
@@ -55,6 +55,13 @@ Publication may proceed under owner authorization; actual objects are pending.
 
 ## Actual publication
 
-Annotated v0.2.1 and GitHub Release now exist at approved exact source315ec1d.
+Annotated v0.2.1 and GitHub Release now exist at approved exact source 315ec1d.
 All downloaded assets match the reviewed package. Independent reconciliation
 remains pending; owner global extension and XFMD remain untouched.
+
+## Closeout
+
+REV-SPS-008-002 independently approves the actual published release, downloaded
+assets and production default with no findings. P1–P3 complete; records reconcile
+real publication. Main, installed global extension and XFMD remain untouched.
+No further Slice is selected.

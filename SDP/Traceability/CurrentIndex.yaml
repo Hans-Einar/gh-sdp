@@ -39,16 +39,16 @@ lifecycle:
   phase: ReleaseReconciliation
   authorization: owner-publish-SDP2.1-and-paired-client-2026-10-01
   contract: SDP/Sprints/Sprint-008/ScrumIterations.md
-  status: independent-review-pending
-  review: REV-SPS-008-001
-  reviewScope: exact-source-package-and-public-default
+  status: complete
+  review: REV-SPS-008-002
+  reviewScope: published-release-reconciliation
 lastCompleted:
-  sprint: Sprint-007
-  iteration: SPI-007
-  slice: SPS-007
+  sprint: Sprint-008
+  iteration: SPI-008
+  slice: SPS-008
   revision: 1
-  milestone: SPS-007-P3
-  releaseCommit: 72b4e048a90841a1994e9846bb4db0d0ad9b922e
-  verification: VER-SPS-007
-  review: REV-SPS-007-003
+  milestone: SPS-008-P3
+  releaseCommit: 315ec1de9dbe9aee990baae47a1ac2a7a07a0702
+  verification: VER-SPS-008
+  review: REV-SPS-008-002
   disposition: published-and-reconciled

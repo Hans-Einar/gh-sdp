@@ -455,7 +455,7 @@ questions:
     status: partially-answered-by-study
     study: STU-001
 sprints:
-  Sprint-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, status: active, iterations: [SPI-008]}
+  Sprint-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, status: complete, iterations: [SPI-008]}
   Sprint-007:
     path: SDP/Sprints/Sprint-007/ScrumIterations.md
     status: complete
@@ -492,7 +492,7 @@ sprints:
       - SPI-002
 refactors: {}
 iterations:
-  SPI-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, status: active, slices: [SPS-008]}
+  SPI-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, status: complete, slices: [SPS-008]}
   SPI-007:
     path: SDP/Sprints/Sprint-007/ScrumIterations.md
     sprint: Sprint-007
@@ -531,7 +531,7 @@ iterations:
     slices:
       - SPS-002
 slices:
-  SPS-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, iteration: SPI-008, status: active, release: REL-0.2.1, verification: [VER-SPS-008], reviews: [REV-SPS-008-001]}
+  SPS-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, iteration: SPI-008, status: complete, release: REL-0.2.1, verification: [VER-SPS-008], reviews: [REV-SPS-008-001, REV-SPS-008-002]}
   SPS-007:
     path: SDP/Sprints/Sprint-007/ScrumIterations.md
     sprint: Sprint-007
@@ -626,6 +626,7 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-008-002: {path: SDP/CodeReview/REV-SPS-008-002.md, status: approved, slice: SPS-008, scope: published-release-reconciliation}
   REV-SPS-008-001: {path: SDP/CodeReview/REV-SPS-008-001.md, status: approved, slice: SPS-008, scope: exact-candidate-publication-prerequisites}
   REV-SPS-007-003:
     path: SDP/CodeReview/REV-SPS-007-003.md
@@ -858,7 +859,7 @@ verification:
     releaseGate: false
 migrations: {}
 releases:
-  REL-0.2.1: {version: "0.2.1", state: released, targetStatus: published, upstreamTargetVersion: "2.1.0", releaseNotes: SDP/RELEASE-NOTES.md, manifest: SDP/SDP-project.manifest.yaml, releaseRecord: SDP/Releases/REL-0.2.1.yaml, verification: [VER-SPS-008], reviews: [REV-SPS-008-001], releaseCommit: 315ec1de9dbe9aee990baae47a1ac2a7a07a0702, gitTag: v0.2.1, githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.2.1}
+  REL-0.2.1: {version: "0.2.1", state: released, targetStatus: published, upstreamTargetVersion: "2.1.0", releaseNotes: SDP/RELEASE-NOTES.md, manifest: SDP/SDP-project.manifest.yaml, releaseRecord: SDP/Releases/REL-0.2.1.yaml, verification: [VER-SPS-008], reviews: [REV-SPS-008-001, REV-SPS-008-002], releaseCommit: 315ec1de9dbe9aee990baae47a1ac2a7a07a0702, gitTag: v0.2.1, githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.2.1}
   REL-0.2.0:
     version: "0.2.0"
     state: released

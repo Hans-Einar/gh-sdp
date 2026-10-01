@@ -1,10 +1,13 @@
 # VER-SPS-008 — SDP 2.1 default patch
 
-Status: native checks passed; independent release approval pending
+Status: passed; actual publication independently reconciled
 Slice: SPS-008
 Release: REL-0.2.1
 Exact source: 315ec1de9dbe9aee990baae47a1ac2a7a07a0702
 Platform: Linux amd64
+
+The staged sections below retain the sequence of actual checks; the final
+independent closeout is authoritative for current status.
 
 ## Exact source and native gate
 
@@ -86,3 +89,17 @@ GitHub API asset digests agree. Published manifest is retained as evidence.
 Independent publication reconciliation remains pending. Main remains unchanged;
 no owner's global gh sdp invocation, extension installation/upgrade or XFMD change
 occurred, preserving the owner's manual notification test.
+
+## Independent closeout
+
+REV-SPS-008-002 independently confirms actual annotated tag and GitHub Release,
+all three downloaded assets/checksums, exact manifest and fresh-cache production
+human/JSON default from the downloaded binary. No findings remain. It approves
+publication reconciliation. GitHub releases/latest also resolves v0.2.1.
+Published project/release records and all new release events pass the current
+Toolkit schemas, and all SDP YAML/NDJSON parse. Historical ledger bytes and
+published 0.2.0-and-earlier release notes remain preserved.
+
+SPS-008 P1–P3 are complete. Main stays at be00296ab88590aea2eff757f1f76148449beb7c.
+The owner's installed extension/update-notification state and XFMD were untouched.
+No next Slice is selected.

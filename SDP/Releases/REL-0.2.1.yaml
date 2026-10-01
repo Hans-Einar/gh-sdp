@@ -10,6 +10,7 @@ verificationRecords:
 - VER-SPS-008
 reviewRecords:
 - REV-SPS-008-001
+- REV-SPS-008-002
 migrationRecord: null
 releasePreparationCommit: 315ec1de9dbe9aee990baae47a1ac2a7a07a0702
 gitTag: v0.2.1
