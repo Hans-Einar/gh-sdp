@@ -68,3 +68,12 @@ default output change requires explicit --json for machine consumers. Publicatio
 from the reviewed branch is authorized after the paired descriptor is public;
 main merge, global extension installation and live XFMD changes are not selected.
 Root owns upstream release; the owner will manually upgrade XFMD.
+
+## Authorized SDP 2.1 default patch — 2026-10-01
+
+Owner explicitly authorized publication of prepared SDPTool 2.1.0 and paired
+gh-sdp. SPS-008 in SDP/Sprints/Sprint-008/ScrumIterations.md selects client v0.2.1
+using immutable upstream bootstrap 93517ad98cd188c0debeb1d0f3d36d123c6e4a3b.
+Publish the exact reviewed branch after the upstream descriptor is public.
+No main merge, global extension upgrade/install or XFMD change is authorized.
+Keep the owner's existing extension intact for their manual gh notification test.

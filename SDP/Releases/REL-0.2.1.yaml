@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+releaseId: REL-0.2.1
+version: 0.2.1
+state: development
+releaseNotesPath: SDP/RELEASE-NOTES.md
+includedCapabilities:
+- gh-sdp.bootstrap.signed
+- gh-sdp.delegate.native
+verificationRecords:
+- VER-SPS-008
+reviewRecords: []
+migrationRecord: null
+releasePreparationCommit: null
+gitTag: null
+githubReleaseUrl: null

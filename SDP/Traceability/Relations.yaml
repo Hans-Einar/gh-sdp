@@ -179,6 +179,7 @@ studies:
       - STU-XRF-006
       - STU-XRF-007
     verification:
+  VER-SPS-008: {path: SDP/Verification/VER-SPS-008.md, status: pending, slice: SPS-008, releaseGate: false}
       - VER-SPS-002
     reviews:
       - REV-SPS-002-001
@@ -455,6 +456,7 @@ questions:
     status: partially-answered-by-study
     study: STU-001
 sprints:
+  Sprint-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, status: active, iterations: [SPI-008]}
   Sprint-007:
     path: SDP/Sprints/Sprint-007/ScrumIterations.md
     status: complete
@@ -479,6 +481,7 @@ sprints:
     path: SDP/Sprints/Sprint-001/ScrumIterations.md
     status: complete
     iterations:
+  SPI-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, status: active, slices: [SPS-008]}
       - SPI-001
   Sprint-002:
     path: SDP/Sprints/Sprint-002/ScrumIterations.md
@@ -521,6 +524,7 @@ iterations:
     sprint: Sprint-001
     status: complete
     slices:
+  SPS-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, iteration: SPI-008, status: active, release: REL-0.2.1, verification: [VER-SPS-008], reviews: []}
       - SPS-001
   SPI-002:
     path: SDP/Sprints/Sprint-002/ScrumIterations.md
@@ -853,6 +857,7 @@ verification:
     releaseGate: false
 migrations: {}
 releases:
+  REL-0.2.1: {version: "0.2.1", state: development, targetStatus: selected, upstreamTargetVersion: "2.1.0", releaseNotes: SDP/RELEASE-NOTES.md, manifest: SDP/SDP-project.manifest.yaml, releaseRecord: SDP/Releases/REL-0.2.1.yaml, verification: [VER-SPS-008], reviews: [], releaseCommit: null, gitTag: null, githubRelease: null}
   REL-0.2.0:
     version: "0.2.0"
     state: released
