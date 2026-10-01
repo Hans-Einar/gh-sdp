@@ -857,7 +857,7 @@ verification:
     releaseGate: false
 migrations: {}
 releases:
-  REL-0.2.1: {version: "0.2.1", state: development, targetStatus: selected, upstreamTargetVersion: "2.1.0", releaseNotes: SDP/RELEASE-NOTES.md, manifest: SDP/SDP-project.manifest.yaml, releaseRecord: SDP/Releases/REL-0.2.1.yaml, verification: [VER-SPS-008], reviews: [], releaseCommit: null, gitTag: null, githubRelease: null}
+  REL-0.2.1: {version: "0.2.1", state: prerelease, targetStatus: selected, upstreamTargetVersion: "2.1.0", releaseNotes: SDP/RELEASE-NOTES.md, manifest: SDP/SDP-project.manifest.yaml, releaseRecord: SDP/Releases/REL-0.2.1.yaml, verification: [VER-SPS-008], reviews: [], releaseCommit: null, gitTag: null, githubRelease: null}
   REL-0.2.0:
     version: "0.2.0"
     state: released
