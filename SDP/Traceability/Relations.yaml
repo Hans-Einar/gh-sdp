@@ -531,7 +531,7 @@ iterations:
     slices:
       - SPS-002
 slices:
-  SPS-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, iteration: SPI-008, status: active, release: REL-0.2.1, verification: [VER-SPS-008], reviews: []}
+  SPS-008: {path: SDP/Sprints/Sprint-008/ScrumIterations.md, sprint: Sprint-008, iteration: SPI-008, status: active, release: REL-0.2.1, verification: [VER-SPS-008], reviews: [REV-SPS-008-001]}
   SPS-007:
     path: SDP/Sprints/Sprint-007/ScrumIterations.md
     sprint: Sprint-007
@@ -626,6 +626,7 @@ fixes:
     reviews:
       - REV-FIX-0.1.0-001-001
 reviews:
+  REV-SPS-008-001: {path: SDP/CodeReview/REV-SPS-008-001.md, status: approved, slice: SPS-008, scope: exact-candidate-publication-prerequisites}
   REV-SPS-007-003:
     path: SDP/CodeReview/REV-SPS-007-003.md
     status: approved
@@ -776,7 +777,7 @@ reviews:
       low: 0
       notes: 2
 verification:
-  VER-SPS-008: {path: SDP/Verification/VER-SPS-008.md, status: native-checks-passed, slice: SPS-008, releaseGate: false}
+  VER-SPS-008: {path: SDP/Verification/VER-SPS-008.md, status: passed, slice: SPS-008, releaseGate: true}
   VER-SPS-007:
     path: SDP/Verification/VER-SPS-007.md
     status: passed
@@ -857,7 +858,7 @@ verification:
     releaseGate: false
 migrations: {}
 releases:
-  REL-0.2.1: {version: "0.2.1", state: prerelease, targetStatus: selected, upstreamTargetVersion: "2.1.0", releaseNotes: SDP/RELEASE-NOTES.md, manifest: SDP/SDP-project.manifest.yaml, releaseRecord: SDP/Releases/REL-0.2.1.yaml, verification: [VER-SPS-008], reviews: [], releaseCommit: null, gitTag: null, githubRelease: null}
+  REL-0.2.1: {version: "0.2.1", state: prerelease, targetStatus: selected, upstreamTargetVersion: "2.1.0", releaseNotes: SDP/RELEASE-NOTES.md, manifest: SDP/SDP-project.manifest.yaml, releaseRecord: SDP/Releases/REL-0.2.1.yaml, verification: [VER-SPS-008], reviews: [REV-SPS-008-001], releaseCommit: null, gitTag: null, githubRelease: null}
   REL-0.2.0:
     version: "0.2.0"
     state: released

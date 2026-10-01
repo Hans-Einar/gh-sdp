@@ -6,7 +6,7 @@ release:
   activeReleaseId: REL-0.2.1
   targetVersion: 0.2.1
   state: prerelease
-  targetStatus: verification-passed-review-pending
+  targetStatus: approved-for-publication
 active:
   sprint: Sprint-008
   refactor: null
@@ -39,7 +39,9 @@ lifecycle:
   phase: ReleasePreparation
   authorization: owner-publish-SDP2.1-and-paired-client-2026-10-01
   contract: SDP/Sprints/Sprint-008/ScrumIterations.md
-  status: independent-review
+  status: approved-for-publication
+  review: REV-SPS-008-001
+  reviewScope: exact-source-package-and-public-default
 lastCompleted:
   sprint: Sprint-007
   iteration: SPI-007

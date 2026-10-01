@@ -58,3 +58,11 @@ this patch; no process migration or complete current-schema conformity is claime
 
 Independent source/package/public-default review and actual client publication
 remain pending. No main merge, global extension upgrade or XFMD change is claimed.
+
+## Independent publication gate
+
+REV-SPS-008-001 independently reran the full exact-package race suite with
+isolated gh, vet, module integrity and a fresh-cache production default. It
+approves source 315ec1de9dbe9aee990baae47a1ac2a7a07a0702 and identical assets
+with no findings. P1/P2 and prepublication P3 gates pass; actual publication
+and independent reconciliation remain pending.
