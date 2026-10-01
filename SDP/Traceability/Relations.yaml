@@ -776,7 +776,7 @@ reviews:
       low: 0
       notes: 2
 verification:
-  VER-SPS-008: {path: SDP/Verification/VER-SPS-008.md, status: pending, slice: SPS-008, releaseGate: false}
+  VER-SPS-008: {path: SDP/Verification/VER-SPS-008.md, status: native-checks-passed, slice: SPS-008, releaseGate: false}
   VER-SPS-007:
     path: SDP/Verification/VER-SPS-007.md
     status: passed

@@ -43,3 +43,9 @@ Use the native local release gate and record upstream exact-source CI separately
 
 Publication is explicitly authorized but awaits actual gate completion. Release
 identities remain null until they exist. Root owns upstream publication.
+
+## Progress
+
+P1 delivered in 315ec1de9dbe9aee990baae47a1ac2a7a07a0702. P2 exact clean
+package and full native suite, and P3 public production default checks pass as
+recorded in VER-SPS-008. Independent review is pending; client is unpublished.

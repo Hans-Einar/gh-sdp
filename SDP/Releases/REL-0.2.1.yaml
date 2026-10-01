@@ -10,6 +10,6 @@ verificationRecords:
 - VER-SPS-008
 reviewRecords: []
 migrationRecord: null
-releasePreparationCommit: null
+releasePreparationCommit: 315ec1de9dbe9aee990baae47a1ac2a7a07a0702
 gitTag: null
 githubReleaseUrl: null
