@@ -4,7 +4,9 @@
 
 No additional changes selected.
 
-## [0.2.1] — selected, unpublished
+## [0.2.1] — 2026-10-01
+
+Release-Date: 2026-10-01
 
 ### Fixed
 
@@ -16,9 +18,10 @@ No additional changes selected.
 
 Linux amd64 only. This patch retains argument, environment, stream, working
 directory, exit, human/JSON, explicit descriptor override and saved-operation
-offline behavior. The client version is independent from SDP v2.1.0. Publication
-requires this candidate's package verification and fresh independent review.
-No main merge, global extension installation/upgrade or live XFMD change is selected.
+offline behavior. The client version is independent from SDP v2.1.0. The exact independently
+reviewed package is published from source 315ec1de9dbe9aee990baae47a1ac2a7a07a0702.
+Downloaded release assets byte-match the approved package. No main merge, global
+extension installation/upgrade or live XFMD change was performed.
 
 ## [0.2.0] — 2026-10-01
 

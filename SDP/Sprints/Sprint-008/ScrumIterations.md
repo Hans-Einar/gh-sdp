@@ -52,3 +52,9 @@ recorded in VER-SPS-008. Independent review is pending; client is unpublished.
 
 REV-SPS-008-001 approves the exact candidate and public production default.
 Publication may proceed under owner authorization; actual objects are pending.
+
+## Actual publication
+
+Annotated v0.2.1 and GitHub Release now exist at approved exact source315ec1d.
+All downloaded assets match the reviewed package. Independent reconciliation
+remains pending; owner global extension and XFMD remain untouched.

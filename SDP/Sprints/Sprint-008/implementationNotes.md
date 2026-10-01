@@ -66,3 +66,10 @@ The supplied engine's SHA-256 was independently checked as
 no engine execution is claimed by this checksum check.
 
 Worker stops after the bounded P1 commit.
+
+## P2/P3 Master reconciliation
+
+VER-SPS-008 and REV-SPS-008-001 establish the clean exact source315ec1d
+package, complete native suite and production public default. Annotated client
+v0.2.1 was published at 2026-10-01T13:35:16Z; downloaded assets match.
+Independent publication closeout remains pending. No main/global/XFMD mutation occurred.

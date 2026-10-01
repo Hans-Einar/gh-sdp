@@ -66,3 +66,23 @@ isolated gh, vet, module integrity and a fresh-cache production default. It
 approves source 315ec1de9dbe9aee990baae47a1ac2a7a07a0702 and identical assets
 with no findings. P1/P2 and prepublication P3 gates pass; actual publication
 and independent reconciliation remain pending.
+
+## Actual publication
+
+Annotated v0.2.1 object 5a93c3b8a51e62c9c3558227b3cf166f6f90f505 resolves
+remotely to approved exact source 315ec1de9dbe9aee990baae47a1ac2a7a07a0702.
+https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.2.1 was published at
+2026-10-01T13:35:16Z, neither draft nor prerelease. Commands used annotated tag
+on that exact source, git push of the tag, then gh release create --verify-tag
+--target with that same SHA and the unchanged approved three package assets.
+No existing tag or asset was replaced.
+
+`gh release download v0.2.1 --repo Hans-Einar/gh-sdp --dir /tmp/gh-sdp-sps008-downloaded`
+retrieved all three assets. Every file byte-matches its approved candidate;
+the binary hash remains 230440b0bbeb5af33f98b91bd227b26f78e3deefba9e23dee1e1508e75061dca.
+The manifest hash is 594cdb20e5148be1ff67f470fc8a5ad062dc61c25d82a8ebce7639a2b271c60f;
+checksums.txt hash is 1f61f4dbc1dff263ec3668fd11d009a44119bc74edd560f2f0fd450ab4afb88e.
+GitHub API asset digests agree. Published manifest is retained as evidence.
+Independent publication reconciliation remains pending. Main remains unchanged;
+no owner's global gh sdp invocation, extension installation/upgrade or XFMD change
+occurred, preserving the owner's manual notification test.

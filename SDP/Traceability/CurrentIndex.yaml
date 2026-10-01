@@ -1,12 +1,12 @@
 project:
   name: gh-sdp
-  status: development
+  status: released
 release:
   previousVersion: 0.2.0
   activeReleaseId: REL-0.2.1
   targetVersion: 0.2.1
-  state: prerelease
-  targetStatus: approved-for-publication
+  state: released
+  targetStatus: published
 active:
   sprint: Sprint-008
   refactor: null
@@ -36,10 +36,10 @@ historicalDependencyAssessment:
   accepted: false
   mediumFindings: 3
 lifecycle:
-  phase: ReleasePreparation
+  phase: ReleaseReconciliation
   authorization: owner-publish-SDP2.1-and-paired-client-2026-10-01
   contract: SDP/Sprints/Sprint-008/ScrumIterations.md
-  status: approved-for-publication
+  status: independent-review-pending
   review: REV-SPS-008-001
   reviewScope: exact-source-package-and-public-default
 lastCompleted:
