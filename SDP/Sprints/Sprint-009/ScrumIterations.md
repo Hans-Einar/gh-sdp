@@ -1,6 +1,6 @@
 # Sprint-009 — runnable-program default release
 
-Status: active
+Status: complete
 Iteration: SPI-009
 Slice: SPS-009
 Authorization: owner Session0010 T011 (2026-10-10) requests gh-sdp publication and local gh extension upgrade.
@@ -32,3 +32,6 @@ P3: annotated tag/release, downloaded asset hashes, global extension upgrade,
 production default and lab discovery/native Run; truthful reconciliation and review.
 
 Current result: P1/P2 and public-default gate passed at 9776f8a; REV-SPS-009-002 independently approves. P3 publication and local upgrade pending.
+
+P3 completed: actual release/download/global-upgrade/native lab evidence passes;
+REV-SPS-009-004 independently approves final publication reconciliation.

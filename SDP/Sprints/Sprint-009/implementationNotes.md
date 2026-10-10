@@ -18,3 +18,15 @@ remain pending. Updating the extension does not upgrade a project's SDP folder.
 Initial source race suite, vet and module verification passed. The final upstream
 commit only corrects a generated release-log plan reference; bootstrap content
 is identical. Final exact-package tests will verify the newly pinned identity.
+
+## P2/P3 — final observed transaction
+
+Exact candidate 9776f8a6b26247383b25e12317e69f06ddd1f4e2 resolves the initial
+review's documentation findings. REV-SPS-009-002 approves its rebuilt package and
+public production default independently. Actual annotated tag/release v0.2.2,
+downloaded hashes, global extension upgrade, exact engine identity and native lab
+Run/SDL/Go/close all passed. VER-SPS-009 and its evidence retain the observations.
+Independent review of publication reconciliation is the remaining closeout step.
+
+Final closeout: REV-SPS-009-004 approves real publication reconciliation; P1–P3
+complete. Earlier pending statements above describe preparation stages.

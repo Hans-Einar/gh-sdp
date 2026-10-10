@@ -5,8 +5,8 @@ release:
   previousVersion: 0.2.1
   activeReleaseId: REL-0.2.2
   targetVersion: 0.2.2
-  state: prerelease
-  targetStatus: publication-ready
+  state: released
+  targetStatus: published-and-reconciled
 active:
   sprint: Sprint-009
   refactor: null
@@ -36,18 +36,19 @@ historicalDependencyAssessment:
   accepted: false
   mediumFindings: 3
 lifecycle:
-  phase: ReleasePreparation
+  phase: ReleaseReconciliation
   authorization: owner-Session0010-T011-release-and-extension-upgrade
   contract: SDP/Sprints/Sprint-009/ScrumIterations.md
-  status: active
-  review: REV-SPS-009-002
+  status: complete
+  review: REV-SPS-009-004
+  reviewScope: published-release-reconciliation
 lastCompleted:
-  sprint: Sprint-008
-  iteration: SPI-008
-  slice: SPS-008
+  sprint: Sprint-009
+  iteration: SPI-009
+  slice: SPS-009
   revision: 1
-  milestone: SPS-008-P3
-  releaseCommit: 315ec1de9dbe9aee990baae47a1ac2a7a07a0702
-  verification: VER-SPS-008
-  review: REV-SPS-008-002
+  milestone: SPS-009-P3
+  releaseCommit: 9776f8a6b26247383b25e12317e69f06ddd1f4e2
+  verification: VER-SPS-009
+  review: REV-SPS-009-004
   disposition: published-and-reconciled

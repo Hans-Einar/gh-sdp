@@ -930,7 +930,7 @@ sprints:
     iterations:
     - SPI-002
   Sprint-009:
-    status: active
+    status: complete
     path: SDP/Sprints/Sprint-009/ScrumIterations.md
     iterations:
     - SPI-009
@@ -985,7 +985,7 @@ iterations:
     slices:
     - SPS-002
   SPI-009:
-    status: active
+    status: complete
     sprint: Sprint-009
     slices:
     - SPS-009
@@ -1122,12 +1122,16 @@ slices:
     - REV-SPS-002-002
     - REV-SPS-002-003
   SPS-009:
-    status: active
+    status: complete
     iteration: SPI-009
     path: SDP/Sprints/Sprint-009/ScrumIterations.md
     verification: VER-SPS-009
-    review: REV-SPS-009-002
     release: REL-0.2.2
+    reviews:
+    - REV-SPS-009-001
+    - REV-SPS-009-002
+    - REV-SPS-009-003
+    - REV-SPS-009-004
 fixes:
   FIX-0.1.0-001:
     path: SDP/Fixes/FIX-0.1.0-001.yaml
@@ -1313,6 +1317,18 @@ reviews:
     path: SDP/CodeReview/REV-SPS-009-002.md
     slice: SPS-009
     candidateCommit: 9776f8a6b26247383b25e12317e69f06ddd1f4e2
+    resolves: REV-SPS-009-001
+  REV-SPS-009-004:
+    status: approved
+    path: SDP/CodeReview/REV-SPS-009-004.md
+    slice: SPS-009
+    candidateCommit: 9776f8a6b26247383b25e12317e69f06ddd1f4e2
+    resolves: REV-SPS-009-003
+  REV-SPS-009-003:
+    status: changes-required
+    path: SDP/CodeReview/REV-SPS-009-003.md
+    slice: SPS-009
+    resolvedBy: REV-SPS-009-004
 verification:
   VER-SPS-008:
     path: SDP/Verification/VER-SPS-008.md
@@ -1491,8 +1507,8 @@ releases:
     githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.1.0
   REL-0.2.2:
     version: 0.2.2
-    state: prerelease
-    targetStatus: publication-ready
+    state: released
+    targetStatus: published-and-reconciled
     upstreamTargetVersion: 2.2.0
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
@@ -1501,9 +1517,10 @@ releases:
     - VER-SPS-009
     reviews:
     - REV-SPS-009-002
+    - REV-SPS-009-004
     releaseCommit: 9776f8a6b26247383b25e12317e69f06ddd1f4e2
-    gitTag: null
-    githubRelease: null
+    gitTag: v0.2.2
+    githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.2.2
 gipRequirements:
   REQ-GHS-005:
     path: SDP/03--Requirements/requirements.md
