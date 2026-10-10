@@ -1,0 +1,5 @@
+=== RUN   TestPackagedCandidates
+    integration_test.go:280: packaged SHA256 gh-sdp=9c7471817285647e3ca12c7ef0618171bd09021e43a9a8392a3779c85b0ba72b sdptool=4383e8b8539eb23aeba5b8333c6cdb4b99f827dc039014cba67fd38794747f8c; automatic discovery, human/JSON output and diagnostic equality, preview equality, apply, preservation, repetition, incompatible and corrupt cache passed
+--- PASS: TestPackagedCandidates (2.54s)
+PASS
+ok  	github.com/Hans-Einar/gh-sdp	3.567s

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "candidate": "9776f8a6b26247383b25e12317e69f06ddd1f4e2",
+  "package": "/tmp/gh-sdp022-package-final",
+  "sha256": "f863d847185a7fecee01c724f6e3e54750ae09ffb3d30d0319efe6b079b33ee4",
+  "rebuildByteIdentical": true,
+  "manifestBuildInfoHashSizeMatch": true,
+  "priorReviewRetainedVerbatim": true,
+  "onlyThreeGovernanceFilesChanged": true,
+  "downloadedUpstreamAssetsMatchApprovedPackage": true
+}
