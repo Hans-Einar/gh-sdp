@@ -4,7 +4,7 @@ A thin GitHub CLI extension that obtains a verified SDPTool executable and
 forwards arguments, streams and exit status. SDPTool owns installation policy,
 preview, apply, recovery and project preservation.
 
-The latest published client is v0.2.1, paired with signed SDP v2.1.0.
+The latest published client is v0.2.1. Release candidate v0.2.2 selects signed SDP v2.2.0.
 Its immutable bootstrap, clean package and public production default were
 independently verified. Install with `gh extension install Hans-Einar/gh-sdp`,
 or update with `gh extension upgrade sdp`; no local Go or PowerShell is needed.
@@ -25,13 +25,13 @@ Install the published Linux amd64 GitHub CLI extension with:
 gh extension install Hans-Einar/gh-sdp
 ```
 
-Client v0.2.1 selects the exact SDP v2.1.0 release descriptor.
+Client v0.2.2 selects the exact SDP v2.2.0 release descriptor.
 Without `SDP_RELEASE`, the client uses that default for both verification and the
 SDPTool child. An explicit `SDP_RELEASE` overrides both selections. No key option
 is needed for the production release: public trust is compiled into the shared
 bootstrap. The private signing key is never part of the client or package.
 
-The paired v2.1.0 engine discovers project sources and defaults to human-readable
+The paired v2.2.0 engine discovers project sources and defaults to human-readable
 output. Machine consumers must explicitly request `--json`, including for
 `--version`. For example, from a project checkout:
 
@@ -89,7 +89,7 @@ No downloads or publication are performed by the script except Go's normal immut
 module retrieval during compilation.
 
 ```sh
-SDP_GO=/absolute/path/to/go scripts/package.sh 0.2.1 /absolute/path/to/package
+SDP_GO=/absolute/path/to/go scripts/package.sh 0.2.2 /absolute/path/to/package
 ```
 
 Outputs are `gh-sdp-linux-amd64` (the asset naming recognized by GitHub CLI),
@@ -118,5 +118,20 @@ The optional GitHub CLI route installs the local extension only into a temporary
 isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
 
 [Current Slice and authority](SDP/Sprints/Sprint-008/ScrumIterations.md) ·
-[Latest published verification](SDP/Verification/VER-SPS-008.md) ·
+[Current candidate verification](SDP/Verification/VER-SPS-009.md) ·
 [Candidate dependency provenance and verification status](SDP/Sprints/Sprint-008/implementationNotes.md)
+
+## Runnable SDUI programs
+
+SDPTool 2.2.0 discovery adds declared runnable programs alongside the existing
+source inventory. A project declares its application runner in `SDP/programs.json`.
+For the independent widget lab, run:
+
+```sh
+gh sdp . discover --json
+gh sdp . run --program widget-lab
+```
+
+Use the revision-bound run arguments returned by discovery in graphical clients.
+A gh extension upgrade updates the client and its default engine; it does not
+migrate the project SDP folder or implement an XFMD Run button.

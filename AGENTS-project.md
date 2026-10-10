@@ -77,3 +77,12 @@ using immutable upstream bootstrap 93517ad98cd188c0debeb1d0f3d36d123c6e4a3b.
 Publish the exact reviewed branch after the upstream descriptor is public.
 No main merge, global extension upgrade/install or XFMD change is authorized.
 Keep the owner's existing extension intact for their manual gh notification test.
+
+## Authorized runnable-program default release — 2026-10-10
+
+Owner Session0010 T011 explicitly requests gh-sdp publication and local extension
+upgrade. SPS-009 selects client 0.2.2 paired with signed SDP 2.2.0, published from
+the exact reviewed branch sdp/release-0.2.2 without a main merge. This supersedes
+SPS-008's earlier no-global-upgrade boundary for this assignment. Root coordinates
+upstream publication and the local upgrade; XFMD code and project migration remain
+separate. Native release gates and fresh independent review remain required.

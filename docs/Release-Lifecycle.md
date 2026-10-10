@@ -33,3 +33,10 @@ SPS-008 does not select global extension installation or live XFMD changes.
 The owner will manually upgrade XFMD; repository publication evidence does not
 claim that adoption has occurred. Preserve the owner's installed extension for
 their manual GitHub CLI update-notification test; GitHub CLI owns notifications.
+
+## Current selection — SPS-009
+
+SPS-009 selects client 0.2.2 and immutable SDP 2.2.0 default, with the same native
+release gates. Publish the reviewed sdp/release-0.2.2 branch, then perform the
+owner-authorized local gh extension upgrade. Earlier SPS-008 descriptions are
+historical. XFMD code and project-directory migrations remain excluded.

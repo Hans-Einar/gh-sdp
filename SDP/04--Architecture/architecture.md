@@ -2,7 +2,7 @@
 
 Status: SPS-003 thin client, SPS-004 first release and SPS-005 default-engine
 patch, SPS-006 template-distribution patch and SPS-007 discovery and human
-output default release delivered; SPS-008 selects the SDP 2.1 default patch.
+output default release delivered; SPS-009 selects the SDP 2.2 default patch.
 
 ## Ownership
 
@@ -18,8 +18,8 @@ and its source evidence and original recommendations are preserved.
 
 ## Scope and limits
 
-SPS-008 retains the shared bootstrap production public trust and selects the exact
-SDP v2.1.0 descriptor as the default. SDPTool owns automatic source discovery and
+SPS-009 retains the shared bootstrap production public trust and selects the exact
+SDP v2.2.0 descriptor as the default. SDPTool owns automatic source discovery and
 human output presentation; callers request machine output explicitly with --json.
 The shared bootstrap probes the engine using machine-readable version output,
 with compatibility fallback for earlier engines. No mutable latest-release catalog is inferred.

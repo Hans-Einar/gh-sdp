@@ -4,6 +4,22 @@
 
 No additional changes selected.
 
+## [0.2.2] — 2026-10-10
+
+Release-Date: 2026-10-10
+
+### Fixed
+
+- [SPS-009] Select signed SDP 2.2.0 by default through the immutable canonical
+  bootstrap, exposing program discovery and run alongside existing source tools.
+
+### Scope
+
+Linux amd64; unchanged thin-client arguments, streams, cwd, exit status, descriptor
+selection and offline behavior. The owner authorizes publication and local extension
+upgrade after exact-candidate verification and fresh independent review. Preparation
+is not evidence of publication. No XFMD application or project-directory migration.
+
 ## [0.2.1] — 2026-10-01
 
 Release-Date: 2026-10-01
