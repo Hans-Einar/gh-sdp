@@ -1126,7 +1126,7 @@ slices:
     iteration: SPI-009
     path: SDP/Sprints/Sprint-009/ScrumIterations.md
     verification: VER-SPS-009
-    review: REV-SPS-009-001
+    review: REV-SPS-009-002
     release: REL-0.2.2
 fixes:
   FIX-0.1.0-001:
@@ -1304,9 +1304,15 @@ reviews:
       low: 0
       notes: 2
   REV-SPS-009-001:
-    status: pending
+    status: changes-required
     path: SDP/CodeReview/REV-SPS-009-001.md
     slice: SPS-009
+    resolvedBy: REV-SPS-009-002
+  REV-SPS-009-002:
+    status: approved
+    path: SDP/CodeReview/REV-SPS-009-002.md
+    slice: SPS-009
+    candidateCommit: 9776f8a6b26247383b25e12317e69f06ddd1f4e2
 verification:
   VER-SPS-008:
     path: SDP/Verification/VER-SPS-008.md
@@ -1392,10 +1398,11 @@ verification:
     reviewerConfirmation: REV-FIX-0.1.0-001-001
     releaseGate: false
   VER-SPS-009:
-    status: pending
+    status: passed
     path: SDP/Verification/VER-SPS-009.md
     slice: SPS-009
-    releaseGate: false
+    releaseGate: true
+    candidateCommit: 9776f8a6b26247383b25e12317e69f06ddd1f4e2
 migrations: {}
 releases:
   REL-0.2.1:
@@ -1485,7 +1492,7 @@ releases:
   REL-0.2.2:
     version: 0.2.2
     state: prerelease
-    targetStatus: preparing
+    targetStatus: publication-ready
     upstreamTargetVersion: 2.2.0
     releaseNotes: SDP/RELEASE-NOTES.md
     manifest: SDP/SDP-project.manifest.yaml
@@ -1493,8 +1500,8 @@ releases:
     verification:
     - VER-SPS-009
     reviews:
-    - REV-SPS-009-001
-    releaseCommit: null
+    - REV-SPS-009-002
+    releaseCommit: 9776f8a6b26247383b25e12317e69f06ddd1f4e2
     gitTag: null
     githubRelease: null
 gipRequirements:

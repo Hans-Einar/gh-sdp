@@ -31,4 +31,4 @@ review; public paired descriptor/default production verification before publicat
 P3: annotated tag/release, downloaded asset hashes, global extension upgrade,
 production default and lab discovery/native Run; truthful reconciliation and review.
 
-Current result: preparation active; no package, review or publication success claimed.
+Current result: P1/P2 and public-default gate passed at 9776f8a; REV-SPS-009-002 independently approves. P3 publication and local upgrade pending.

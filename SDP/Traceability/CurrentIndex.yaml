@@ -6,7 +6,7 @@ release:
   activeReleaseId: REL-0.2.2
   targetVersion: 0.2.2
   state: prerelease
-  targetStatus: preparing
+  targetStatus: publication-ready
 active:
   sprint: Sprint-009
   refactor: null
@@ -40,7 +40,7 @@ lifecycle:
   authorization: owner-Session0010-T011-release-and-extension-upgrade
   contract: SDP/Sprints/Sprint-009/ScrumIterations.md
   status: active
-  review: REV-SPS-009-001
+  review: REV-SPS-009-002
 lastCompleted:
   sprint: Sprint-008
   iteration: SPI-008
