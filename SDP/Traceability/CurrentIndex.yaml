@@ -2,17 +2,17 @@ project:
   name: gh-sdp
   status: active-development
 release:
-  previousVersion: 0.2.1
-  activeReleaseId: REL-0.2.2
+  previousVersion: 0.2.2
+  activeReleaseId: REL-0.2.3
   targetVersion: 0.2.3
-  state: released
-  targetStatus: reviewed-unpublished-trust-bridge
+  state: prerelease
+  targetStatus: release-preparation
 active:
-  sprint: null
+  sprint: Sprint-010
   refactor: null
-  iteration: null
-  slice: null
-  fix: FIX-0.2.3-001
+  iteration: SPI-010
+  slice: SPS-010
+  fix: null
   revision: 1
 historicalStudy:
   phase: Study
@@ -36,12 +36,12 @@ historicalDependencyAssessment:
   accepted: false
   mediumFindings: 3
 lifecycle:
-  phase: Implementation
-  authorization: owner-2026-11-11-Linux-publisher
-  contract: SDP/Fixes/FIX-0.2.3-001.yaml
-  status: complete
-  review: REV-FIX-0.2.3-001
-  reviewScope: unpublished-trust-bridge
+  phase: ReleasePreparation
+  authorization: owner-2026-11-11-publication-and-three-host-installation
+  contract: SDP/Sprints/Sprint-010/ScrumIterations.md
+  status: active
+  review: null
+  reviewScope: exact-release-candidate
 lastCompleted:
   sprint: Sprint-009
   iteration: SPI-009

@@ -136,8 +136,8 @@ Use the revision-bound run arguments returned by discovery in graphical clients.
 A gh extension upgrade updates the client and its default engine; it does not
 migrate the project SDP folder or implement an XFMD Run button.
 
-## Prepared publisher-trust bridge
+## Selected 0.2.3 release candidate
 
-The unpublished 0.2.3 candidate adds Linux publisher trust while retaining the
-2.2.0 default and old publisher. See [rollout](docs/Publisher-Trust.md).
-Existing installed clients are not automatically changed by this source update.
+The selected 0.2.3 candidate adds Linux publisher trust and defaults to SDP2.2.1.
+See [rollout](docs/Publisher-Trust.md). Publication and installation are recorded
+separately; the public 0.2.2 history above remains current until then.

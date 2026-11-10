@@ -95,3 +95,12 @@ as default. Work on sdp/linux-publisher-trust, commit by milestone. This is
 authorized implementation/build and review; no client publication, main merge,
 global extension replacement or project upgrade is inferred. Upstream key
 provisioning/trust changes are separately authorized in SDP R221-K1.
+
+## Paired publication and host installation — owner 2026-11-11
+
+SPS-010 supersedes the completed bridge's preparation-only boundary for publication
+of0.2.3 with signed SDP2.2.1 default, plus gh extension upgrades on Linux, Beinerud
+and the laptop. Owner also authorizes root-coordinated upgrades of gh-sdp-installed
+repositories under Linux ~/git. Use current sdp/linux-publisher-trust branch,
+milestone commits and exact reviewed publication source; no main merge is needed.
+Legacy/manual process installations are not silently migrated.

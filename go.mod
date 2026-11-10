@@ -2,4 +2,4 @@ module github.com/Hans-Einar/gh-sdp
 
 go 1.26.0
 
-require github.com/Hans-Einar/SDP/SDPTool/bootstrap v0.0.0-20261110231554-643ec77a69a4
+require github.com/Hans-Einar/SDP/SDPTool/bootstrap v0.0.0-20261110232832-35bfdf8469e0

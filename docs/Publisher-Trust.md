@@ -1,26 +1,23 @@
-# Linux publisher bridge
+# Linux publisher rollout
 
-FIX-0.2.3-001 prepares an unpublished 0.2.3 client candidate. Published 0.2.2
-remains the current release until a separate publication is recorded.
+The initial FIX-0.2.3-001 bridge was reviewed with SDP2.2.0 as default. Owner
+authorization on 2026-11-11 selects SPS-010 publication with SDP2.2.1 as default,
+followed by installation on Linux, Beinerud and the laptop. Historical bridge
+evidence remains scoped to its own source; the release has its own final gate.
 
-The new immutable bootstrap retains the laptop key and adds the Linux key:
+The immutable bootstrap retains the laptop key and adds the Linux key:
 `2c947457cffe015f870168cb332242c49606fdea378a13d875579544c2989c03`.
 Its public base64 value is `3c4v3py8MxlsZ0zGp0T2Wtmcl2rXQ4f4WEM/YBShBiw=`.
 Only SDP's publisher holds private signing material; gh-sdp requires none to build.
 
-The bridge deliberately retains the existing signed SDP2.2.0 default. After this
-client is distributed, a Linux-signed release can be explicitly selected with
-SDP_RELEASE. A later client default update is separate. Existing 0.2.2 clients
-reject the new signer: SSH access, a GitHub public key or publishing the descriptor
-does not update their compiled trust. Never use SDP_TEST_KEY for production rollout.
+Publish and verify signed SDP2.2.1 first, then publish/install gh-sdp0.2.3. Old
+0.2.2 clients reject the Linux signer. GitHub/SSH authentication or SDP_RELEASE
+cannot introduce trust. Never use SDP_TEST_KEY for production rollout.
+The release does not revoke the laptop key, change signature formats, enable
+automatic trust discovery or replace existing released artifacts.
 
-No released descriptor, tag or asset is replaced. This change does not claim
-revocation, automatic trust discovery, multiple signatures or completed client adoption.
-See the [verification record](../SDP/Verification/VER-FIX-0.2.3-001.md).
-
-## Verified build
-
-The independent review approves clean source b3258f9. Build portable Linux amd64
-with `GOAMD64=v1 bash scripts/package.sh 0.2.3 NEW_OUTPUT_DIRECTORY`; do not
-inherit a host-specific GOAMD64 setting. The final checked candidate and evidence
-are in the verification record. The installed 0.2.2 extension remains unchanged.
+Build portable Linux amd64 with
+`GOAMD64=v1 bash scripts/package.sh 0.2.3 NEW_OUTPUT_DIRECTORY`.
+Do not inherit a host-specific GOAMD64 setting. Exact-candidate evidence belongs
+to [SPS-010](../SDP/Sprints/Sprint-010/ScrumIterations.md).
+Project SDP upgrades are a separate root-bound preview/apply operation.

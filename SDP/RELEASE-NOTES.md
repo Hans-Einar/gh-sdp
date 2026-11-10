@@ -2,8 +2,23 @@
 
 ## [Unreleased]
 
-- [FIX-0.2.3-001] Prepare overlapping Linux/laptop publisher trust through an
-  immutable bootstrap update; preserve the signed SDP2.2.0 default. Unpublished.
+No additional changes selected.
+
+## [0.2.3] — 2026-11-11
+
+Release-Date: 2026-11-11
+
+### Fixed
+
+- [SPS-010] Trust the independent Linux publisher alongside the existing laptop
+  key and select signed SDP2.2.1 through an immutable bootstrap dependency.
+- [SPS-010] Preserve the thin-client arguments, streams, cwd, exit status and
+  offline workflow. Linux amd64 artifacts use the portable v1 CPU baseline.
+
+### Migration
+
+Upgrade the extension before selecting Linux-signed descriptors;0.2.2 does not
+know the new key. Client installation does not itself upgrade project SDP folders.
 
 ## [0.2.2] — 2026-10-10
 
