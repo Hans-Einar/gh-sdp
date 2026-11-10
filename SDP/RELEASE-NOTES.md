@@ -2,7 +2,8 @@
 
 ## [Unreleased]
 
-No additional changes selected.
+- [FIX-0.2.3-001] Prepare overlapping Linux/laptop publisher trust through an
+  immutable bootstrap update; preserve the signed SDP2.2.0 default. Unpublished.
 
 ## [0.2.2] — 2026-10-10
 

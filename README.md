@@ -135,3 +135,9 @@ gh sdp . run --program widget-lab
 Use the revision-bound run arguments returned by discovery in graphical clients.
 A gh extension upgrade updates the client and its default engine; it does not
 migrate the project SDP folder or implement an XFMD Run button.
+
+## Prepared publisher-trust bridge
+
+The unpublished 0.2.3 candidate adds Linux publisher trust while retaining the
+2.2.0 default and old publisher. See [rollout](docs/Publisher-Trust.md).
+Existing installed clients are not automatically changed by this source update.

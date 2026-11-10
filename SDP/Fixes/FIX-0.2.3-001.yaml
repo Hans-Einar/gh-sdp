@@ -1,0 +1,40 @@
+schemaVersion: '1.0'
+fixId: FIX-0.2.3-001
+targetVersion: 0.2.3
+status: in-progress
+reasonFullSliceIsDisproportionate: Bounded dependency/trust update under the existing
+  overlapping-key contract; no new client behavior or protocol.
+scope:
+- Pin the canonical bootstrap containing both existing and Linux publisher keys.
+- Build and verify an unpublished Linux amd64 bridge client with the unchanged signed
+  SDP 2.2.0 default.
+expectedFiles:
+- go.mod
+- go.sum
+- publisher_trust_test.go
+- docs/Publisher-Trust.md
+- SDP/Fixes/FIX-0.2.3-001.yaml
+- SDP/Verification/VER-FIX-0.2.3-001.md
+- SDP/CodeReview/REV-FIX-0.2.3-001.md
+- SDP/SDP-project.manifest.yaml
+- SDP/Traceability/CurrentIndex.yaml
+- SDP/Traceability/Relations.yaml
+- SDP/RELEASE-NOTES.md
+- README.md
+- AGENTS-project.md
+invariants:
+- Retain old publisher trust and pinned SDP 2.2.0 default.
+- No local module replace in the packaged client.
+- Preserve thin adapter arguments, cwd, streams, errors and offline behavior.
+- Do not modify published tags/assets or install over the owner's extension.
+nonGoals:
+- Client publication or main merge.
+- SDP 2.2.1 default selection or project upgrades.
+- Copying private signing keys.
+verification:
+- Race tests, vet and module verification.
+- Clean exact-source package and actual packaged integration.
+- Production trust for old descriptor and Linux-signed candidate; old-client rejection.
+- Fresh independent review.
+reviewRecord: REV-FIX-0.2.3-001
+revision: 1

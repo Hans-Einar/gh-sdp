@@ -1147,6 +1147,13 @@ fixes:
     - VER-FIX-0.1.0-001
     reviews:
     - REV-FIX-0.1.0-001-001
+  FIX-0.2.3-001:
+    path: SDP/Fixes/FIX-0.2.3-001.yaml
+    status: in-progress
+    targetVersion: 0.2.3
+    verification:
+    - VER-FIX-0.2.3-001
+    reviews: []
 reviews:
   REV-SPS-008-002:
     path: SDP/CodeReview/REV-SPS-008-002.md

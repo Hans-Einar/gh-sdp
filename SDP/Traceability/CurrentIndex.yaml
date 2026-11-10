@@ -4,15 +4,15 @@ project:
 release:
   previousVersion: 0.2.1
   activeReleaseId: REL-0.2.2
-  targetVersion: 0.2.2
+  targetVersion: 0.2.3
   state: released
-  targetStatus: published-and-reconciled
+  targetStatus: unpublished-trust-bridge-preparation
 active:
-  sprint: Sprint-009
+  sprint: null
   refactor: null
-  iteration: SPI-009
-  slice: SPS-009
-  fix: null
+  iteration: null
+  slice: null
+  fix: FIX-0.2.3-001
   revision: 1
 historicalStudy:
   phase: Study
@@ -36,12 +36,12 @@ historicalDependencyAssessment:
   accepted: false
   mediumFindings: 3
 lifecycle:
-  phase: ReleaseReconciliation
-  authorization: owner-Session0010-T011-release-and-extension-upgrade
-  contract: SDP/Sprints/Sprint-009/ScrumIterations.md
-  status: complete
-  review: REV-SPS-009-004
-  reviewScope: published-release-reconciliation
+  phase: Implementation
+  authorization: owner-2026-11-11-Linux-publisher
+  contract: SDP/Fixes/FIX-0.2.3-001.yaml
+  status: in-progress
+  review: null
+  reviewScope: unpublished-trust-bridge
 lastCompleted:
   sprint: Sprint-009
   iteration: SPI-009

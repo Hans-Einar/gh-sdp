@@ -86,3 +86,12 @@ the exact reviewed branch sdp/release-0.2.2 without a main merge. This supersede
 SPS-008's earlier no-global-upgrade boundary for this assignment. Root coordinates
 upstream publication and the local upgrade; XFMD code and project migration remain
 separate. Native release gates and fresh independent review remain required.
+
+## Linux publisher bridge — owner 2026-11-11
+
+The owner requires signing on the always-available Linux build host. Bounded
+FIX-0.2.3-001 prepares a client trusting both publisher keys, retaining SDP2.2.0
+as default. Work on sdp/linux-publisher-trust, commit by milestone. This is
+authorized implementation/build and review; no client publication, main merge,
+global extension replacement or project upgrade is inferred. Upstream key
+provisioning/trust changes are separately authorized in SDP R221-K1.
