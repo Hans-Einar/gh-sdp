@@ -1,6 +1,6 @@
 # gh-sdp0.2.3 exact-candidate release checklist
 
-Candidate pending. Engine distribution checks are upstream R221 responsibilities;
+Candidate03e4571; see [Evidence](Evidence.md). Engine distribution checks are upstream R221 responsibilities;
 client must verify the actual public production default.
 
 # ReleaseChecklist
@@ -12,11 +12,11 @@ release log is not proof of publication. The project release contract governs.
 
 ## Scope and content
 
-- [ ] Select product version from compatibility impact. Keep language/profile,
+- [x] Select product version from compatibility impact. Keep language/profile,
   process/management schema and client versions distinct.
-- [ ] Enumerate included work and remaining exclusions; validate selected model,
+- [x] Enumerate included work and remaining exclusions; validate selected model,
   tests, review dispositions and links on the actual candidate.
-- [ ] Update canonical RELEASE-NOTES.md Unreleased entries with stable work IDs.
+- [x] Update canonical RELEASE-NOTES.md Unreleased entries with stable work IDs.
   Freeze selected entries into a dated version section; preserve released bytes.
 - [ ] Run `sdptool release-log --version X.Y.Z --output Releases/X.Y.Z.md`.
   Check with the same command plus --check. Use --all --output Releases --check
@@ -61,3 +61,9 @@ release log is not proof of publication. The project release contract governs.
 Consuming projects reuse the scope/content/publication checks; mark SDP publisher
 inventory/signing steps N/A if they do not distribute SDP itself. Keep their own
 application/package/installer acceptance checks alongside this list.
+
+Client applicability: SDP publisher inventory/profile/signing/upgrade items are
+N/A for this wrapper and covered by upstream R221 final evidence. The client
+packages its own binary/manifest/checksum; canonical notes use the installed
+legacy release workflow, not the producer release-log command. Public default,
+release download and three-host installation checks remain pending.
