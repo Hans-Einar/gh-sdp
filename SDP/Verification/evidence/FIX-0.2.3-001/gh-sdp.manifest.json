@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "gh-sdp-package/1",
+  "version": "0.2.3",
+  "sourceCommit": "b3258f9d9b592bf6f251a32e69530432f4cc038c",
+  "platform": "linux/amd64",
+  "file": "gh-sdp-linux-amd64",
+  "sha256": "274dfc2e2967a957d85571af39c1a2f89f5d4b95dcdd4fe1a9debca152204f0f",
+  "size": 9449901,
+  "goVersion": "go1.26.10 (Red Hat 1.26.10-1.el10_2.alma.1)",
+  "buildInfo": [
+    "\tpath\tgithub.com/Hans-Einar/gh-sdp",
+    "\tmod\tgithub.com/Hans-Einar/gh-sdp\tv0.2.3-0.20261110231821-b3258f9d9b59\t",
+    "\tdep\tgithub.com/Hans-Einar/SDP/SDPTool/bootstrap\tv0.0.0-20261110231554-643ec77a69a4\th1:zU2ly4c4uGsxQRD/Ai9BgP10L/ytNXaCCbVotSTJacs=",
+    "\tbuild\t-buildmode=exe",
+    "\tbuild\t-compiler=gc",
+    "\tbuild\t-tags=fips140v1.0",
+    "\tbuild\t-trimpath=true",
+    "\tbuild\tDefaultGODEBUG=fips140=auto",
+    "\tbuild\tCGO_ENABLED=0",
+    "\tbuild\tGOARCH=amd64",
+    "\tbuild\tGOFIPS140=v1.0.0-c2097c7c",
+    "\tbuild\tGOOS=linux",
+    "\tbuild\tGOAMD64=v1",
+    "\tbuild\tvcs=git",
+    "\tbuild\tvcs.revision=b3258f9d9b592bf6f251a32e69530432f4cc038c",
+    "\tbuild\tvcs.time=2026-11-10T23:18:21Z",
+    "\tbuild\tvcs.modified=false"
+  ]
+}

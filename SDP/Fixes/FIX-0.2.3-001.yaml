@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 fixId: FIX-0.2.3-001
 targetVersion: 0.2.3
-status: in-progress
+status: complete
 reasonFullSliceIsDisproportionate: Bounded dependency/trust update under the existing
   overlapping-key contract; no new client behavior or protocol.
 scope:

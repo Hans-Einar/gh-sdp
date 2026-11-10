@@ -1149,11 +1149,12 @@ fixes:
     - REV-FIX-0.1.0-001-001
   FIX-0.2.3-001:
     path: SDP/Fixes/FIX-0.2.3-001.yaml
-    status: in-progress
+    status: complete
     targetVersion: 0.2.3
     verification:
     - VER-FIX-0.2.3-001
-    reviews: []
+    reviews:
+    - REV-FIX-0.2.3-001
 reviews:
   REV-SPS-008-002:
     path: SDP/CodeReview/REV-SPS-008-002.md
@@ -1336,6 +1337,10 @@ reviews:
     path: SDP/CodeReview/REV-SPS-009-003.md
     slice: SPS-009
     resolvedBy: REV-SPS-009-004
+  REV-FIX-0.2.3-001:
+    path: SDP/CodeReview/REV-FIX-0.2.3-001.md
+    status: approved
+    scope: unpublished-linux-publisher-bridge
 verification:
   VER-SPS-008:
     path: SDP/Verification/VER-SPS-008.md
@@ -1426,6 +1431,10 @@ verification:
     slice: SPS-009
     releaseGate: true
     candidateCommit: 9776f8a6b26247383b25e12317e69f06ddd1f4e2
+  VER-FIX-0.2.3-001:
+    path: SDP/Verification/VER-FIX-0.2.3-001.md
+    status: passed
+    scope: unpublished-linux-publisher-bridge
 migrations: {}
 releases:
   REL-0.2.1:

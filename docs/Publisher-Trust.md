@@ -17,3 +17,10 @@ does not update their compiled trust. Never use SDP_TEST_KEY for production roll
 No released descriptor, tag or asset is replaced. This change does not claim
 revocation, automatic trust discovery, multiple signatures or completed client adoption.
 See the [verification record](../SDP/Verification/VER-FIX-0.2.3-001.md).
+
+## Verified build
+
+The independent review approves clean source b3258f9. Build portable Linux amd64
+with `GOAMD64=v1 bash scripts/package.sh 0.2.3 NEW_OUTPUT_DIRECTORY`; do not
+inherit a host-specific GOAMD64 setting. The final checked candidate and evidence
+are in the verification record. The installed 0.2.2 extension remains unchanged.

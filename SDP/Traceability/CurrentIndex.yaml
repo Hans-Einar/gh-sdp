@@ -6,7 +6,7 @@ release:
   activeReleaseId: REL-0.2.2
   targetVersion: 0.2.3
   state: released
-  targetStatus: unpublished-trust-bridge-preparation
+  targetStatus: reviewed-unpublished-trust-bridge
 active:
   sprint: null
   refactor: null
@@ -39,8 +39,8 @@ lifecycle:
   phase: Implementation
   authorization: owner-2026-11-11-Linux-publisher
   contract: SDP/Fixes/FIX-0.2.3-001.yaml
-  status: in-progress
-  review: null
+  status: complete
+  review: REV-FIX-0.2.3-001
   reviewScope: unpublished-trust-bridge
 lastCompleted:
   sprint: Sprint-009
