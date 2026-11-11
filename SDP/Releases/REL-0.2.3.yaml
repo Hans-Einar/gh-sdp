@@ -1,14 +1,16 @@
 schemaVersion: '1.0'
 releaseId: REL-0.2.3
 version: 0.2.3
-state: prerelease
+state: released
 releaseNotesPath: SDP/RELEASE-NOTES.md
 includedCapabilities:
 - gh-sdp.bootstrap.signed
 - gh-sdp.delegate.native
-verificationRecords: []
-reviewRecords: []
+verificationRecords:
+- VER-SPS-010
+reviewRecords:
+- REV-SPS-010
 migrationRecord: null
-releasePreparationCommit: null
-gitTag: null
-githubReleaseUrl: null
+releasePreparationCommit: 03e45710db3ad845d05b26b19c286bd069911294
+gitTag: v0.2.3
+githubReleaseUrl: https://github.com/Hans-Einar/gh-sdp/releases/tag/v0.2.3

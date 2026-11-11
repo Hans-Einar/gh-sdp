@@ -5,11 +5,11 @@ project:
 installed:
   manifestPath: Framework/installed-toolkit.manifest.yaml
 release:
-  currentVersion: 0.2.2
+  currentVersion: 0.2.3
   nextTargetVersion: 0.2.3
-  state: prerelease
-  latestTag: v0.2.2
-  latestCommit: 9776f8a6b26247383b25e12317e69f06ddd1f4e2
+  state: released
+  latestTag: v0.2.3
+  latestCommit: 03e45710db3ad845d05b26b19c286bd069911294
 development:
   sprintId: Sprint-010
   refactorId: null

@@ -1,69 +1,41 @@
-# gh-sdp0.2.3 exact-candidate release checklist
+# gh-sdp 0.2.3 release checklist
 
-Candidate03e4571; see [Evidence](Evidence.md). Engine distribution checks are upstream R221 responsibilities;
-client must verify the actual public production default.
-
-# ReleaseChecklist
-
-Copy this checklist into the selected release's work area. Record version,
-previous release, exact commit, owner publication authority, evidence paths and
-actual outcomes. Unchecked means pending; use N/A only with a reason. A generated
-release log is not proof of publication. The project release contract governs.
+Adapted from the instantiated Toolkit ReleaseChecklist. Exact candidate:
+03e45710db3ad845d05b26b19c286bd069911294. Previous client:0.2.2.
+Owner authorization:2026-11-11 publication and three-host installation.
 
 ## Scope and content
 
-- [x] Select product version from compatibility impact. Keep language/profile,
-  process/management schema and client versions distinct.
-- [x] Enumerate included work and remaining exclusions; validate selected model,
-  tests, review dispositions and links on the actual candidate.
-- [x] Update canonical RELEASE-NOTES.md Unreleased entries with stable work IDs.
-  Freeze selected entries into a dated version section; preserve released bytes.
-- [ ] Run `sdptool release-log --version X.Y.Z --output Releases/X.Y.Z.md`.
-  Check with the same command plus --check. Use --all --output Releases --check
-  to check every recorded version. Generator extracts reviewed notes, not Git guesses.
+- [x] Select backward-compatible client0.2.3 independently from engine2.2.1.
+- [x] Enumerate trust/default changes and preserve thin-client/offline boundaries.
+- [x] Freeze canonical SDP/RELEASE-NOTES.md0.2.3 section; retain old release notes.
+- [x] Check exact clean-source package, immutable dependency and actual packaged tests.
+- N/A: producer release-log generation. This legacy client workflow uses its
+  canonical release-note section directly as the public release body.
 
-## Installation distribution (SDP publisher)
+## Distribution and review
 
-- [ ] Check Template/sdp-root and project-root guidance. Include Sessions guide and
-  blank template, never project conversations, boards or existing work records.
-- [ ] Review SDPTool/profiles/payload.json: every distributed file, destination,
-  ownership and removed/moved path. Inventory completeness tests must pass.
-- [ ] Review SDPTool/profiles/five-phase.json: capabilities, schema/profile versions
-  and exact supported predecessor descriptor digests, including current stable.
-- [ ] Reconcile SDP.manifest.yaml, Toolkit/SDP-install.manifest.json compatibility
-  metadata, package version, release record and notes. Retained legacy metadata
-  does not replace the current Go inventory or signed descriptor.
-- [ ] Build package and immutable sdp-release.json from a clean exact commit using
-  the Go profile builder. Verify file hashes, sourceCommit and executable identity.
-  Never edit the built descriptor or use a project-local manifest as authority.
-- [ ] Sign descriptor with the trusted publisher key; verify signature, binary hash
-  and SHA256SUMS. Store no private keys or secrets in evidence/repository.
-- [ ] Rehearse install and each supported upgrade from original verified descriptor
-  bytes. Check new Sessions files, existing Session/document preservation, receipt,
-  Maintenance entry/history, conflict handling and repeated no-op.
-- [ ] Test extracted-source operation, packaged signed child and normal bootstrap.
-  Development artifacts or test signers are not production signed evidence.
+- [x] Portable Linux amd64/v1 binary, manifest and checksum built from exact source.
+- [x] Race tests, vet, module verification and actual packaged integration pass.
+- [x] Independent REV-SPS-010 has no findings; producer exact6f33 CI passed.
+- [x] Exact client verifies the real public signed2.2.1 default with a fresh cache
+  before client publication. See upstream public-default.json evidence.
+- N/A: this wrapper does not distribute Toolkit templates, payload inventory,
+  predecessor contracts or signed SDP descriptors. Those checklist obligations
+  belong to upstream R221 and its final production-signed evidence. Private
+  publisher keys are never part of the client package.
+- N/A: no client GitHub CI workflow exists; native release tests and independent
+  review are the client gates. Do not describe upstream CI as client CI.
 
-## Publish and consumer readiness
+## Publication and deployment
 
-- [ ] Exact candidate CI and required independent review pass; working tree clean;
-  tag absent; merge/publication explicitly authorized.
-- [ ] Publish annotated tag and GitHub Release with generated log, signed descriptor,
-  executable and checksums; verify downloaded assets against exact release.
-- [ ] Reconcile actual tag/commit/time and append truthful release events only after
-  success. Do not rewrite a released log or silently correct released notes.
-- [ ] Verify gh-sdp selection: its compiled default is pinned. Either publish/update
-  the client default or document an explicit SDP_RELEASE selecting this release.
-- [ ] Provide preview/apply commands and expected receipt. Owner-requested manual
-  project upgrade remains manual; never confuse updating the gh extension with
-  upgrading the project's SDP directory.
+- [x] Annotated v0.2.3 tag targets the reviewed source; owner publication authorized.
+- [x] Public binary, manifest and checksum downloads match reviewed bytes.
+- [x] Reconcile actual source/tag/publication metadata and append release events.
+- [x] Linux, Beinerud and labtop extension hashes and public engine identities pass.
+- [x] Existing extensions backed up before installation.
+- [x] Distinguish extension installation from project SDP upgrades. Root R221
+  records three successful consumer upgrades, four blocked histories and one
+  excluded legacy installation; this client slice does not claim full-fleet success.
 
-Consuming projects reuse the scope/content/publication checks; mark SDP publisher
-inventory/signing steps N/A if they do not distribute SDP itself. Keep their own
-application/package/installer acceptance checks alongside this list.
-
-Client applicability: SDP publisher inventory/profile/signing/upgrade items are
-N/A for this wrapper and covered by upstream R221 final evidence. The client
-packages its own binary/manifest/checksum; canonical notes use the installed
-legacy release workflow, not the producer release-log command. Public default,
-release download and three-host installation checks remain pending.
+Evidence: Evidence.md, Publication.json and Host-Installations.json.

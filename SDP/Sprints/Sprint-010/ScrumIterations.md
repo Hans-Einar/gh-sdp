@@ -1,6 +1,6 @@
 # Sprint-010 — Linux publisher and SDP2.2.1 default
 
-Status: active
+Status: complete
 Iteration: SPI-010
 Slice: SPS-010
 Authorization: owner2026-11-11 explicitly requests publication and installation on
@@ -26,3 +26,10 @@ default on all three hosts; evidence-backed reconciliation.
 
 Publish only after the signed SDP2.2.1 descriptor is publicly downloadable and
 verifies through this exact client. Do not rewrite existing tags/assets.
+
+## Completion
+
+P1/P2/P3 complete. Publication.json and Host-Installations.json establish the
+exact release and all three installations. Public default verified before
+client publication. Four upstream-coordinated consumer upgrades remain blocked;
+these are outside this completed client publication/installation slice.

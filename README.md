@@ -4,7 +4,7 @@ A thin GitHub CLI extension that obtains a verified SDPTool executable and
 forwards arguments, streams and exit status. SDPTool owns installation policy,
 preview, apply, recovery and project preservation.
 
-The latest published client is v0.2.2, paired with signed SDP v2.2.0.
+The latest published client is v0.2.3, paired with signed SDP v2.2.1.
 Its immutable bootstrap, exact package and public production default were
 independently verified. Install with `gh extension install Hans-Einar/gh-sdp`,
 or update with `gh extension upgrade sdp`; no local Go or PowerShell is needed.
@@ -25,13 +25,13 @@ Install the published Linux amd64 GitHub CLI extension with:
 gh extension install Hans-Einar/gh-sdp
 ```
 
-Client v0.2.2 selects the exact SDP v2.2.0 release descriptor.
+Client v0.2.3 selects the exact SDP v2.2.1 release descriptor.
 Without `SDP_RELEASE`, the client uses that default for both verification and the
 SDPTool child. An explicit `SDP_RELEASE` overrides both selections. No key option
 is needed for the production release: public trust is compiled into the shared
 bootstrap. The private signing key is never part of the client or package.
 
-The paired v2.2.0 engine discovers project sources and defaults to human-readable
+The paired v2.2.1 engine discovers project sources and defaults to human-readable
 output. Machine consumers must explicitly request `--json`, including for
 `--version`. For example, from a project checkout:
 
@@ -136,8 +136,10 @@ Use the revision-bound run arguments returned by discovery in graphical clients.
 A gh extension upgrade updates the client and its default engine; it does not
 migrate the project SDP folder or implement an XFMD Run button.
 
-## Selected 0.2.3 release candidate
+## Linux publisher trust
 
-The selected 0.2.3 candidate adds Linux publisher trust and defaults to SDP2.2.1.
-See [rollout](docs/Publisher-Trust.md). Publication and installation are recorded
-separately; the public 0.2.2 history above remains current until then.
+Client0.2.3 trusts the independent Linux publisher alongside the retained
+previous publisher, and defaults to signed SDP2.2.1. Publication downloads and
+installation on Linux, Beinerud and labtop were verified. Private signing
+material is kept only on the signing host. Upgrading the extension does not
+upgrade project SDP directories; preview and apply those upgrades explicitly.
