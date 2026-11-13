@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"encoding/pem"
 	"fmt"
@@ -15,11 +16,16 @@ import (
 	"strings"
 	"sync/atomic"
 	"testing"
+	"time"
 )
 
 // Exercise the real gh binary-release install/upgrade implementation against an
 // isolated TLS GitHub API fixture. This is not a local-extension symlink test.
-func TestActualGHExtensionInstallUpgrade(t *testing.T) {
+func TestActualGHExtensionInstallUpgrade(t *testing.T) { testActualGH(t, false) }
+
+func TestActualGHInterruptedUpdateRecovery(t *testing.T) { testActualGH(t, true) }
+
+func testActualGH(t *testing.T, truncated bool) {
 	gh, err := exec.LookPath("gh")
 	if err != nil {
 		t.Skip("gh required")
@@ -49,6 +55,7 @@ func TestActualGHExtensionInstallUpgrade(t *testing.T) {
 		t.Fatal(err)
 	}
 	var latest atomic.Int32
+	var failDownload atomic.Int32
 	latest.Store(1)
 	var server *httptest.Server
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -61,14 +68,25 @@ func TestActualGHExtensionInstallUpgrade(t *testing.T) {
 			if strings.HasSuffix(r.URL.Path, "/tags/v2.2.1") {
 				n = 1
 			}
+			assetBytes := oldBytes
 			tag := "v2.2.1"
 			if n == 2 {
 				tag = "v2.3.0"
+				assetBytes = newBytes
 			}
-			json.NewEncoder(w).Encode(map[string]any{"tag_name": tag, "assets": []any{map[string]any{"name": "gh-sdp-linux-amd64", "url": fmt.Sprintf("%s/assets/%d", server.URL, n), "browser_download_url": fmt.Sprintf("%s/assets/%d", server.URL, n)}}})
+			json.NewEncoder(w).Encode(map[string]any{"tag_name": tag, "assets": []any{map[string]any{"name": "gh-sdp-linux-amd64", "digest": "sha256:" + digest(assetBytes), "size": len(assetBytes), "url": fmt.Sprintf("%s/assets/%d", server.URL, n), "browser_download_url": fmt.Sprintf("%s/assets/%d", server.URL, n)}}})
 		case r.URL.Path == "/assets/1":
 			w.Write(oldBytes)
 		case r.URL.Path == "/assets/2":
+			if failDownload.Load() == 1 {
+				http.Error(w, "injected release download failure", http.StatusServiceUnavailable)
+				return
+			}
+			if failDownload.Load() == 2 {
+				w.Header().Set("Content-Length", fmt.Sprint(len(newBytes)+1))
+				w.Write(newBytes[:len(newBytes)/2])
+				return
+			}
 			w.Write(newBytes)
 		default:
 			t.Logf("unhandled gh API: %s %s", r.Method, r.URL.Path)
@@ -128,7 +146,56 @@ func TestActualGHExtensionInstallUpgrade(t *testing.T) {
 	if err := os.RemoveAll(filepath.Join(dir, "cache", "gh")); err != nil {
 		t.Fatal(err)
 	}
-	t.Logf("upgrade: %s", call("extension", "upgrade", "sdp"))
+
+	failDownload.Store(1)
+	if truncated {
+		failDownload.Store(2)
+	}
+	interrupted := exec.Command(gh, "extension", "upgrade", "sdp")
+	interrupted.Env = baseEnv
+	interrupted.Dir = project
+
+	interruptionOutput, interruptionErr := interrupted.CombinedOutput()
+	retained, e := os.ReadFile(alias)
+	if e != nil {
+		t.Fatal(e)
+	}
+	if truncated {
+		if bytes.Equal(retained, newBytes) {
+			t.Fatal("truncation fixture did not corrupt payload")
+		}
+		// gh2.97.0 currently reports success and commits truncated bytes, even when
+		// asset metadata advertises digest/size. Retain this observable limitation.
+		t.Logf("truncated gh update result: error=%v output=%s installedBytes=%d canonicalBytes=%d", interruptionErr, interruptionOutput, len(retained), len(newBytes))
+		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		defer cancel()
+		broken := exec.CommandContext(ctx, alias, "--version", "--json")
+		broken.Env = []string{"HOME=" + dir, "PATH=/nonexistent", "SDP_OFFLINE=true"}
+		broken.Dir = project
+		if out, e := broken.CombinedOutput(); e == nil {
+			t.Fatalf("partial engine did not fail closed: %s", out)
+		}
+	} else {
+		if interruptionErr == nil {
+			t.Fatalf("HTTP503 download unexpectedly succeeded: %s", interruptionOutput)
+		}
+		if !bytes.Equal(retained, oldBytes) {
+			t.Fatal("HTTP failure lost prior registered engine")
+		}
+	}
+	failDownload.Store(0)
+	if truncated {
+		t.Logf("forced upgrade attempt: %s", call("extension", "upgrade", "sdp", "--force"))
+		t.Logf("forced install attempt: %s", call("extension", "install", "https://"+host+"/test/gh-sdp", "--force"))
+		call("extension", "remove", "sdp")
+		if err := os.RemoveAll(filepath.Join(dir, "cache", "gh")); err != nil {
+			t.Fatal(err)
+		}
+		call("extension", "install", "https://"+host+"/test/gh-sdp")
+	} else {
+		t.Logf("upgrade: %s", call("extension", "upgrade", "sdp"))
+	}
+
 	// Deliberately no gh sdp invocation between update and direct execution.
 	installed, err := os.ReadFile(alias)
 	if err != nil || !bytes.Equal(installed, newBytes) {

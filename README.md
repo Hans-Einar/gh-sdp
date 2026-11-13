@@ -68,7 +68,7 @@ go test -race ./...
 go vet ./...
 GH_SDP_PACKAGE_DIR=/absolute/path/to/package go test -run TestPackagedAssetDiscovery -v .
 GH_SDP_BINARY=/absolute/path/to/gh-sdp-linux-amd64 SDPTOOL_BINARY=/absolute/path/to/sdptool go test -run TestPackagedCandidates -v .
-SDPTOOL_OLD_BINARY=/absolute/path/to/previous-registered-engine GH_SDP_BINARY=/absolute/path/to/gh-sdp-linux-amd64 go test -run TestActualGHExtensionInstallUpgrade -v .
+SDPTOOL_OLD_BINARY=/absolute/path/to/previous-registered-engine GH_SDP_BINARY=/absolute/path/to/gh-sdp-linux-amd64 go test -run TestActualGH -v .
 ```
 
 The last gate runs actual gh binary-extension install/upgrade against an isolated
@@ -80,3 +80,9 @@ The installer gate uses disposable signed framework fixtures and checks direct/g
 output, preview/apply and project preservation. No tests modify the user's extension.
 
 [Current bounded work](SDP/Sprints/Sprint-011/ScrumIterations.md)
+
+An interrupted gh2.97.0 download can leave a partial executable; direct consumers
+fail without falling back. Forced update may report the current tag up to date.
+The isolated recovery gate verifies extension removal and reinstall after HTTP
+cache expiration restores the same registered target. See the
+[known gh limitation](SDP/Sprints/Sprint-011/Evidence.md#interrupted-update-discovery).

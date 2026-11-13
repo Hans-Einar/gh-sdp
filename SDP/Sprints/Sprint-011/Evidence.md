@@ -24,3 +24,22 @@ project preview/apply gate and fresh independent review are pending root's C1
 artifact and cross-repository gates. Public publication/native RPM checks are not
 claimed. Network disabled at OS namespace level is a separate integrated gate;
 server closure/no gh/no auth here proves no dependency on the fixture server.
+
+## Interrupted update discovery
+
+Actual gh2.97.0 with explicit asset size/digest metadata preserves the previous
+registered engine on HTTP503. A deliberately truncated HTTP200 body was accepted,
+reported upgraded and installed partial bytes. Direct invocation failed closed;
+no older runtime was selected. Both `extension upgrade sdp --force` and
+`extension install URL --force` then reported already up to date. In isolation,
+removing the extension, expiring/removing its HTTP cache and reinstalling recovered
+the exact new executable at the same registered pathname. The executable test
+`TestActualGHInterruptedUpdateRecovery` retains this behavior and recovery check.
+This is a known upstream gh limitation, not a claim of atomic rollback.
+
+[Official gh2.97.0 download implementation](https://github.com/cli/cli/blob/v2.97.0/pkg/cmd/extension/http.go#L65-L104)
+ignores release-asset digest/size metadata and opens the destination for truncation
+before copying. It checks io.Copy errors; observed truncated success may involve
+its HTTP cache transport. [Upgrade selection](https://github.com/cli/cli/blob/v2.97.0/pkg/cmd/extension/manager.go#L481-L510)
+checks update availability before the binary path and does not make force reinstall
+a current tag. No gh source changes or runtime fallback were introduced here.

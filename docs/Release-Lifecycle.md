@@ -26,3 +26,11 @@ performed by C2. Canonical2.3.0 must be public and verified before extension2.3.
 both must be available before successor XFMD removes its private engine. Tag,
 release, public installation and owner acceptance remain separate recorded facts.
 Never replace an already published asset or label a fixture as production proof.
+
+Interrupted-transfer checks must report gh's behavior honestly. On gh2.97.0,
+HTTP503 preserves the installed engine, but a truncated HTTP200 fixture installed
+partial bytes even with digest/size metadata. Direct execution failed closed;
+forced install/upgrade did not refetch the current tag. Isolated recovery required
+extension removal, HTTP cache expiration and reinstall, restoring the same target
+pathname. This external limitation prevents an atomic rollback claim. See the
+[recorded evidence](../SDP/Sprints/Sprint-011/Evidence.md#interrupted-update-discovery).
