@@ -1,145 +1,82 @@
 # gh-sdp
 
-A thin GitHub CLI extension that obtains a verified SDPTool executable and
-forwards arguments, streams and exit status. SDPTool owns installation policy,
-preview, apply, recovery and project preservation.
+GitHub CLI distribution of the canonical SDPTool engine. The selected 2.3.0
+candidate publishes the **exact signed canonical engine bytes** as
+`gh-sdp-linux-amd64`. `gh sdp` executes that engine directly. No runtime bootstrap,
+child-engine download, private engine cache or separate client version is involved.
+The latest published historical bootstrap client remains 0.2.3 with SDP2.2.1;
+this branch does not claim 2.3.0 publication.
 
-The latest published client is v0.2.3, paired with signed SDP v2.2.1.
-Its immutable bootstrap, exact package and public production default were
-independently verified. Install with `gh extension install Hans-Einar/gh-sdp`,
-or update with `gh extension upgrade sdp`; no local Go or PowerShell is needed.
-Native verification covers Linux amd64 only; Windows/macOS support requires native tests.
-
-## Build and use
-
-Use Go 1.26 or later (verification uses Go 1.27.1):
-
-```sh
-go build -o gh-sdp .
-gh extension install .
-```
-
-Install the published Linux amd64 GitHub CLI extension with:
+Install or update the shared tool through GitHub CLI:
 
 ```sh
 gh extension install Hans-Einar/gh-sdp
+gh extension upgrade sdp
+gh sdp setup
 ```
 
-Client v0.2.3 selects the exact SDP v2.2.1 release descriptor.
-Without `SDP_RELEASE`, the client uses that default for both verification and the
-SDPTool child. An explicit `SDP_RELEASE` overrides both selections. No key option
-is needed for the production release: public trust is compiled into the shared
-bootstrap. The private signing key is never part of the client or package.
-
-The paired v2.2.1 engine discovers project sources and defaults to human-readable
-output. Machine consumers must explicitly request `--json`, including for
-`--version`. For example, from a project checkout:
+Explicit setup registers `$HOME/.local/bin/sdptool` as a link to the current
+executable, without assuming a GitHub extension directory layout. Put
+`$HOME/.local/bin` on PATH for shell use. Native consumers resolve that documented
+path directly. Ordinary gh binary extension upgrades replace the same target
+pathname, so registered consumers immediately execute the new engine even before
+the next `gh sdp` call. Local commands work without gh, credentials or network:
 
 ```sh
-gh sdp discover
-gh sdp discover --json
-gh sdp --version --json
+"$HOME/.local/bin/sdptool" --version --json
+"$HOME/.local/bin/sdptool" discover --json
 ```
 
-Preview an existing manual installation with:
+SDPTool owns setup, actions, discovery, installation policy, signed framework
+selection, preview/apply, recovery and preservation. Framework selection through
+`SDP_RELEASE` does not choose a different executing tool. A tool update does not
+upgrade project SDP directories. Preview and apply project upgrades explicitly.
 
 ```sh
 gh sdp upgrade --manifest /absolute/path/to/adoption.json --plan-output /absolute/path/to/plan.json
 gh sdp upgrade --apply /absolute/path/to/plan.json
 ```
 
-An adoption manifest must describe that project's actual current inventory; the
-client does not generate or guess it. `gh sdp install --plan-output ...` previews
-a clean installation. The default descriptor requires a published paired SDP
-release and network access on the first call, then uses the verified cache.
+Human output is the default; machine consumers request `--json`. Declared
+project programs remain project-owned (`gh sdp run --program NAME`). Native
+release qualification currently covers Linux amd64. Windows/macOS need native
+checks before support claims.
 
-For an explicit nonproduction signed test distribution instead:
+## Package a candidate
 
-```sh
-export SDP_RELEASE=/absolute/path/to/release.json
-export SDP_TEST_KEY=/absolute/path/to/nonproduction-public-key.txt
-# Optional private cache directory; otherwise the user's SDPTool cache is used.
-export SDP_CACHE_DIR=/absolute/path/to/private-cache
-
-gh sdp upgrade --manifest /absolute/path/to/adoption.json --plan-output /absolute/path/to/plan.json
-gh sdp upgrade --apply /absolute/path/to/plan.json
-```
-
-Run from the project directory. Preview requires a fresh external plan path;
-apply uses that exact root-bound plan. Saved apply/resume forces offline bootstrap
-from the verified cache populated during preview. For other commands, set
-`SDP_OFFLINE=true` to require cached distribution inputs. Only lowercase `true`
-and `false` are accepted so the child receives the same selection. The explicit test key
-is required again for cached test distributions. It is a base64 Ed25519 public
-key; its selection never means a production release is trusted or supported.
-The signed descriptor's `.sig` and assets follow the canonical SDPTool contract.
-
-All command arguments reach SDPTool unchanged. Invalid local configuration exits
-2, bootstrap/start failures exit 4, and ordinary child exit codes pass through.
-No shell or PATH lookup selects the engine. `gh sdp --version` reports the child
-SDPTool identity; it does not claim that the client has that version. The client
-release identity is recorded independently in the package manifest; the client
-forwards the engine's version output unchanged.
-
-## Package a release candidate
-
-The script requires Bash, Git, Python 3, and Go. Use a clean checkout and an output
-directory outside it; existing output files and local module replacements are rejected.
-No downloads or publication are performed by the script except Go's normal immutable
-module retrieval during compilation.
+Use Bash, Git, Python3 and Go1.26+, a clean checkout and a new output directory
+outside it. The script verifies an explicitly selected signed canonical release,
+checks engine version/revision against its signed descriptor and republishes its
+bytes without compiling another engine:
 
 ```sh
-SDP_GO=/absolute/path/to/go scripts/package.sh 0.2.2 /absolute/path/to/package
+scripts/package.sh 2.3.0 /absolute/path/to/sdp-release.json /absolute/path/to/new-package
 ```
 
-Outputs are `gh-sdp-linux-amd64` (the asset naming recognized by GitHub CLI),
-`checksums.txt`, and `gh-sdp.manifest.json`. The manifest records the exact clean
-source commit, platform, byte count, SHA-256 and Go dependency/build identities.
-Builds disable CGO and use `-trimpath`; the same clean source and Go toolchain
-produce the same executable. Publication requires the separate
-[release gate](docs/Release-Lifecycle.md).
+HTTPS descriptors are supported. Only build-time verification uses the immutable
+canonical bootstrap dependency. It is never shipped as a launcher. Outputs include
+the executable, checksum, package manifest, exact signed descriptor/signature and
+verification envelope. The manifest distinguishes canonical engine source from
+extension distribution source. Explicit `SDP_TEST_KEY` permits nonproduction
+fixtures, visibly marked `test-signed`; these do not qualify production publication.
+See the [release gate](docs/Release-Lifecycle.md).
 
-## Verification
+## Verify
 
 ```sh
 go test -race ./...
-GH_SDP_PACKAGE_DIR=/absolute/path/to/package go test -race -run TestPackagedAssetDiscovery -v ./...
-GH_SDP_BINARY=/absolute/path/to/gh-sdp SDPTOOL_BINARY=/absolute/path/to/sdptool go test -race -v ./...
-GH_SDP_VIA_GH=true GH_SDP_BINARY=/absolute/path/to/gh-sdp SDPTOOL_BINARY=/absolute/path/to/sdptool go test -race -v ./...
+go vet ./...
+GH_SDP_PACKAGE_DIR=/absolute/path/to/package go test -run TestPackagedAssetDiscovery -v .
+GH_SDP_BINARY=/absolute/path/to/gh-sdp-linux-amd64 SDPTOOL_BINARY=/absolute/path/to/sdptool go test -run TestPackagedCandidates -v .
+SDPTOOL_OLD_BINARY=/absolute/path/to/previous-registered-engine GH_SDP_BINARY=/absolute/path/to/gh-sdp-linux-amd64 go test -run TestActualGHExtensionInstallUpgrade -v .
 ```
 
-The asset-discovery test checks the real package using GitHub CLI's `linux-amd64`
-suffix rule, then verifies its manifest and checksum; it requires `GH_SDP_PACKAGE_DIR`.
-The packaged-candidate test is skipped unless both binary paths are supplied.
-It creates disposable signed fixtures and projects and compares direct and
-client human/JSON version, discovery, preview and diagnostic output, then
-preview/apply.
-The optional GitHub CLI route installs the local extension only into a temporary
-isolated `GH_CONFIG_DIR` and `XDG_DATA_HOME`.
+The last gate runs actual gh binary-extension install/upgrade against an isolated
+TLS release fixture, expires gh's HTTP metadata cache between simulated releases,
+and verifies stable setup registration, byte equality before the first post-update
+gh invocation, and direct offline version/discovery without gh on PATH or auth.
+Both engine inputs must support setup. It does not prove public release publication.
+The installer gate uses disposable signed framework fixtures and checks direct/gh
+output, preview/apply and project preservation. No tests modify the user's extension.
 
-[Current Slice and authority](SDP/Sprints/Sprint-009/ScrumIterations.md) ·
-[Current candidate verification](SDP/Verification/VER-SPS-009.md) ·
-[Candidate dependency provenance and verification status](SDP/Sprints/Sprint-009/implementationNotes.md)
-
-## Runnable SDUI programs
-
-SDPTool 2.2.0 discovery adds declared runnable programs alongside the existing
-source inventory. A project declares its application runner in `SDP/programs.json`.
-For the independent widget lab, run:
-
-```sh
-gh sdp . discover --json
-gh sdp . run --program widget-lab
-```
-
-Use the revision-bound run arguments returned by discovery in graphical clients.
-A gh extension upgrade updates the client and its default engine; it does not
-migrate the project SDP folder or implement an XFMD Run button.
-
-## Linux publisher trust
-
-Client0.2.3 trusts the independent Linux publisher alongside the retained
-previous publisher, and defaults to signed SDP2.2.1. Publication downloads and
-installation on Linux, Beinerud and labtop were verified. Private signing
-material is kept only on the signing host. Upgrading the extension does not
-upgrade project SDP directories; preview and apply those upgrades explicitly.
+[Current bounded work](SDP/Sprints/Sprint-011/ScrumIterations.md)

@@ -1,10 +1,17 @@
-# Design analysis — Thin delegation
+# Design analysis — Shared executable
 
-The owner-selected GIP design places the portable engine inside SDPTool and
-leaves gh-sdp as bootstrap/delegation. This avoids the competing installation
-implementations considered by STU-001. The selected implementation reuses the
-canonical bootstrap package directly with an exact dependency identity; it does
-not copy release, trust, compatibility, cache or installation policy.
+Owner Activity0004 selects one tool update owner: GitHub CLI replaces its actual
+extension executable, which is also the directly registered standalone engine.
+A second bootstrap would retain the competing runtime lookup/update state the
+migration removes. Exact signed-byte republishing preserves canonical module and
+helper build composition without duplicating canonical mains or imports here.
 
-Native OS evidence remains necessary: Go cross-compilation alone cannot prove
-process, filesystem, permissions, locking or recovery behavior on another OS.
+Build-time reuse of the immutable canonical bootstrap verifier retains publisher
+trust, path/bounds checks, digest and protocol validation. Additional packaging
+checks bind signed release/source to the actual executable version/revision.
+The extension distribution manifest records its own source separately.
+
+Native update qualification uses actual gh release installation rather than a
+local extension symlink, because only the former exercises executable replacement.
+An isolated TLS API fixture permits reproducible release transitions; public
+signed-release verification remains a separate root-coordinated gate.

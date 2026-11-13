@@ -4,14 +4,14 @@ project:
 release:
   previousVersion: 0.2.3
   activeReleaseId: REL-0.2.3
-  targetVersion: 0.2.3
-  state: released
-  targetStatus: published-and-installed
+  targetVersion: 2.3.0
+  state: development
+  targetStatus: not-published
 active:
-  sprint: Sprint-010
+  sprint: Sprint-011
   refactor: null
-  iteration: SPI-010
-  slice: SPS-010
+  iteration: SPI-011
+  slice: SPS-011
   fix: null
   revision: 1
 historicalStudy:
@@ -36,12 +36,12 @@ historicalDependencyAssessment:
   accepted: false
   mediumFindings: 3
 lifecycle:
-  phase: Release
-  authorization: owner-2026-11-11-publication-and-three-host-installation
-  contract: SDP/Sprints/Sprint-010/ScrumIterations.md
-  status: completed
-  review: REV-SPS-010
-  reviewScope: exact-release-candidate
+  phase: Implementation
+  authorization: owner-Activity0004-execution
+  contract: SDP/Sprints/Sprint-011/ScrumIterations.md
+  status: implementation
+  review: null
+  reviewScope: pending-independent-review
 lastCompleted:
   sprint: Sprint-010
   iteration: SPI-010

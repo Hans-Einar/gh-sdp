@@ -7,7 +7,7 @@ import (
 )
 
 // This public non-release proof exercises the actual pinned dependency.
-func TestLinuxPublisherTrustAndReleaseDefault(t *testing.T) {
+func TestBuildTimeLinuxPublisherTrust(t *testing.T) {
 	data := []byte("SDP publisher trust-anchor probe: Linux build host, 2026-11-11. Not a release descriptor.\n")
 	sig, err := base64.StdEncoding.DecodeString("adARfG5LbAdInSYkB7oC7n3W6xGVeib2sQlUyc6QeHYVRLkxMeAqk/4uqLrA5uMwXQ5UAIiK21cBJ627MExMAA==")
 	if err != nil {
@@ -19,8 +19,5 @@ func TestLinuxPublisherTrustAndReleaseDefault(t *testing.T) {
 	}
 	if bootstrap.Verify(append(data, '!'), sig, id, "signed") == nil {
 		t.Fatal("tampered proof accepted")
-	}
-	if bootstrap.DefaultRelease != "https://github.com/Hans-Einar/SDP/releases/download/v2.2.1/sdp-release.json" {
-		t.Fatal("release must select signed SDP 2.2.1")
 	}
 }

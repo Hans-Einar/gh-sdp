@@ -1,30 +1,29 @@
-# Architecture — GIP thin client
+# Architecture — Canonical engine distribution
 
-Status: SPS-003 thin client, SPS-004 first release and SPS-005 default-engine
-patch, SPS-006 template-distribution patch and SPS-007 discovery and human
-output default release delivered; SPS-009 selects the SDP 2.2 default patch.
+ARC-GHS-001 is superseded for SPS-011 by ARC-GHS-002, selected through owner
+Activity0004 / canonical PLAN-SDP-0029 C2. Historical release clients used runtime
+bootstrap/delegation. The current extension distribution ships the exact signed
+canonical SDPTool executable renamed `gh-sdp-linux-amd64`.
 
-## Ownership
+SDPTool owns all runtime command behavior, setup registration, capabilities,
+framework descriptor verification and project preservation. gh-sdp owns only
+build-time verification, republishing and distribution provenance. No executable
+launcher here selects/downloads/starts a second runtime. Shared signature code
+is reused through the immutable bootstrap module only in `cmd/package`.
 
-ARC-GHS-001: gh-sdp is a process adapter. Canonical SDPTool owns release selection,
-trust verification, caching, compatibility, installation planning and execution.
-The client imports its shared bootstrap package without local policy forks.
-The fixed local executable is invoked directly through Go os/exec, with no shell
-or PATH resolution for the child. Arguments and streams are passed unchanged.
+The build-time verifier checks canonical signature, platform asset bounds/hash,
+protocol and engine version/revision against signed source identity. It copies
+verified bytes unchanged and retains the signed descriptor and verification
+facts. Distribution source identity differs from engine source identity; the
+manifest records both. Version2.3.0 is shared across executable entrypoints.
 
-This explicitly supersedes STU-REC-002 / STU-ADI-001's historical proposal for a
-portable apply engine inside gh-sdp. STU-001 remains an accepted historical Study,
-and its source evidence and original recommendations are preserved.
+Setup registers the actual executing engine through canonical behavior. gh owns
+replacement of its binary extension file. The stable registered link therefore
+observes an update immediately without a bootstrap call. Native consumers use
+that public path offline. Framework release selection cannot change the
+executing engine. Tool upgrades do not mutate installed project framework data.
+Canonical managed helper packaging remains canonical SDP responsibility; exact
+republishing preserves it without another extension-owned helper/update path.
 
-## Scope and limits
-
-SPS-009 retains the shared bootstrap production public trust and selects the exact
-SDP v2.2.0 descriptor as the default. SDPTool owns automatic source discovery and
-human output presentation; callers request machine output explicitly with --json.
-The shared bootstrap probes the engine using machine-readable version output,
-with compatibility fallback for earlier engines. No mutable latest-release catalog is inferred.
-Explicit local/HTTPS descriptors and non-production public-key files remain
-available for development. Release packaging targets Linux amd64 only.
-Windows and macOS require native verification before support claims.
-
-Requirements: [REQ-GHS-001–005](../03--Requirements/requirements.md).
+Linux amd64 remains the native boundary. Real isolated gh release install/upgrade
+checks complement descriptor/package tests and preserved project workflow checks.

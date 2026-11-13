@@ -49,6 +49,9 @@ func TestPackagedCandidates(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	if fileDigest(t, client) != digest(binary) {
+		t.Fatal("extension must be the exact canonical engine bytes")
+	}
 	dir := t.TempDir()
 	root := filepath.Join(dir, "project with spaces")
 	if err = os.Mkdir(root, 0700); err != nil {
@@ -137,7 +140,7 @@ func TestPackagedCandidates(t *testing.T) {
 		return out
 	}
 	// The new paired engine defaults to human output, including its version.
-	// Bootstrap must probe it successfully without changing delegated output.
+	// Both names execute the same canonical engine without an intervening probe.
 	for _, args := range [][]string{{"--version"}, {"--version", "--json"}, {"discover"}, {"discover", "--json"}, {"upgrade", "--manifest", manifest}, {"upgrade", "--manifest", manifest, "--json"}} {
 		wrapped, wrappedErr, wrappedCode := call(client, args...)
 		direct, directErr, directCode := call(engine, args...)
@@ -194,7 +197,7 @@ func TestPackagedCandidates(t *testing.T) {
 	if b, _ := os.ReadFile(filepath.Join(root, "AGENTS.md")); !bytes.Equal(b, original) {
 		t.Fatal("preview mutated project")
 	}
-	// Removing the source proves saved apply uses the verified cache. The plan
+	// Removing the source proves saved apply uses retained signed plan facts. The plan
 	// itself retains signed release facts and the engine performs saved-plan apply.
 	if err = os.Remove(descriptor); err != nil {
 		t.Fatal(err)
@@ -240,44 +243,19 @@ func TestPackagedCandidates(t *testing.T) {
 	if err = json.Unmarshal(wrapperOutput, &envelope); err != nil || len(envelope.Result.Actions) != 0 {
 		t.Fatalf("repeat not no-change: %s", wrapperOutput)
 	}
-	// A descriptor with an unsupported protocol must be rejected before the child.
-	release["protocol"] = "sdp-install-command/999"
-	bad := filepath.Join(dir, "incompatible.json")
-	sign(bad, release)
-	t.Setenv("SDP_RELEASE", bad)
-	out, diagnostic, code := call(client, "upgrade", "--json")
-	if code != 4 || len(out) != 0 || !bytes.Contains(diagnostic, []byte("protocol")) {
-		t.Fatalf("incompatible: %d %s %s", code, out, diagnostic)
+	// Framework release selection and legacy cache corruption must not select
+	// another executing engine. Version is a local read with no descriptor/cache.
+	baseline := require(engine, "--version", "--json")
+	t.Setenv("SDP_RELEASE", filepath.Join(dir, "missing-descriptor"))
+	if err = os.MkdirAll(os.Getenv("SDP_CACHE_DIR"), 0700); err != nil {
+		t.Fatal(err)
 	}
-	// A signed descriptor can name a digest-valid engine with the wrong probe
-	// protocol. The client must reject that executable as well.
-	incompatibleBinary := bytes.ReplaceAll(binary, []byte(bootstrap.Protocol), []byte("sdp-install-command/9"))
-	if bytes.Equal(binary, incompatibleBinary) {
-		t.Fatal("engine protocol marker absent")
-	}
-	writeFixture(t, filepath.Join(dir, "incompatible-engine"), incompatibleBinary, 0700)
-	release["protocol"] = bootstrap.Protocol
-	release["binaries"] = []any{map[string]any{"platform": runtime.GOOS + "/" + runtime.GOARCH, "path": "incompatible-engine", "sha256": digest(incompatibleBinary), "size": len(incompatibleBinary)}}
-	badEngineDescriptor := filepath.Join(dir, "bad-engine.json")
-	sign(badEngineDescriptor, release)
-	t.Setenv("SDP_RELEASE", badEngineDescriptor)
-	out, diagnostic, code = call(client, "--version")
-	if code != 4 || len(out) != 0 || !bytes.Contains(diagnostic, []byte("lacks")) {
-		t.Fatalf("incompatible binary: %d %s %s", code, out, diagnostic)
-	}
-	t.Setenv("SDP_RELEASE", descriptor)
-	// Cached binary corruption must fail, including offline invocation.
-	cacheBinary := filepath.Join(os.Getenv("SDP_CACHE_DIR"), digest(binary)+"-sdptool")
-	if runtime.GOOS == "windows" {
-		cacheBinary += ".exe"
-	}
-	writeFixture(t, cacheBinary, []byte("corrupt"), 0700)
+	writeFixture(t, filepath.Join(os.Getenv("SDP_CACHE_DIR"), digest(binary)+"-sdptool"), []byte("corrupt obsolete engine"), 0700)
 	t.Setenv("SDP_OFFLINE", "true")
-	out, diagnostic, code = call(client, "--version")
-	if code != 4 || len(out) != 0 || !bytes.Contains(diagnostic, []byte("digest/size")) {
-		t.Fatalf("corrupt: %d %s %s", code, out, diagnostic)
+	if actual := require(client, "--version", "--json"); !bytes.Equal(actual, baseline) {
+		t.Fatal("framework selection changed executing engine identity")
 	}
-	t.Logf("packaged SHA256 gh-sdp=%s sdptool=%s; automatic discovery, human/JSON output and diagnostic equality, preview equality, apply, preservation, repetition, incompatible and corrupt cache passed", fileDigest(t, client), digest(binary))
+	t.Logf("identical packaged engine SHA256=%s; discovery/output/diagnostic equality, preview/apply, preservation, repetition and absence of runtime selection passed", digest(binary))
 }
 func fileDigest(t *testing.T, path string) string {
 	t.Helper()

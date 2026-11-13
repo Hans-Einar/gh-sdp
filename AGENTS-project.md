@@ -104,3 +104,16 @@ and the laptop. Owner also authorizes root-coordinated upgrades of gh-sdp-instal
 repositories under Linux ~/git. Use current sdp/linux-publisher-trust branch,
 milestone commits and exact reviewed publication source; no main merge is needed.
 Legacy/manual process installations are not silently migrated.
+
+## Shared engine distribution — owner Activity0004 execution
+
+Owner selects ACTIVITY-SDP-0004 / PLAN-SDP-0029 C2, coordinated in canonical
+SESSION-SDP-0021 and KB-SDP-063. SPS-011 replaces the historical thin runtime
+bootstrap contract: extension2.3.0 distributes the exact canonical signed
+SDPTool2.3.0 executable. Shared identity supersedes the earlier separately
+versioned-client instruction for this assignment. Verification/republishing is
+build-time only; setup and every tool operation belong to SDPTool. Use
+sdp/shared-tool-installation and milestone commits. Root coordinates canonical
+signing, cross-repository gates, fresh independent review and subsequent
+publication. No main merge or publication is authorized in this bounded Worker
+assignment. Preserve immutable release and traceability history.

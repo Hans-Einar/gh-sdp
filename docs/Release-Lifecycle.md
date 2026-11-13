@@ -1,42 +1,28 @@
 # Native release gate
 
-A release candidate must have completed preparation milestones in its bounded
-release Slice,
-passing Go race tests and vet, a clean exact-commit Linux amd64 package with SHA-256,
-and a fresh independent review of the same production source. The upstream bootstrap
-must be a remotely resolvable immutable module version, with no local replace.
-The default signed SDP descriptor must be public before the gh-sdp release is published.
+Activity0004 / PLAN-SDP-0029 C2 selects distribution2.3.0, identical to the
+canonical engine version. Earlier 0.2.x separately versioned bootstrap clients
+remain immutable history. Current work is [SPS-011](../SDP/Sprints/Sprint-011/ScrumIterations.md).
 
-The first public client API is v0.1.0 (previous currentVersion 0.0.0 is an unreleased
-placeholder). Platform scope is Linux amd64. Package naming is gh-sdp-linux-amd64,
-which GitHub CLI discovers as a binary extension asset. The package script records
-source commit and refuses tracked or untracked dirt. A checksum accompanies the binary.
+Require a clean reviewed distribution commit, race tests/vet, exact canonical
+signed release descriptor and asset, and package checks before publication.
+`scripts/package.sh VERSION SIGNED-DESCRIPTOR NEW-OUTPUT` verifies canonical
+publisher trust/digest/protocol at build time and checks engine version/revision
+against the signed source. It copies that engine unchanged under the GitHub CLI
+asset suffix `gh-sdp-linux-amd64`. The manifest distinguishes engine repository,
+commit, version and hash from distribution repository/commit. Signed descriptor
+bytes and signature must accompany the candidate. Production qualification must
+reject test-signed provenance; explicit fixture success is insufficient.
 
-Freeze selected notes into the selected client version and set release state to
-prerelease at preparation. SPS-008 selects patch v0.2.1 paired with SDP v2.1.0
-by updating the immutable default bootstrap without changing the client API.
-The delegated default remains human-readable; machine consumers must request
---json. Earlier release evidence remains historical. The selected candidate
-requires its own package checks, human/JSON delegation verification and fresh review.
+Run actual isolated gh install/upgrade, setup, direct/gh identity and byte
+comparison, project preview/apply preservation and offline direct use. Update must
+replace the registered engine before another gh sdp invocation. A local-extension
+symlink test alone does not qualify the binary-release update path. Retain honest
+Linux amd64 scope; cross-compilation does not qualify other platforms.
 
-Follow the Slice's selected publication source: SPS-008 authorizes the exact
-reviewed commit on sdp/release-0.2.1, without a main merge. Where a later Slice
-explicitly selects a merge, use its reviewed merged commit. Keep publication
-identities null until real objects exist. Once the paired production descriptor
-is public and the package passes default verification with a fresh cache and
-production trust, annotate the selected client version tag on the reviewed clean
-source commit and publish its exact asset/checksum/manifest. Verify tag target
-and GitHub release remotely, append actual release events, and reconcile
-manifests in a small follow-up commit. Do not overwrite a published tag or asset.
-
-SPS-008 does not select global extension installation or live XFMD changes.
-The owner will manually upgrade XFMD; repository publication evidence does not
-claim that adoption has occurred. Preserve the owner's installed extension for
-their manual GitHub CLI update-notification test; GitHub CLI owns notifications.
-
-## Current selection — SPS-009
-
-SPS-009 selects client 0.2.2 and immutable SDP 2.2.0 default, with the same native
-release gates. Publish the reviewed sdp/release-0.2.2 branch, then perform the
-owner-authorized local gh extension upgrade. Earlier SPS-008 descriptions are
-historical. XFMD code and project-directory migrations remain excluded.
+Root coordinates canonical signing, exact production candidate verification,
+fresh independent review and publication order. No main merge or publication is
+performed by C2. Canonical2.3.0 must be public and verified before extension2.3.0;
+both must be available before successor XFMD removes its private engine. Tag,
+release, public installation and owner acceptance remain separate recorded facts.
+Never replace an already published asset or label a fixture as production proof.
