@@ -1,0 +1,17 @@
+{
+  "descriptor": "/tmp/activity4-release-dab8a03/sdp-release.json",
+  "descriptorSHA256": "ee68feaebda7be1eb249648d1fd64986ba570d0bacfcfc06cc3d8c626fc0c3a5",
+  "distributionCommit": "4cd3192282961256b9e02807b6e96a93dddd9f6f",
+  "distributionRepository": "https://github.com/Hans-Einar/gh-sdp",
+  "engineCommit": "dab8a03c8a4a36d303ca64cbdc0fe79af94843dd",
+  "engineRepository": "https://github.com/Hans-Einar/SDP",
+  "engineVersion": "2.3.0",
+  "file": "gh-sdp-linux-amd64",
+  "platform": "linux/amd64",
+  "provenance": "signed",
+  "schemaVersion": "gh-sdp-package/2",
+  "sha256": "115b233f203c27b3764e2b9a9d3b19229542d8c1b8b939b13bacd650e1fb409e",
+  "signingKeyId": "2c947457cffe015f870168cb332242c49606fdea378a13d875579544c2989c03",
+  "size": 38611633,
+  "version": "2.3.0"
+}

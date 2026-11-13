@@ -54,7 +54,7 @@ its pinned build-time trust dependency cannot be replaced by unrelated workspace
 configuration. Only the verifier is compiled here; the engine is copied.
 
 
-## Signed canonical qualification — source63b7f83
+## Superseded signed canonical qualification — source63b7f83
 
 Canonical2.3.0 source63b7f8303f3688d135272913bb437895f11080f2 is signed by the
 trusted Linux publisher. Engine SHA256:
@@ -103,3 +103,34 @@ not a newly rebuilt predecessor. Per-case signed receipt, predecessor/target
 hashes and summary are retained under SDP/Verification/evidence/SPS-011;
 full disposable plans/outputs remain /tmp/activity4-c2-predecessor-matrix.
 No live project was changed.
+
+
+## Current signed canonical qualification — sourcedab8a03
+
+Source dab8a03c8a4a36d303ca64cbdc0fe79af94843dd supersedes63b7f83 after the
+canonical SDUI CLI output-argument fix. Version remains2.3.0. Its production
+signed engine SHA256 is
+`115b233f203c27b3764e2b9a9d3b19229542d8c1b8b939b13bacd650e1fb409e`;
+signed descriptor SHA256 is
+`ee68feaebda7be1eb249648d1fd64986ba570d0bacfcfc06cc3d8c626fc0c3a5`.
+The previous candidate's package, logs and receipts remain superseded evidence.
+
+Clean distribution4cd3192 repackaged the replacement unchanged at
+/tmp/activity4-gh-package-dab8a03-prequalification. Actual gh install/upgrade,
+stable registration and before-next-gh-call exact byte identity pass with the
+unchanged2.2.99 test fixture. Direct offline version/discovery and SDUI check/
+preview pass with absent gh/auth and fresh cache. The test now explicitly puts
+--json immediately after the SDUI operation and checks the preview result and
+rendered file. Truncated-download failure/recovery and the documented gh-owned
+limitation remain verified. Signed installer equivalence/preservation passes both
+direct and actual gh routes. Race tests and vet pass.
+
+All seven original signed predecessor upgrades were repeated against dab8a03,
+including original production2.2.1: every preservation, managed-conflict refusal,
+signed receipt and repeated no-change assertion passes. New per-case receipt,
+source/target hashes, adapted script and logs are retained separately under
+SDP/Verification/evidence/SPS-011/dab8a03. Full disposable plans/outputs remain
+/tmp/activity4-c2-predecessor-matrix-dab8a03. The final reviewed distribution
+source is repackaged after the evidence commit and its exact package/gate paths
+are handed to root. No public release, live project mutation or main merge is
+claimed; root coordinates the independent/integrated publication gates.

@@ -253,7 +253,7 @@ func testActualGH(t *testing.T, truncated bool) {
 		t.Fatal(err)
 	}
 	for _, operation := range []string{"check", "preview"} {
-		args := []string{"sdui", operation, "-source", source, "-entry", "page", "--json"}
+		args := []string{"sdui", operation, "--json", "-source", source, "-entry", "page"}
 		if operation == "preview" {
 			bundle := filepath.Join(dir, "preview-bundle")
 			if err = os.Mkdir(bundle, 0700); err != nil {
@@ -267,6 +267,17 @@ func testActualGH(t *testing.T, truncated bool) {
 		out, e := cmd.CombinedOutput()
 		if e != nil || !json.Valid(out) {
 			t.Fatalf("offline SDUI %s: %v %s", operation, e, out)
+		}
+
+		var result struct{ Operation, Entry, Revision string }
+		if err = json.Unmarshal(out, &result); err != nil || result.Operation != "sdui-"+operation || result.Revision == "" {
+			t.Fatalf("offline %s result: %v %s", operation, err, out)
+		}
+		if operation == "preview" {
+			entry, e := os.ReadFile(result.Entry)
+			if e != nil || !bytes.Contains(entry, []byte("OK")) {
+				t.Fatalf("offline preview artifact: %v %s", e, entry)
+			}
 		}
 	}
 	if _, err := os.Stat(filepath.Join(dir, "empty-cache", "sdptool", "distribution")); !os.IsNotExist(err) {
