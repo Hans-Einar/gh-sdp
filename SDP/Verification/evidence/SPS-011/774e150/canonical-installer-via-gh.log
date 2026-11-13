@@ -1,0 +1,5 @@
+=== RUN   TestPackagedCandidates
+    installer_integration_test.go:258: identical packaged engine SHA256=2cfcf12f8bfb0d6fa8d11391db874f68d9bc9210c85974ff3cecee50f915ced6; discovery/output/diagnostic equality, preview/apply, preservation, repetition and absence of runtime selection passed
+--- PASS: TestPackagedCandidates (1.62s)
+PASS
+ok  	github.com/Hans-Einar/gh-sdp	2.644s

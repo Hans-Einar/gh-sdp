@@ -105,7 +105,7 @@ full disposable plans/outputs remain /tmp/activity4-c2-predecessor-matrix.
 No live project was changed.
 
 
-## Current signed canonical qualification — sourcedab8a03
+## Superseded signed canonical qualification — sourcedab8a03
 
 Source dab8a03c8a4a36d303ca64cbdc0fe79af94843dd supersedes63b7f83 after the
 canonical SDUI CLI output-argument fix. Version remains2.3.0. Its production
@@ -134,3 +134,36 @@ SDP/Verification/evidence/SPS-011/dab8a03. Full disposable plans/outputs remain
 source is repackaged after the evidence commit and its exact package/gate paths
 are handed to root. No public release, live project mutation or main merge is
 claimed; root coordinates the independent/integrated publication gates.
+
+
+## Current signed canonical qualification — source774e150
+
+Source774e150774d184d0604ae78f274586eeb2bad495 supersedes dab8a03 after completing
+the typed canonical SDUI preview service boundary and predecessor-profile test/CI
+updates. Runtime wire contract, embedded native payload and framework payload
+remain unchanged. Version stays2.3.0. Production signed engine SHA256:
+`2cfcf12f8bfb0d6fa8d11391db874f68d9bc9210c85974ff3cecee50f915ced6`;
+production signed descriptor SHA256:
+`c7ef11e749eb2186ca6fee32e8dba1d96d160095f9e0221e1b70d4bd1b3b50b4`.
+Earlier receipts and logs remain superseded candidate evidence.
+
+Clean distribution53a25f8 repackaged the exact signed source at
+/tmp/activity4-gh-package-774e150-prequalification. The same focused canonical
+gates pass: actual gh binary-release installation/upgrade, stable setup alias,
+exact new bytes before first subsequent gh sdp call, direct offline version/
+discovery/SDUI check/preview without gh/auth or legacy-engine cache, actual
+preview artifact, interrupted-transfer failure/recovery, and production package
+signature/source/hash checks. Signed framework preview/apply equivalence and
+project preservation pass direct and actual gh routes. No new runtime fallback
+or release-publication claim is introduced.
+
+All seven original production signed predecessors were rerun against the new
+descriptor:0.2.0,0.2.1,1.0.0,2.0.0,2.1.0,2.2.0,2.2.1. Every case passes original
+predecessor installation, target signed upgrade, owner-byte preservation,
+managed-conflict refusal and repeat no-change. New receipts, descriptor hashes,
+script and focused gate logs are retained under
+SDP/Verification/evidence/SPS-011/774e150; full disposable plans remain
+/tmp/activity4-c2-predecessor-matrix-774e150. Final clean distribution source and
+repackaged exact-source gate log are handed to root after this evidence commit.
+Root retains independent/integrated gates, public publication and main-merge
+ownership. The previously recorded gh interrupted-download limitation remains.
