@@ -1,11 +1,11 @@
 # gh-sdp
 
-GitHub CLI distribution of the canonical SDPTool engine. The selected 2.3.0
-candidate publishes the **exact signed canonical engine bytes** as
+GitHub CLI distribution of the canonical SDPTool engine. Published 2.3.0
+distributes the **exact signed canonical engine bytes** as
 `gh-sdp-linux-amd64`. `gh sdp` executes that engine directly. No runtime bootstrap,
 child-engine download, private engine cache or separate client version is involved.
-The latest published historical bootstrap client remains 0.2.3 with SDP2.2.1;
-this branch does not claim 2.3.0 publication.
+Release [v2.3.0](https://github.com/Hans-Einar/gh-sdp/releases/tag/v2.3.0)
+was published on 2026-11-13. Historical bootstrap client 0.2.3 used SDP2.2.1.
 
 Install or update the shared tool through GitHub CLI:
 

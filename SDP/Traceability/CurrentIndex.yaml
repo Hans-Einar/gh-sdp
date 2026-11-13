@@ -3,17 +3,17 @@ project:
   status: active-development
 release:
   previousVersion: 0.2.3
-  activeReleaseId: REL-0.2.3
-  targetVersion: 2.3.0
-  state: development
-  targetStatus: not-published
+  activeReleaseId: REL-2.3.0
+  targetVersion: null
+  state: released
+  targetStatus: published
 active:
-  sprint: Sprint-011
+  sprint: null
   refactor: null
-  iteration: SPI-011
-  slice: SPS-011
+  iteration: null
+  slice: null
   fix: null
-  revision: 1
+  revision: null
 historicalStudy:
   phase: Study
   study: STU-001
@@ -39,16 +39,16 @@ lifecycle:
   phase: Implementation
   authorization: owner-Activity0004-execution
   contract: SDP/Sprints/Sprint-011/ScrumIterations.md
-  status: implementation
-  review: null
-  reviewScope: pending-independent-review
+  status: completed
+  review: REV-SPS-011-PUBLIC
+  reviewScope: canonical-and-extension-public-gate-approved
 lastCompleted:
-  sprint: Sprint-010
-  iteration: SPI-010
-  slice: SPS-010
+  sprint: Sprint-011
+  iteration: SPI-011
+  slice: SPS-011
   revision: 1
-  milestone: SPS-010-P3
-  releaseCommit: 03e45710db3ad845d05b26b19c286bd069911294
-  verification: VER-SPS-010
-  review: REV-SPS-010
-  disposition: published-and-installed-three-hosts
+  milestone: C2-public-closeout
+  releaseCommit: 1753a11ffcbda3d6fd563456ee70db3c77e8d6c4
+  verification: VER-SPS-011-PUBLIC
+  review: REV-SPS-011-PUBLIC
+  disposition: published-and-public-consumer-verified

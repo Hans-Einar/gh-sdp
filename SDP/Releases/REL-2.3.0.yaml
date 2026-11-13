@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+releaseId: REL-2.3.0
+version: 2.3.0
+state: released
+releaseNotesPath: SDP/RELEASE-NOTES.md
+includedCapabilities:
+- gh-sdp.canonical-engine.distribution
+- sdptool.runtime.setup
+verificationRecords:
+- VER-SPS-011-PUBLIC
+reviewRecords:
+- REV-SPS-011-PUBLIC
+migrationRecord: null
+releasePreparationCommit: 1753a11ffcbda3d6fd563456ee70db3c77e8d6c4
+gitTag: v2.3.0
+githubReleaseUrl: https://github.com/Hans-Einar/gh-sdp/releases/tag/v2.3.0

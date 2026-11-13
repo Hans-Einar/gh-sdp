@@ -4,6 +4,20 @@
 
 No additional changes selected.
 
+## [2.3.0] — 2026-11-13
+
+Release-Date: 2026-11-13
+
+- [SPS-011] Distribute the exact signed canonical SDPTool2.3.0 engine instead of
+  the historical runtime bootstrap. Engine and extension share version2.3.0.
+- Explicit `gh sdp setup` registers the public runtime for native consumers.
+  Ordinary gh extension updates replace the registered target; local operations
+  work without gh, credentials or networking. Project upgrades remain explicit.
+- Public unpinned0.2.3 normal upgrade, fresh install, setup and OS-network-isolated
+  local commands pass; signed public-default Framework preview/apply preserves
+  owner files and repeats without changes. Linux amd64 scope; gh's truncated
+  download/recovery limitation remains documented in SPS-011 Evidence.md.
+
 ## [0.2.3] — 2026-11-11
 
 Release-Date: 2026-11-11

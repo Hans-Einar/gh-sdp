@@ -167,3 +167,20 @@ SDP/Verification/evidence/SPS-011/774e150; full disposable plans remain
 repackaged exact-source gate log are handed to root after this evidence commit.
 Root retains independent/integrated gates, public publication and main-merge
 ownership. The previously recorded gh interrupted-download limitation remains.
+
+## Published exact candidate — supersedes local candidate gaps
+
+Public extension source 1753a11ffcbda3d6fd563456ee70db3c77e8d6c4; annotated tag v2.3.0 object
+ab40dc7b510e0cd729eb2262e691a3dae06d5724; published2026-11-13T09:32:55Z.
+Canonical engine source 774e150774d184d0604ae78f274586eeb2bad495; SHA256 `2cfcf12f8bfb0d6fa8d11391db874f68d9bc9210c85974ff3cecee50f915ced6`.
+[Public assets](public-evidence/extension-publication.json) and
+[normal upgrade/fresh install](public-evidence/consumer-results.json) retain exact
+published identities. Actual unpinned0.2.3 normal upgrade and clean install/setup
+pass with a stable registered target and exact public executable bytes, followed
+by direct version/discovery/SDUI checks without gh/auth and with OS namespace
+network isolation. Projects and live extension remain unchanged.
+[Signed public-default Framework checks](public-evidence/framework-results.json)
+pass preview/apply, owner-file preservation and repeat no-op without release
+or trust overrides. [Independent public gate review](public-evidence/independent-review.md)
+approves this canonical/extension public scope. Historical signed/local candidates
+and the gh truncated-download limitation above remain unchanged.
