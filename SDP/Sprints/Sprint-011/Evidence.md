@@ -19,9 +19,9 @@ then compares alias bytes before any gh sdp invocation. Alias target remains
 unchanged. Direct version/discovery succeeds with gh absent from PATH, no auth,
 server closed and fresh cache. No user's extension/project is modified.
 
-Canonical signed2.3.0 artifact qualification, canonical setup behavior, signed
-project preview/apply gate and fresh independent review are pending root's C1
-artifact and cross-repository gates. Public publication/native RPM checks are not
+At the first source milestone, canonical artifact qualification was pending.
+The current signed qualification below supersedes that temporary gap. Fresh
+independent review and the remaining cross-repository gates are still pending. Public publication/native RPM checks are not
 claimed. Network disabled at OS namespace level is a separate integrated gate;
 server closure/no gh/no auth here proves no dependency on the fixture server.
 
@@ -52,3 +52,54 @@ The build script also inspects its compiled verifier's clean VCS identity and
 rejects replacements, disabling ambient Go workspaces/flags before execution so
 its pinned build-time trust dependency cannot be replaced by unrelated workspace
 configuration. Only the verifier is compiled here; the engine is copied.
+
+
+## Signed canonical qualification — source63b7f83
+
+Canonical2.3.0 source63b7f8303f3688d135272913bb437895f11080f2 is signed by the
+trusted Linux publisher. Engine SHA256:
+`8c7c21fc616b57a4dc4b20eba0fa9cd03418ca31335a00b5d4da02f6d88d3c82`.
+Descriptor SHA256:
+`5086d386e801b63f7aa1df7d1d45ed10ca3da1b1940d50b28e5edf75057ea9cf`.
+Clean distribution6065596 packaged it unchanged at
+/tmp/activity4-gh-package-6065596. Retained package manifest records production
+signed provenance and separate canonical/distribution source identities. This is
+a signed local release candidate; no public publication is claimed.
+
+The previous-engine fixture was rebuilt from the same canonical frozen source
+and bundled helper with BuildVersion2.2.99 and actual source BuildRevision, solely
+for update testing. Its SHA256 is
+`42c6291f105a313e4f4c2544f58f21b2a0488f7b8d5f8ed4e72721a7f71213a4`.
+It is not a historical public release and was not byte-patched. No tracked source
+files in the frozen canonical release worktree were modified.
+
+Actual gh binary-release install/upgrade and interrupted-transfer recovery pass
+against these canonical bytes. Registered target lives inside isolated HOME,
+retains its pathname and exposes exact replacement bytes before a subsequent
+gh sdp call. Production capability/version JSON is identical across entrypoints.
+After fixture server closure and removal of gh/auth from the direct environment,
+version, discovery, SDUI check and SDUI preview pass with a fresh legacy-engine
+cache. HTTP503 preservation and truncated-transfer failure/recovery limitations
+remain as above. OS-level network namespace isolation belongs to root's combined
+qualification; this test does not claim that separate condition.
+
+The signed installer gate passes direct and actual gh routes: exact engine byte
+identity, human/JSON and diagnostic equality, signed preview/apply preservation,
+repeat no-change, and no executing-engine selection through framework descriptors.
+Commands: GH_SDP_PACKAGE_DIR, GH_SDP_BINARY, SDPTOOL_BINARY and
+SDPTOOL_OLD_BINARY set to the paths above; `go test -race -run
+'TestPackaged|TestActualGH' -v .`; repeat TestPackagedCandidates with
+GH_SDP_VIA_GH=true. Logs are in SDP/Verification/evidence/SPS-011.
+
+## Original signed predecessor matrix
+
+The adapted verification script executes the current canonical engine against
+original production signed descriptors0.2.0,0.2.1,1.0.0,2.0.0,2.1.0,2.2.0 and
+2.2.1. Every disposable case installs its predecessor, adds owner project/Session/
+SDL bytes, refuses a managed-file conflict, upgrades to signed2.3.0 five-phase,
+preserves the owner bytes and produces no actions on repeat upgrade. All seven
+pass. The original2.2.1 source is the producer-final production descriptor,
+not a newly rebuilt predecessor. Per-case signed receipt, predecessor/target
+hashes and summary are retained under SDP/Verification/evidence/SPS-011;
+full disposable plans/outputs remain /tmp/activity4-c2-predecessor-matrix.
+No live project was changed.

@@ -45,6 +45,20 @@ func testActualGH(t *testing.T, truncated bool) {
 	if bytes.Equal(oldBytes, newBytes) {
 		t.Fatal("upgrade needs distinct engines")
 	}
+
+	engineTag := func(path string) string {
+		t.Helper()
+		out, e := exec.Command(path, "--version", "--json").Output()
+		if e != nil {
+			t.Fatal(e)
+		}
+		var v struct{ Version string }
+		if e = json.Unmarshal(out, &v); e != nil || v.Version == "" {
+			t.Fatalf("engine version: %v %s", e, out)
+		}
+		return "v" + v.Version
+	}
+	oldTag, newTag := engineTag(oldEngine), engineTag(newEngine)
 	dir := t.TempDir()
 	project := filepath.Join(dir, "project")
 	if err = os.MkdirAll(filepath.Join(project, "SDP"), 0700); err != nil {
@@ -65,13 +79,13 @@ func testActualGH(t *testing.T, truncated bool) {
 			json.NewEncoder(w).Encode(map[string]any{"name": "gh-sdp", "full_name": "test/gh-sdp", "owner": map[string]any{"login": "test"}, "default_branch": "main"})
 		case strings.Contains(r.URL.Path, "/releases/"):
 			n := latest.Load()
-			if strings.HasSuffix(r.URL.Path, "/tags/v2.2.1") {
+			if strings.HasSuffix(r.URL.Path, "/tags/"+oldTag) {
 				n = 1
 			}
 			assetBytes := oldBytes
-			tag := "v2.2.1"
+			tag := oldTag
 			if n == 2 {
-				tag = "v2.3.0"
+				tag = newTag
 				assetBytes = newBytes
 			}
 			json.NewEncoder(w).Encode(map[string]any{"tag_name": tag, "assets": []any{map[string]any{"name": "gh-sdp-linux-amd64", "digest": "sha256:" + digest(assetBytes), "size": len(assetBytes), "url": fmt.Sprintf("%s/assets/%d", server.URL, n), "browser_download_url": fmt.Sprintf("%s/assets/%d", server.URL, n)}}})
@@ -234,6 +248,27 @@ func testActualGH(t *testing.T, truncated bool) {
 		t.Fatal("tool update/discovery mutated project SDP")
 	}
 
+	source := filepath.Join(dir, "offline.sdui")
+	if err = os.WriteFile(source, []byte(`sdui 0.2; page=[button("OK")];`), 0600); err != nil {
+		t.Fatal(err)
+	}
+	for _, operation := range []string{"check", "preview"} {
+		args := []string{"sdui", operation, "-source", source, "-entry", "page", "--json"}
+		if operation == "preview" {
+			bundle := filepath.Join(dir, "preview-bundle")
+			if err = os.Mkdir(bundle, 0700); err != nil {
+				t.Fatal(err)
+			}
+			args = append(args, "-output", bundle)
+		}
+		cmd := exec.Command(alias, args...)
+		cmd.Env = direct.Env
+		cmd.Dir = project
+		out, e := cmd.CombinedOutput()
+		if e != nil || !json.Valid(out) {
+			t.Fatalf("offline SDUI %s: %v %s", operation, e, out)
+		}
+	}
 	if _, err := os.Stat(filepath.Join(dir, "empty-cache", "sdptool", "distribution")); !os.IsNotExist(err) {
 		t.Fatal("runtime populated legacy engine cache")
 	}

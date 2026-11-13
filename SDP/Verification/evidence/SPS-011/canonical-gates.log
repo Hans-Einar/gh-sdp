@@ -1,0 +1,27 @@
+=== RUN   TestActualGHExtensionInstallUpgrade
+    extension_integration_test.go:76: gh API GET /api/v3/repos/test/gh-sdp/releases/latest latest=1
+    extension_integration_test.go:76: gh API GET /assets/1 latest=1
+    extension_integration_test.go:76: gh API GET /api/v3/repos/test/gh-sdp/releases/latest latest=2
+    extension_integration_test.go:76: gh API GET /assets/2 latest=2
+    extension_integration_test.go:76: gh API GET /assets/2 latest=2
+    extension_integration_test.go:210: upgrade: [sdp]: upgraded from v2.2.99 to v2.3.0
+--- PASS: TestActualGHExtensionInstallUpgrade (2.12s)
+=== RUN   TestActualGHInterruptedUpdateRecovery
+    extension_integration_test.go:76: gh API GET /api/v3/repos/test/gh-sdp/releases/latest latest=1
+    extension_integration_test.go:76: gh API GET /assets/1 latest=1
+    extension_integration_test.go:76: gh API GET /api/v3/repos/test/gh-sdp/releases/latest latest=2
+    extension_integration_test.go:76: gh API GET /assets/2 latest=2
+    extension_integration_test.go:183: truncated gh update result: error=<nil> output=[sdp]: upgraded from v2.2.99 to v2.3.0
+         installedBytes=19304224 canonicalBytes=38608449
+    extension_integration_test.go:202: forced upgrade attempt: [sdp]: already up to date
+    extension_integration_test.go:203: forced install attempt: [sdp]: already up to date
+    extension_integration_test.go:76: gh API GET /api/v3/repos/test/gh-sdp/releases/latest latest=2
+    extension_integration_test.go:76: gh API GET /assets/2 latest=2
+--- PASS: TestActualGHInterruptedUpdateRecovery (3.23s)
+=== RUN   TestPackagedCandidates
+    installer_integration_test.go:258: identical packaged engine SHA256=8c7c21fc616b57a4dc4b20eba0fa9cd03418ca31335a00b5d4da02f6d88d3c82; discovery/output/diagnostic equality, preview/apply, preservation, repetition and absence of runtime selection passed
+--- PASS: TestPackagedCandidates (2.13s)
+=== RUN   TestPackagedAssetDiscovery
+--- PASS: TestPackagedAssetDiscovery (0.47s)
+PASS
+ok  	github.com/Hans-Einar/gh-sdp	9.001s
