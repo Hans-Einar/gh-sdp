@@ -43,3 +43,12 @@ before copying. It checks io.Copy errors; observed truncated success may involve
 its HTTP cache transport. [Upgrade selection](https://github.com/cli/cli/blob/v2.97.0/pkg/cmd/extension/manager.go#L481-L510)
 checks update availability before the binary path and does not make force reinstall
 a current tag. No gh source changes or runtime fallback were introduced here.
+
+Clean source bbc0c98 was packaged through the actual script against an explicit
+signed shell fixture at /tmp/gh-sdp-c2-fixture-package-bbc0c98; package/2 descriptor,
+source, canonical asset byte/hash and signature verification passed. This remains
+test-signed harness qualification, not a canonical or production artifact.
+The build script also inspects its compiled verifier's clean VCS identity and
+rejects replacements, disabling ambient Go workspaces/flags before execution so
+its pinned build-time trust dependency cannot be replaced by unrelated workspace
+configuration. Only the verifier is compiled here; the engine is copied.

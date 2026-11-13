@@ -23,7 +23,20 @@ PY
 )
 commit=$(git rev-parse HEAD)
 go_tool=${SDP_GO:-go}
-GOTOOLCHAIN=local "$go_tool" run ./cmd/package "$1" "$2" "$output" "$commit"
+staging=$(mktemp -d)
+trap 'rm -rf "$staging"' EXIT
+# Compile only the build-time verifier. Disable ambient workspaces/flags so an
+# unrelated checkout or -modfile cannot replace the pinned trust implementation.
+GOENV=off GOWORK=off GOFLAGS= GOTOOLCHAIN=local "$go_tool" build -trimpath -buildvcs=true -o "$staging/packager" ./cmd/package
+"$go_tool" version -m "$staging/packager" > "$staging/build-info.txt"
+python3 - "$staging/build-info.txt" "$commit" <<'PYBUILD'
+import pathlib,sys
+info=pathlib.Path(sys.argv[1]).read_text()
+if f'vcs.revision={sys.argv[2]}' not in info or 'vcs.modified=false' not in info or '=>' in info:
+    raise SystemExit('package: verifier must identify clean source without replacements')
+PYBUILD
+"$staging/packager" "$1" "$2" "$output" "$commit"
+cp "$staging/build-info.txt" "$output/gh-sdp.packager-build.txt"
 if [[ -n $(git status --porcelain --untracked-files=all) || $(git rev-parse HEAD) != "$commit" ]]; then
   rm -rf -- "$output"
   echo 'package: source changed during packaging' >&2
