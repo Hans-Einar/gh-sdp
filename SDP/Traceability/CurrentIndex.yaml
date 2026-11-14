@@ -4,16 +4,16 @@ project:
 release:
   previousVersion: 2.3.0
   activeReleaseId: REL-2.3.1
-  targetVersion: 2.3.1
-  state: unreleased
-  targetStatus: preparing
+  targetVersion: null
+  state: released
+  targetStatus: published
 active:
-  sprint: Sprint-012
+  sprint: null
   refactor: null
-  iteration: SPI-012
-  slice: SPS-012
+  iteration: null
+  slice: null
   fix: null
-  revision: 1
+  revision: null
 historicalStudy:
   phase: Study
   study: STU-001
@@ -39,16 +39,12 @@ lifecycle:
   phase: Implementation
   authorization: owner-SDP2.3.1-and-HEOS-rollout
   contract: SDP/Sprints/Sprint-012/ScrumIterations.md
-  status: active
-  review: null
-  reviewScope: pending
+  status: completed
+  review: REV-SPS-012-PUBLIC
+  reviewScope: public-distribution-and-consumer-verified
 lastCompleted:
-  sprint: Sprint-011
-  iteration: SPI-011
-  slice: SPS-011
+  sprint: Sprint-012
+  iteration: SPI-012
+  slice: SPS-012
   revision: 1
-  milestone: C2-public-closeout
-  releaseCommit: 1753a11ffcbda3d6fd563456ee70db3c77e8d6c4
-  verification: VER-SPS-011-PUBLIC
-  review: REV-SPS-011-PUBLIC
-  disposition: published-and-public-consumer-verified
+  milestone: R231-public-closeout

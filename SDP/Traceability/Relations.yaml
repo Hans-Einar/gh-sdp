@@ -1173,6 +1173,10 @@ fixes:
     reviews:
     - REV-FIX-0.2.3-001
 reviews:
+  REV-SPS-012-PUBLIC:
+    status: approved
+    path: SDP/Sprints/Sprint-012/evidence/IndependentReview.md
+    release: REL-2.3.1
   REV-SPS-010:
     status: approved
     path: SDP/Sprints/Sprint-010/Evidence.md
@@ -1364,6 +1368,10 @@ reviews:
     status: approved
     scope: unpublished-linux-publisher-bridge
 verification:
+  VER-SPS-012-PUBLIC:
+    status: passed
+    path: SDP/Sprints/Sprint-012/evidence/consumers.json
+    release: REL-2.3.1
   VER-SPS-010:
     status: passed
     path: SDP/Sprints/Sprint-010/Evidence.md
@@ -1465,6 +1473,15 @@ verification:
     scope: unpublished-linux-publisher-bridge
 migrations: {}
 releases:
+  REL-2.3.1:
+    version: 2.3.1
+    state: released
+    releaseRecord: SDP/Releases/REL-2.3.1.yaml
+    verification: [VER-SPS-012-PUBLIC]
+    reviews: [REV-SPS-012-PUBLIC]
+    gitTag: v2.3.1
+    releaseCommit: ae7aa216c4343c6d4904078c8545cd1d2d8f7a64
+    githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v2.3.1
   REL-0.2.1:
     version: 0.2.1
     state: released
@@ -1621,3 +1638,12 @@ sharedEngineDistribution:
     release: REL-2.3.0
     evidence: SDP/Sprints/Sprint-011/public-evidence/consumer-results.json
     review: REV-SPS-011-PUBLIC
+
+  SPS-012:
+    path: SDP/Sprints/Sprint-012/ScrumIterations.md
+    activity: ACTIVITY-SDP-0005
+    plan: MAINT-SDP-0020
+    status: completed
+    release: REL-2.3.1
+    evidence: SDP/Sprints/Sprint-012/evidence/consumers.json
+    review: REV-SPS-012-PUBLIC

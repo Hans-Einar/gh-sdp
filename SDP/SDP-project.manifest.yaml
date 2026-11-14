@@ -5,11 +5,11 @@ project:
 installed:
   manifestPath: Framework/installed-toolkit.manifest.yaml
 release:
-  currentVersion: 2.3.0
-  nextTargetVersion: 2.3.1
-  state: unreleased
-  latestTag: v2.3.0
-  latestCommit: 1753a11ffcbda3d6fd563456ee70db3c77e8d6c4
+  currentVersion: 2.3.1
+  nextTargetVersion: null
+  state: released
+  latestTag: v2.3.1
+  latestCommit: ae7aa216c4343c6d4904078c8545cd1d2d8f7a64
 development:
   sprintId: null
   refactorId: null

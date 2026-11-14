@@ -1,11 +1,11 @@
 # gh-sdp
 
-GitHub CLI distribution of the canonical SDPTool engine. Published 2.3.0
+GitHub CLI distribution of the canonical SDPTool engine. Published 2.3.1
 distributes the **exact signed canonical engine bytes** as
 `gh-sdp-linux-amd64`. `gh sdp` executes that engine directly. No runtime bootstrap,
 child-engine download, private engine cache or separate client version is involved.
-Release [v2.3.0](https://github.com/Hans-Einar/gh-sdp/releases/tag/v2.3.0)
-was published on 2026-11-13. Historical bootstrap client 0.2.3 used SDP2.2.1.
+Release [v2.3.1](https://github.com/Hans-Einar/gh-sdp/releases/tag/v2.3.1)
+was published on 2026-11-14. Historical bootstrap client 0.2.3 used SDP2.2.1.
 
 Install or update the shared tool through GitHub CLI:
 
@@ -50,7 +50,7 @@ checks engine version/revision against its signed descriptor and republishes its
 bytes without compiling another engine:
 
 ```sh
-scripts/package.sh 2.3.0 /absolute/path/to/sdp-release.json /absolute/path/to/new-package
+scripts/package.sh 2.3.1 /absolute/path/to/sdp-release.json /absolute/path/to/new-package
 ```
 
 HTTPS descriptors are supported. Only build-time verification uses the immutable
@@ -79,7 +79,7 @@ Both engine inputs must support setup. It does not prove public release publicat
 The installer gate uses disposable signed framework fixtures and checks direct/gh
 output, preview/apply and project preservation. No tests modify the user's extension.
 
-[Current bounded work](SDP/Sprints/Sprint-011/ScrumIterations.md)
+[Current bounded work](SDP/Sprints/Sprint-012/ScrumIterations.md)
 
 An interrupted gh2.97.0 download can leave a partial executable; direct consumers
 fail without falling back. Forced update may report the current tag up to date.
