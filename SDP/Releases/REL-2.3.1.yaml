@@ -1,0 +1,12 @@
+schemaVersion: '1.0'
+releaseId: REL-2.3.1
+version: 2.3.1
+state: unreleased
+releaseNotesPath: SDP/RELEASE-NOTES.md
+includedCapabilities: [gh-sdp.canonical-engine.distribution, sdptool.runtime.setup]
+verificationRecords: []
+reviewRecords: []
+migrationRecord: null
+releasePreparationCommit: null
+gitTag: null
+githubReleaseUrl: null

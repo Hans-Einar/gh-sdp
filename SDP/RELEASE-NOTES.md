@@ -4,6 +4,16 @@
 
 No additional changes selected.
 
+## [2.3.1] — 2026-11-14
+
+Release-Date: 2026-11-14
+
+- [SPS-012] Republish the exact signed canonical SDPTool2.3.1 engine from the
+  integrated source. Its default Framework is2.3.1 and it accepts the original
+  signed2.3.0 installation as an upgrade predecessor.
+- Keep the single extension update path and explicit project preview/apply.
+  Existing setup registration continues to point to the same extension target.
+
 ## [2.3.0] — 2026-11-13
 
 Release-Date: 2026-11-13

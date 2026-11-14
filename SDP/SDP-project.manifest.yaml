@@ -6,8 +6,8 @@ installed:
   manifestPath: Framework/installed-toolkit.manifest.yaml
 release:
   currentVersion: 2.3.0
-  nextTargetVersion: null
-  state: released
+  nextTargetVersion: 2.3.1
+  state: unreleased
   latestTag: v2.3.0
   latestCommit: 1753a11ffcbda3d6fd563456ee70db3c77e8d6c4
 development:
