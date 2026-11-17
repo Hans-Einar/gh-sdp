@@ -2,18 +2,18 @@ project:
   name: gh-sdp
   status: active-development
 release:
-  previousVersion: 2.3.0
-  activeReleaseId: REL-2.3.1
-  targetVersion: null
-  state: released
-  targetStatus: published
+  previousVersion: 2.3.1
+  activeReleaseId: REL-2.3.2
+  targetVersion: 2.3.2
+  state: prerelease
+  targetStatus: preparation
 active:
-  sprint: null
+  sprint: Sprint-013
   refactor: null
-  iteration: null
-  slice: null
+  iteration: SPI-013
+  slice: SPS-013
   fix: null
-  revision: null
+  revision: 1
 historicalStudy:
   phase: Study
   study: STU-001
@@ -37,11 +37,11 @@ historicalDependencyAssessment:
   mediumFindings: 3
 lifecycle:
   phase: Implementation
-  authorization: owner-SDP2.3.1-and-HEOS-rollout
-  contract: SDP/Sprints/Sprint-012/ScrumIterations.md
-  status: completed
-  review: REV-SPS-012-PUBLIC
-  reviewScope: public-distribution-and-consumer-verified
+  authorization: owner-publish-preview-output-limit-fix
+  contract: SDP/Sprints/Sprint-013/ScrumIterations.md
+  status: preparing-release
+  review: null
+  reviewScope: combined-review-pending
 lastCompleted:
   sprint: Sprint-012
   iteration: SPI-012

@@ -4,6 +4,16 @@
 
 No additional changes selected.
 
+## [2.3.2] — 2026-11-17
+
+Release-Date: 2026-11-17
+
+- [SPS-013] Republish the exact signed canonical SDPTool 2.3.2 engine, raising
+  preview/source-reading output limits from 128 files / 32 MiB to 512 files /
+  128 MiB. Engine and extension retain one shared version and update path.
+- Project Framework upgrades remain explicit; this release does not upgrade
+  project directories when the extension is updated.
+
 ## [2.3.1] — 2026-11-14
 
 Release-Date: 2026-11-14
