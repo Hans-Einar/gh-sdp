@@ -1,0 +1,17 @@
+{
+  "tag": "v2.3.2",
+  "tagObject": "4d3d683871903a368f0addbc7717a24010c8ff80",
+  "sourceCommit": "c1d86bd148e6ad24da55b03482000df68e3fa3d6",
+  "releaseUrl": "https://github.com/Hans-Einar/gh-sdp/releases/tag/v2.3.2",
+  "releaseId": 448348099,
+  "publishedAt": "2026-11-17T08:37:25Z",
+  "assetSHA256": {
+    "checksums.txt": "eb02a75668737d4b844da4d8a0b6aa2eaa2205f5845d1c67927d3adf170cbcc2",
+    "gh-sdp-linux-amd64": "7eab2b30286fe1608e95cc8011d07632dca7b73750486979130cfa8094b5f5bf",
+    "gh-sdp.manifest.json": "3c9e6c9c18f0fc433e3cd0655dde64e411aed2cafe9ac9b4a5809697acdb7a91",
+    "gh-sdp.packager-build.txt": "9dae88696ca9d0a1a25f838c14108f97eef3b633e98762c9d11079b13a796bb5",
+    "sdp-release.json": "34e2fa36ad45047ca398612cbc99f0a30430c44250a5990e98bbaed2f13efac8",
+    "sdp-release.json.sig": "ed1540e7bc837b3b702417a688794b1895aabf3d61a16e99eac29a1293e6972c",
+    "sdp-release.verification.json": "3bfe0e44874369f8a8f04631a6e8d17094234edcaf561b13f16d3e5dd4145cef"
+  }
+}

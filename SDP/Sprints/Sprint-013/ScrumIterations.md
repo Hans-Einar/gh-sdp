@@ -1,6 +1,6 @@
 # SPS-013 — Shared SDP 2.3.2 release
 
-SPI-013 / Sprint-013. State: in progress. Revision: 1.
+SPI-013 / Sprint-013. State: completed. Revision: 1.
 
 Owner explicitly authorizes publication so `gh extension upgrade sdp` obtains the
 preview/source-reading output-limit correction (128 files / 32 MiB becomes
@@ -22,7 +22,8 @@ SPS-011/SPS-012 behavior evidence for unchanged distribution code.
 
 No main merge, replacement of the owner's installed extension, consumer Framework
 upgrade or new platform qualification is selected. Published history is immutable.
-The assigned Worker prepares source and packaging only; root owns public actions.
+The assigned Worker prepares source, packaging, isolated qualification and
+reconciliation; root owns public actions.
 
 Preflight: extension worktree was clean at 54f830a; only this extension worktree
 exists; no extension record/code overlap or SPS-013 identity collision was found.
@@ -32,5 +33,7 @@ Loaded routines: managed AGENTS/project overrides, Framework/manifests, installe
 Worker, release, versioning and traceability skills; current source SDP entrypoint,
 Worker and release guidance. No installed Framework migration is performed.
 
-Next: production descriptor/package qualification, independent combined review,
-then root-controlled publication and truthful reconciliation.
+Outcome: public 2.3.2, exact package/public download checks, isolated normal upgrade
+and clean install, public-default Framework qualification and fresh independent
+combined review passed. See Evidence.md and evidence/. Root owns canonical
+Session closeout; no further extension work is selected.

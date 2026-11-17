@@ -1,0 +1,9 @@
+{
+  "liveSnapshot": {
+    "gh-sdp": "04f78532a4e7ae8653df5b1e623e1407312713a90043f2ac36e7f68e0dc0495b",
+    "manifest.yml": "1251d44c76064c7e26c4dab87f16d139dc7962a705d87844d4d129a9a78e525a"
+  },
+  "publishedTag": "v2.3.1",
+  "publishedAssetSHA256": "04f78532a4e7ae8653df5b1e623e1407312713a90043f2ac36e7f68e0dc0495b",
+  "liveUnchanged": true
+}

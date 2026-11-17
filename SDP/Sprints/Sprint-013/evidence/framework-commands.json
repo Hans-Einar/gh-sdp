@@ -1,0 +1,59 @@
+[
+  {
+    "name": "public-default-install-preview",
+    "args": [
+      "install",
+      "--plan-output",
+      "/tmp/sdp-r232-public-framework/install-plan.json"
+    ],
+    "exitCode": 0,
+    "stderr": "",
+    "stdoutSHA256": "fb74ef6c56dd3b78fa9a7ce6c7db6db686e94409d3fab71b4093aa50c795ba42",
+    "stdoutTopLevelFields": [
+      "operation",
+      "projectRoot",
+      "result",
+      "schemaVersion",
+      "status"
+    ],
+    "fullTranscript": "/tmp/sdp-r232-public-framework/commands.json"
+  },
+  {
+    "name": "public-default-install-apply",
+    "args": [
+      "install",
+      "--apply",
+      "/tmp/sdp-r232-public-framework/install-plan.json"
+    ],
+    "exitCode": 0,
+    "stderr": "",
+    "stdoutSHA256": "01cd34e9cdc3b08829bf8cd23a102f89b3d8732e7cd0f5f3877cea6fc3b7c362",
+    "stdoutTopLevelFields": [
+      "operation",
+      "projectRoot",
+      "result",
+      "schemaVersion",
+      "status"
+    ],
+    "fullTranscript": "/tmp/sdp-r232-public-framework/commands.json"
+  },
+  {
+    "name": "public-default-upgrade-noop",
+    "args": [
+      "upgrade",
+      "--plan-output",
+      "/tmp/sdp-r232-public-framework/noop-plan.json"
+    ],
+    "exitCode": 0,
+    "stderr": "",
+    "stdoutSHA256": "be3659db78c20eaa25040c05274889f0dadd1c84ba97e40f9e617b60c8194c06",
+    "stdoutTopLevelFields": [
+      "operation",
+      "projectRoot",
+      "result",
+      "schemaVersion",
+      "status"
+    ],
+    "fullTranscript": "/tmp/sdp-r232-public-framework/commands.json"
+  }
+]

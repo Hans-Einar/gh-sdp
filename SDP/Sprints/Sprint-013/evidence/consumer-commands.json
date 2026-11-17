@@ -1,0 +1,292 @@
+[
+  {
+    "name": "old-public-asset",
+    "command": [
+      "/usr/bin/gh",
+      "release",
+      "download",
+      "v2.3.1",
+      "--repo",
+      "Hans-Einar/gh-sdp",
+      "--pattern",
+      "gh-sdp-linux-amd64",
+      "--dir",
+      "/tmp/sdp-r232-public-consumers/control/old-download",
+      "--clobber"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-old-version",
+    "command": [
+      "/tmp/sdp-r232-public-consumers/upgrade/data/gh/extensions/gh-sdp/gh-sdp",
+      "--version",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"capabilities\":[\"runtime.setup/1\",\"sdui.source/1\"],\"installationProtocol\":\"sdp-install-command/1\",\"installedFactSchemas\":[\"1.0\",\"2.0\",\"3.0\"],\"nativePrototypeBundled\":true,\"operation\":\"version\",\"revision\":\"84d5e46012fdc45a3690bd0b26b617501fd1caa7\",\"schema\":\"sdptool/0.2\",\"version\":\"2.3.1\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-previous-setup",
+    "command": [
+      "/tmp/sdp-r232-public-consumers/upgrade/data/gh/extensions/gh-sdp/gh-sdp",
+      "setup",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"schema\":\"sdptool/0.2\",\"operation\":\"setup\",\"entrypoint\":\"/tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool\",\"executable\":\"/tmp/sdp-r232-public-consumers/upgrade/data/gh/extensions/gh-sdp/gh-sdp\",\"version\":\"2.3.1\",\"revision\":\"84d5e46012fdc45a3690bd0b26b617501fd1caa7\",\"status\":\"registered\",\"warnings\":[\"PATH selects another sdptool (/home/warloc/.local/bin/sdptool); remove that obsolete installation or put $HOME/.local/bin first. XFMD uses /tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool.\"]}\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-normal-public-upgrade",
+    "command": [
+      "/usr/bin/gh",
+      "extension",
+      "upgrade",
+      "sdp"
+    ],
+    "exitCode": 0,
+    "stdout": "[sdp]: upgraded from v2.3.1 to v2.3.2\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-registered-version-before-setup",
+    "command": [
+      "/tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool",
+      "--version",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"capabilities\":[\"runtime.setup/1\",\"sdui.source/1\"],\"installationProtocol\":\"sdp-install-command/1\",\"installedFactSchemas\":[\"1.0\",\"2.0\",\"3.0\"],\"nativePrototypeBundled\":true,\"operation\":\"version\",\"revision\":\"f7a6c9f4793b55de5d0017ae74210135f2a4d365\",\"schema\":\"sdptool/0.2\",\"version\":\"2.3.2\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-setup",
+    "command": [
+      "/usr/bin/gh",
+      "sdp",
+      "setup",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"schema\":\"sdptool/0.2\",\"operation\":\"setup\",\"entrypoint\":\"/tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool\",\"executable\":\"/tmp/sdp-r232-public-consumers/upgrade/data/gh/extensions/gh-sdp/gh-sdp\",\"version\":\"2.3.2\",\"revision\":\"f7a6c9f4793b55de5d0017ae74210135f2a4d365\",\"status\":\"already-registered\",\"warnings\":[\"PATH selects another sdptool (/home/warloc/.local/bin/sdptool); remove that obsolete installation or put $HOME/.local/bin first. XFMD uses /tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool.\"]}\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-gh-version",
+    "command": [
+      "/usr/bin/gh",
+      "sdp",
+      "--version",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"capabilities\":[\"runtime.setup/1\",\"sdui.source/1\"],\"installationProtocol\":\"sdp-install-command/1\",\"installedFactSchemas\":[\"1.0\",\"2.0\",\"3.0\"],\"nativePrototypeBundled\":true,\"operation\":\"version\",\"revision\":\"f7a6c9f4793b55de5d0017ae74210135f2a4d365\",\"schema\":\"sdptool/0.2\",\"version\":\"2.3.2\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-direct-version",
+    "command": [
+      "/tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool",
+      "--version",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"capabilities\":[\"runtime.setup/1\",\"sdui.source/1\"],\"installationProtocol\":\"sdp-install-command/1\",\"installedFactSchemas\":[\"1.0\",\"2.0\",\"3.0\"],\"nativePrototypeBundled\":true,\"operation\":\"version\",\"revision\":\"f7a6c9f4793b55de5d0017ae74210135f2a4d365\",\"schema\":\"sdptool/0.2\",\"version\":\"2.3.2\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-offline-version",
+    "command": [
+      "/usr/bin/unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "/tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool",
+      "--version",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"capabilities\":[\"runtime.setup/1\",\"sdui.source/1\"],\"installationProtocol\":\"sdp-install-command/1\",\"installedFactSchemas\":[\"1.0\",\"2.0\",\"3.0\"],\"nativePrototypeBundled\":true,\"operation\":\"version\",\"revision\":\"f7a6c9f4793b55de5d0017ae74210135f2a4d365\",\"schema\":\"sdptool/0.2\",\"version\":\"2.3.2\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-offline-discover",
+    "command": [
+      "/usr/bin/unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "/tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool",
+      "discover",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"schema\":\"sdptool/0.2\",\"operation\":\"discover\",\"status\":\"valid\",\"root\":\"/tmp/sdp-r232-public-consumers/upgrade/project\",\"area\":\"/tmp/sdp-r232-public-consumers/upgrade/project/SDP\",\"inventory\":{\"schemaVersion\":\"2.0\",\"projectId\":\"project\",\"processProfile\":\"sdp-five-phase/0.1\",\"models\":[],\"sdui\":[]},\"capabilities\":{\"blueprints\":\"absent\",\"implementation-plan\":\"absent\",\"kanban\":\"absent\",\"readingNavigation\":\"1\",\"sdl\":\"absent\",\"sdui\":\"absent\",\"sdui-programs\":\"absent\",\"sessions\":\"absent\"},\"installation\":{\"state\":\"unknown\"},\"sources\":[],\"programs\":[],\"programDiscovery\":{\"manifest\":\"SDP/programs.json\",\"state\":\"absent\"},\"navigation\":{\"presentation\":\"producer-reading/1\",\"inventoryRevision\":\"7aadb1c45c6067971d451b0cdd4d0394671dd748713d85b754b70f4da71e8842\",\"schema\":\"sdptool/0.2\",\"operation\":\"tree\",\"project\":\"project\",\"roots\":[\"files\",\"sdl\",\"kanban\",\"sdui\",\"sessions\",\"blueprints\"],\"nodes\":[{\"id\":\"sdl\",\"kind\":\"tab\",\"label\":\"SDL\",\"state\":\"absent\"},{\"id\":\"files\",\"kind\":\"directory\",\"label\":\"SDP\",\"state\":\"available\"},{\"id\":\"sessions\",\"kind\":\"tab\",\"label\":\"Sessions\",\"state\":\"absent\"},{\"id\":\"blueprints\",\"kind\":\"tab\",\"label\":\"Blueprints\",\"state\":\"absent\"},{\"id\":\"kanban\",\"kind\":\"tab\",\"label\":\"KanBan\",\"state\":\"absent\"},{\"id\":\"sdui\",\"kind\":\"tab\",\"label\":\"SDUI\",\"state\":\"absent\"}],\"expansionDepthLimit\":8},\"plans\":[]}\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-offline-sdui-check",
+    "command": [
+      "/usr/bin/unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "/tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool",
+      "sdui",
+      "check",
+      "--json",
+      "-source",
+      "/tmp/sdp-r232-public-consumers/upgrade/page.sdui",
+      "-entry",
+      "page"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"schema\":\"sdptool/0.2\",\"operation\":\"sdui-check\",\"status\":\"prototype\",\"revision\":\"52bb09ef5eb6ce22201e14ab28d9745790c131e0cc422958b4986c9c63c77db6\",\"entry\":\"page\",\"source\":\"/tmp/sdp-r232-public-consumers/upgrade/page.sdui\",\"diagnostic\":\"Local Fyne prototype; no SDL runtime\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "upgrade-offline-sdui-preview",
+    "command": [
+      "/usr/bin/unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "/tmp/sdp-r232-public-consumers/upgrade/.local/bin/sdptool",
+      "sdui",
+      "preview",
+      "--json",
+      "-source",
+      "/tmp/sdp-r232-public-consumers/upgrade/page.sdui",
+      "-entry",
+      "page",
+      "-output",
+      "/tmp/sdp-r232-public-consumers/upgrade/preview"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"directory\":\"/tmp/sdp-r232-public-consumers/upgrade/preview\",\"entry\":\"/tmp/sdp-r232-public-consumers/upgrade/preview/entry.md\",\"operation\":\"sdui-preview\",\"revision\":\"52bb09ef5eb6ce22201e14ab28d9745790c131e0cc422958b4986c9c63c77db6\",\"schema\":\"sdptool/0.2\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "clean-install-public-install",
+    "command": [
+      "/usr/bin/gh",
+      "extension",
+      "install",
+      "Hans-Einar/gh-sdp"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "name": "clean-install-setup",
+    "command": [
+      "/usr/bin/gh",
+      "sdp",
+      "setup",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"schema\":\"sdptool/0.2\",\"operation\":\"setup\",\"entrypoint\":\"/tmp/sdp-r232-public-consumers/clean-install/.local/bin/sdptool\",\"executable\":\"/tmp/sdp-r232-public-consumers/clean-install/data/gh/extensions/gh-sdp/gh-sdp\",\"version\":\"2.3.2\",\"revision\":\"f7a6c9f4793b55de5d0017ae74210135f2a4d365\",\"status\":\"registered\",\"warnings\":[\"PATH selects another sdptool (/home/warloc/.local/bin/sdptool); remove that obsolete installation or put $HOME/.local/bin first. XFMD uses /tmp/sdp-r232-public-consumers/clean-install/.local/bin/sdptool.\"]}\n",
+    "stderr": ""
+  },
+  {
+    "name": "clean-install-gh-version",
+    "command": [
+      "/usr/bin/gh",
+      "sdp",
+      "--version",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"capabilities\":[\"runtime.setup/1\",\"sdui.source/1\"],\"installationProtocol\":\"sdp-install-command/1\",\"installedFactSchemas\":[\"1.0\",\"2.0\",\"3.0\"],\"nativePrototypeBundled\":true,\"operation\":\"version\",\"revision\":\"f7a6c9f4793b55de5d0017ae74210135f2a4d365\",\"schema\":\"sdptool/0.2\",\"version\":\"2.3.2\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "clean-install-direct-version",
+    "command": [
+      "/tmp/sdp-r232-public-consumers/clean-install/.local/bin/sdptool",
+      "--version",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"capabilities\":[\"runtime.setup/1\",\"sdui.source/1\"],\"installationProtocol\":\"sdp-install-command/1\",\"installedFactSchemas\":[\"1.0\",\"2.0\",\"3.0\"],\"nativePrototypeBundled\":true,\"operation\":\"version\",\"revision\":\"f7a6c9f4793b55de5d0017ae74210135f2a4d365\",\"schema\":\"sdptool/0.2\",\"version\":\"2.3.2\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "clean-install-offline-version",
+    "command": [
+      "/usr/bin/unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "/tmp/sdp-r232-public-consumers/clean-install/.local/bin/sdptool",
+      "--version",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"capabilities\":[\"runtime.setup/1\",\"sdui.source/1\"],\"installationProtocol\":\"sdp-install-command/1\",\"installedFactSchemas\":[\"1.0\",\"2.0\",\"3.0\"],\"nativePrototypeBundled\":true,\"operation\":\"version\",\"revision\":\"f7a6c9f4793b55de5d0017ae74210135f2a4d365\",\"schema\":\"sdptool/0.2\",\"version\":\"2.3.2\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "clean-install-offline-discover",
+    "command": [
+      "/usr/bin/unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "/tmp/sdp-r232-public-consumers/clean-install/.local/bin/sdptool",
+      "discover",
+      "--json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"schema\":\"sdptool/0.2\",\"operation\":\"discover\",\"status\":\"valid\",\"root\":\"/tmp/sdp-r232-public-consumers/clean-install/project\",\"area\":\"/tmp/sdp-r232-public-consumers/clean-install/project/SDP\",\"inventory\":{\"schemaVersion\":\"2.0\",\"projectId\":\"project\",\"processProfile\":\"sdp-five-phase/0.1\",\"models\":[],\"sdui\":[]},\"capabilities\":{\"blueprints\":\"absent\",\"implementation-plan\":\"absent\",\"kanban\":\"absent\",\"readingNavigation\":\"1\",\"sdl\":\"absent\",\"sdui\":\"absent\",\"sdui-programs\":\"absent\",\"sessions\":\"absent\"},\"installation\":{\"state\":\"unknown\"},\"sources\":[],\"programs\":[],\"programDiscovery\":{\"manifest\":\"SDP/programs.json\",\"state\":\"absent\"},\"navigation\":{\"presentation\":\"producer-reading/1\",\"inventoryRevision\":\"7aadb1c45c6067971d451b0cdd4d0394671dd748713d85b754b70f4da71e8842\",\"schema\":\"sdptool/0.2\",\"operation\":\"tree\",\"project\":\"project\",\"roots\":[\"files\",\"sdl\",\"kanban\",\"sdui\",\"sessions\",\"blueprints\"],\"nodes\":[{\"id\":\"sdl\",\"kind\":\"tab\",\"label\":\"SDL\",\"state\":\"absent\"},{\"id\":\"files\",\"kind\":\"directory\",\"label\":\"SDP\",\"state\":\"available\"},{\"id\":\"sessions\",\"kind\":\"tab\",\"label\":\"Sessions\",\"state\":\"absent\"},{\"id\":\"blueprints\",\"kind\":\"tab\",\"label\":\"Blueprints\",\"state\":\"absent\"},{\"id\":\"kanban\",\"kind\":\"tab\",\"label\":\"KanBan\",\"state\":\"absent\"},{\"id\":\"sdui\",\"kind\":\"tab\",\"label\":\"SDUI\",\"state\":\"absent\"}],\"expansionDepthLimit\":8},\"plans\":[]}\n",
+    "stderr": ""
+  },
+  {
+    "name": "clean-install-offline-sdui-check",
+    "command": [
+      "/usr/bin/unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "/tmp/sdp-r232-public-consumers/clean-install/.local/bin/sdptool",
+      "sdui",
+      "check",
+      "--json",
+      "-source",
+      "/tmp/sdp-r232-public-consumers/clean-install/page.sdui",
+      "-entry",
+      "page"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"schema\":\"sdptool/0.2\",\"operation\":\"sdui-check\",\"status\":\"prototype\",\"revision\":\"52bb09ef5eb6ce22201e14ab28d9745790c131e0cc422958b4986c9c63c77db6\",\"entry\":\"page\",\"source\":\"/tmp/sdp-r232-public-consumers/clean-install/page.sdui\",\"diagnostic\":\"Local Fyne prototype; no SDL runtime\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "clean-install-offline-sdui-preview",
+    "command": [
+      "/usr/bin/unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "/tmp/sdp-r232-public-consumers/clean-install/.local/bin/sdptool",
+      "sdui",
+      "preview",
+      "--json",
+      "-source",
+      "/tmp/sdp-r232-public-consumers/clean-install/page.sdui",
+      "-entry",
+      "page",
+      "-output",
+      "/tmp/sdp-r232-public-consumers/clean-install/preview"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"directory\":\"/tmp/sdp-r232-public-consumers/clean-install/preview\",\"entry\":\"/tmp/sdp-r232-public-consumers/clean-install/preview/entry.md\",\"operation\":\"sdui-preview\",\"revision\":\"52bb09ef5eb6ce22201e14ab28d9745790c131e0cc422958b4986c9c63c77db6\",\"schema\":\"sdptool/0.2\"}\n",
+    "stderr": ""
+  }
+]

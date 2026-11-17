@@ -1173,6 +1173,10 @@ fixes:
     reviews:
     - REV-FIX-0.2.3-001
 reviews:
+  REV-SPS-013-PUBLIC:
+    path: SDP/Sprints/Sprint-013/evidence/IndependentReview.md
+    status: approved
+    release: REL-2.3.2
   REV-SPS-012-PUBLIC:
     status: approved
     path: SDP/Sprints/Sprint-012/evidence/IndependentReview.md
@@ -1368,6 +1372,11 @@ reviews:
     status: approved
     scope: unpublished-linux-publisher-bridge
 verification:
+  VER-SPS-013-PUBLIC:
+    path: SDP/Sprints/Sprint-013/Evidence.md
+    status: passed
+    release: REL-2.3.2
+    evidence: SDP/Sprints/Sprint-013/evidence/consumers.json
   VER-SPS-012-PUBLIC:
     status: passed
     path: SDP/Sprints/Sprint-012/evidence/consumers.json
@@ -1475,13 +1484,13 @@ migrations: {}
 releases:
   REL-2.3.2:
     version: 2.3.2
-    state: prerelease
+    state: released
     releaseRecord: SDP/Releases/REL-2.3.2.yaml
-    verification: []
-    reviews: []
-    gitTag: null
-    releaseCommit: null
-    githubRelease: null
+    verification: [VER-SPS-013-PUBLIC]
+    reviews: [REV-SPS-013-PUBLIC]
+    gitTag: v2.3.2
+    releaseCommit: c1d86bd148e6ad24da55b03482000df68e3fa3d6
+    githubRelease: https://github.com/Hans-Einar/gh-sdp/releases/tag/v2.3.2
   REL-2.3.1:
     version: 2.3.1
     state: released
@@ -1659,7 +1668,7 @@ sharedEngineDistribution:
 
   SPS-013:
     path: SDP/Sprints/Sprint-013/ScrumIterations.md
-    status: preparing-release
+    status: completed
     release: REL-2.3.2
     evidence: SDP/Sprints/Sprint-013/Evidence.md
-    review: null
+    review: REV-SPS-013-PUBLIC
