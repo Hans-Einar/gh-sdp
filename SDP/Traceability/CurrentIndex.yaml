@@ -4,16 +4,16 @@ project:
 release:
   previousVersion: 2.3.2
   activeReleaseId: REL-2.4.0
-  targetVersion: 2.4.0
-  state: prerelease
-  targetStatus: preparation
+  targetVersion: null
+  state: released
+  targetStatus: published-and-consumer-verified
 active:
-  sprint: Sprint-014
+  sprint: null
   refactor: null
-  iteration: SPI-014
-  slice: SPS-014
+  iteration: null
+  slice: null
   fix: null
-  revision: 1
+  revision: null
 historicalStudy:
   phase: Study
   study: STU-001
@@ -39,12 +39,12 @@ lifecycle:
   phase: Implementation
   authorization: owner-publish-documenthost-launcher
   contract: SDP/Sprints/Sprint-014/ScrumIterations.md
-  status: preparing-release
-  review: null
-  reviewScope: combined-review-pending
+  status: completed
+  review: REV-SPS-014-PUBLIC
+  reviewScope: public-distribution-and-consumer-verified
 lastCompleted:
-  sprint: Sprint-013
-  iteration: SPI-013
-  slice: SPS-013
+  sprint: Sprint-014
+  iteration: SPI-014
+  slice: SPS-014
   revision: 1
-  milestone: R232-public-closeout
+  milestone: R240-public-closeout

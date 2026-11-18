@@ -1,6 +1,6 @@
 # SPS-014 — Shared SDP 2.4.0 DocumentHost release
 
-SPI-014 / Sprint-014. State: in progress. Revision: 1.
+SPI-014 / Sprint-014. State: completed. Revision: 1.
 
 The owner authorizes paired SDPTool/gh-sdp 2.4.0 publication of the completed
 DocumentHost launcher. Canonical implementation/model independent review covers
@@ -27,8 +27,8 @@ offline identity checks. Root owns canonical runtime/native/predecessor evidence
 Reuse existing unchanged distribution behavior evidence. Linux amd64 only.
 
 No main merge, user extension replacement, consumer Framework upgrade or platform
-expansion is selected. This Worker prepares records and packages; root owns public
-actions and closeout. Published history must remain immutable.
+expansion is selected. This Worker prepares records, packages and reconciliation; root owns public
+actions and canonical closeout. Published history must remain immutable.
 
 Preflight: extension checkout clean at c0b6f0f; single worktree; no SPS-014 or release
 identity collision and no overlapping extension edits found. Scoped verdict: green.
@@ -38,5 +38,7 @@ Loaded routines: managed AGENTS/project overrides, reminders, Framework/manifest
 installed Worker/release/versioning/traceability; current SDP entrypoint, Worker
 and release. Installed Framework remains unchanged.
 
-Next: qualify the signed canonical descriptor and clean extension package; hand off
-the actual candidate to root for combined review and publication.
+Outcome: public 2.4.0 signed-engine distribution passed actual package/public hash
+checks, isolated normal 2.3.2 upgrade and clean install, setup/offline identity,
+public-default Framework qualification and final independent combined review.
+See evidence/. Root owns canonical Session closeout; no next extension work selected.

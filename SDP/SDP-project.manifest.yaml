@@ -5,18 +5,18 @@ project:
 installed:
   manifestPath: Framework/installed-toolkit.manifest.yaml
 release:
-  currentVersion: 2.3.2
-  nextTargetVersion: 2.4.0
-  state: prerelease
-  latestTag: v2.3.2
-  latestCommit: c1d86bd148e6ad24da55b03482000df68e3fa3d6
+  currentVersion: 2.4.0
+  nextTargetVersion: null
+  state: released
+  latestTag: v2.4.0
+  latestCommit: f7763acf27900c0fb51fd28d3f2b6edc8a40a5f7
 development:
-  sprintId: Sprint-014
+  sprintId: null
   refactorId: null
-  iterationId: SPI-014
-  sliceId: SPS-014
+  iterationId: null
+  sliceId: null
   fixId: null
-  revision: 1
+  revision: null
 migration:
   pendingWarnings:
   - Bootstrapped from unreleased SDP Toolkit 0.2.0 source commit bc110bb5fd60009ba67015cf640ad6ddbfe1b04b;

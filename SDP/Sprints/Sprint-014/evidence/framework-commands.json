@@ -1,0 +1,38 @@
+[
+  {
+    "name": "public-default-install-preview",
+    "args": [
+      "install",
+      "--plan-output",
+      "/tmp/sdp-r240-public-framework/install-plan.json"
+    ],
+    "exitCode": 0,
+    "stderr": "",
+    "stdoutSHA256": "612a89ed9802a23b626381e01a262b396d493648413ceb42e16ad523abf0981e",
+    "fullTranscript": "/tmp/sdp-r240-public-framework/commands.json"
+  },
+  {
+    "name": "public-default-install-apply",
+    "args": [
+      "install",
+      "--apply",
+      "/tmp/sdp-r240-public-framework/install-plan.json"
+    ],
+    "exitCode": 0,
+    "stderr": "",
+    "stdoutSHA256": "2a84d13b21d6b6676ea5b74e6458e7a3716d3c63084d5338be220c8dce3db07a",
+    "fullTranscript": "/tmp/sdp-r240-public-framework/commands.json"
+  },
+  {
+    "name": "public-default-upgrade-noop",
+    "args": [
+      "upgrade",
+      "--plan-output",
+      "/tmp/sdp-r240-public-framework/noop-plan.json"
+    ],
+    "exitCode": 0,
+    "stderr": "",
+    "stdoutSHA256": "505c2bec62ba68ee6a8c643142727a94333f266e497590b45fe6860920ff01c0",
+    "fullTranscript": "/tmp/sdp-r240-public-framework/commands.json"
+  }
+]
