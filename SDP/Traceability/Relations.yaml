@@ -1482,6 +1482,15 @@ verification:
     scope: unpublished-linux-publisher-bridge
 migrations: {}
 releases:
+  REL-2.4.0:
+    version: 2.4.0
+    state: prerelease
+    releaseRecord: SDP/Releases/REL-2.4.0.yaml
+    verification: []
+    reviews: []
+    gitTag: null
+    releaseCommit: null
+    githubRelease: null
   REL-2.3.2:
     version: 2.3.2
     state: released
@@ -1672,3 +1681,10 @@ sharedEngineDistribution:
     release: REL-2.3.2
     evidence: SDP/Sprints/Sprint-013/Evidence.md
     review: REV-SPS-013-PUBLIC
+
+  SPS-014:
+    path: SDP/Sprints/Sprint-014/ScrumIterations.md
+    status: preparing-release
+    release: REL-2.4.0
+    evidence: SDP/Sprints/Sprint-014/Evidence.md
+    review: null

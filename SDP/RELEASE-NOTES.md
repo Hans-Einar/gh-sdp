@@ -4,6 +4,16 @@
 
 No additional changes selected.
 
+## [2.4.0] — 2026-11-18
+
+Release-Date: 2026-11-18
+
+- [SPS-014] Republish the exact signed canonical SDPTool 2.4.0 engine with the
+  additive native DocumentHost launcher: explicit `--context` choice, SVG data,
+  and reload that preserves the last valid view. Legacy SDUI 0.2 stays supported.
+- Engine and extension retain a shared version and update path. Project Framework
+  upgrades remain explicit. Domain callbacks and an XFMD context picker are excluded.
+
 ## [2.3.2] — 2026-11-17
 
 Release-Date: 2026-11-17
